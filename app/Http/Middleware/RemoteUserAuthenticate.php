@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Middleware;
+namespace App\Http\Middleware;
 
-use CachetHQ\Cachet\Models\User;
+use App\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;

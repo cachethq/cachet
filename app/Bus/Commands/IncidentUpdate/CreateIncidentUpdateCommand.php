@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\IncidentUpdate;
+namespace App\Bus\Commands\IncidentUpdate;
 
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\User;
+use App\Models\Incident;
+use App\Models\User;
 
 /**
  * This is the report incident update command.
@@ -24,7 +24,7 @@ final class CreateIncidentUpdateCommand
     /**
      * The incident.
      *
-     * @var \CachetHQ\Cachet\Models\Incident
+     * @var \App\Models\Incident
      */
     public $incident;
 
@@ -57,7 +57,7 @@ final class CreateIncidentUpdateCommand
     /**
      * The user.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
@@ -78,10 +78,10 @@ final class CreateIncidentUpdateCommand
     /**
      * Create a new report incident update command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      * @param string                           $status
      * @param string                           $message
-     * @param \CachetHQ\Cachet\Models\User     $user
+     * @param \App\Models\User     $user
      *
      * @return void
      */

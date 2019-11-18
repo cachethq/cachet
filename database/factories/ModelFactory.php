@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\IncidentUpdate;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\Setting;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
-use CachetHQ\Cachet\Models\User;
+use App\Models\Component;
+use App\Models\ComponentGroup;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Models\IncidentUpdate;
+use App\Models\Metric;
+use App\Models\MetricPoint;
+use App\Models\Schedule;
+use App\Models\Setting;
+use App\Models\Subscriber;
+use App\Models\Subscription;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 

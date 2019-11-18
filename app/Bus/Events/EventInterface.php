@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events;
+namespace App\Bus\Events;
 
 /**
  * This is the event interface.

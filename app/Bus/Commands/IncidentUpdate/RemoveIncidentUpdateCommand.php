@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\IncidentUpdate;
+namespace App\Bus\Commands\IncidentUpdate;
 
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Models\IncidentUpdate;
 
 /**
  * This is the remove incident update command.
@@ -23,14 +23,14 @@ final class RemoveIncidentUpdateCommand
     /**
      * The incident update to remove.
      *
-     * @var \CachetHQ\Cachet\Models\IncidentUpdate
+     * @var \App\Models\IncidentUpdate
      */
     public $incidentUpdate;
 
     /**
      * Create a new remove incident update command instance.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
+     * @param \App\Models\IncidentUpdate $incidentUpdate
      *
      * @return void
      */

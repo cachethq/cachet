@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\IncidentUpdatePresenter;
+use App\Models\Traits\SortableTrait;
+use App\Presenters\IncidentUpdatePresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 

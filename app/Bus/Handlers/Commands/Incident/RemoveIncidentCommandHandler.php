@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
+namespace App\Bus\Handlers\Commands\Incident;
 
-use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent;
+use App\Bus\Commands\Incident\RemoveIncidentCommand;
+use App\Bus\Events\Incident\IncidentWasRemovedEvent;
 use Illuminate\Contracts\Auth\Guard;
 
 class RemoveIncidentCommandHandler
@@ -39,7 +39,7 @@ class RemoveIncidentCommandHandler
     /**
      * Handle the remove incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand $command
+     * @param \App\Bus\Commands\Incident\RemoveIncidentCommand $command
      *
      * @return void
      */

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Subscriber;
+namespace App\Bus\Commands\Subscriber;
 
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Models\Subscriber;
 
 /**
  * This is the subscribe subscriber command.
@@ -23,7 +23,7 @@ final class UpdateSubscriberSubscriptionCommand
     /**
      * The subscriber email.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     public $subscriber;
 
@@ -37,7 +37,7 @@ final class UpdateSubscriberSubscriptionCommand
     /**
      * Create a new subscribe subscriber command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      * @param null|array                         $subscriptions
      *
      * @return void

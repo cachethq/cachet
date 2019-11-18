@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Middleware;
+namespace App\Bus\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\DB;

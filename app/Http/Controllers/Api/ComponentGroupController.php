@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use App\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use App\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
@@ -75,7 +75,7 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Get a single group.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -108,7 +108,7 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Update an existing group.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -132,7 +132,7 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Delete an existing group.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
      */

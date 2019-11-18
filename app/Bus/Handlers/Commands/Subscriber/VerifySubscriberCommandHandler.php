@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
+namespace App\Bus\Handlers\Commands\Subscriber;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Bus\Commands\Subscriber\VerifySubscriberCommand;
+use App\Bus\Events\Subscriber\SubscriberHasVerifiedEvent;
+use App\Models\Subscriber;
 use Carbon\Carbon;
 
 class VerifySubscriberCommandHandler
@@ -21,7 +21,7 @@ class VerifySubscriberCommandHandler
     /**
      * Handle the subscribe customer command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand $command
+     * @param \App\Bus\Commands\Subscriber\VerifySubscriberCommand $command
      *
      * @return void
      */

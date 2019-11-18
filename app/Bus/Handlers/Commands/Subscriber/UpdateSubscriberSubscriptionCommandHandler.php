@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
+namespace App\Bus\Handlers\Commands\Subscriber;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
+use App\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
+use App\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent;
+use App\Models\Component;
+use App\Models\Subscriber;
+use App\Models\Subscription;
 
 /**
  * This is the subscribe subscriber command handler.
@@ -27,9 +27,9 @@ class UpdateSubscriberSubscriptionCommandHandler
     /**
      * Handle the subscribe subscriber command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand $command
+     * @param \App\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \App\Models\Subscriber
      */
     public function handle(UpdateSubscriberSubscriptionCommand $command)
     {

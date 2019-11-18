@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations\Core;
+namespace App\Integrations\Core;
 
-use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;
+use App\Integrations\Contracts\Credits as CreditsContract;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;

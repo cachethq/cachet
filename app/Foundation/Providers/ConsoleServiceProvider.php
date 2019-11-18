@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Subscribers\CommandSubscriber;
+use App\Subscribers\CommandSubscriber;
 use Illuminate\Support\ServiceProvider;
 
 /**

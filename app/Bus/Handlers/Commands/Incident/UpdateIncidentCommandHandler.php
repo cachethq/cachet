@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
+namespace App\Bus\Handlers\Commands\Incident;
 
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
-use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
-use CachetHQ\Cachet\Bus\Handlers\Traits\StoresMeta;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Bus\Commands\Incident\UpdateIncidentCommand;
+use App\Bus\Events\Incident\IncidentWasUpdatedEvent;
+use App\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
+use App\Bus\Handlers\Traits\StoresMeta;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
 use Twig\Environment as Twig_Environment;
 use Twig\Loader\ArrayLoader as Twig_Loader_Array;
@@ -43,7 +43,7 @@ class UpdateIncidentCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -51,7 +51,7 @@ class UpdateIncidentCommandHandler
      * Create a new update incident command handler instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \App\Services\Dates\DateFactory $dates
      *
      * @return void
      */
@@ -64,9 +64,9 @@ class UpdateIncidentCommandHandler
     /**
      * Handle the update incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand $command
+     * @param \App\Bus\Commands\Incident\UpdateIncidentCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \App\Models\Incident
      */
     public function handle(UpdateIncidentCommand $command)
     {
@@ -118,7 +118,7 @@ class UpdateIncidentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand $command
+     * @param \App\Bus\Commands\Incident\UpdateIncidentCommand $command
      *
      * @return array
      */
@@ -143,8 +143,8 @@ class UpdateIncidentCommandHandler
     /**
      * Compiles an incident template into an incident message.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate                     $template
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand $command
+     * @param \App\Models\IncidentTemplate                     $template
+     * @param \App\Bus\Commands\Incident\UpdateIncidentCommand $command
      *
      * @return string
      */

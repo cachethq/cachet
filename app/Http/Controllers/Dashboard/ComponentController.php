@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Bus\Commands\Component\CreateComponentCommand;
+use App\Bus\Commands\Component\RemoveComponentCommand;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Models\Component;
+use App\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -83,7 +83,7 @@ class ComponentController extends Controller
     /**
      * Shows the edit component view.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\View\View
      */
@@ -102,7 +102,7 @@ class ComponentController extends Controller
     /**
      * Updates a component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -182,7 +182,7 @@ class ComponentController extends Controller
     /**
      * Deletes a given component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\RedirectResponse
      */

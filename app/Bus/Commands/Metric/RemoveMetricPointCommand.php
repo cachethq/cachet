@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Models\MetricPoint;
 
 final class RemoveMetricPointCommand
 {
     /**
      * The metric point to remove.
      *
-     * @var \CachetHQ\Cachet\Models\MetricPoint
+     * @var \App\Models\MetricPoint
      */
     public $metricPoint;
 
     /**
      * Create a new remove metric point command instance.
      *
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \App\Models\MetricPoint $metricPoint
      *
      * @return void
      */

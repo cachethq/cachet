@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
+namespace App\Bus\Handlers\Commands\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
+use App\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
+use App\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -44,9 +44,9 @@ class UpdateIncidentUpdateCommandHandler
     /**
      * Handle the update incident update command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand $command
+     * @param \App\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\IncidentUpdate
+     * @return \App\Models\IncidentUpdate
      */
     public function handle(UpdateIncidentUpdateCommand $command)
     {
@@ -60,7 +60,7 @@ class UpdateIncidentUpdateCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand $command
+     * @param \App\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand $command
      *
      * @return array
      */

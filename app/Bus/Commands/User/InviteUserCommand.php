@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\User;
+namespace App\Bus\Commands\User;
 
 /**
  * This is the invite user command.

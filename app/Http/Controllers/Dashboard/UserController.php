@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent;
-use CachetHQ\Cachet\Bus\Events\User\UserEnabledTwoAuthEvent;
-use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\User\UserDisabledTwoAuthEvent;
+use App\Bus\Events\User\UserEnabledTwoAuthEvent;
+use App\Bus\Events\User\UserRegeneratedApiTokenEvent;
+use App\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
@@ -76,7 +76,7 @@ class UserController extends Controller
     /**
      * Regenerates the users API key.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\View\View
      */

@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
+use App\Models\Metric;
 
 final class RemoveMetricCommand
 {
     /**
      * The metric to remove.
      *
-     * @var \CachetHQ\Cachet\Models\Metric
+     * @var \App\Models\Metric
      */
     public $metric;
 
     /**
      * Create a new remove metric command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return void
      */

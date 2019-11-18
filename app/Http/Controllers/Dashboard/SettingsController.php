@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Integrations\Contracts\Credits;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Bus\Commands\System\Config\UpdateConfigCommand;
+use App\Integrations\Contracts\Credits;
+use App\Models\User;
+use App\Notifications\System\SystemTestNotification;
+use App\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -404,7 +404,7 @@ class SettingsController extends Controller
     /**
      * Handle updating of the banner image.
      *
-     * @param \CachetHQ\Cachet\Settings\Repository $setting
+     * @param \App\Settings\Repository $setting
      *
      * @return void
      */

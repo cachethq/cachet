@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters;
+namespace App\Presenters;
 
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Models\Schedule;
+use App\Presenters\Traits\TimestampsTrait;
+use App\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;
@@ -30,15 +30,15 @@ class SchedulePresenter extends BasePresenter implements Arrayable
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new presenter.
      *
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
-     * @param \CachetHQ\Cachet\Models\Schedule            $resource
+     * @param \App\Services\Dates\DateFactory $dates
+     * @param \App\Models\Schedule            $resource
      *
      * @return void
      */

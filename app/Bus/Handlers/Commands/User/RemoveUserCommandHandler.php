@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasRemovedEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\User\RemoveUserCommand;
+use App\Bus\Events\User\UserWasRemovedEvent;
+use App\Models\User;
 
 class RemoveUserCommandHandler
 {
     /**
      * Handle the remove user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand $command
+     * @param \App\Bus\Commands\User\RemoveUserCommand $command
      *
      * @return void
      */

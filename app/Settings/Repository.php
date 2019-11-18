@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Settings;
+namespace App\Settings;
 
-use CachetHQ\Cachet\Models\Setting;
+use App\Models\Setting;
 use Exception;
 
 /**
@@ -34,7 +34,7 @@ class Repository
     /**
      * The eloquent model instance.
      *
-     * @var \CachetHQ\Cachet\Models\Setting
+     * @var \App\Models\Setting
      */
     protected $model;
 
@@ -48,7 +48,7 @@ class Repository
     /**
      * Create a new settings repository instance.
      *
-     * @param \CachetHQ\Cachet\Models\Setting $model
+     * @param \App\Models\Setting $model
      *
      * @return void
      */
@@ -60,7 +60,7 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @throws \CachetHQ\Cachet\Settings\ReadException
+     * @throws \App\Settings\ReadException
      *
      * @return array
      */
@@ -81,7 +81,7 @@ class Repository
      * @param string      $name
      * @param string|null $value
      *
-     * @throws \CachetHQ\Cachet\Settings\WriteException
+     * @throws \App\Settings\WriteException
      *
      * @return void
      */
@@ -106,7 +106,7 @@ class Repository
      * @param string $name
      * @param mixed  $default
      *
-     * @throws \CachetHQ\Cachet\Settings\ReadException
+     * @throws \App\Settings\ReadException
      *
      * @return mixed
      */
@@ -128,7 +128,7 @@ class Repository
      *
      * @param string $name
      *
-     * @throws \CachetHQ\Cachet\Settings\WriteException
+     * @throws \App\Settings\WriteException
      *
      * @return void
      */
@@ -146,7 +146,7 @@ class Repository
     /**
      * Clear all settings.
      *
-     * @throws \CachetHQ\Cachet\Settings\WriteException
+     * @throws \App\Settings\WriteException
      *
      * @return void
      */

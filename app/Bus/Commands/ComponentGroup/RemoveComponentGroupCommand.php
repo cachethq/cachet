@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
+namespace App\Bus\Commands\ComponentGroup;
 
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Models\ComponentGroup;
 
 final class RemoveComponentGroupCommand
 {
     /**
      * The component group to remove.
      *
-     * @var \CachetHQ\Cachet\Models\ComponentGroup
+     * @var \App\Models\ComponentGroup
      */
     public $group;
 
     /**
      * Create a new remove component group command instance.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return void
      */

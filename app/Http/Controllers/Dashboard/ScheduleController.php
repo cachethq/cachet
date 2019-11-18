@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
-use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
-use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\Schedule;
+use App\Bus\Commands\Schedule\CreateScheduleCommand;
+use App\Bus\Commands\Schedule\DeleteScheduleCommand;
+use App\Bus\Commands\Schedule\UpdateScheduleCommand;
+use App\Integrations\Contracts\System;
+use App\Models\IncidentTemplate;
+use App\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -39,7 +39,7 @@ class ScheduleController extends Controller
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
@@ -114,7 +114,7 @@ class ScheduleController extends Controller
     /**
      * Shows the edit schedule maintenance form.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\View\View
      */
@@ -131,7 +131,7 @@ class ScheduleController extends Controller
     /**
      * Updates the given incident.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -161,7 +161,7 @@ class ScheduleController extends Controller
     /**
      * Deletes a given schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\RedirectResponse
      */

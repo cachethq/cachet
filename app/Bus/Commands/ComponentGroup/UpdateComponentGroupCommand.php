@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
+namespace App\Bus\Commands\ComponentGroup;
 
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Models\ComponentGroup;
 
 /**
  * This is the update component group command.
@@ -23,7 +23,7 @@ final class UpdateComponentGroupCommand
     /**
      * The component group.
      *
-     * @var \CachetHQ\Cachet\Models\ComponentGroup
+     * @var \App\Models\ComponentGroup
      */
     public $group;
 
@@ -70,7 +70,7 @@ final class UpdateComponentGroupCommand
     /**
      * Create a add component group command instance.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      * @param string                                 $name
      * @param int                                    $order
      * @param int                                    $collapsed

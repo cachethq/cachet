@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Routes;
+namespace App\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 

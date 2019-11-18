@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Models\Incident;
+use App\Bus\Commands\Incident\CreateIncidentCommand;
+use App\Bus\Commands\Incident\RemoveIncidentCommand;
+use App\Bus\Commands\Incident\UpdateIncidentCommand;
+use App\Models\Incident;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
@@ -50,7 +50,7 @@ class IncidentController extends AbstractApiController
     /**
      * Get a single incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -91,7 +91,7 @@ class IncidentController extends AbstractApiController
     /**
      * Update an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -122,7 +122,7 @@ class IncidentController extends AbstractApiController
     /**
      * Delete an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */

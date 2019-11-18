@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\User;
+namespace App\Bus\Events\User;
 
-use CachetHQ\Cachet\Models\Invite;
+use App\Models\Invite;
 
 /**
  * This is the user was invited event class.
@@ -25,14 +25,14 @@ final class UserWasInvitedEvent implements UserEventInterface
     /**
      * The invite that has been created.
      *
-     * @var \CachetHQ\Cachet\Models\Invite
+     * @var \App\Models\Invite
      */
     public $invite;
 
     /**
      * Create a new user was invite event instance.
      *
-     * @param \CachetHQ\Cachet\Models\Invite $invite
+     * @param \App\Models\Invite $invite
      *
      * @return void
      */

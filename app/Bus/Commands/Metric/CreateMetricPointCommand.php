@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
+use App\Models\Metric;
 
 /**
  * This is the create metric point command class.
@@ -24,7 +24,7 @@ final class CreateMetricPointCommand
     /**
      * The metric to add.
      *
-     * @var \CachetHQ\Cachet\Models\Metric
+     * @var \App\Models\Metric
      */
     public $metric;
 
@@ -55,7 +55,7 @@ final class CreateMetricPointCommand
     /**
      * Create a new add metric point command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param int                            $value
      * @param int                            $created_at
      *

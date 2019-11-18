@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Schedule;
+namespace App\Bus\Commands\Schedule;
 
-use CachetHQ\Cachet\Models\Schedule;
+use App\Models\Schedule;
 
 /**
  * This is the update schedule command.
@@ -23,7 +23,7 @@ final class UpdateScheduleCommand
     /**
      * The schedule to update.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule
+     * @param \App\Models\Schedule
      */
     public $schedule;
 
@@ -87,7 +87,7 @@ final class UpdateScheduleCommand
     /**
      * Create a new update schedule command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      * @param string                           $name
      * @param string                           $message
      * @param int                              $status

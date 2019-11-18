@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Subscriber;
+namespace App\Bus\Commands\Subscriber;
 
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Models\Subscriber;
 
 final class UnsubscribeSubscriberCommand
 {
     /**
      * The subscriber to unsubscribe.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     public $subscriber;
 
     /**
      * Create a unsubscribe subscriber command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @return void
      */

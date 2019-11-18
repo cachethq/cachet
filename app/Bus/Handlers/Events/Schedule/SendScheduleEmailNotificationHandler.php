@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Schedule;
+namespace App\Bus\Handlers\Events\Schedule;
 
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Schedule\NewScheduleNotification;
+use App\Bus\Events\Schedule\ScheduleEventInterface;
+use App\Models\Subscriber;
+use App\Notifications\Schedule\NewScheduleNotification;
 
 /**
  * This is the send schedule event notification handler.
@@ -25,14 +25,14 @@ class SendScheduleEmailNotificationHandler
     /**
      * The subscriber instance.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     protected $subscriber;
 
     /**
      * Create a new send schedule email notification handler.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @return void
      */
@@ -44,7 +44,7 @@ class SendScheduleEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface $event
+     * @param \App\Bus\Events\Schedule\ScheduleEventInterface $event
      *
      * @return void
      */

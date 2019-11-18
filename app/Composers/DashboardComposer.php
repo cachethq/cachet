@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Models\Schedule;
+use App\Models\Subscriber;
 use Illuminate\Contracts\View\View;
 
 /**

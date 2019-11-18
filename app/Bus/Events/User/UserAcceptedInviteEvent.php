@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\User;
+namespace App\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\Invite;
+use App\Models\User;
 
 /**
  * This is the user accepted invite event class.
@@ -25,22 +25,22 @@ final class UserAcceptedInviteEvent implements ActionInterface, UserEventInterfa
     /**
      * The user that accepted the invite.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The invite that the user accepted.
      *
-     * @var \CachetHQ\Cachet\Models\Invite
+     * @var \App\Models\Invite
      */
     public $invite;
 
     /**
      * Create a new user accepted invite event class.
      *
-     * @param \CachetHQ\Cachet\Models\User   $user
-     * @param \CachetHQ\Cachet\Models\Invite $invite
+     * @param \App\Models\User   $user
+     * @param \App\Models\Invite $invite
      *
      * @return void
      */

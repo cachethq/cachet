@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions;
+namespace App\Bus\Exceptions;
 
 /**
  * This is the exception interface.

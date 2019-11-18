@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\GenerateApiTokenCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\User\GenerateApiTokenCommand;
+use App\Bus\Events\User\UserRegeneratedApiTokenEvent;
+use App\Models\User;
 
 class GenerateApiTokenCommandHandler
 {
     /**
      * Handle the generate api key command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\GenerateApiTokenCommand $command
+     * @param \App\Bus\Commands\User\GenerateApiTokenCommand $command
      *
      * @return void
      */

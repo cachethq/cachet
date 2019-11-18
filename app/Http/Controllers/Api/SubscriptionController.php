@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
-use CachetHQ\Cachet\Models\Subscription;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use App\Models\Subscription;
 
 /**
  * This is the subscription controller class.
@@ -24,7 +24,7 @@ class SubscriptionController extends AbstractApiController
     /**
      * Delete a subscription.
      *
-     * @param \CachetHQ\Cachet\Models\Subscription $subscription
+     * @param \App\Models\Subscription $subscription
      *
      * @return \Illuminate\Http\JsonResponse
      */

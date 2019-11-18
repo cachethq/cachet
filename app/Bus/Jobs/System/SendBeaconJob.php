@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Jobs\System;
+namespace App\Bus\Jobs\System;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 

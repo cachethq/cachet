@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use App\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
@@ -74,7 +74,7 @@ class SubscriberController extends Controller
     /**
      * Deletes a subscriber.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @throws \Exception
      *

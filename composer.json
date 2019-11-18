@@ -81,7 +81,7 @@
             "app/helpers.php"
         ],
         "psr-4": {
-            "CachetHQ\\Cachet\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

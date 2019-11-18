@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters;
+namespace App\Presenters;
 
-use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use App\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use McCool\LaravelAutoPresenter\BasePresenter;

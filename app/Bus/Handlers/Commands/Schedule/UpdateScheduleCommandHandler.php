@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
+namespace App\Bus\Handlers\Commands\Schedule;
 
-use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Schedule\UpdateScheduleCommand;
+use App\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
+use App\Models\Schedule;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -34,7 +34,7 @@ class UpdateScheduleCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -42,7 +42,7 @@ class UpdateScheduleCommandHandler
      * Create a new update schedule command handler instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \App\Services\Dates\DateFactory $dates
      *
      * @return void
      */
@@ -55,9 +55,9 @@ class UpdateScheduleCommandHandler
     /**
      * Handle the update schedule command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand $command
+     * @param \App\Bus\Commands\Schedule\UpdateScheduleCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Schedule
+     * @return \App\Models\Schedule
      */
     public function handle(UpdateScheduleCommand $command)
     {
@@ -73,7 +73,7 @@ class UpdateScheduleCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand $command
+     * @param \App\Bus\Commands\Schedule\UpdateScheduleCommand $command
      *
      * @return array
      */

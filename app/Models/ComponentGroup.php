@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Models\Traits\SearchableTrait;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
+use App\Models\Traits\SearchableTrait;
+use App\Models\Traits\SortableTrait;
+use App\Presenters\ComponentGroupPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;

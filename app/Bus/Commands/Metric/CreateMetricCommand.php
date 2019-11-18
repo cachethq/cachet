@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
 /**
  * This is the create metric command class.

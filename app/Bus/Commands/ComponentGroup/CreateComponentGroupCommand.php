@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
+namespace App\Bus\Commands\ComponentGroup;
 
 /**
  * This is the create component group command.

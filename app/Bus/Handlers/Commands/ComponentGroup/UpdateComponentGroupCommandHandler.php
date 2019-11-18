@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup;
+namespace App\Bus\Handlers\Commands\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
+use App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
 use Illuminate\Contracts\Auth\Guard;
 
 class UpdateComponentGroupCommandHandler
@@ -39,9 +39,9 @@ class UpdateComponentGroupCommandHandler
     /**
      * Handle the update component group command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand $command
+     * @param \App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\ComponentGroup
+     * @return \App\Models\ComponentGroup
      */
     public function handle(UpdateComponentGroupCommand $command)
     {
@@ -56,7 +56,7 @@ class UpdateComponentGroupCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand $command
+     * @param \App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand $command
      *
      * @return array
      */

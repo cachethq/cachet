@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
-use CachetHQ\Cachet\Repositories\Metric\MySqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\SqliteRepository;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Repositories\Metric\MetricRepository;
+use App\Repositories\Metric\MySqlRepository;
+use App\Repositories\Metric\PgSqlRepository;
+use App\Repositories\Metric\SqliteRepository;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;

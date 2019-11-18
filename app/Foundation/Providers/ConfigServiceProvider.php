@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Models\Setting as SettingModel;
-use CachetHQ\Cachet\Settings\Cache;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Models\Setting as SettingModel;
+use App\Settings\Cache;
+use App\Settings\Repository;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 use Jenssegers\Date\Date;

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Subscriber;
+namespace App\Bus\Commands\Subscriber;
 
 /**
  * This is the subscribe subscriber command.

@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Models\Traits\HasMeta;
-use CachetHQ\Cachet\Models\Traits\HasTags;
-use CachetHQ\Cachet\Models\Traits\SearchableTrait;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\ComponentPresenter;
+use App\Models\Traits\HasMeta;
+use App\Models\Traits\HasTags;
+use App\Models\Traits\SearchableTrait;
+use App\Models\Traits\SortableTrait;
+use App\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

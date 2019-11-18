@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers;
+namespace App\Http\Controllers;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
-use CachetHQ\Cachet\Notifications\Subscriber\ManageSubscriptionNotification;
+use App\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use App\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
+use App\Bus\Commands\Subscriber\VerifySubscriberCommand;
+use App\Models\Component;
+use App\Models\ComponentGroup;
+use App\Models\Subscriber;
+use App\Models\Subscription;
+use App\Notifications\Subscriber\ManageSubscriptionNotification;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Auth\Guard;

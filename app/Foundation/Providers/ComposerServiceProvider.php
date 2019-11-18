@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Composers\AppComposer;
-use CachetHQ\Cachet\Composers\ComponentsComposer;
-use CachetHQ\Cachet\Composers\CurrentUserComposer;
-use CachetHQ\Cachet\Composers\DashboardComposer;
-use CachetHQ\Cachet\Composers\MetricsComposer;
-use CachetHQ\Cachet\Composers\ScheduledComposer;
-use CachetHQ\Cachet\Composers\SettingsComposer;
-use CachetHQ\Cachet\Composers\StatusComposer;
-use CachetHQ\Cachet\Composers\StickiedComposer;
-use CachetHQ\Cachet\Composers\ThemeComposer;
-use CachetHQ\Cachet\Composers\TimelineComposer;
-use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
+use App\Composers\AppComposer;
+use App\Composers\ComponentsComposer;
+use App\Composers\CurrentUserComposer;
+use App\Composers\DashboardComposer;
+use App\Composers\MetricsComposer;
+use App\Composers\ScheduledComposer;
+use App\Composers\SettingsComposer;
+use App\Composers\StatusComposer;
+use App\Composers\StickiedComposer;
+use App\Composers\ThemeComposer;
+use App\Composers\TimelineComposer;
+use App\Composers\TimezoneLocaleComposer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\ServiceProvider;
 

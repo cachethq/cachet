@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Middleware;
+namespace App\Http\Middleware;
 
-use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
+use App\Settings\Repository as SettingsRepository;
 use Closure;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Http\Request;
@@ -36,7 +36,7 @@ class Localize
     /**
      * The settings repository instance.
      *
-     * @var \CachetHQ\Cachet\Settings\Repository
+     * @var \App\Settings\Repository
      */
     protected $settings;
 
@@ -44,7 +44,7 @@ class Localize
      * Constructs a new localize middleware instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \CachetHQ\Cachet\Settings\Repository    $settings
+     * @param \App\Settings\Repository    $settings
      *
      * @return void
      */

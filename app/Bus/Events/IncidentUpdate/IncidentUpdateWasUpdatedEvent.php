@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\IncidentUpdate;
+namespace App\Bus\Events\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\IncidentUpdate;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\IncidentUpdate;
+use App\Models\User;
 
 /**
  * This is the incident update was updated event.
@@ -25,21 +25,21 @@ final class IncidentUpdateWasUpdatedEvent implements ActionInterface, IncidentUp
     /**
      * The user who updated the incident update.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The incident update that has been updated.
      *
-     * @var \CachetHQ\Cachet\Models\IncidentUpdate
+     * @var \App\Models\IncidentUpdate
      */
     public $update;
 
     /**
      * Create a new incident update was updated event instance.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
+     * @param \App\Models\IncidentUpdate $update
      *
      * @return void
      */

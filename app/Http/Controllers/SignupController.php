@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers;
+namespace App\Http\Controllers;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand;
-use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\Invite\ClaimInviteCommand;
+use App\Bus\Commands\User\SignupUserCommand;
+use App\Models\Invite;
+use App\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations\Core;
+namespace App\Integrations\Core;
 
-use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Schedule;
+use App\Integrations\Contracts\System as SystemContract;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\Schedule;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 

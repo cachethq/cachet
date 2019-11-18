@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers;
+namespace App\Http\Controllers;
 
-use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
-use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
-use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
-use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
+use App\Bus\Events\User\UserFailedTwoAuthEvent;
+use App\Bus\Events\User\UserLoggedInEvent;
+use App\Bus\Events\User\UserLoggedOutEvent;
+use App\Bus\Events\User\UserPassedTwoAuthEvent;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;

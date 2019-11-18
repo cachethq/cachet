@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
-use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\IncidentTemplate;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use App\Http\Controllers\Api\AbstractApiController;
+use App\Models\Component;
+use App\Models\ComponentGroup;
+use App\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -27,11 +27,11 @@ class ApiController extends AbstractApiController
     /**
      * Updates a component with the entered info.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \App\Models\Component
      */
     public function postUpdateComponent(Component $component)
     {
@@ -117,7 +117,7 @@ class ApiController extends AbstractApiController
      *
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      *
-     * @return \CachetHQ\Cachet\Models\IncidentTemplate
+     * @return \App\Models\IncidentTemplate
      */
     public function getIncidentTemplate()
     {

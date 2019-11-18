@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
+namespace App\Bus\Handlers\Commands\Component;
 
-use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
-use CachetHQ\Cachet\Models\Component;
+use App\Bus\Commands\Component\CreateComponentCommand;
+use App\Bus\Events\Component\ComponentWasCreatedEvent;
+use App\Models\Component;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -45,9 +45,9 @@ class CreateComponentCommandHandler
     /**
      * Handle the add component command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand $command
+     * @param \App\Bus\Commands\Component\CreateComponentCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \App\Models\Component
      */
     public function handle(CreateComponentCommand $command)
     {
@@ -70,7 +70,7 @@ class CreateComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand $command
+     * @param \App\Bus\Commands\Component\CreateComponentCommand $command
      *
      * @return array
      */

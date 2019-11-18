@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\Incident;
+namespace App\Bus\Exceptions\Incident;
 
 use Exception;
 

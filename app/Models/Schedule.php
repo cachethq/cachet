@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Models\Traits\HasMeta;
-use CachetHQ\Cachet\Models\Traits\SearchableTrait;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\SchedulePresenter;
+use App\Models\Traits\HasMeta;
+use App\Models\Traits\SearchableTrait;
+use App\Models\Traits\SortableTrait;
+use App\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

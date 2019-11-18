@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
-use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;
-use CachetHQ\Cachet\Integrations\Contracts\Feed as FeedContract;
-use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
-use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
-use CachetHQ\Cachet\Integrations\Core\Beacon;
-use CachetHQ\Cachet\Integrations\Core\Credits;
-use CachetHQ\Cachet\Integrations\Core\Feed;
-use CachetHQ\Cachet\Integrations\Core\System;
-use CachetHQ\Cachet\Integrations\GitHub\Releases;
+use App\Integrations\Contracts\Beacon as BeaconContract;
+use App\Integrations\Contracts\Credits as CreditsContract;
+use App\Integrations\Contracts\Feed as FeedContract;
+use App\Integrations\Contracts\Releases as ReleasesContract;
+use App\Integrations\Contracts\System as SystemContract;
+use App\Integrations\Core\Beacon;
+use App\Integrations\Core\Credits;
+use App\Integrations\Core\Feed;
+use App\Integrations\Core\System;
+use App\Integrations\GitHub\Releases;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Models\Traits\HasMeta;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\MetricPresenter;
+use App\Models\Traits\HasMeta;
+use App\Models\Traits\SortableTrait;
+use App\Presenters\MetricPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\MessageBag;

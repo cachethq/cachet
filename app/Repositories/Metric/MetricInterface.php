@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Repositories\Metric;
+namespace App\Repositories\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
+use App\Models\Metric;
 
 /**
  * This is the metric interface.
@@ -23,7 +23,7 @@ interface MetricInterface
     /**
      * Returns metrics since given minutes.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param int                            $minutes
      *
      * @return \Illuminate\Support\Collection
@@ -33,7 +33,7 @@ interface MetricInterface
     /**
      * Returns metrics since given hour.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param int                            $hour
      *
      * @return \Illuminate\Support\Collection
@@ -43,7 +43,7 @@ interface MetricInterface
     /**
      * Returns metrics since given day.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param int                            $day
      *
      * @return \Illuminate\Support\Collection

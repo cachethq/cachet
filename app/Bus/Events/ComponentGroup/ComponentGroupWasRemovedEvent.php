@@ -9,33 +9,33 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\ComponentGroup;
+namespace App\Bus\Events\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\ComponentGroup;
+use App\Models\User;
 
 final class ComponentGroupWasRemovedEvent implements ActionInterface, ComponentGroupEventInterface
 {
     /**
      * The user who removed the component group.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The component group that was removed.
      *
-     * @var \CachetHQ\Cachet\Models\ComponentGroup
+     * @var \App\Models\ComponentGroup
      */
     public $group;
 
     /**
      * Create a new component group was removed event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User           $user
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\User           $user
+     * @param \App\Models\ComponentGroup $group
      *
      * @return void
      */

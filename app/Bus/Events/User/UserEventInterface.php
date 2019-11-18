@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\User;
+namespace App\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\EventInterface;
+use App\Bus\Events\EventInterface;
 
 /**
  * This is the user event interface.

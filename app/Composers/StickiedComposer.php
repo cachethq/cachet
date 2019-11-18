@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Models\Incident;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\View\View;
 
 /**

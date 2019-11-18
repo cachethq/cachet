@@ -190,14 +190,14 @@ return [
         /*
          * Application Service Providers...
          */
-        CachetHQ\Cachet\Foundation\Providers\AppServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\EventServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\IntegrationServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
+        App\Foundation\Providers\AppServiceProvider::class,
+        App\Foundation\Providers\ComposerServiceProvider::class,
+        App\Foundation\Providers\ConsoleServiceProvider::class,
+        App\Foundation\Providers\ConfigServiceProvider::class,
+        App\Foundation\Providers\EventServiceProvider::class,
+        App\Foundation\Providers\IntegrationServiceProvider::class,
+        App\Foundation\Providers\RepositoryServiceProvider::class,
+        App\Foundation\Providers\RouteServiceProvider::class,
 
     ]),
 

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Builder;
@@ -154,7 +154,7 @@ class User extends Authenticatable
      *
      * @param string $password
      *
-     * @return \CachetHQ\Cachet\Models\User
+     * @return \App\Models\User
      */
     public function setPasswordAttribute($password)
     {
@@ -171,7 +171,7 @@ class User extends Authenticatable
      *
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      *
-     * @return \CachetHQ\Cachet\Models\User
+     * @return \App\Models\User
      */
     public static function findByApiToken($token, $columns = ['*'])
     {

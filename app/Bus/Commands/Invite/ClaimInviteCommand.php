@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Invite;
+namespace App\Bus\Commands\Invite;
 
-use CachetHQ\Cachet\Models\Invite;
+use App\Models\Invite;
 
 final class ClaimInviteCommand
 {
     /**
      * The invite to mark as claimed.
      *
-     * @var \CachetHQ\Cachet\Models\Invite
+     * @var \App\Models\Invite
      */
     public $invite;
 
     /**
      * Create a new claim invite command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Invite $invite
+     * @param \App\Models\Invite $invite
      *
      * @return void
      */

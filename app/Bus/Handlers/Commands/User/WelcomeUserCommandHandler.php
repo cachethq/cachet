@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasWelcomedEvent;
+use App\Bus\Commands\User\WelcomeUserCommand;
+use App\Bus\Events\User\UserWasWelcomedEvent;
 
 /**
  * This is the welcome user command handler.
@@ -24,7 +24,7 @@ class WelcomeUserCommandHandler
     /**
      * Handle the welcome user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand $command
+     * @param \App\Bus\Commands\User\WelcomeUserCommand $command
      *
      * @return void
      */

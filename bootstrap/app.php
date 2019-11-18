@@ -22,9 +22,9 @@ $app = new Illuminate\Foundation\Application(realpath(__DIR__.'/../'));
 |
 */
 
-$app->singleton(Illuminate\Contracts\Http\Kernel::class, CachetHQ\Cachet\Http\Kernel::class);
+$app->singleton(Illuminate\Contracts\Http\Kernel::class, App\Http\Kernel::class);
 
-$app->singleton(Illuminate\Contracts\Console\Kernel::class, CachetHQ\Cachet\Console\Kernel::class);
+$app->singleton(Illuminate\Contracts\Console\Kernel::class, App\Console\Kernel::class);
 
 $app->singleton(Illuminate\Contracts\Debug\ExceptionHandler::class, GrahamCampbell\Exceptions\ExceptionHandler::class);
 

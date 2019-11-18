@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\System;
+namespace App\Bus\Events\System;
 
 /**
  * This is the system was reset event class.

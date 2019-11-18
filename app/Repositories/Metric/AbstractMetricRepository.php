@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Repositories\Metric;
+namespace App\Repositories\Metric;
 
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Metric;
+use App\Integrations\Contracts\System;
+use App\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Collection;
 
@@ -76,7 +76,7 @@ abstract class AbstractMetricRepository
     /**
      * Return the query type.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return string
      */
@@ -94,7 +94,7 @@ abstract class AbstractMetricRepository
     /**
      * Map the result set.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param array                          $results
      *
      * @return \Illuminate\Support\Collection

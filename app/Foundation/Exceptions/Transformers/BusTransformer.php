@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Exceptions\Transformers;
+namespace App\Foundation\Exceptions\Transformers;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 use Exception;
 use GrahamCampbell\Exceptions\Transformers\TransformerInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;

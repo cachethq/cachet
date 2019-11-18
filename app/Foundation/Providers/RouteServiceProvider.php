@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
-use CachetHQ\Cachet\Http\Middleware\Acceptable;
-use CachetHQ\Cachet\Http\Middleware\Authenticate;
-use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
-use CachetHQ\Cachet\Http\Middleware\Timezone;
-use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
-use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
-use CachetHQ\Cachet\Http\Routes\AuthRoutes;
-use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
-use CachetHQ\Cachet\Http\Routes\SetupRoutes;
-use CachetHQ\Cachet\Http\Routes\SignupRoutes;
+use App\Http\Middleware\Acceptable;
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\RemoteUserAuthenticate;
+use App\Http\Middleware\Timezone;
+use App\Http\Middleware\VerifyCsrfToken;
+use App\Http\Routes\ApiSystemRoutes;
+use App\Http\Routes\AuthRoutes;
+use App\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
+use App\Http\Routes\SetupRoutes;
+use App\Http\Routes\SignupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -45,7 +45,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'CachetHQ\Cachet\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers';
 
     /**
      * These are the route files that should always be available anonymously.
@@ -83,19 +83,19 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function bind(Router $router)
     {
-        $router->model('component', 'CachetHQ\Cachet\Models\Component');
-        $router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
-        $router->model('incident', 'CachetHQ\Cachet\Models\Incident');
-        $router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
-        $router->model('incident_update', 'CachetHQ\Cachet\Models\IncidentUpdate');
-        $router->model('metric', 'CachetHQ\Cachet\Models\Metric');
-        $router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
-        $router->model('schedule', 'CachetHQ\Cachet\Models\Schedule');
-        $router->model('setting', 'CachetHQ\Cachet\Models\Setting');
-        $router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
-        $router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
-        $router->model('tag', 'CachetHQ\Cachet\Models\Tag');
-        $router->model('user', 'CachetHQ\Cachet\Models\User');
+        $router->model('component', 'App\Models\Component');
+        $router->model('component_group', 'App\Models\ComponentGroup');
+        $router->model('incident', 'App\Models\Incident');
+        $router->model('incident_template', 'App\Models\IncidentTemplate');
+        $router->model('incident_update', 'App\Models\IncidentUpdate');
+        $router->model('metric', 'App\Models\Metric');
+        $router->model('metric_point', 'App\Models\MetricPoint');
+        $router->model('schedule', 'App\Models\Schedule');
+        $router->model('setting', 'App\Models\Setting');
+        $router->model('subscriber', 'App\Models\Subscriber');
+        $router->model('subscription', 'App\Models\Subscription');
+        $router->model('tag', 'App\Models\Tag');
+        $router->model('user', 'App\Models\User');
     }
 
     /**
@@ -119,7 +119,7 @@ class RouteServiceProvider extends ServiceProvider
                 $class = str_replace('/', '\\', $class);
                 $class = substr($class, 0, -4);
 
-                $routes = $this->app->make("CachetHQ\\Cachet\\Http\\Routes${class}");
+                $routes = $this->app->make("App\\Http\\Routes${class}");
 
                 if ($routes::$browser) {
                     $this->mapForBrowser($router, $routes, $applyAlwaysAuthenticate);

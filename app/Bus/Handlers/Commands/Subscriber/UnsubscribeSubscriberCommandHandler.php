@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
+namespace App\Bus\Handlers\Commands\Subscriber;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use App\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
 
 /**
  * This is the unsubscribe subscriber command class.
@@ -26,7 +26,7 @@ class UnsubscribeSubscriberCommandHandler
     /**
      * Handle the subscribe customer command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand $command
+     * @param \App\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand $command
      *
      * @return void
      */

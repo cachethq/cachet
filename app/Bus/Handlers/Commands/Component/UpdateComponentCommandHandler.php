@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
+namespace App\Bus\Handlers\Commands\Component;
 
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use App\Bus\Events\Component\ComponentWasUpdatedEvent;
+use App\Models\Component;
 use Illuminate\Contracts\Auth\Guard;
 
 class UpdateComponentCommandHandler
@@ -41,9 +41,9 @@ class UpdateComponentCommandHandler
     /**
      * Handle the update component command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand $command
+     * @param \App\Bus\Commands\Component\UpdateComponentCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \App\Models\Component
      */
     public function handle(UpdateComponentCommand $command)
     {
@@ -73,7 +73,7 @@ class UpdateComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand $command
+     * @param \App\Bus\Commands\Component\UpdateComponentCommand $command
      *
      * @return array
      */

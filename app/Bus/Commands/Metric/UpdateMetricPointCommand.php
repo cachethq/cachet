@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Models\Metric;
+use App\Models\MetricPoint;
 
 /**
  * This is the update metric point command.
@@ -24,14 +24,14 @@ final class UpdateMetricPointCommand
     /**
      * The metric point.
      *
-     * @var \CachetHQ\Cachet\Models\MetricPoint
+     * @var \App\Models\MetricPoint
      */
     public $point;
 
     /**
      * The metric.
      *
-     * @var \CachetHQ\Cachet\Models\Metric
+     * @var \App\Models\Metric
      */
     public $metric;
 
@@ -62,8 +62,8 @@ final class UpdateMetricPointCommand
     /**
      * Create a new update metric point command instance.
      *
-     * @param \CachetHQ\Cachet\Models\MetricPoint $point
-     * @param \CachetHQ\Cachet\Models\Metric      $metric
+     * @param \App\Models\MetricPoint $point
+     * @param \App\Models\Metric      $metric
      * @param float                               $value
      * @param string                              $created_at
      *

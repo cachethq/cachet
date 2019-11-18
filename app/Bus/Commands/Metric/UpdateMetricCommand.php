@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Metric;
+namespace App\Bus\Commands\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
+use App\Models\Metric;
 
 final class UpdateMetricCommand
 {
     /**
      * The metric.
      *
-     * @var \CachetHQ\Cachet\Models\Metric
+     * @var \App\Models\Metric
      */
     public $metric;
 
@@ -121,7 +121,7 @@ final class UpdateMetricCommand
     /**
      * Create a new update metric command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      * @param string                         $name
      * @param string                         $suffix
      * @param string                         $description

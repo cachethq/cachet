@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use App\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
+use App\Integrations\Contracts\System;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Models\IncidentUpdate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
@@ -47,7 +47,7 @@ class IncidentUpdateController extends Controller
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
@@ -69,7 +69,7 @@ class IncidentUpdateController extends Controller
     /**
      * Shows the incident update form.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\View\View
      */
@@ -81,7 +81,7 @@ class IncidentUpdateController extends Controller
     /**
      * Shows the incident update form.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\View\View
      */
@@ -96,7 +96,7 @@ class IncidentUpdateController extends Controller
     /**
      * Creates a new incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -129,8 +129,8 @@ class IncidentUpdateController extends Controller
     /**
      * Shows the edit incident view.
      *
-     * @param \CachetHQ\Cachet\Models\Incident       $incident
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
+     * @param \App\Models\Incident       $incident
+     * @param \App\Models\IncidentUpdate $incidentUpdate
      *
      * @return \Illuminate\View\View
      */
@@ -145,8 +145,8 @@ class IncidentUpdateController extends Controller
     /**
      * Edit an incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident       $incident
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
+     * @param \App\Models\Incident       $incident
+     * @param \App\Models\IncidentUpdate $incidentUpdate
      *
      * @return \Illuminate\Http\RedirectResponse
      */

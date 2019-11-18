@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations\GitHub;
+namespace App\Integrations\GitHub;
 
-use CachetHQ\Cachet\Bus\Events\System\SystemCheckedForUpdatesEvent;
-use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
+use App\Bus\Events\System\SystemCheckedForUpdatesEvent;
+use App\Integrations\Contracts\Releases as ReleasesContract;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
+namespace App\Bus\Handlers\Commands\Subscriber;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
-use CachetHQ\Cachet\Models\Subscription;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use App\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
+use App\Models\Subscription;
 
 class UnsubscribeSubscriptionCommandHandler
 {
     /**
      * Handle the unsubscribe subscription command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand $command
+     * @param \App\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand $command
      *
      * @return void
      */

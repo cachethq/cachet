@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Models\Component;
+use App\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
 

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Integrations\Contracts\System;
+use App\Integrations\Contracts\System;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Arr;
 
@@ -26,14 +26,14 @@ class StatusComposer
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
     /**
      * Create a new status composer instance.
      *
-     * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
+     * @param \App\Integrations\Contracts\System $system
      *
      * @return void
      */
