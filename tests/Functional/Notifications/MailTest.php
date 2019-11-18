@@ -64,7 +64,7 @@ class MailTest extends AbstractTestCase
     /**
      * Setup the application.
      */
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->app->make(SettingsRepository::class)->set('app_name', $this->appName);
