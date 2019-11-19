@@ -14,10 +14,10 @@ namespace Tests\Foundation\Providers;
 use AltThree\TestBench\ServiceProviderTrait;
 use App\Foundation\Providers\RouteServiceProvider;
 use App\Http\Middleware\Authenticate;
-use Tests\AbstractTestCase;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\Router;
+use Tests\AbstractTestCase;
 
 /**
  * This is the route service provider test class.

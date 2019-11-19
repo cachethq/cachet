@@ -12,8 +12,8 @@
 namespace Tests\Api;
 
 use App\Models\User;
-use Tests\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\AbstractTestCase;
 
 /**
  * This is the abstract api test case class.

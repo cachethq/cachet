@@ -15,9 +15,9 @@ use App\Bus\Commands\Incident\CreateIncidentCommand;
 use App\Models\Incident;
 use App\Presenters\IncidentPresenter;
 use App\Settings\Repository as SettingsRepository;
-use Tests\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Str;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create incident command test class.

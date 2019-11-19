@@ -13,9 +13,9 @@ namespace Tests\Bus\Traits;
 
 use App\Bus\Handlers\Traits\StoresMeta;
 use App\Models\Meta;
-use Tests\AbstractTestCase;
 use Mockery;
 use Mockery\MockInterface;
+use Tests\AbstractTestCase;
 
 class StoresMetaTest extends AbstractTestCase
 {

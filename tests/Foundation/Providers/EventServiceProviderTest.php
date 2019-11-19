@@ -12,9 +12,9 @@
 namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\EventServiceProviderTrait;
-use Tests\AbstractTestCase;
 use Illuminate\Support\ServiceProvider;
 use ReflectionClass;
+use Tests\AbstractTestCase;
 
 /**
  * This is the event service provider test class.

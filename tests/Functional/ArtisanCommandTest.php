@@ -11,9 +11,9 @@
 
 namespace Tests\Functional;
 
-use Tests\AbstractTestCase;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\AbstractTestCase;
 
 /**
  * This is the artisan command test class.
