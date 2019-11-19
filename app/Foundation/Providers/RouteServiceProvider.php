@@ -18,8 +18,8 @@ use App\Http\Middleware\Timezone;
 use App\Http\Middleware\VerifyCsrfToken;
 use App\Http\Routes\ApiSystemRoutes;
 use App\Http\Routes\AuthRoutes;
-use App\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
 use App\Http\Routes\SetupRoutes;
+use App\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
 use App\Http\Routes\SignupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -27,6 +27,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Route;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 /**
@@ -101,107 +102,44 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      *
-     * @param \Illuminate\Routing\Router $router
-     *
      * @return void
      */
-    public function map(Router $router)
+    public function map()
     {
-        $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
-            $path = app_path('Http/Routes');
+        $this->mapApiRoutes();
 
-            $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
-            $AllFileIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
-            $PhpFileIterator = new \RegexIterator($AllFileIterator, '/^.+\.php$/i', \RecursiveRegexIterator::GET_MATCH);
+        $this->mapWebRoutes();
 
-            foreach ($PhpFileIterator as $file => $object) {
-                $class = substr($file, strlen($path));
-                $class = str_replace('/', '\\', $class);
-                $class = substr($class, 0, -4);
-
-                $routes = $this->app->make("App\\Http\\Routes${class}");
-
-                if ($routes::$browser) {
-                    $this->mapForBrowser($router, $routes, $applyAlwaysAuthenticate);
-                } else {
-                    $this->mapOtherwise($router, $routes, $applyAlwaysAuthenticate);
-                }
-            }
-        });
+        //
     }
 
     /**
-     * Wrap the routes in the browser specific middleware.
+     * Define the "web" routes for the application.
      *
-     * @param \Illuminate\Routing\Router $router
-     * @param object                     $routes
-     * @param bool                       $applyAlwaysAuthenticate
+     * These routes all receive session state, CSRF protection, etc.
      *
      * @return void
      */
-    protected function mapForBrowser(Router $router, $routes, $applyAlwaysAuthenticate)
+    protected function mapWebRoutes()
     {
-        $middleware = [
-            EncryptCookies::class,
-            AddQueuedCookiesToResponse::class,
-            StartSession::class,
-            ShareErrorsFromSession::class,
-            VerifyCsrfToken::class,
-            SubstituteBindings::class,
-        ];
-
-        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
-            $middleware[] = Authenticate::class;
-            $middleware[] = RemoteUserAuthenticate::class;
-        }
-
-        $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
-            $routes->map($router);
-        });
+        Route::middleware('web')
+             ->as('core::')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/web.php'));
     }
 
     /**
-     * Wrap the routes in the basic middleware.
+     * Define the "api" routes for the application.
      *
-     * @param \Illuminate\Routing\Router $router
-     * @param object                     $routes
-     * @param bool                       $applyAlwaysAuthenticate
+     * These routes are typically stateless.
      *
      * @return void
      */
-    protected function mapOtherwise(Router $router, $routes, $applyAlwaysAuthenticate)
+    protected function mapApiRoutes()
     {
-        $middleware = [
-            SubstituteBindings::class,
-            Acceptable::class,
-            Timezone::class,
-        ];
-
-        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
-            $middleware[] = 'auth.api:true';
-        }
-
-        $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
-            $routes->map($router);
-        });
-    }
-
-    /**
-     * Validates if the route object is an instance of the whitelisted routes.
-     * A small workaround since we cant use multiple classes in a `instanceof` comparison.
-     *
-     * @param object $routes
-     *
-     * @return bool
-     */
-    private function isWhiteListedAuthRoute($routes)
-    {
-        foreach ($this->whitelistedAuthRoutes as $whitelistedRoute) {
-            if (is_a($routes, $whitelistedRoute)) {
-                return true;
-            }
-        }
-
-        return false;
+        Route::prefix('api')
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api.php'));
     }
 }

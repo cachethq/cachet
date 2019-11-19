@@ -55,7 +55,7 @@ class Authenticate
     public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guest()) {
-            throw new HttpException(401);
+            return cachet_redirect('auth.login');
         }
 
         return $next($request);
