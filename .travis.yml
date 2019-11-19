@@ -6,6 +6,7 @@ branches:
   except:
     - l10n_2.3
     - l10n_2.4
+    - 3.x
 
 before_install:
   - cp .env.example .env
