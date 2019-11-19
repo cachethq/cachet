@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Foundation\Providers;
+namespace App\Providers;
 
 use App\Models\Setting as SettingModel;
 use App\Settings\Cache;

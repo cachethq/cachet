@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Foundation\Providers;
+namespace App\Providers;
 
 use App\Subscribers\CommandSubscriber;
 use Illuminate\Support\ServiceProvider;

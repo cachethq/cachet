@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Foundation\Providers;
+namespace App\Providers;
 
 use App\Integrations\Contracts\Beacon as BeaconContract;
 use App\Integrations\Contracts\Credits as CreditsContract;

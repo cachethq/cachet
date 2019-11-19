@@ -12,7 +12,7 @@
 namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use App\Foundation\Providers\RouteServiceProvider;
+use App\Providers\RouteServiceProvider;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;

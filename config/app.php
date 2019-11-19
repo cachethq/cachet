@@ -188,14 +188,14 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Foundation\Providers\AppServiceProvider::class,
-        App\Foundation\Providers\ComposerServiceProvider::class,
-        App\Foundation\Providers\ConsoleServiceProvider::class,
-        App\Foundation\Providers\ConfigServiceProvider::class,
-        App\Foundation\Providers\EventServiceProvider::class,
-        App\Foundation\Providers\IntegrationServiceProvider::class,
-        App\Foundation\Providers\RepositoryServiceProvider::class,
-        App\Foundation\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
+        App\Providers\ConsoleServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\IntegrationServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ]),
 
