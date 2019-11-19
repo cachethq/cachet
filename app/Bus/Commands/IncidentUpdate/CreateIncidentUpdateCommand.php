@@ -79,8 +79,8 @@ final class CreateIncidentUpdateCommand
      * Create a new report incident update command instance.
      *
      * @param \App\Models\Incident $incident
-     * @param string                           $status
-     * @param string                           $message
+     * @param string               $status
+     * @param string               $message
      * @param \App\Models\User     $user
      *
      * @return void

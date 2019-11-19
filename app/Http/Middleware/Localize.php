@@ -44,7 +44,7 @@ class Localize
      * Constructs a new localize middleware instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \App\Settings\Repository    $settings
+     * @param \App\Settings\Repository                $settings
      *
      * @return void
      */

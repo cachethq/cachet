@@ -37,8 +37,8 @@ class CreateMetricPointCommandHandler
     /**
      * Create a new add metric point command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \App\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param \App\Services\Dates\DateFactory  $dates
      *
      * @return void
      */

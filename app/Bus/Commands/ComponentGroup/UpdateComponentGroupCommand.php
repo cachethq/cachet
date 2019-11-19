@@ -71,10 +71,10 @@ final class UpdateComponentGroupCommand
      * Create a add component group command instance.
      *
      * @param \App\Models\ComponentGroup $group
-     * @param string                                 $name
-     * @param int                                    $order
-     * @param int                                    $collapsed
-     * @param int                                    $visible
+     * @param string                     $name
+     * @param int                        $order
+     * @param int                        $collapsed
+     * @param int                        $visible
      *
      * @return void
      */

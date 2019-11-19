@@ -88,7 +88,7 @@ class MetricRepository
      * Returns all points as an array, by x hours.
      *
      * @param \App\Models\Metric $metric
-     * @param int                            $hours
+     * @param int                $hours
      *
      * @return array
      */

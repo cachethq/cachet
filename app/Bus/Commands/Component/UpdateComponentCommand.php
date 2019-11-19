@@ -113,16 +113,16 @@ final class UpdateComponentCommand
      * Create a new update component command instance.
      *
      * @param \App\Models\Component $component
-     * @param string|null                       $name
-     * @param string|null                       $description
-     * @param int|null                          $status
-     * @param string|null                       $link
-     * @param int|null                          $order
-     * @param int|null                          $group_id
-     * @param bool|null                         $enabled
-     * @param array|null                        $meta
-     * @param string|null                       $tags
-     * @param bool                              $silent
+     * @param string|null           $name
+     * @param string|null           $description
+     * @param int|null              $status
+     * @param string|null           $link
+     * @param int|null              $order
+     * @param int|null              $group_id
+     * @param bool|null             $enabled
+     * @param array|null            $meta
+     * @param string|null           $tags
+     * @param bool                  $silent
      *
      * @return void
      */

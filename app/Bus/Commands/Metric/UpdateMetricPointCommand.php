@@ -64,8 +64,8 @@ final class UpdateMetricPointCommand
      *
      * @param \App\Models\MetricPoint $point
      * @param \App\Models\Metric      $metric
-     * @param float                               $value
-     * @param string                              $created_at
+     * @param float                   $value
+     * @param string                  $created_at
      *
      * @return void
      */

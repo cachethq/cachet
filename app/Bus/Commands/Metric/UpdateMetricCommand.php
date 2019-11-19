@@ -122,17 +122,17 @@ final class UpdateMetricCommand
      * Create a new update metric command instance.
      *
      * @param \App\Models\Metric $metric
-     * @param string                         $name
-     * @param string                         $suffix
-     * @param string                         $description
-     * @param float                          $default_value
-     * @param int                            $calc_type
-     * @param int                            $display_chart
-     * @param int                            $places
-     * @param int                            $default_view
-     * @param int                            $threshold
-     * @param int|null                       $order
-     * @param int                            $visible
+     * @param string             $name
+     * @param string             $suffix
+     * @param string             $description
+     * @param float              $default_value
+     * @param int                $calc_type
+     * @param int                $display_chart
+     * @param int                $places
+     * @param int                $default_view
+     * @param int                $threshold
+     * @param int|null           $order
+     * @param int                $visible
      *
      * @return void
      */

@@ -11,24 +11,15 @@
 
 namespace App\Foundation\Providers;
 
-use App\Http\Middleware\Acceptable;
 use App\Http\Middleware\Authenticate;
-use App\Http\Middleware\RemoteUserAuthenticate;
-use App\Http\Middleware\Timezone;
-use App\Http\Middleware\VerifyCsrfToken;
 use App\Http\Routes\ApiSystemRoutes;
 use App\Http\Routes\AuthRoutes;
-use App\Http\Routes\SetupRoutes;
 use App\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
+use App\Http\Routes\SetupRoutes;
 use App\Http\Routes\SignupRoutes;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
-use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 /**
  * This is the route service provider.

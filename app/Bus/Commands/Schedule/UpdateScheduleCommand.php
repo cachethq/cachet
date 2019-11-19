@@ -88,12 +88,12 @@ final class UpdateScheduleCommand
      * Create a new update schedule command instance.
      *
      * @param \App\Models\Schedule $schedule
-     * @param string                           $name
-     * @param string                           $message
-     * @param int                              $status
-     * @param string                           $scheduled_at
-     * @param string                           $completed_at
-     * @param array                            $components
+     * @param string               $name
+     * @param string               $message
+     * @param int                  $status
+     * @param string               $scheduled_at
+     * @param string               $completed_at
+     * @param array                $components
      *
      * @return void
      */

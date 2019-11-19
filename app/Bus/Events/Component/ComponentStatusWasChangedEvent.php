@@ -62,9 +62,9 @@ final class ComponentStatusWasChangedEvent implements ActionInterface, Component
      *
      * @param \App\Models\User      $user
      * @param \App\Models\Component $component
-     * @param int                               $original_status
-     * @param int                               $new_status
-     * @param bool                              $silent
+     * @param int                   $original_status
+     * @param int                   $new_status
+     * @param bool                  $silent
      *
      * @return void
      */

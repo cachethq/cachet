@@ -38,7 +38,7 @@ final class UpdateSubscriberSubscriptionCommand
      * Create a new subscribe subscriber command instance.
      *
      * @param \App\Models\Subscriber $subscriber
-     * @param null|array                         $subscriptions
+     * @param null|array             $subscriptions
      *
      * @return void
      */

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
     /*
     |
@@ -25,12 +34,12 @@ return [
     */
 
     'reporting' => [
-        'anonymize_ips' => true,
-        'collect_git_information' => true,
-        'report_queries' => true,
+        'anonymize_ips'                       => true,
+        'collect_git_information'             => true,
+        'report_queries'                      => true,
         'maximum_number_of_collected_queries' => 200,
-        'report_query_bindings' => true,
-        'report_view_data' => true,
+        'report_query_bindings'               => true,
+        'report_view_data'                    => true,
     ],
 
     /*

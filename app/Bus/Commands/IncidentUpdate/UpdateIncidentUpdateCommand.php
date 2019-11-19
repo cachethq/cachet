@@ -63,8 +63,8 @@ final class UpdateIncidentUpdateCommand
      * Create a new update incident update command instance.
      *
      * @param \App\Models\IncidentUpdate $update
-     * @param string                                 $status
-     * @param string                                 $message
+     * @param string                     $status
+     * @param string                     $message
      * @param \App\Models\User           $user
      *
      * @return void

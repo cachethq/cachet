@@ -25,7 +25,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      * Returns metrics since given minutes.
      *
      * @param \App\Models\Metric $metric
-     * @param int                            $minutes
+     * @param int                $minutes
      *
      * @return \Illuminate\Support\Collection
      */
@@ -50,7 +50,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      * Returns metrics since given hour.
      *
      * @param \App\Models\Metric $metric
-     * @param int                            $hour
+     * @param int                $hour
      *
      * @return \Illuminate\Support\Collection
      */
@@ -73,7 +73,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      * Returns metrics since given day.
      *
      * @param \App\Models\Metric $metric
-     * @param int                            $day
+     * @param int                $day
      *
      * @return \Illuminate\Support\Collection
      */

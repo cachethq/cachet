@@ -43,7 +43,7 @@ final class IncidentWasCreatedEvent implements ActionInterface, IncidentEventInt
      *
      * @param \App\Models\User     $user
      * @param \App\Models\Incident $incident
-     * @param bool                             $notify
+     * @param bool                 $notify
      *
      * @return void
      */

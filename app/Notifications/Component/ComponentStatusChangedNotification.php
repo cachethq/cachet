@@ -46,7 +46,7 @@ class ComponentStatusChangedNotification extends Notification
      * Create a new notification instance.
      *
      * @param \App\Models\Component $component
-     * @param int                               $status
+     * @param int                   $status
      *
      * @return void
      */

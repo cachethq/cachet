@@ -95,7 +95,7 @@ abstract class AbstractMetricRepository
      * Map the result set.
      *
      * @param \App\Models\Metric $metric
-     * @param array                          $results
+     * @param array              $results
      *
      * @return \Illuminate\Support\Collection
      */

@@ -1,8 +1,14 @@
 <?php
 
-use Illuminate\Http\Request;
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-// Status Page Routes
 Route::get('/', [
     'as'   => 'get:status-page',
     'uses' => 'StatusPageController@showIndex',

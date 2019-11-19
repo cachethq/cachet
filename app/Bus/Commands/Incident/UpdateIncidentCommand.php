@@ -136,18 +136,18 @@ final class UpdateIncidentCommand
      * Create a new update incident command instance.
      *
      * @param \App\Models\Incident $incident
-     * @param string                           $name
-     * @param int                              $status
-     * @param string                           $message
-     * @param int                              $visible
-     * @param int                              $component_id
-     * @param int                              $component_status
-     * @param bool                             $notify
-     * @param bool                             $stickied
-     * @param string|null                      $occurred_at
-     * @param string|null                      $template
-     * @param array                            $template_vars
-     * @param array                            $meta
+     * @param string               $name
+     * @param int                  $status
+     * @param string               $message
+     * @param int                  $visible
+     * @param int                  $component_id
+     * @param int                  $component_status
+     * @param bool                 $notify
+     * @param bool                 $stickied
+     * @param string|null          $occurred_at
+     * @param string|null          $template
+     * @param array                $template_vars
+     * @param array                $meta
      *
      * @return void
      */

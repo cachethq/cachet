@@ -56,8 +56,8 @@ final class CreateMetricPointCommand
      * Create a new add metric point command instance.
      *
      * @param \App\Models\Metric $metric
-     * @param int                            $value
-     * @param int                            $created_at
+     * @param int                $value
+     * @param int                $created_at
      *
      * @return void
      */

@@ -11,7 +11,6 @@
 
 namespace App\Http;
 
-use Barryvdh\Cors\HandleCors;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\ApiAuthentication;
 use App\Http\Middleware\Authenticate;
@@ -24,6 +23,7 @@ use App\Http\Middleware\SetupAlreadyCompleted;
 use App\Http\Middleware\SubscribersConfigured;
 use App\Http\Middleware\Throttler;
 use App\Http\Middleware\TrustProxies;
+use Barryvdh\Cors\HandleCors;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
