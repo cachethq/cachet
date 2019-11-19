@@ -13,9 +13,8 @@ namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 
-class Subscription extends Model
+class Subscription extends BaseModel
 {
     use ValidatingTrait;
 

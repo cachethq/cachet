@@ -12,10 +12,9 @@
 namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class IncidentTemplate extends Model
+class IncidentTemplate extends BaseModel
 {
     use ValidatingTrait;
 

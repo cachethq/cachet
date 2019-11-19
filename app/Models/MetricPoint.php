@@ -15,7 +15,6 @@ use AltThree\Validator\ValidatingTrait;
 use App\Presenters\MetricPointPresenter;
 use Carbon\Carbon;
 use DateTime;
-use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -25,7 +24,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author Joseph Cohen <joe@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class MetricPoint extends Model implements HasPresenter
+class MetricPoint extends BaseModel implements HasPresenter
 {
     use ValidatingTrait;
 

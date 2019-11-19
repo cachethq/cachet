@@ -12,7 +12,6 @@
 namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * This is the action model class.
@@ -20,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-class Action extends Model
+class Action extends BaseModel
 {
     use ValidatingTrait;
 

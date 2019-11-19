@@ -11,10 +11,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Tag extends Model
+class Tag extends BaseModel
 {
     /**
      * The attributes that should be casted to native types.

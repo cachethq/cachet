@@ -12,14 +12,13 @@
 namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * This is the meta model class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class Meta extends Model
+class Meta extends BaseModel
 {
     use ValidatingTrait;
 

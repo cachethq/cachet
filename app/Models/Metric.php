@@ -17,11 +17,10 @@ use App\Models\Traits\HasMeta;
 use App\Models\Traits\SortableTrait;
 use App\Presenters\MetricPresenter;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\MessageBag;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Metric extends Model implements HasPresenter
+class Metric extends BaseModel implements HasPresenter
 {
     use HasMeta,
         SortableTrait,

@@ -18,7 +18,6 @@ use App\Models\Traits\SearchableTrait;
 use App\Models\Traits\SortableTrait;
 use App\Presenters\IncidentPresenter;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -29,7 +28,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author Joseph Cohen <joseph@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Incident extends Model implements HasPresenter
+class Incident extends BaseModel implements HasPresenter
 {
     use HasMeta,
         HasTags,

@@ -15,7 +15,6 @@ use AltThree\Validator\ValidatingTrait;
 use App\Models\Traits\HasMeta;
 use App\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -27,7 +26,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Subscriber extends Model implements HasPresenter
+class Subscriber extends BaseModel implements HasPresenter
 {
     use HasMeta,
         Notifiable,

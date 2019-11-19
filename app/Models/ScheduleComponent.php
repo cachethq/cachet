@@ -12,9 +12,8 @@
 namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
 
-class ScheduleComponent extends Model
+class ScheduleComponent extends BaseModel
 {
     use ValidatingTrait;
 

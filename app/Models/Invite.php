@@ -11,7 +11,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
@@ -21,7 +20,7 @@ use Illuminate\Support\Str;
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-class Invite extends Model
+class Invite extends BaseModel
 {
     use Notifiable;
 

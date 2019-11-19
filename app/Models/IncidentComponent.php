@@ -12,14 +12,13 @@
 namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * This is the incident component model class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class IncidentComponent extends Model
+class IncidentComponent extends BaseModel
 {
     use ValidatingTrait;
 

@@ -18,11 +18,10 @@ use App\Models\Traits\SortableTrait;
 use App\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Schedule extends Model implements HasPresenter
+class Schedule extends BaseModel implements HasPresenter
 {
     use HasMeta,
         SearchableTrait,
