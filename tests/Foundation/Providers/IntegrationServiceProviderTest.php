@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Integrations\Contracts\Beacon;
-use CachetHQ\Cachet\Integrations\Contracts\Credits;
-use CachetHQ\Cachet\Integrations\Contracts\Feed;
-use CachetHQ\Cachet\Integrations\Contracts\Releases;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Integrations\Contracts\Beacon;
+use App\Integrations\Contracts\Credits;
+use App\Integrations\Contracts\Feed;
+use App\Integrations\Contracts\Releases;
+use App\Integrations\Contracts\System;
+use Tests\AbstractTestCase;
 
 /**
  * This is the integration service provider test class.

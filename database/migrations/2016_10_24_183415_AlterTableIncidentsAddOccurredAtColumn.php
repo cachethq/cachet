@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use CachetHQ\Cachet\Integrations\Contracts\System;
+use App\Integrations\Contracts\System;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;

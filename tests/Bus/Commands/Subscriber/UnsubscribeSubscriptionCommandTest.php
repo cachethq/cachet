@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Subscriber;
+namespace Tests\Bus\Commands\Subscriber;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber\UnsubscribeSubscriptionCommandHandler;
-use CachetHQ\Cachet\Models\Subscription;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use App\Bus\Handlers\Commands\Subscriber\UnsubscribeSubscriptionCommandHandler;
+use App\Models\Subscription;
+use Tests\AbstractTestCase;
 
 /**
  * This is the unsubscribe subscriber command test class.

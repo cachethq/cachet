@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
 use AltThree\TestBench\ValidationTrait;
-use CachetHQ\Cachet\Models\IncidentComponent;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\IncidentComponent;
+use Tests\AbstractTestCase;
 
 /**
  * This is the incident component model test class.

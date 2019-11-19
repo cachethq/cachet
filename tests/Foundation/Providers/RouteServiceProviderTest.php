@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider;
-use CachetHQ\Cachet\Http\Middleware\Authenticate;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Foundation\Providers\RouteServiceProvider;
+use App\Http\Middleware\Authenticate;
+use Tests\AbstractTestCase;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\Router;
@@ -67,9 +67,9 @@ class RouteServiceProviderTest extends AbstractTestCase
     public function testWhenAlwaysAuthenticateIsEnabledApiSystemRoutesAreWhiteListed()
     {
         $routeActions = [
-            'CachetHQ\Cachet\Http\Controllers\Api\GeneralController@ping',
-            'CachetHQ\Cachet\Http\Controllers\Api\GeneralController@version',
-            'CachetHQ\Cachet\Http\Controllers\Api\GeneralController@status',
+            'App\Http\Controllers\Api\GeneralController@ping',
+            'App\Http\Controllers\Api\GeneralController@version',
+            'App\Http\Controllers\Api\GeneralController@status',
         ];
 
         $router = $this->bootRouter(true);
@@ -89,19 +89,19 @@ class RouteServiceProviderTest extends AbstractTestCase
     public function testWhenAlwaysAuthenticateIsEnabledApiRoutesAreHardAuthenticated()
     {
         $routeActions = [
-            'CachetHQ\Cachet\Http\Controllers\Api\ComponentController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\ComponentGroupController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\ComponentGroupController@show',
-            'CachetHQ\Cachet\Http\Controllers\Api\ComponentController@show',
-            'CachetHQ\Cachet\Http\Controllers\Api\IncidentController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\IncidentController@show',
-            'CachetHQ\Cachet\Http\Controllers\Api\IncidentUpdateController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\IncidentUpdateController@show',
-            'CachetHQ\Cachet\Http\Controllers\Api\MetricController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\MetricController@show',
-            'CachetHQ\Cachet\Http\Controllers\Api\MetricPointController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\ScheduleController@index',
-            'CachetHQ\Cachet\Http\Controllers\Api\ScheduleController@show',
+            'App\Http\Controllers\Api\ComponentController@index',
+            'App\Http\Controllers\Api\ComponentGroupController@index',
+            'App\Http\Controllers\Api\ComponentGroupController@show',
+            'App\Http\Controllers\Api\ComponentController@show',
+            'App\Http\Controllers\Api\IncidentController@index',
+            'App\Http\Controllers\Api\IncidentController@show',
+            'App\Http\Controllers\Api\IncidentUpdateController@index',
+            'App\Http\Controllers\Api\IncidentUpdateController@show',
+            'App\Http\Controllers\Api\MetricController@index',
+            'App\Http\Controllers\Api\MetricController@show',
+            'App\Http\Controllers\Api\MetricPointController@index',
+            'App\Http\Controllers\Api\ScheduleController@index',
+            'App\Http\Controllers\Api\ScheduleController@show',
         ];
 
         $router = $this->bootRouter(true);

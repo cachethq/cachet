@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Incident;
+namespace Tests\Bus\Commands\Incident;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Incident\UpdateIncidentCommandHandler;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Incident\UpdateIncidentCommand;
+use App\Bus\Handlers\Commands\Incident\UpdateIncidentCommandHandler;
+use App\Models\Incident;
+use Tests\AbstractTestCase;
 
 /**
  * This is the update incident command test class.

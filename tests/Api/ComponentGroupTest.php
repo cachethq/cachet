@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
+use App\Models\Component;
+use App\Models\ComponentGroup;
 
 /**
  * This is the component group test class.

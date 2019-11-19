@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Subscriber;
+namespace Tests\Bus\Commands\Subscriber;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber\VerifySubscriberCommandHandler;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Subscriber\VerifySubscriberCommand;
+use App\Bus\Handlers\Commands\Subscriber\VerifySubscriberCommandHandler;
+use App\Models\Subscriber;
+use Tests\AbstractTestCase;
 
 /**
  * This is the verify subscriber command test class.

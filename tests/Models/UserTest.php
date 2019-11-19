@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
 use AltThree\TestBench\ValidationTrait;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\User;
+use Tests\AbstractTestCase;
 
 /**
  * This is the user model test class.

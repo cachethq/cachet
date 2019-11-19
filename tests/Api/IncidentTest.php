@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
+use App\Bus\Events\Incident\IncidentWasCreatedEvent;
+use App\Bus\Events\Incident\IncidentWasRemovedEvent;
+use App\Bus\Events\Incident\IncidentWasUpdatedEvent;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
 
 /**
  * This is the incident test class.

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Schedule;
+namespace Tests\Bus\Events\Schedule;
 
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
+use App\Models\Schedule;
+use App\Models\User;
 
 class ScheduleWasUpdatedEventTest extends AbstractScheduleEventTestCase
 {

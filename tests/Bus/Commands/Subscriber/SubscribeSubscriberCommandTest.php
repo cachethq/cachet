@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Subscriber;
+namespace Tests\Bus\Commands\Subscriber;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber\SubscribeSubscriberCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use App\Bus\Handlers\Commands\Subscriber\SubscribeSubscriberCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the subscribe subscriber command test class.

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
+namespace Tests\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\CreateMetricPointCommandHandler;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Metric\CreateMetricPointCommand;
+use App\Bus\Handlers\Commands\Metric\CreateMetricPointCommandHandler;
+use App\Models\Metric;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create metric point command test class.

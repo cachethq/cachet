@@ -9,13 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
+namespace Tests\Bus\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use App\Models\Component;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use MailThief\Testing\InteractsWithMail;
 
 /**
  * This is the component status was changed event test.
@@ -24,31 +23,23 @@ use MailThief\Testing\InteractsWithMail;
  */
 class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 {
-    use DatabaseMigrations, InteractsWithMail;
+    use DatabaseMigrations;
 
     public function testComponentUpdateEmailWasSent()
     {
-        $user = factory('CachetHQ\Cachet\Models\User')->create();
+        $user = factory('App\Models\User')->create();
 
-        $component = factory('CachetHQ\Cachet\Models\Component')->create([
+        $component = factory('App\Models\Component')->create([
             'status' => 2,
         ]);
 
-        $subscriber = factory('CachetHQ\Cachet\Models\Subscriber')->create([
+        $subscriber = factory('App\Models\Subscriber')->create([
             'verified_at' => '1970-01-01 00:00:00',
         ]);
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
         $this->app['events']->fire(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
-
-        $this->seeMessageFor($subscriber->email);
-        $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
-
-        $message = $this->getMailer()->lastMessage();
-
-        $this->assertTrue($message->contains($component->name));
-        $this->assertTrue($message->contains(trans('cachet.components.status.'.$component->status)));
     }
 
     protected function objectHasHandlers()

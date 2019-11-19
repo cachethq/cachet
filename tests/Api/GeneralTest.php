@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\Component;
+use App\Models\Component;
 
 /**
  * This is the general test class.

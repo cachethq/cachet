@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\IncidentUpdate;
+namespace Tests\Bus\Events\IncidentUpdate;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\IncidentUpdate\IncidentUpdateEventInterface;
+use Tests\AbstractTestCase;
 
 /**
  * This is the abstract incident update event test case class.

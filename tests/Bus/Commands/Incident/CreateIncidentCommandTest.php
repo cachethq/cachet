@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Incident;
+namespace Tests\Bus\Commands\Incident;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Incident\CreateIncidentCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Incident\CreateIncidentCommand;
+use App\Bus\Handlers\Commands\Incident\CreateIncidentCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create incident command test class.

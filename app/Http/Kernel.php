@@ -57,7 +57,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'api' => [
-            'bindings',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Acceptable::class,
             \App\Http\Middleware\Timezone::class,
         ],

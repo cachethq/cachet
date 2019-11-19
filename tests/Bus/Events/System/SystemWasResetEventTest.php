@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\System;
+namespace Tests\Bus\Events\System;
 
-use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
+use App\Bus\Events\System\SystemWasResetEvent;
 
 /**
  * This is the system was reset event test class.

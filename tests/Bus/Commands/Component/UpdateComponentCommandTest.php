@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Component;
+namespace Tests\Bus\Commands\Component;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Component\UpdateComponentCommandHandler;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Bus\Handlers\Commands\Component\UpdateComponentCommandHandler;
+use App\Models\Component;
+use Tests\AbstractTestCase;
 
 /**
  * This is the update component command test class.

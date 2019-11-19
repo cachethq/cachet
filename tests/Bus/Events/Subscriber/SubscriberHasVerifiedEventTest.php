@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Subscriber;
+namespace Tests\Bus\Events\Subscriber;
 
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Bus\Events\Subscriber\SubscriberHasVerifiedEvent;
+use App\Models\Subscriber;
 
 class SubscriberHasVerifiedEventTest extends AbstractSubscriberEventTestCase
 {

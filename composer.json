@@ -84,7 +84,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "CachetHQ\\Tests\\Cachet\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "scripts": {

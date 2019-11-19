@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\User;
+namespace Tests\Bus\Commands\User;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\User\RemoveUserCommandHandler;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\User\RemoveUserCommand;
+use App\Bus\Handlers\Commands\User\RemoveUserCommandHandler;
+use App\Models\User;
+use Tests\AbstractTestCase;
 
 /**
  * This is the remove user command test class.

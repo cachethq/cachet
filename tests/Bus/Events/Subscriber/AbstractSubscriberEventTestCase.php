@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Subscriber;
+namespace Tests\Bus\Events\Subscriber;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Subscriber\SubscriberEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractSubscriberEventTestCase extends AbstractTestCase
 {

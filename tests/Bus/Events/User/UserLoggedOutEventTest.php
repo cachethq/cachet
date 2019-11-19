@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\User;
+namespace Tests\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\User\UserLoggedOutEvent;
+use App\Models\User;
 
 /**
  * This is the user logged out event test class.

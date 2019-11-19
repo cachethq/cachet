@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
-use CachetHQ\Cachet\Models\Setting;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\Setting;
+use Tests\AbstractTestCase;
 
 /**
  * This is the setting model test class.

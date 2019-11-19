@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Invite;
+namespace Tests\Bus\Commands\Invite;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Invite\ClaimInviteCommandHandler;
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Invite\ClaimInviteCommand;
+use App\Bus\Handlers\Commands\Invite\ClaimInviteCommandHandler;
+use App\Models\Invite;
+use Tests\AbstractTestCase;
 
 /**
  * This is the claim invite command test class.

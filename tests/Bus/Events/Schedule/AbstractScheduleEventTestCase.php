@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Schedule;
+namespace Tests\Bus\Events\Schedule;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Schedule\ScheduleEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractScheduleEventTestCase extends AbstractTestCase
 {

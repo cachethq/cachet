@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Services\Dates\DateFactory;
+use Tests\AbstractTestCase;
 
 /**
  * This is the app service provider test class.

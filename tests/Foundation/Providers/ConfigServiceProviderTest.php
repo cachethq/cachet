@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Settings\Cache;
-use CachetHQ\Cachet\Settings\Repository;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Settings\Cache;
+use App\Settings\Repository;
+use Tests\AbstractTestCase;
 
 /**
  * This is the config service provider test class.

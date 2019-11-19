@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Repositories\Metric\MetricRepository;
+use Tests\AbstractTestCase;
 
 /**
  * This is the repository service provider test class.

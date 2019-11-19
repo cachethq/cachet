@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
+namespace Tests\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\RemoveMetricPointCommandHandler;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Metric\RemoveMetricPointCommand;
+use App\Bus\Handlers\Commands\Metric\RemoveMetricPointCommandHandler;
+use App\Models\MetricPoint;
+use Tests\AbstractTestCase;
 
 /**
  * This is the remove metric point command test class.

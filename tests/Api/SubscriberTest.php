@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
+use App\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
+use App\Models\Component;
+use App\Models\Subscriber;
+use App\Models\Subscription;
 use Illuminate\Support\Facades\Notification;
 
 /**

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
+namespace Tests\Bus\Events\Metric;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Metric\MetricEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractMetricEventTestCase extends AbstractTestCase
 {

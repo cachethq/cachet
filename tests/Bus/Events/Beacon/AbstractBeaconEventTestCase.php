@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Beacon;
+namespace Tests\Bus\Events\Beacon;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Beacon\BeaconEventInterface;
+use Tests\AbstractTestCase;
 
 /**
  * This is the abstract beacon event test case.

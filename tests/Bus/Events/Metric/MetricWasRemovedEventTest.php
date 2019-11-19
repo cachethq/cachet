@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
+namespace Tests\Bus\Events\Metric;
 
-use CachetHQ\Cachet\Bus\Events\Metric\MetricWasRemovedEvent;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Metric\MetricWasRemovedEvent;
+use App\Models\Metric;
+use App\Models\User;
 
 class MetricWasRemovedEventTest extends AbstractMetricEventTestCase
 {

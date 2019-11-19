@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\User;
+namespace Tests\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent;
-use CachetHQ\Cachet\Models\Invite;
+use App\Bus\Events\User\UserWasInvitedEvent;
+use App\Models\Invite;
 
 /**
  * This is the user was invited event test class.

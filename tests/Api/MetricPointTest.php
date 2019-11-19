@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Models\Metric;
+use App\Models\MetricPoint;
 use Carbon\Carbon;
 
 /**

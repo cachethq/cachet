@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\ComponentGroup;
+namespace Tests\Bus\Events\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
+use App\Models\ComponentGroup;
+use App\Models\User;
 
 class ComponentGroupWasRemovedEventTest extends AbstractComponentGroupEventTestCase
 {

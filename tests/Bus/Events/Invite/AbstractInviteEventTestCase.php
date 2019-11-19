@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Invite;
+namespace Tests\Bus\Events\Invite;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Invite\InviteEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Invite\InviteEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractInviteEventTestCase extends AbstractTestCase
 {

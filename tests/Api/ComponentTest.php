@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
+use App\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use App\Bus\Events\Component\ComponentWasCreatedEvent;
+use App\Bus\Events\Component\ComponentWasRemovedEvent;
+use App\Bus\Events\Component\ComponentWasUpdatedEvent;
+use App\Models\Component;
 
 /**
  * This is the component test class.

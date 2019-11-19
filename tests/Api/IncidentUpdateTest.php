@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Models\Incident;
+use App\Models\IncidentUpdate;
 
 /**
  * This is the incident update test class.

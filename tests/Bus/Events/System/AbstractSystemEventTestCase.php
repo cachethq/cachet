@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\System;
+namespace Tests\Bus\Events\System;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\System\SystemEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\System\SystemEventInterface;
+use Tests\AbstractTestCase;
 
 /**
  * This is the abstract system event test class.

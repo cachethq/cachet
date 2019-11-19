@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\IncidentUpdate;
+namespace Tests\Bus\Commands\IncidentUpdate;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate\CreateIncidentUpdateCommandHandler;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use App\Bus\Handlers\Commands\IncidentUpdate\CreateIncidentUpdateCommandHandler;
+use App\Models\Incident;
+use App\Models\User;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create incident update command test class.

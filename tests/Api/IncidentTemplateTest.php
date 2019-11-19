@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\IncidentTemplate;
+use App\Models\IncidentTemplate;
 
 /**
  * This is the incident template test class.

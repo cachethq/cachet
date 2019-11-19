@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet;
+namespace Tests;
 
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Settings\Cache;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Models\User;
+use App\Settings\Cache;
+use App\Settings\Repository;
 use Illuminate\Foundation\Testing\TestCase;
 
 /**
@@ -29,16 +29,16 @@ abstract class AbstractTestCase extends TestCase
     /**
      * Test actor.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     protected $user;
 
     /**
      * Sign in an user if it's the case.
      *
-     * @param \CachetHQ\Cachet\Models\User|null $user
+     * @param \App\Models\User|null $user
      *
-     * @return \CachetHQ\Tests\Cachet\AbstractTestCase
+     * @return \Tests\AbstractTestCase
      */
     protected function signIn(User $user = null)
     {
@@ -54,7 +54,7 @@ abstract class AbstractTestCase extends TestCase
      *
      * @param array $properties
      *
-     * @return \CachetHQ\Cachet\Models\User
+     * @return \App\Models\User
      */
     protected function createUser($properties = [])
     {
@@ -64,7 +64,7 @@ abstract class AbstractTestCase extends TestCase
     /**
      * Set up the needed configuration to be able to run the tests.
      *
-     * @return \CachetHQ\Tests\Cachet\AbstractTestCase
+     * @return \Tests\AbstractTestCase
      */
     protected function setupConfig()
     {

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet;
+namespace Tests;
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Setting;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\Setting;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\User;
+namespace Tests\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserAcceptedInviteEvent;
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\User\UserAcceptedInviteEvent;
+use App\Models\Invite;
+use App\Models\User;
 
 /**
  * This is the user accepted invite event test class.

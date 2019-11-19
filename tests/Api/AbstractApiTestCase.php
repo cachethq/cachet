@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\User;
+use Tests\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**

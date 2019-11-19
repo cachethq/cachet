@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
+namespace Tests\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\UpdateMetricPointCommandHandler;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Metric\UpdateMetricPointCommand;
+use App\Bus\Handlers\Commands\Metric\UpdateMetricPointCommandHandler;
+use App\Models\Metric;
+use App\Models\MetricPoint;
+use Tests\AbstractTestCase;
 
 /**
  * This is the update metric point command test class.

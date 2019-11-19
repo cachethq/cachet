@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet;
+namespace Tests;
 
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Test;

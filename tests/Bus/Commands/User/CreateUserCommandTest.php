@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\User;
+namespace Tests\Bus\Commands\User;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\User\CreateUserCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\User\CreateUserCommand;
+use App\Bus\Handlers\Commands\User\CreateUserCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create user command test class.

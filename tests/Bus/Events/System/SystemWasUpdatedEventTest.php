@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\System;
+namespace Tests\Bus\Events\System;
 
-use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
+use App\Bus\Events\System\SystemWasUpdatedEvent;
 
 /**
  * This is the system was updated event test class.

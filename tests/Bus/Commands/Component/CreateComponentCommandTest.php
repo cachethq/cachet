@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Component;
+namespace Tests\Bus\Commands\Component;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Component\CreateComponentCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Component\CreateComponentCommand;
+use App\Bus\Handlers\Commands\Component\CreateComponentCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create component command test class.

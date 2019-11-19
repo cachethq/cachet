@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
-use CachetHQ\Cachet\Models\Tag;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\Tag;
+use Tests\AbstractTestCase;
 
 /**
  * This is the tag model test class.

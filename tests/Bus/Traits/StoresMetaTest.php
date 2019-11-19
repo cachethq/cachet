@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Traits;
+namespace Tests\Bus\Traits;
 
-use CachetHQ\Cachet\Bus\Handlers\Traits\StoresMeta;
-use CachetHQ\Cachet\Models\Meta;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Handlers\Traits\StoresMeta;
+use App\Models\Meta;
+use Tests\AbstractTestCase;
 use Mockery;
 use Mockery\MockInterface;
 

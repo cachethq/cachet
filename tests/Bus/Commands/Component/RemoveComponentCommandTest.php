@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Component;
+namespace Tests\Bus\Commands\Component;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Component\RemoveComponentCommandHandler;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Component\RemoveComponentCommand;
+use App\Bus\Handlers\Commands\Component\RemoveComponentCommandHandler;
+use App\Models\Component;
+use Tests\AbstractTestCase;
 
 /**
  * This is the remove component command test class.

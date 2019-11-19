@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
+namespace Tests\Bus\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Component\ComponentWasUpdatedEvent;
+use App\Models\Component;
+use App\Models\User;
 
 class ComponentWasUpdatedEventTest extends AbstractComponentEventTestCase
 {

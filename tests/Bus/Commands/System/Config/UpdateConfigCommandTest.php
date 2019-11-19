@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\System\Config;
+namespace Tests\Bus\Commands\System\Config;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\System\Config\UpdateConfigCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\System\Config\UpdateConfigCommand;
+use App\Bus\Handlers\Commands\System\Config\UpdateConfigCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the update config command test class.

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\ComponentGroup;
+namespace Tests\Bus\Commands\ComponentGroup;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup\CreateComponentGroupCommandHandler;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use App\Bus\Handlers\Commands\ComponentGroup\CreateComponentGroupCommandHandler;
+use App\Models\ComponentGroup;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create component group command test class.

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Invite;
+namespace Tests\Bus\Events\Invite;
 
-use CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent;
-use CachetHQ\Cachet\Models\Invite;
+use App\Bus\Events\Invite\InviteWasClaimedEvent;
+use App\Models\Invite;
 
 class InviteWasClaimedEventTest extends AbstractInviteEventTestCase
 {

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
 use AltThree\TestBench\ValidationTrait;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\Component;
+use Tests\AbstractTestCase;
 
 /**
  * This is the component model test class.

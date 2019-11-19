@@ -11,7 +11,7 @@
 
 Route::group([
     'namespace'  => 'Api',
-    'prefix'     => 'api/v1',
+    'prefix'     => 'v1',
 ], function () {
     Route::group(['middleware' => ['auth.api', 'cors']], function () {
         Route::get('components', 'ComponentController@index');

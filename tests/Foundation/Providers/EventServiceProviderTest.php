@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace Tests\Foundation\Providers;
 
 use AltThree\TestBench\EventServiceProviderTrait;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Tests\AbstractTestCase;
 use Illuminate\Support\ServiceProvider;
 use ReflectionClass;
 

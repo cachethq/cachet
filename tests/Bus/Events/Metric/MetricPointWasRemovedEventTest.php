@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
+namespace Tests\Bus\Events\Metric;
 
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasRemovedEvent;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Metric\MetricPointWasRemovedEvent;
+use App\Models\MetricPoint;
+use App\Models\User;
 
 /**
  * This is the metric point was removed event test class.

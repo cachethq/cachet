@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Incident;
+namespace Tests\Bus\Events\Incident;
 
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Incident\IncidentWasUpdatedEvent;
+use App\Models\Incident;
+use App\Models\User;
 
 /**
  * This is the incident was updated event test class.

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Beacon;
+namespace Tests\Bus\Events\Beacon;
 
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
+use App\Bus\Events\Beacon\BeaconWasSentEvent;
 
 /**
  * This is the beacon was sent event test.

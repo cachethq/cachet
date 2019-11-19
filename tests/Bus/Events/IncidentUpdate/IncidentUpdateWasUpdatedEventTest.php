@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\IncidentUpdate;
+namespace Tests\Bus\Events\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
-use CachetHQ\Cachet\Models\IncidentUpdate;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
+use App\Models\IncidentUpdate;
+use App\Models\User;
 
 class IncidentUpdateWasUpdatedEventTest extends AbstractIncidentUpdateEventTestCase
 {

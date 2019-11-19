@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\IncidentUpdate;
+namespace Tests\Bus\Commands\IncidentUpdate;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate\RemoveIncidentUpdateCommandHandler;
-use CachetHQ\Cachet\Models\IncidentUpdate;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
+use App\Bus\Handlers\Commands\IncidentUpdate\RemoveIncidentUpdateCommandHandler;
+use App\Models\IncidentUpdate;
+use Tests\AbstractTestCase;
 
 /**
  * This is the remove incident update command test class.

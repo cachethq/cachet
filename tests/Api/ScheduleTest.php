@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Api;
+namespace Tests\Api;
 
-use CachetHQ\Cachet\Models\Schedule;
+use App\Models\Schedule;
 use Illuminate\Support\Arr;
 
 /**

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
+namespace Tests\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\CreateMetricCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Metric\CreateMetricCommand;
+use App\Bus\Handlers\Commands\Metric\CreateMetricCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create metric command test class.

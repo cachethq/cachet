@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Models;
+namespace Tests\Models;
 
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Models\Invite;
+use Tests\AbstractTestCase;
 
 /**
  * This is the invite model test class.

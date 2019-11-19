@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Functional;
+namespace Tests\Functional;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Tests\AbstractTestCase;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 

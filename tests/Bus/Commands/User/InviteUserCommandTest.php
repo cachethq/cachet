@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\User;
+namespace Tests\Bus\Commands\User;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\User\InviteUserCommandHandler;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\User\InviteUserCommand;
+use App\Bus\Handlers\Commands\User\InviteUserCommandHandler;
+use Tests\AbstractTestCase;
 
 /**
  * This is the invite user command test class.

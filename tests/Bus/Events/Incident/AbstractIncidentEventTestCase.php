@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Incident;
+namespace Tests\Bus\Events\Incident;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\Incident\IncidentEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractIncidentEventTestCase extends AbstractTestCase
 {

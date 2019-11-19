@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\ComponentGroup;
+namespace Tests\Bus\Commands\ComponentGroup;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup\RemoveComponentGroupCommandHandler;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use App\Bus\Handlers\Commands\ComponentGroup\RemoveComponentGroupCommandHandler;
+use App\Models\ComponentGroup;
+use Tests\AbstractTestCase;
 
 /**
  * This is the remove component group command test class.

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\User;
+namespace Tests\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\User\UserRegeneratedApiTokenEvent;
+use App\Models\User;
 
 /**
  * This is the user regenerated api token event test class.

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
+namespace Tests\Bus\Events\Metric;
 
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\Metric\MetricPointWasUpdatedEvent;
+use App\Models\MetricPoint;
+use App\Models\User;
 
 /**
  * This is the metric point was updated event test class.

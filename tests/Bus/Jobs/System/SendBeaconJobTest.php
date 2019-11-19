@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Jobs\System;
+namespace Tests\Bus\Jobs\System;
 
 use AltThree\TestBench\JobTrait;
-use CachetHQ\Cachet\Bus\Handlers\Jobs\System\SendBeaconJobHandler;
-use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Handlers\Jobs\System\SendBeaconJobHandler;
+use App\Bus\Jobs\System\SendBeaconJob;
+use Tests\AbstractTestCase;
 
 /**
  * This is the send beacon job test class.

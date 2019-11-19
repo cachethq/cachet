@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\ComponentGroup;
+namespace Tests\Bus\Events\ComponentGroup;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\ComponentGroup\ComponentGroupEventInterface;
+use Tests\AbstractTestCase;
 
 abstract class AbstractComponentGroupEventTestCase extends AbstractTestCase
 {

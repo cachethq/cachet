@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Jobs;
+namespace Tests\Bus\Jobs;
 
 use AltThree\TestBench\ExistenceTrait;
 use PHPUnit\Framework\TestCase;

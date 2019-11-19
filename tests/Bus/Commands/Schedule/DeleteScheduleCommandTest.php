@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Commands\Schedule;
+namespace Tests\Bus\Commands\Schedule;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Schedule\DeleteScheduleCommandHandler;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Schedule\DeleteScheduleCommand;
+use App\Bus\Handlers\Commands\Schedule\DeleteScheduleCommandHandler;
+use App\Models\Schedule;
+use Tests\AbstractTestCase;
 
 /**
  * This is the create schedule command test class.

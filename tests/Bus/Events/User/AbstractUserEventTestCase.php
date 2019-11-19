@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Bus\Events\User;
+namespace Tests\Bus\Events\User;
 
 use AltThree\TestBench\EventTrait;
-use CachetHQ\Cachet\Bus\Events\User\UserEventInterface;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Events\User\UserEventInterface;
+use Tests\AbstractTestCase;
 
 /**
  * This is the abstract user event test class.

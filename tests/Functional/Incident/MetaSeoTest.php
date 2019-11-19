@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Functional\Bus\Commands\Incident;
+namespace Tests\Functional\Bus\Commands\Incident;
 
-use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Presenters\IncidentPresenter;
-use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
-use CachetHQ\Tests\Cachet\AbstractTestCase;
+use App\Bus\Commands\Incident\CreateIncidentCommand;
+use App\Models\Incident;
+use App\Presenters\IncidentPresenter;
+use App\Settings\Repository as SettingsRepository;
+use Tests\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Str;
 
