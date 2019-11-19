@@ -1,47 +1,35 @@
 {
   "name": "cachet",
+  "private": true,
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "postinstall": "opencollective-postinstall || true"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "animate-sass": "^0.8.2",
     "axios": "^0.19",
-    "bootstrap-sass": "^3.4.1",
-    "chart.js": "^2.8.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^5.1",
-    "es5-shim": "^4.5.9",
-    "flatpickr": "^4.5.7",
-    "github-markdown-css": "^2.3.0",
-    "ionicons": "~2.0",
-    "jquery": "^3.4.0",
-    "jquery-minicolors": "^2.1.10",
-    "jquery-serializeobject": "^1.0.0",
-    "jquery-sparkline": "^2.4.0",
-    "laravel-mix": "^2.1",
-    "laravel-mix-purgecss": "^3.0.0",
-    "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
+    "jquery": "^3.4",
+    "laravel-mix": "^4.0.16",
     "lodash": "^4.17.13",
-    "messenger": "git+https://github.com/HubSpot/messenger.git",
-    "moment": "^2.24.0",
-    "promise": "^7.3.1",
-    "sortablejs": "^1.8.4",
-    "sweetalert2": "^6.8.0",
-    "vue": "^2.6.10",
+    "nprogress": "^0.2.0",
+    "popper.js": "^1.12",
+    "portal-vue": "^2.0.0",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.0.4",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.6.10"
   },
-  "private": true,
   "dependencies": {
-    "opencollective-postinstall": "^2.0.2"
-  },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/Cachet"
+    "@tailwindcss/custom-forms": "^0.2.0-beta.1",
+    "chart.js": "^2.8.0",
+    "vue-flatpickr-component": "^8.1.2",
+    "vue-router": "^3.0.2"
   }
 }

@@ -1,0 +1,7 @@
+@import 'tailwindcss/base';
+@import './base.css';
+@import 'tailwindcss/components';
+@import './components.css';
+@import 'tailwindcss/utilities';
+@import './utilities.css';
+@import './nprogress.css';
