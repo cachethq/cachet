@@ -180,7 +180,6 @@ return [
         CachetHQ\Emoji\EmojiServiceProvider::class,
         CachetHQ\Twitter\TwitterServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
-        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,

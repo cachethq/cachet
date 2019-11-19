@@ -77,7 +77,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => CachetHQ\Cachet\User::class,
+            'model'  => App\Models\User::class,
         ],
 
         // 'users' => [
