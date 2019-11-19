@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Notifications\Component;
+namespace App\Notifications\Component;
 
-use CachetHQ\Cachet\Models\Component;
+use App\Models\Component;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
@@ -31,7 +31,7 @@ class ComponentStatusChangedNotification extends Notification
     /**
      * The component that changed.
      *
-     * @var \CachetHQ\Cachet\Models\Component
+     * @var \App\Models\Component
      */
     protected $component;
 
@@ -45,8 +45,8 @@ class ComponentStatusChangedNotification extends Notification
     /**
      * Create a new notification instance.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
-     * @param int                               $status
+     * @param \App\Models\Component $component
+     * @param int                   $status
      *
      * @return void
      */

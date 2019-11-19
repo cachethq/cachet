@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations\Core;
+namespace App\Integrations\Core;
 
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
-use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
-use CachetHQ\Cachet\Models\Action;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\Tag;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Settings\Repository as Setting;
+use App\Bus\Events\Beacon\BeaconFailedToSendEvent;
+use App\Bus\Events\Beacon\BeaconWasSentEvent;
+use App\Integrations\Contracts\Beacon as BeaconContract;
+use App\Models\Action;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\Metric;
+use App\Models\Schedule;
+use App\Models\Tag;
+use App\Models\User;
+use App\Settings\Repository as Setting;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Config\Repository;

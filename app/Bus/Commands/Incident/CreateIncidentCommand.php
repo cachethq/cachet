@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Incident;
+namespace App\Bus\Commands\Incident;
 
 /**
  * This is the create incident command.

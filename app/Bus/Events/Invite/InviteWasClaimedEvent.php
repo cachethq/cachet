@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Invite;
+namespace App\Bus\Events\Invite;
 
-use CachetHQ\Cachet\Models\Invite;
+use App\Models\Invite;
 
 final class InviteWasClaimedEvent implements InviteEventInterface
 {
     /**
      * The invite that has been claimed.
      *
-     * @var \CachetHQ\Cachet\Models\Invite
+     * @var \App\Models\Invite
      */
     public $invite;
 

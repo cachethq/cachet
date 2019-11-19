@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
+namespace App\Bus\Handlers\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscription;
+use App\Bus\Events\Component\ComponentWasRemovedEvent;
+use App\Models\Component;
+use App\Models\Subscription;
 
 /**
  * This is the cleanup component subscriptions handler.
@@ -25,7 +25,7 @@ class CleanupComponentSubscriptionsHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent $event
+     * @param \App\Bus\Events\Component\ComponentWasRemovedEvent $event
      *
      * @return void
      */

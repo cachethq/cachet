@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
+namespace App\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricWasCreatedEvent;
-use CachetHQ\Cachet\Models\Metric;
+use App\Bus\Commands\Metric\CreateMetricCommand;
+use App\Bus\Events\Metric\MetricWasCreatedEvent;
+use App\Models\Metric;
 use Illuminate\Contracts\Auth\Guard;
 
 class CreateMetricCommandHandler
@@ -40,9 +40,9 @@ class CreateMetricCommandHandler
     /**
      * Handle the add metric command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand $command
+     * @param \App\Bus\Commands\Metric\CreateMetricCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \App\Models\Metric
      */
     public function handle(CreateMetricCommand $command)
     {

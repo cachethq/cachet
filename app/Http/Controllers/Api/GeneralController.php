@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Integrations\Contracts\Releases;
-use CachetHQ\Cachet\Integrations\Contracts\System;
+use App\Integrations\Contracts\Releases;
+use App\Integrations\Contracts\System;
 
 /**
  * This is the general api controller.

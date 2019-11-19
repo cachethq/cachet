@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\Incident;
+namespace App\Bus\Exceptions\Incident;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 
 /**
  * This is the incident exception interface.

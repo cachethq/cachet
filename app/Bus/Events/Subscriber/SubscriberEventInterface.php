@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Subscriber;
+namespace App\Bus\Events\Subscriber;
 
-use CachetHQ\Cachet\Bus\Events\EventInterface;
+use App\Bus\Events\EventInterface;
 
 /**
  * This is the subscriber event interface.

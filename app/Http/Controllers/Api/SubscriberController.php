@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use App\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use App\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\QueryException;
@@ -61,7 +61,7 @@ class SubscriberController extends AbstractApiController
     /**
      * Delete a subscriber.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @return \Illuminate\Http\JsonResponse
      */

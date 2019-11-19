@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Schedule;
+namespace App\Bus\Events\Schedule;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\Schedule;
+use App\Models\User;
 
 /**
  * This is the schedule was updated event class.
@@ -25,22 +25,22 @@ final class ScheduleWasUpdatedEvent implements ActionInterface, ScheduleEventInt
     /**
      * The user that created the schedule.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The schedule that has been updated.
      *
-     * @var \CachetHQ\Cachet\Models\Schedule
+     * @var \App\Models\Schedule
      */
     public $schedule;
 
     /**
      * Create a new schedule was updated event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User     $user
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\User     $user
+     * @param \App\Models\Schedule $schedule
      *
      * @return void
      */

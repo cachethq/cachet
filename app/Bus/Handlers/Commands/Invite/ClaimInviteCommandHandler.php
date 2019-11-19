@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Invite;
+namespace App\Bus\Handlers\Commands\Invite;
 
-use CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand;
-use CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent;
+use App\Bus\Commands\Invite\ClaimInviteCommand;
+use App\Bus\Events\Invite\InviteWasClaimedEvent;
 use Carbon\Carbon;
 
 class ClaimInviteCommandHandler
@@ -20,7 +20,7 @@ class ClaimInviteCommandHandler
     /**
      * Handle the claim invite command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand $command
+     * @param \App\Bus\Commands\Invite\ClaimInviteCommand $command
      *
      * @return void
      */

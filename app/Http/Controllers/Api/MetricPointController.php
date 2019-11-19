@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Bus\Commands\Metric\CreateMetricPointCommand;
+use App\Bus\Commands\Metric\RemoveMetricPointCommand;
+use App\Bus\Commands\Metric\UpdateMetricPointCommand;
+use App\Models\Metric;
+use App\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -26,8 +26,8 @@ class MetricPointController extends AbstractApiController
     /**
      * Get a single metric point.
      *
-     * @param \CachetHQ\Cachet\Models\Metric      $metric
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \App\Models\Metric      $metric
+     * @param \App\Models\MetricPoint $metricPoint
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -41,7 +41,7 @@ class MetricPointController extends AbstractApiController
     /**
      * Create a new metric point.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -63,8 +63,8 @@ class MetricPointController extends AbstractApiController
     /**
      * Updates a metric point.
      *
-     * @param \CachetHQ\Cachet\Models\Metric      $metric
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \App\Models\Metric      $metric
+     * @param \App\Models\MetricPoint $metricPoint
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -83,8 +83,8 @@ class MetricPointController extends AbstractApiController
     /**
      * Destroys a metric point.
      *
-     * @param \CachetHQ\Cachet\Models\Metric      $metric
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \App\Models\Metric      $metric
+     * @param \App\Models\MetricPoint $metricPoint
      *
      * @return \Illuminate\Http\JsonResponse
      */

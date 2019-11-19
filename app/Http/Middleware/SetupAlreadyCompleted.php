@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Middleware;
+namespace App\Http\Middleware;
 
-use CachetHQ\Cachet\Settings\ReadException;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Settings\ReadException;
+use App\Settings\Repository;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -28,14 +28,14 @@ class SetupAlreadyCompleted
     /**
      * The settings repository instance.
      *
-     * @var \CachetHQ\Cachet\Settings\Repository
+     * @var \App\Settings\Repository
      */
     protected $settings;
 
     /**
      * Creates a new setup already completed middleware instance.
      *
-     * @param \CachetHQ\Cachet\Settings\Repository $settings
+     * @param \App\Settings\Repository $settings
      *
      * @return void
      */

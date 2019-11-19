@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
+use App\Integrations\Contracts\System;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
@@ -44,7 +44,7 @@ class IncidentTemplateController extends Controller
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
@@ -89,7 +89,7 @@ class IncidentTemplateController extends Controller
     /**
      * Shows the edit incident template view.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate $template
+     * @param \App\Models\IncidentTemplate $template
      *
      * @return \Illuminate\View\View
      */
@@ -103,7 +103,7 @@ class IncidentTemplateController extends Controller
     /**
      * Deletes an incident template.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate $template
+     * @param \App\Models\IncidentTemplate $template
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -141,7 +141,7 @@ class IncidentTemplateController extends Controller
     /**
      * Edit an incident template.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate $template
+     * @param \App\Models\IncidentTemplate $template
      *
      * @return \Illuminate\Http\RedirectResponse
      */

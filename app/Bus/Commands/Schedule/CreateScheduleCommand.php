@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Schedule;
+namespace App\Bus\Commands\Schedule;
 
 /**
  * This is the create schedule command.

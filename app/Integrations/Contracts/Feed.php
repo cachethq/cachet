@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations\Contracts;
+namespace App\Integrations\Contracts;
 
 /**
  * This is the feed interface.

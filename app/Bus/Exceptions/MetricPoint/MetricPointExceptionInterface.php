@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\MetricPoint;
+namespace App\Bus\Exceptions\MetricPoint;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 
 /**
  * This is the metric point exception interface.

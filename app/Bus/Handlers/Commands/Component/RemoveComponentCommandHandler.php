@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
+namespace App\Bus\Handlers\Commands\Component;
 
-use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
+use App\Bus\Commands\Component\RemoveComponentCommand;
+use App\Bus\Events\Component\ComponentWasRemovedEvent;
 use Illuminate\Contracts\Auth\Guard;
 
 class RemoveComponentCommandHandler
@@ -39,7 +39,7 @@ class RemoveComponentCommandHandler
     /**
      * Handle the remove component command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand $command
+     * @param \App\Bus\Commands\Component\RemoveComponentCommand $command
      *
      * @return void
      */

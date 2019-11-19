@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Component;
+namespace App\Bus\Commands\Component;
 
-use CachetHQ\Cachet\Models\Component;
+use App\Models\Component;
 
 final class RemoveComponentCommand
 {
     /**
      * The component to remove.
      *
-     * @var \CachetHQ\Cachet\Models\Component
+     * @var \App\Models\Component
      */
     public $component;
 
     /**
      * Create a new remove component command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return void
      */

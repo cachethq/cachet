@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Console\Commands;
+namespace App\Console\Commands;
 
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Models\MetricPoint;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;

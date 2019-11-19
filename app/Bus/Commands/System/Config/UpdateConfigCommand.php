@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\System\Config;
+namespace App\Bus\Commands\System\Config;
 
 /**
  * This is the update config command class.

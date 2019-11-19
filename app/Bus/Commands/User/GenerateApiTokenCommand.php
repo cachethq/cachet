@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\User;
+namespace App\Bus\Commands\User;
 
-use CachetHQ\Cachet\Models\User;
+use App\Models\User;
 
 final class GenerateApiTokenCommand
 {
     /**
      * The user to generate the token.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * Create a new generate api token command instance.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return void
      */

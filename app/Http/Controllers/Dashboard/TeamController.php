@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
-use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
-use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\User\CreateUserCommand;
+use App\Bus\Commands\User\InviteUserCommand;
+use App\Bus\Commands\User\RemoveUserCommand;
+use App\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -39,7 +39,7 @@ class TeamController extends Controller
     /**
      * Shows the edit team member view.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\View\View
      */
@@ -100,7 +100,7 @@ class TeamController extends Controller
     /**
      * Updates a user.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\View\View
      */
@@ -146,7 +146,7 @@ class TeamController extends Controller
     /**
      * Delete a user.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\Http\RedirectResponse
      */

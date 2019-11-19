@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
 use Illuminate\Contracts\View\View;
 

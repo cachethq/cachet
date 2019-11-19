@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
+namespace App\Bus\Handlers\Commands\Schedule;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Schedule\CreateScheduleCommand;
+use App\Bus\Events\Schedule\ScheduleWasCreatedEvent;
+use App\Models\Schedule;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\MessageBag;
 use InvalidArgumentException;
@@ -37,15 +37,15 @@ class CreateScheduleCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new update schedule command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param \App\Services\Dates\DateFactory  $dates
      *
      * @return void
      */
@@ -58,9 +58,9 @@ class CreateScheduleCommandHandler
     /**
      * Handle the create schedule command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand $command
+     * @param \App\Bus\Commands\Schedule\CreateScheduleCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Schedule
+     * @return \App\Models\Schedule
      */
     public function handle(CreateScheduleCommand $command)
     {
@@ -77,7 +77,7 @@ class CreateScheduleCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand $command
+     * @param \App\Bus\Commands\Schedule\CreateScheduleCommand $command
      *
      * @return array
      */

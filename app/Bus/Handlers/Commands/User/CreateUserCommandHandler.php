@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\User\CreateUserCommand;
+use App\Bus\Events\User\UserWasCreatedEvent;
+use App\Models\User;
 
 /**
  * This is the create user command handler.
@@ -25,9 +25,9 @@ class CreateUserCommandHandler
     /**
      * Handle the add user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand $command
+     * @param \App\Bus\Commands\User\CreateUserCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\User
+     * @return \App\Models\User
      */
     public function handle(CreateUserCommand $command)
     {

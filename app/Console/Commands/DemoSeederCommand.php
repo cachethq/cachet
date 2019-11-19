@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Console\Commands;
+namespace App\Console\Commands;
 
-use CachetHQ\Cachet\Models\Action;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\IncidentUpdate;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Models\Action;
+use App\Models\Component;
+use App\Models\ComponentGroup;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Models\IncidentUpdate;
+use App\Models\Metric;
+use App\Models\MetricPoint;
+use App\Models\Schedule;
+use App\Models\Subscriber;
+use App\Models\User;
+use App\Settings\Repository;
 use Carbon\Carbon;
 use DateInterval;
 use DateTime;
@@ -56,14 +56,14 @@ class DemoSeederCommand extends Command
     /**
      * The settings repository.
      *
-     * @var \CachetHQ\Cachet\Settings\Repository
+     * @var \App\Settings\Repository
      */
     protected $settings;
 
     /**
      * Create a new demo seeder command instance.
      *
-     * @param \CachetHQ\Cachet\Settings\Repository $settings
+     * @param \App\Settings\Repository $settings
      *
      * @return void
      */

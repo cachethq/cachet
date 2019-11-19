@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers;
+namespace App\Http\Controllers;
 
-use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Settings\Repository;
+use App\Bus\Commands\System\Config\UpdateConfigCommand;
+use App\Models\User;
+use App\Settings\Repository;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;

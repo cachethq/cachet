@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -21,142 +21,142 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'CachetHQ\Cachet\Bus\Events\ActionInterface' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\ActionStorageHandler',
+        'App\Bus\Events\ActionInterface' => [
+            'App\Bus\Handlers\Events\ActionStorageHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Beacon\LogBeaconFailedHandler',
+        'App\Bus\Events\Beacon\BeaconFailedToSendEvent' => [
+            'App\Bus\Handlers\Events\Beacon\LogBeaconFailedHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent' => [
+        'App\Bus\Events\Beacon\BeaconWasSentEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent' => [
+        'App\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
+        'App\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
+        'App\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Component\SendComponentUpdateEmailNotificationHandler',
+        'App\Bus\Events\Component\ComponentStatusWasChangedEvent' => [
+            'App\Bus\Handlers\Events\Component\SendComponentUpdateEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent' => [
+        'App\Bus\Events\Component\ComponentWasCreatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Component\CleanupComponentSubscriptionsHandler',
+        'App\Bus\Events\Component\ComponentWasRemovedEvent' => [
+            'App\Bus\Handlers\Events\Component\CleanupComponentSubscriptionsHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent' => [
+        'App\Bus\Events\Component\ComponentWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent' => [
+        'App\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate\SendIncidentUpdateEmailNotificationHandler',
+        'App\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent' => [
+            'App\Bus\Handlers\Events\IncidentUpdate\SendIncidentUpdateEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent' => [
+        'App\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+        'App\Bus\Events\Incident\IncidentWasCreatedEvent' => [
+            'App\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
+        'App\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
+        'App\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent' => [
+        'App\Bus\Events\Invite\InviteWasClaimedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasCreatedEvent' => [
+        'App\Bus\Events\Metric\MetricPointWasCreatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasRemovedEvent' => [
+        'App\Bus\Events\Metric\MetricPointWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent' => [
+        'App\Bus\Events\Metric\MetricPointWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasCreatedEvent' => [
+        'App\Bus\Events\Metric\MetricWasCreatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasRemovedEvent' => [
+        'App\Bus\Events\Metric\MetricWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent' => [
+        'App\Bus\Events\Metric\MetricWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleEmailNotificationHandler',
+        'App\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
+            'App\Bus\Handlers\Events\Schedule\SendScheduleEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
+        'App\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent' => [
+        'App\Bus\Events\Schedule\ScheduleWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
+        'App\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
+        'App\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent' => [
+        'App\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
+        'App\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\System\SystemCheckedForUpdatesEvent' => [
+        'App\Bus\Events\System\SystemCheckedForUpdatesEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent' => [
+        'App\Bus\Events\System\SystemWasInstalledEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent' => [
+        'App\Bus\Events\System\SystemWasResetEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent' => [
+        'App\Bus\Events\System\SystemWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserAcceptedInviteEvent' => [
+        'App\Bus\Events\User\UserAcceptedInviteEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent' => [
+        'App\Bus\Events\User\UserDisabledTwoAuthEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserEnabledTwoAuthEvent' => [
+        'App\Bus\Events\User\UserEnabledTwoAuthEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent' => [
+        'App\Bus\Events\User\UserFailedTwoAuthEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent' => [
+        'App\Bus\Events\User\UserLoggedInEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent' => [
+        'App\Bus\Events\User\UserLoggedOutEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent' => [
+        'App\Bus\Events\User\UserPassedTwoAuthEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent' => [
+        'App\Bus\Events\User\UserRegeneratedApiTokenEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent' => [
+        'App\Bus\Events\User\UserWasCreatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent' => [
+        'App\Bus\Events\User\UserWasInvitedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserWasRemovedEvent' => [
+        'App\Bus\Events\User\UserWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\User\UserWasWelcomedEvent' => [
+        'App\Bus\Events\User\UserWasWelcomedEvent' => [
             //
         ],
     ];

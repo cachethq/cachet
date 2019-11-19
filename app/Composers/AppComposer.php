@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
@@ -27,7 +27,7 @@ class AppComposer
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -41,8 +41,8 @@ class AppComposer
     /**
      * Create a new app composer instance.
      *
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
-     * @param \Illuminate\Contracts\Config\Repository     $config
+     * @param \App\Services\Dates\DateFactory         $dates
+     * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */

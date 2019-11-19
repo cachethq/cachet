@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup;
+namespace App\Bus\Handlers\Commands\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use App\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
+use App\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 
 class CreateComponentGroupCommandHandler
@@ -40,9 +40,9 @@ class CreateComponentGroupCommandHandler
     /**
      * Handle the create component group command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand $command
+     * @param \App\Bus\Commands\ComponentGroup\CreateComponentGroupCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\ComponentGroup
+     * @return \App\Models\ComponentGroup
      */
     public function handle(CreateComponentGroupCommand $command)
     {

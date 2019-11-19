@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Settings;
+namespace App\Settings;
 
 use Exception;
 

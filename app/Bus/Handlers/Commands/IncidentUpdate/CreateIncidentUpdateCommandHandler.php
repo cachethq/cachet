@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
+namespace App\Bus\Handlers\Commands\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Bus\Commands\Incident\UpdateIncidentCommand;
+use App\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use App\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
+use App\Models\IncidentUpdate;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -46,9 +46,9 @@ class CreateIncidentUpdateCommandHandler
     /**
      * Handle the report incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand $command
+     * @param \App\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\IncidentUpdate
+     * @return \App\Models\IncidentUpdate
      */
     public function handle(CreateIncidentUpdateCommand $command)
     {

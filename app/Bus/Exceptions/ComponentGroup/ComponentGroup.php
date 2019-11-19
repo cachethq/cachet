@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\ComponentGroup;
+namespace App\Bus\Exceptions\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 
 /**
  * This is the component group exception interface.

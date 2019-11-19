@@ -9,34 +9,34 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
+namespace App\Bus\Handlers\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
+use App\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use App\Integrations\Contracts\System;
+use App\Models\Component;
+use App\Models\Subscriber;
+use App\Notifications\Component\ComponentStatusChangedNotification;
 
 class SendComponentUpdateEmailNotificationHandler
 {
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
     /**
      * The subscriber instance.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     protected $subscriber;
 
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent $event
+     * @param \App\Bus\Events\Component\ComponentStatusWasChangedEvent $event
      *
      * @return void
      */

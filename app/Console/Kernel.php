@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Console;
+namespace App\Console;
 
-use CachetHQ\Cachet\Console\Commands\AppResetCommand;
-use CachetHQ\Cachet\Console\Commands\AppUpdateCommand;
-use CachetHQ\Cachet\Console\Commands\BeaconCommand;
-use CachetHQ\Cachet\Console\Commands\DemoMetricPointSeederCommand;
-use CachetHQ\Cachet\Console\Commands\DemoSeederCommand;
-use CachetHQ\Cachet\Console\Commands\InstallCommand;
-use CachetHQ\Cachet\Console\Commands\VersionCommand;
+use App\Console\Commands\AppResetCommand;
+use App\Console\Commands\AppUpdateCommand;
+use App\Console\Commands\BeaconCommand;
+use App\Console\Commands\DemoMetricPointSeederCommand;
+use App\Console\Commands\DemoSeederCommand;
+use App\Console\Commands\InstallCommand;
+use App\Console\Commands\VersionCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

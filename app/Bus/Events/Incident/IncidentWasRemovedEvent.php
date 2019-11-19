@@ -9,33 +9,33 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Incident;
+namespace App\Bus\Events\Incident;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\Incident;
+use App\Models\User;
 
 final class IncidentWasRemovedEvent implements ActionInterface, IncidentEventInterface
 {
     /**
      * The user who removed the event.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The incident that has been removed.
      *
-     * @var \CachetHQ\Cachet\Models\Incident
+     * @var \App\Models\Incident
      */
     public $incident;
 
     /**
      * Create a new incident was removed event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User     $user
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\User     $user
+     * @param \App\Models\Incident $incident
      *
      * @return void
      */

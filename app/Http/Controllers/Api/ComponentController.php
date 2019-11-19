@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Models\Component;
+use App\Bus\Commands\Component\CreateComponentCommand;
+use App\Bus\Commands\Component\RemoveComponentCommand;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Models\Component;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
@@ -56,7 +56,7 @@ class ComponentController extends AbstractApiController
     /**
      * Get a single component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -94,7 +94,7 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -124,7 +124,7 @@ class ComponentController extends AbstractApiController
     /**
      * Delete an existing component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
      */

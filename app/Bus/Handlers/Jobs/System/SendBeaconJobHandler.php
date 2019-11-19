@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Jobs\System;
+namespace App\Bus\Handlers\Jobs\System;
 
-use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
-use CachetHQ\Cachet\Integrations\Contracts\Beacon;
+use App\Bus\Jobs\System\SendBeaconJob;
+use App\Integrations\Contracts\Beacon;
 use Exception;
 
 /**
@@ -25,14 +25,14 @@ class SendBeaconJobHandler
     /**
      * The beacon instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\Beacon
+     * @var \App\Integrations\Contracts\Beacon
      */
     protected $beacon;
 
     /**
      * Create a new send beacon job handler instance.
      *
-     * @param \CachetHQ\Cachet\Integrations\Contracts\Beacon $beacon
+     * @param \App\Integrations\Contracts\Beacon $beacon
      *
      * @return void
      */
@@ -44,7 +44,7 @@ class SendBeaconJobHandler
     /**
      * Handle the send beacon job.
      *
-     * @param \CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob $job
+     * @param \App\Bus\Jobs\System\SendBeaconJob $job
      *
      * @return void
      */

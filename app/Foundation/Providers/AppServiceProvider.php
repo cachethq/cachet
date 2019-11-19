@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace App\Foundation\Providers;
 
 use AltThree\Bus\Dispatcher;
 use AltThree\Validator\ValidatingMiddleware;
-use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Middleware\UseDatabaseTransactions;
+use App\Services\Dates\DateFactory;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Bus', 'CachetHQ\Cachet\Bus\Handlers');
+            return Dispatcher::simpleMapping($command, 'App\Bus', 'App\Bus\Handlers');
         });
 
         $dispatcher->pipeThrough([UseDatabaseTransactions::class, ValidatingMiddleware::class]);
@@ -51,12 +51,12 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Relation::morphMap([
-            'components' => \CachetHQ\Cachet\Models\Component::class,
-            'incidents'  => \CachetHQ\Cachet\Models\Incident::class,
-            'metrics'    => \CachetHQ\Cachet\Models\Metric::class,
-            'schedules'  => \CachetHQ\Cachet\Models\Schedule::class,
-            'subscriber' => \CachetHQ\Cachet\Models\Subscriber::class,
-            'tags'       => \CachetHQ\Cachet\Models\Tag::class,
+            'components' => \App\Models\Component::class,
+            'incidents'  => \App\Models\Incident::class,
+            'metrics'    => \App\Models\Metric::class,
+            'schedules'  => \App\Models\Schedule::class,
+            'subscriber' => \App\Models\Subscriber::class,
+            'tags'       => \App\Models\Tag::class,
         ]);
     }
 

@@ -9,21 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http;
+namespace App\Http;
 
+use App\Http\Middleware\Admin;
+use App\Http\Middleware\ApiAuthentication;
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\CacheControl;
+use App\Http\Middleware\Localize;
+use App\Http\Middleware\ReadyForUse;
+use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Middleware\RemoteUserAuthenticate;
+use App\Http\Middleware\SetupAlreadyCompleted;
+use App\Http\Middleware\SubscribersConfigured;
+use App\Http\Middleware\Throttler;
+use App\Http\Middleware\TrustProxies;
 use Barryvdh\Cors\HandleCors;
-use CachetHQ\Cachet\Http\Middleware\Admin;
-use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
-use CachetHQ\Cachet\Http\Middleware\Authenticate;
-use CachetHQ\Cachet\Http\Middleware\CacheControl;
-use CachetHQ\Cachet\Http\Middleware\Localize;
-use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
-use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
-use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
-use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
-use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
-use CachetHQ\Cachet\Http\Middleware\Throttler;
-use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
@@ -39,6 +39,28 @@ class Kernel extends HttpKernel
     protected $middleware = [
         TrustProxies::class,
         CheckForMaintenanceMode::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+        'api' => [
+            'bindings',
+            \App\Http\Middleware\Acceptable::class,
+            \App\Http\Middleware\Timezone::class,
+        ],
     ];
 
     /**

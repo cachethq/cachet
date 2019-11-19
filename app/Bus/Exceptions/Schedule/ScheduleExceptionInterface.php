@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\Schedule;
+namespace App\Bus\Exceptions\Schedule;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 
 /**
  * This is the schedule exception interface.

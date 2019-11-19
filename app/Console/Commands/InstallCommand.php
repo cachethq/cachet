@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Console\Commands;
+namespace App\Console\Commands;
 
-use CachetHQ\Cachet\Models\User;
+use App\Models\User;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;

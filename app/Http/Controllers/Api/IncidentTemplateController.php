@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Models\IncidentTemplate;
+use App\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Support\Facades\Request;
 
@@ -40,7 +40,7 @@ class IncidentTemplateController extends AbstractApiController
     /**
      * Get a single incident templates.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate $incidentTemplate
+     * @param \App\Models\IncidentTemplate $incidentTemplate
      *
      * @return \Illuminate\Http\JsonResponse
      */

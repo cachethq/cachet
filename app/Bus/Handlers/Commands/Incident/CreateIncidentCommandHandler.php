@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
+namespace App\Bus\Handlers\Commands\Incident;
 
-use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
-use CachetHQ\Cachet\Bus\Handlers\Traits\StoresMeta;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\Meta;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Component\UpdateComponentCommand;
+use App\Bus\Commands\Incident\CreateIncidentCommand;
+use App\Bus\Events\Incident\IncidentWasCreatedEvent;
+use App\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
+use App\Bus\Handlers\Traits\StoresMeta;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\IncidentTemplate;
+use App\Models\Meta;
+use App\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 use Twig\Environment as Twig_Environment;
@@ -45,15 +45,15 @@ class CreateIncidentCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new create incident command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param \App\Services\Dates\DateFactory  $dates
      *
      * @return void
      */
@@ -66,9 +66,9 @@ class CreateIncidentCommandHandler
     /**
      * Handle the create incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand $command
+     * @param \App\Bus\Commands\Incident\CreateIncidentCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \App\Models\Incident
      */
     public function handle(CreateIncidentCommand $command)
     {
@@ -134,8 +134,8 @@ class CreateIncidentCommandHandler
     /**
      * Compiles an incident template into an incident message.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentTemplate                     $template
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand $command
+     * @param \App\Models\IncidentTemplate                     $template
+     * @param \App\Bus\Commands\Incident\CreateIncidentCommand $command
      *
      * @return string
      */

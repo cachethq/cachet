@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Component;
+namespace App\Bus\Commands\Component;
 
 /**
  * This is the create component command class.

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
+namespace App\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Metric\UpdateMetricPointCommand;
+use App\Bus\Events\Metric\MetricPointWasUpdatedEvent;
+use App\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
 
 class UpdateMetricPointCommandHandler
@@ -28,15 +28,15 @@ class UpdateMetricPointCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new update metric point command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param \App\Services\Dates\DateFactory  $dates
      *
      * @return void
      */
@@ -49,9 +49,9 @@ class UpdateMetricPointCommandHandler
     /**
      * Handle the update metric point command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand $command
+     * @param \App\Bus\Commands\Metric\UpdateMetricPointCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \App\Models\MetricPoint
      */
     public function handle(UpdateMetricPointCommand $command)
     {

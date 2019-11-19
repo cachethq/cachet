@@ -174,13 +174,11 @@ return [
          * Packages Service Providers...
          */
         env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
-        AltThree\Badger\BadgerServiceProvider::class,
-        AltThree\Emoji\EmojiServiceProvider::class,
-        AltThree\Twitter\TwitterServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-        env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
+        CachetHQ\Badger\BadgerServiceProvider::class,
+        CachetHQ\Emoji\EmojiServiceProvider::class,
+        CachetHQ\Twitter\TwitterServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
-        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
@@ -190,14 +188,14 @@ return [
         /*
          * Application Service Providers...
          */
-        CachetHQ\Cachet\Foundation\Providers\AppServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\EventServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\IntegrationServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
+        App\Foundation\Providers\AppServiceProvider::class,
+        App\Foundation\Providers\ComposerServiceProvider::class,
+        App\Foundation\Providers\ConsoleServiceProvider::class,
+        App\Foundation\Providers\ConfigServiceProvider::class,
+        App\Foundation\Providers\EventServiceProvider::class,
+        App\Foundation\Providers\IntegrationServiceProvider::class,
+        App\Foundation\Providers\RepositoryServiceProvider::class,
+        App\Foundation\Providers\RouteServiceProvider::class,
 
     ]),
 

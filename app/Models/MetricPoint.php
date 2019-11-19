@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Presenters\MetricPointPresenter;
+use App\Presenters\MetricPointPresenter;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;

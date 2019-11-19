@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -59,7 +59,7 @@ class Tag extends Model
     /**
      * @param array|\ArrayAccess $values
      *
-     * @return \CachetHQ\Cachet\Models\Tag|static
+     * @return \App\Models\Tag|static
      */
     public static function findOrCreate($values)
     {

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Component;
+namespace App\Bus\Commands\Component;
 
-use CachetHQ\Cachet\Models\Component;
+use App\Models\Component;
 
 final class UpdateComponentCommand
 {
     /**
      * The component to update.
      *
-     * @var \CachetHQ\Cachet\Models\Component
+     * @var \App\Models\Component
      */
     public $component;
 
@@ -112,17 +112,17 @@ final class UpdateComponentCommand
     /**
      * Create a new update component command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
-     * @param string|null                       $name
-     * @param string|null                       $description
-     * @param int|null                          $status
-     * @param string|null                       $link
-     * @param int|null                          $order
-     * @param int|null                          $group_id
-     * @param bool|null                         $enabled
-     * @param array|null                        $meta
-     * @param string|null                       $tags
-     * @param bool                              $silent
+     * @param \App\Models\Component $component
+     * @param string|null           $name
+     * @param string|null           $description
+     * @param int|null              $status
+     * @param string|null           $link
+     * @param int|null              $order
+     * @param int|null              $group_id
+     * @param bool|null             $enabled
+     * @param array|null            $meta
+     * @param string|null           $tags
+     * @param bool                  $silent
      *
      * @return void
      */

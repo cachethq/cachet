@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Component;
+namespace App\Bus\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\EventInterface;
+use App\Bus\Events\EventInterface;
 
 /**
  * This is the component event interface.

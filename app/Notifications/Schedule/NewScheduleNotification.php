@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Notifications\Schedule;
+namespace App\Notifications\Schedule;
 
-use CachetHQ\Cachet\Models\Schedule;
+use App\Models\Schedule;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -32,14 +32,14 @@ class NewScheduleNotification extends Notification implements ShouldQueue
     /**
      * The schedule.
      *
-     * @var \CachetHQ\Cachet\Models\Schedule
+     * @var \App\Models\Schedule
      */
     protected $schedule;
 
     /**
      * Create a new notification instance.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return void
      */

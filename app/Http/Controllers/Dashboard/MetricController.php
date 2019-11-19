@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\MetricPoint;
+use App\Bus\Commands\Metric\CreateMetricCommand;
+use App\Bus\Commands\Metric\RemoveMetricCommand;
+use App\Bus\Commands\Metric\UpdateMetricCommand;
+use App\Models\Metric;
+use App\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -108,7 +108,7 @@ class MetricController extends Controller
     /**
      * Deletes a given metric.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -123,7 +123,7 @@ class MetricController extends Controller
     /**
      * Shows the edit metric view.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\View\View
      */
@@ -137,7 +137,7 @@ class MetricController extends Controller
     /**
      * Edit an metric.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\RedirectResponse
      */

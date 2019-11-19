@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Services\Dates;
+namespace App\Services\Dates;
 
 use DateTimeZone;
 use Jenssegers\Date\Date;

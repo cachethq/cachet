@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Models\Traits\HasMeta;
-use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use App\Models\Traits\HasMeta;
+use App\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;

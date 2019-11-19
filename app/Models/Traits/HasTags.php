@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models\Traits;
+namespace App\Models\Traits;
 
-use CachetHQ\Cachet\Models\Tag;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -61,7 +61,7 @@ trait HasTags
     }
 
     /**
-     * @param string|array|\ArrayAccess|\CachetHQ\Cachet\Models\Tag $tags
+     * @param string|array|\ArrayAccess|\App\Models\Tag $tags
      */
     public function setTagsAttribute($tags)
     {
@@ -111,7 +111,7 @@ trait HasTags
     }
 
     /**
-     * @param array|\ArrayAccess|\CachetHQ\Cachet\Models\Tag $tags
+     * @param array|\ArrayAccess|\App\Models\Tag $tags
      *
      * @return $this
      */
@@ -125,7 +125,7 @@ trait HasTags
     }
 
     /**
-     * @param string|\CachetHQ\Cachet\Models\Tag $tag
+     * @param string|\App\Models\Tag $tag
      *
      * @return $this
      */
@@ -153,7 +153,7 @@ trait HasTags
     }
 
     /**
-     * @param string|\CachetHQ\Cachet\Models\Tag $tag
+     * @param string|\App\Models\Tag $tag
      *
      * @return $this
      */
@@ -177,7 +177,7 @@ trait HasTags
     }
 
     /**
-     * Convert a list of tags into a collection of \CachetHQ\Cachet\Models\Tag.
+     * Convert a list of tags into a collection of \App\Models\Tag.
      *
      * @param array|\ArrayAccess $values
      *

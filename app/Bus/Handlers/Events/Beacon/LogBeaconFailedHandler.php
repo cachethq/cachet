@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Beacon;
+namespace App\Bus\Handlers\Events\Beacon;
 
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
+use App\Bus\Events\Beacon\BeaconFailedToSendEvent;
 
 /**
  * This is the log beacon failed handler.
@@ -23,7 +23,7 @@ class LogBeaconFailedHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent $event
+     * @param \App\Bus\Events\Beacon\BeaconFailedToSendEvent $event
      *
      * @return void
      */

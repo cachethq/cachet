@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters\Traits;
+namespace App\Presenters\Traits;
 
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Services\Dates\DateFactory;
 use Illuminate\Support\Facades\Config;
 
 /**

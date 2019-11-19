@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Models\Metric;
+use App\Models\Metric;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;

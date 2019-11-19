@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
+namespace App\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Metric;
+use App\Bus\Commands\Metric\UpdateMetricCommand;
+use App\Bus\Events\Metric\MetricWasUpdatedEvent;
+use App\Models\Metric;
 use Illuminate\Contracts\Auth\Guard;
 
 class UpdateMetricCommandHandler
@@ -40,9 +40,9 @@ class UpdateMetricCommandHandler
     /**
      * Handle the update metric command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand $command
+     * @param \App\Bus\Commands\Metric\UpdateMetricCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \App\Models\Metric
      */
     public function handle(UpdateMetricCommand $command)
     {
@@ -58,7 +58,7 @@ class UpdateMetricCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand $command
+     * @param \App\Bus\Commands\Metric\UpdateMetricCommand $command
      *
      * @return array
      */

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Notifications\IncidentUpdate;
+namespace App\Notifications\IncidentUpdate;
 
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Models\Incident;
+use App\Models\IncidentUpdate;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
@@ -32,14 +32,14 @@ class IncidentUpdatedNotification extends Notification
     /**
      * The incident update.
      *
-     * @var \CachetHQ\Cachet\Models\IncidentUpdate
+     * @var \App\Models\IncidentUpdate
      */
     protected $update;
 
     /**
      * Create a new notification instance.
      *
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
+     * @param \App\Models\IncidentUpdate $update
      *
      * @return void
      */

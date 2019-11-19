@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers;
+namespace App\Http\Controllers;
 
 use AltThree\Badger\Facades\Badger;
-use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Http\Controllers\Api\AbstractApiController;
+use App\Models\Component;
+use App\Models\Incident;
+use App\Models\Metric;
+use App\Models\Schedule;
+use App\Repositories\Metric\MetricRepository;
+use App\Services\Dates\DateFactory;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -134,7 +134,7 @@ class StatusPageController extends AbstractApiController
     /**
      * Shows an incident in more detail.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\View\View
      */
@@ -146,7 +146,7 @@ class StatusPageController extends AbstractApiController
     /**
      * Show a single schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\View\View
      */
@@ -158,7 +158,7 @@ class StatusPageController extends AbstractApiController
     /**
      * Returns metrics in a readily formatted way.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -184,7 +184,7 @@ class StatusPageController extends AbstractApiController
     /**
      * Generates a Shield (badge) for the component.
      *
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \App\Models\Component $component
      *
      * @return \Illuminate\Http\Response
      */

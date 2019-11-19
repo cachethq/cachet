@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models\Traits;
+namespace App\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 

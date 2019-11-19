@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
+namespace App\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasCreatedEvent;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Bus\Commands\Metric\CreateMetricPointCommand;
+use App\Bus\Events\Metric\MetricPointWasCreatedEvent;
+use App\Models\MetricPoint;
+use App\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -30,15 +30,15 @@ class CreateMetricPointCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new add metric point command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard            $auth
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param \App\Services\Dates\DateFactory  $dates
      *
      * @return void
      */
@@ -51,9 +51,9 @@ class CreateMetricPointCommandHandler
     /**
      * Handle the add metric point command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand $command
+     * @param \App\Bus\Commands\Metric\CreateMetricPointCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \App\Models\MetricPoint
      */
     public function handle(CreateMetricPointCommand $command)
     {
@@ -73,9 +73,9 @@ class CreateMetricPointCommandHandler
     /**
      * Find or create a metric point.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand $command
+     * @param \App\Bus\Commands\Metric\CreateMetricPointCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \App\Models\MetricPoint
      */
     protected function findOrCreatePoint(CreateMetricPointCommand $command)
     {

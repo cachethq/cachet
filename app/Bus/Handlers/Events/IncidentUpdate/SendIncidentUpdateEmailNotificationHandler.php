@@ -9,34 +9,34 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate;
+namespace App\Bus\Handlers\Events\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
-use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
+use App\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
+use App\Integrations\Contracts\System;
+use App\Models\Subscriber;
+use App\Notifications\IncidentUpdate\IncidentUpdatedNotification;
 
 class SendIncidentUpdateEmailNotificationHandler
 {
     /**
      * The system instance.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     * @var \App\Integrations\Contracts\System
      */
     protected $system;
 
     /**
      * The subscriber instance.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     protected $subscriber;
 
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
-     * @param \CachetHQ\Cachet\Models\Subscriber             $subscriber
+     * @param \App\Integrations\Contracts\System $system
+     * @param \App\Models\Subscriber             $subscriber
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class SendIncidentUpdateEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent $event
+     * @param \App\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent $event
      *
      * @return void
      */

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Models;
+namespace App\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Builder;

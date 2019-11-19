@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Repositories\Metric;
+namespace App\Repositories\Metric;
 
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
+use App\Models\Metric;
+use App\Services\Dates\DateFactory;
 use DateInterval;
 
 /**
@@ -25,22 +25,22 @@ class MetricRepository
     /**
      * Metric repository.
      *
-     * @var \CachetHQ\Cachet\Repositories\Metric\MetricInterface
+     * @var \App\Repositories\Metric\MetricInterface
      */
     protected $repository;
 
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
+     * @var \App\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new metric repository class.
      *
-     * @param \CachetHQ\Cachet\Repositories\Metric\MetricInterface $repository
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory          $dates
+     * @param \App\Repositories\Metric\MetricInterface $repository
+     * @param \App\Services\Dates\DateFactory          $dates
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class MetricRepository
     /**
      * Returns all points as an array, for the last hour.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Support\Collection
      */
@@ -87,8 +87,8 @@ class MetricRepository
     /**
      * Returns all points as an array, by x hours.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hours
+     * @param \App\Models\Metric $metric
+     * @param int                $hours
      *
      * @return array
      */
@@ -114,7 +114,7 @@ class MetricRepository
     /**
      * Returns all points as an array, in the last week.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return array
      */
@@ -140,7 +140,7 @@ class MetricRepository
     /**
      * Returns all points as an array, in the last month.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return array
      */

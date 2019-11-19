@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
-use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
-use CachetHQ\Cachet\Models\Metric;
+use App\Bus\Commands\Metric\CreateMetricCommand;
+use App\Bus\Commands\Metric\RemoveMetricCommand;
+use App\Bus\Commands\Metric\UpdateMetricCommand;
+use App\Models\Metric;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -45,7 +45,7 @@ class MetricController extends AbstractApiController
     /**
      * Get a single metric.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -85,7 +85,7 @@ class MetricController extends AbstractApiController
     /**
      * Update an existing metric.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -116,7 +116,7 @@ class MetricController extends AbstractApiController
     /**
      * Delete an existing metric.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \App\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
      */

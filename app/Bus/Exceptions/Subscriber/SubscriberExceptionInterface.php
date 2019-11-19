@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\Subscriber;
+namespace App\Bus\Exceptions\Subscriber;
 
-use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
+use App\Bus\Exceptions\ExceptionInterface;
 
 /**
  * This is the subscriber exception interface.

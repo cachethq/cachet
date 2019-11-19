@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentUpdate;
+use App\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use App\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
+use App\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
+use App\Models\Incident;
+use App\Models\IncidentUpdate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +32,7 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Return all updates on the incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -54,8 +54,8 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Return a single incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident       $incident
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
+     * @param \App\Models\Incident       $incident
+     * @param \App\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -67,7 +67,7 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Create a new incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -92,8 +92,8 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Update an incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident       $incident
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
+     * @param \App\Models\Incident       $incident
+     * @param \App\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -116,8 +116,8 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Create a new incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident       $incident
-     * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
+     * @param \App\Models\Incident       $incident
+     * @param \App\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
      */

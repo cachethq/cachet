@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Commands\User\SignupUserCommand;
+use App\Bus\Events\User\UserWasCreatedEvent;
+use App\Models\User;
 
 class SignupUserCommandHandler
 {
     /**
      * Handle the signup user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand $command
+     * @param \App\Bus\Commands\User\SignupUserCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\User
+     * @return \App\Models\User
      */
     public function handle(SignupUserCommand $command)
     {

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
+namespace App\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent;
-use CachetHQ\Cachet\Models\Invite;
-use CachetHQ\Cachet\Notifications\User\InviteUserNotification;
+use App\Bus\Commands\User\InviteUserCommand;
+use App\Bus\Events\User\UserWasInvitedEvent;
+use App\Models\Invite;
+use App\Notifications\User\InviteUserNotification;
 
 /**
  * This is the invite user command handler.
@@ -26,7 +26,7 @@ class InviteUserCommandHandler
     /**
      * Handle the invite team member command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand $command
+     * @param \App\Bus\Commands\User\InviteUserCommand $command
      *
      * @return void
      */

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
+namespace App\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricWasRemovedEvent;
-use CachetHQ\Cachet\Models\Metric;
+use App\Bus\Commands\Metric\RemoveMetricCommand;
+use App\Bus\Events\Metric\MetricWasRemovedEvent;
+use App\Models\Metric;
 use Illuminate\Contracts\Auth\Guard;
 
 class RemoveMetricCommandHandler
@@ -40,7 +40,7 @@ class RemoveMetricCommandHandler
     /**
      * Handle the remove metric command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand $command
+     * @param \App\Bus\Commands\Metric\RemoveMetricCommand $command
      *
      * @return void
      */

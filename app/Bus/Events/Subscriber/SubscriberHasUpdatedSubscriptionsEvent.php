@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Subscriber;
+namespace App\Bus\Events\Subscriber;
 
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Models\Subscriber;
 
 /**
  * This is the subscriber has updated subscriptions event.
@@ -23,14 +23,14 @@ final class SubscriberHasUpdatedSubscriptionsEvent implements SubscriberEventInt
     /**
      * The subscriber.
      *
-     * @var \CachetHQ\Cachet\Models\Subscriber
+     * @var \App\Models\Subscriber
      */
     public $subscriber;
 
     /**
      * Create a new subscriber has updated subscriptions event instance.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \App\Models\Subscriber $subscriber
      *
      * @return void
      */

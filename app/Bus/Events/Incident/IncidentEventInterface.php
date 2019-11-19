@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Incident;
+namespace App\Bus\Events\Incident;
 
-use CachetHQ\Cachet\Bus\Events\EventInterface;
+use App\Bus\Events\EventInterface;
 
 /**
  * This is the incident event interface.

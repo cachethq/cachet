@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Traits;
+namespace App\Bus\Handlers\Traits;
 
-use CachetHQ\Cachet\Models\Meta;
+use App\Models\Meta;
 
 trait StoresMeta
 {

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Console\Commands;
+namespace App\Console\Commands;
 
-use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
+use App\Bus\Jobs\System\SendBeaconJob;
 use Illuminate\Console\Command;
 
 /**

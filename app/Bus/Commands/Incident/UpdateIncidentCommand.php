@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Incident;
+namespace App\Bus\Commands\Incident;
 
-use CachetHQ\Cachet\Models\Incident;
+use App\Models\Incident;
 
 /**
  * This is the update incident command.
@@ -25,7 +25,7 @@ final class UpdateIncidentCommand
     /**
      * The incident to update.
      *
-     * @var \CachetHQ\Cachet\Models\Incident
+     * @var \App\Models\Incident
      */
     public $incident;
 
@@ -135,19 +135,19 @@ final class UpdateIncidentCommand
     /**
      * Create a new update incident command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
-     * @param string                           $name
-     * @param int                              $status
-     * @param string                           $message
-     * @param int                              $visible
-     * @param int                              $component_id
-     * @param int                              $component_status
-     * @param bool                             $notify
-     * @param bool                             $stickied
-     * @param string|null                      $occurred_at
-     * @param string|null                      $template
-     * @param array                            $template_vars
-     * @param array                            $meta
+     * @param \App\Models\Incident $incident
+     * @param string               $name
+     * @param int                  $status
+     * @param string               $message
+     * @param int                  $visible
+     * @param int                  $component_id
+     * @param int                  $component_status
+     * @param bool                 $notify
+     * @param bool                 $stickied
+     * @param string|null          $occurred_at
+     * @param string|null          $template
+     * @param array                $template_vars
+     * @param array                $meta
      *
      * @return void
      */

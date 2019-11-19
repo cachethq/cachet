@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events;
+namespace App\Bus\Handlers\Events;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Action;
+use App\Bus\Events\ActionInterface;
+use App\Models\Action;
 
 /**
  * This is the action storage handler class.
@@ -25,7 +25,7 @@ class ActionStorageHandler
     /**
      * Handle the any actions that need storing.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\ActionInterface $event
+     * @param \App\Bus\Events\ActionInterface $event
      *
      * @return void
      */

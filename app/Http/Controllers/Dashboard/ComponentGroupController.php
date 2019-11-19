@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use App\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use App\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use App\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use App\Models\Component;
+use App\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -81,7 +81,7 @@ class ComponentGroupController extends Controller
     /**
      * Deletes a given component group.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -107,7 +107,7 @@ class ComponentGroupController extends Controller
     /**
      * Shows the edit component group view.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\View\View
      */
@@ -146,7 +146,7 @@ class ComponentGroupController extends Controller
     /**
      * Updates a component group.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \App\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\RedirectResponse
      */

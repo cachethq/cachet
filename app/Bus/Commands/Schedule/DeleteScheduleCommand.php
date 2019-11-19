@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Schedule;
+namespace App\Bus\Commands\Schedule;
 
-use CachetHQ\Cachet\Models\Schedule;
+use App\Models\Schedule;
 
 /**
  * This is the delete schedule command.
@@ -23,7 +23,7 @@ final class DeleteScheduleCommand
     /**
      * The schedule to delete.
      *
-     * @var \CachetHQ\Cachet\Models\Schedule
+     * @var \App\Models\Schedule
      */
     public $schedule;
 
@@ -39,7 +39,7 @@ final class DeleteScheduleCommand
     /**
      * Create a new delete schedule command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return void
      */

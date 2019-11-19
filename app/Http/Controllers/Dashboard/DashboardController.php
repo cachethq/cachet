@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand;
-use CachetHQ\Cachet\Integrations\Contracts\Feed;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Subscriber;
+use App\Bus\Commands\User\WelcomeUserCommand;
+use App\Integrations\Contracts\Feed;
+use App\Models\Component;
+use App\Models\ComponentGroup;
+use App\Models\Incident;
+use App\Models\Subscriber;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -48,7 +48,7 @@ class DashboardController extends Controller
     /**
      * The feed integration.
      *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\Feed
+     * @var \App\Integrations\Contracts\Feed
      */
     protected $feed;
 
@@ -62,8 +62,8 @@ class DashboardController extends Controller
     /**
      * Creates a new dashboard controller instance.
      *
-     * @param \CachetHQ\Cachet\Integrations\Contracts\Feed $feed
-     * @param \Illuminate\Contracts\Auth\Guard             $guard
+     * @param \App\Integrations\Contracts\Feed $feed
+     * @param \Illuminate\Contracts\Auth\Guard $guard
      *
      * @return void
      */

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Metric;
+namespace App\Bus\Events\Metric;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\MetricPoint;
+use App\Models\User;
 
 /**
  * This is the metric point was created event class.
@@ -25,22 +25,22 @@ final class MetricPointWasCreatedEvent implements ActionInterface, MetricEventIn
     /**
      * The user who added the metric point.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * The metric point that was added.
      *
-     * @var \CachetHQ\Cachet\Models\MetricPoint
+     * @var \App\Models\MetricPoint
      */
     public $metricPoint;
 
     /**
      * Create a new metric point was added event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User        $user
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \App\Models\User        $user
+     * @param \App\Models\MetricPoint $metricPoint
      *
      * @return void
      */

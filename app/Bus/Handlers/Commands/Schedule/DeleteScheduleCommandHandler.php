@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
+namespace App\Bus\Handlers\Commands\Schedule;
 
-use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent;
+use App\Bus\Commands\Schedule\DeleteScheduleCommand;
+use App\Bus\Events\Schedule\ScheduleWasRemovedEvent;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -44,7 +44,7 @@ class DeleteScheduleCommandHandler
     /**
      * Handle the delete schedule command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand $command
+     * @param \App\Bus\Commands\Schedule\DeleteScheduleCommand $command
      *
      * @return void
      */

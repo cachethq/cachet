@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace App\Composers;
 
-use CachetHQ\Cachet\Models\Schedule;
+use App\Models\Schedule;
 use Illuminate\Contracts\View\View;
 
 /**

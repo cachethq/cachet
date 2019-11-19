@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\User;
+namespace App\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\User;
+use App\Bus\Events\ActionInterface;
+use App\Models\User;
 
 /**
  * This is the user disabled two auth event class.
@@ -24,14 +24,14 @@ final class UserDisabledTwoAuthEvent implements ActionInterface, UserEventInterf
     /**
      * The user that disabled two auth.
      *
-     * @var \CachetHQ\Cachet\Models\User
+     * @var \App\Models\User
      */
     public $user;
 
     /**
      * Create a new user disabled two auth event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @param \App\Models\User $user
      *
      * @return void
      */

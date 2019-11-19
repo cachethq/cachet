@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Commands\Incident;
+namespace App\Bus\Commands\Incident;
 
-use CachetHQ\Cachet\Models\Incident;
+use App\Models\Incident;
 
 final class RemoveIncidentCommand
 {
     /**
      * The incident to remove.
      *
-     * @var \CachetHQ\Cachet\Models\Incident
+     * @var \App\Models\Incident
      */
     public $incident;
 
     /**
      * Create a new remove incident command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \App\Models\Incident $incident
      *
      * @return void
      */

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
-use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
-use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
-use CachetHQ\Cachet\Models\Schedule;
+use App\Bus\Commands\Schedule\CreateScheduleCommand;
+use App\Bus\Commands\Schedule\DeleteScheduleCommand;
+use App\Bus\Commands\Schedule\UpdateScheduleCommand;
+use App\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -50,7 +50,7 @@ class ScheduleController extends AbstractApiController
     /**
      * Return a single schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -86,7 +86,7 @@ class ScheduleController extends AbstractApiController
     /**
      * Update a schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -112,7 +112,7 @@ class ScheduleController extends AbstractApiController
     /**
      * Delete a schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param \App\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\JsonResponse
      */

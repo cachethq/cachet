@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Commands\System\Config;
+namespace App\Bus\Handlers\Commands\System\Config;
 
-use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
+use App\Bus\Commands\System\Config\UpdateConfigCommand;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 
@@ -25,7 +25,7 @@ class UpdateConfigCommandHandler
     /**
      * Handle update config command handler instance.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand $command
+     * @param \App\Bus\Commands\System\Config\UpdateConfigCommand $command
      *
      * @return void
      */

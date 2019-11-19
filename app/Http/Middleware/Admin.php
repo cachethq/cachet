@@ -9,12 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * This is the admin middleware class.
@@ -55,7 +54,7 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
         if (!$this->auth->check() || ($this->auth->check() && !$this->auth->user()->isAdmin)) {
-            throw new HttpException(401);
+            return cachet_redirect('auth.login');
         }
 
         return $next($request);

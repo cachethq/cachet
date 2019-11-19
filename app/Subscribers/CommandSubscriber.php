@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Subscribers;
+namespace App\Subscribers;
 
-use CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent;
-use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
-use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
-use CachetHQ\Cachet\Settings\Cache;
+use App\Bus\Events\System\SystemWasInstalledEvent;
+use App\Bus\Events\System\SystemWasResetEvent;
+use App\Bus\Events\System\SystemWasUpdatedEvent;
+use App\Settings\Cache;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -29,14 +29,14 @@ class CommandSubscriber
     /**
      * The settings cache instance.
      *
-     * @var \CachetHQ\Cachet\Settings\Cache
+     * @var \App\Settings\Cache
      */
     protected $cache;
 
     /**
      * Create a new command subscriber instance.
      *
-     * @param \CachetHQ\Cachet\Settings\Cache $cache
+     * @param \App\Settings\Cache $cache
      *
      * @return void
      */
