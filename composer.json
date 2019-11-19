@@ -58,15 +58,15 @@
     "require-dev": {
         "ext-sqlite3": "*",
         "alt-three/testbench": "^4.0",
-        "barryvdh/laravel-debugbar": "^3.2",
         "bugsnag/bugsnag-laravel": "^2.15",
+        "facade/ignition": "^1.4",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.8",
         "graham-campbell/analyzer": "^2.1",
+        "laravel/telescope": "^2.1",
         "mockery/mockery": "^1.2",
-        "phpunit/phpunit": "^7.4",
         "nunomaduro/collision": "^3.0",
-        "facade/ignition": "^1.4"
+        "phpunit/phpunit": "^7.4"
     },
     "suggest": {
         "ext-apc": "APC Support cache driver."
