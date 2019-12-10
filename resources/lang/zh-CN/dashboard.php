@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => '登录',
         'logged_in'  => '您已登录',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => '欢迎回来！',
         'two-factor' => '请输入您的双重验证码。',
     ],
 
