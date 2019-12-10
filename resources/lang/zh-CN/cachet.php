@@ -23,7 +23,7 @@ return [
         'group' => [
             'other' => '其他组件',
         ],
-        'select_all'   => 'Select All',
+        'select_all'   => '全选',
         'deselect_all' => 'Deselect All',
     ],
 
