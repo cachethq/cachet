@@ -114,9 +114,9 @@ if (!function_exists('color_contrast')) {
      */
     function color_contrast($hexcolor)
     {
-        $r = hexdec(substr($hexcolor, 0, 2));
-        $g = hexdec(substr($hexcolor, 2, 2));
-        $b = hexdec(substr($hexcolor, 4, 2));
+        $r = ctype_xdigit(substr($hexcolor, 0, 2));
+        $g = ctype_xdigit(substr($hexcolor, 2, 2));
+        $b = ctype_xdigit(substr($hexcolor, 4, 2));
         $yiq = (($r * 100) + ($g * 400) + ($b * 114)) / 1000;
 
         return ($yiq >= 128) ? 'black' : 'white';
