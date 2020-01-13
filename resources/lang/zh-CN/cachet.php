@@ -24,7 +24,7 @@ return [
             'other' => '其他组件',
         ],
         'select_all'   => '全选',
-        'deselect_all' => 'Deselect All',
+        'deselect_all' => '反选所有',
     ],
 
     // Incidents
@@ -34,7 +34,7 @@ return [
         'stickied'     => '已关注的故障',
         'scheduled'    => '计划维护',
         'scheduled_at' => '，计划于 :timestamp',
-        'posted'       => 'Posted :timestamp by :username',
+        'posted'       => '在 :timestamp 由 :username 发布',
         'posted_at'    => '发布于 :timestamp',
         'status'       => [
             1 => '确认中',
@@ -77,23 +77,23 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
+        'subscribe'           => '关注状态更改和更新',
+        'unsubscribe'         => '取消订阅',
         'button'              => '订阅',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => '管理订阅',
         'manage'              => [
             'notifications'       => '通知',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => '管理通知给',
             'no_subscriptions'    => '您当前已订阅所有更新。',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => '更新订阅',
             'my_subscriptions'    => '您当前已订阅下列更新',
             'manage_at_link'      => '在 :link 管理你的订阅',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => '我们已经给您发送了一封电子邮件，请点击链接来管理您的订阅',
             'subscribe'           => '订阅电子邮件更新。',
             'subscribed'          => '您已经订阅电子邮件通知，请检查您的电子邮件进行确认。',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => '您已成功更新您的订阅。',
             'verified'            => '您的电子邮件订阅已确认。谢谢！',
             'manage'              => '管理您的订阅',
             'unsubscribe'         => '取消电子邮件订阅。',
