@@ -154,7 +154,7 @@ return [
             'about-this-page'                       => '关于本页',
             'days-of-incidents'                     => '每页最多显示故障天数',
             'time_before_refresh'                   => '状态页刷新速度（秒）',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => '重大故障阈值 (%)',
             'banner'                                => '横幅图像',
             'banner-help'                           => "建议上传文件宽度不大于 930 像素。",
             'subscribers'                           => '允许用户订阅邮件通知',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代码',
             'analytics_gosquared'    => 'GoSquared Analytics 代码',
-            'analytics_piwik_url'    => 'URL of your Piwik instance',
+            'analytics_piwik_url'    => 'Piwik 实例的 URL',
             'analytics_piwik_siteid' => 'Piwik 的站点 id',
         ],
         'localization' => [
@@ -180,8 +180,8 @@ return [
         'security' => [
             'allowed-domains'           => '允许的 CORS 域',
             'allowed-domains-help'      => '以逗号分隔。默认情况下，API跨域请求将自动允许以上已设置的域。',
-            'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate'       => '始终验证',
+            'always-authenticate-help'  => '需要登录才能查看 Cachet 页面',
         ],
         'stylesheet' => [
             'custom-css' => '自定义 CSS 样式表',
@@ -230,8 +230,8 @@ return [
     ],
 
     'seo' => [
-        'title'        => 'SEO Title',
-        'description'  => 'SEO Description',
+        'title'        => 'SEO 标题',
+        'description'  => 'SEO 描述',
     ],
 
     // Buttons
