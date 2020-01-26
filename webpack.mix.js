@@ -13,18 +13,14 @@ require('laravel-mix-purgecss')
  |
  */
 
+const sassOptions = {
+    includePaths: ['node_modules'],
+};
+
 mix
-    .copy(
-        'node_modules/jquery-minicolors/jquery.minicolors.css',
-        'resources/assets/sass/plugins/_jquery.minicolors.scss'
-    )
-    .copy(
-        'node_modules/github-markdown-css/github-markdown.css',
-        'resources/assets/sass/plugins/_github-markdown.scss'
-    )
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
-    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard')
-    .sass('resources/assets/sass/app.scss', 'public/dist/css')
+    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
+    .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
     .purgeCss()
     .options({
         processCssUrls: false
@@ -49,6 +45,6 @@ mix
         'resources/assets/js/cachet.js',
     ], 'public/dist/js/all.js')
 
-if (mix.config.inProduction) {
+if (mix.inProduction()) {
     mix.version();
 }

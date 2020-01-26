@@ -11,9 +11,11 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
+use CachetHQ\Cachet\Models\User;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Contracts\Events\Dispatcher;
 
 /**
@@ -70,6 +72,7 @@ class InstallCommand extends Command
             $this->configureDrivers();
             $this->configureMail();
             $this->configureCachet();
+            $this->configureUser();
         }
 
         $this->line('Installing Cachet...');
@@ -313,9 +316,11 @@ class InstallCommand extends Command
     /**
      * Configure Cachet.
      *
+     * @param array $config
+     *
      * @return void
      */
-    protected function configureCachet()
+    protected function configureCachet(array $config = [])
     {
         $config = [];
         if ($this->confirm('Do you wish to use Cachet Beacon?')) {
@@ -330,6 +335,33 @@ class InstallCommand extends Command
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
         }
+    }
+
+    /**
+     * Configure the first user.
+     *
+     * @return void
+     */
+    protected function configureUser()
+    {
+        if (!$this->confirm('Do you want to create an admin user?')) {
+            return;
+        }
+
+        // We need to refresh the config to get access to the newly connected database.
+        $this->getFreshConfiguration();
+
+        // Now we need to install the application.
+        // $this->call('cachet:install');
+
+        $user = [
+            'username' => $this->ask('Please enter your username'),
+            'email'    => $this->ask('Please enter your email'),
+            'password' => $this->secret('Please enter your password'),
+            'level'    => User::LEVEL_ADMIN,
+        ];
+
+        User::create($user);
     }
 
     /**
@@ -370,6 +402,17 @@ class InstallCommand extends Command
         }
 
         $this->table(['Setting', 'Value'], $configRows);
+    }
+
+    /**
+     * Boot a fresh copy of the application configuration.
+     *
+     * @return void
+     */
+    protected function getFreshConfiguration()
+    {
+        $app = require $this->laravel->bootstrapPath().'/app.php';
+        $app->make(Kernel::class)->bootstrap();
     }
 
     /**

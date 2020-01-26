@@ -256,7 +256,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function latest()
     {
         if (is_bool($this->latest)) {
-            $this->latest = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first();
+            $this->latest = $this->wrappedObject->updates()->first();
         }
 
         return $this->latest;

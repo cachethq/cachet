@@ -28,7 +28,7 @@ class Feed implements FeedContract
      *
      * @var string
      */
-    const URL = 'https://blog.alt-three.com/tag/cachet/rss';
+    const URL = 'https://alt-three.com/tag/cachet/rss';
 
     /**
      * The failed status indicator.

@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Foundation\Exceptions\Filters;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ApiFilter
 {
@@ -31,7 +32,7 @@ class ApiFilter
     {
         if ($request->is('api*')) {
             foreach ($displayers as $index => $displayer) {
-                if (!str_contains($displayer->contentType(), 'application/')) {
+                if (!Str::contains($displayer->contentType(), 'application/')) {
                     unset($displayers[$index]);
                 }
             }

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -184,7 +185,7 @@ class Subscriber extends Model implements HasPresenter
      */
     public static function generateVerifyCode()
     {
-        return str_random(42);
+        return Str::random(42);
     }
 
     /**

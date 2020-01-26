@@ -40,7 +40,7 @@ class ApiRoutes
             'namespace'  => 'Api',
             'prefix'     => 'api/v1',
         ], function (Registrar $router) {
-            $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
+            $router->group(['middleware' => ['auth.api', 'cors']], function (Registrar $router) {
                 $router->get('components', 'ComponentController@index');
                 $router->get('components/groups', 'ComponentGroupController@index');
                 $router->get('components/groups/{component_group}', 'ComponentGroupController@show');
