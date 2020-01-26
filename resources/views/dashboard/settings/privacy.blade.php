@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <form name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings', [], 'post') }}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" aria-hidden="true">
                     @include('partials.errors')
                     <fieldset>
                         <div class="row">
@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <form class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings.privacy.remove-unverified-subscribers', [], 'post') }}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" aria-hidden="true">
                     <fieldset>
                         <div class="row">
                             <div class="col-xs-12">
