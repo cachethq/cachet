@@ -89,7 +89,7 @@ class SettingsController extends Controller
             'privacy' => [
                 'title'  => trans('dashboard.settings.privacy.privacy'),
                 'url'    => cachet_route('dashboard.settings.privacy'),
-                'icon'   => 'ion-ios-glasses',
+                'icon'   => 'ion-ios-glasses-outline',
                 'active' => false,
             ],
             'analytics' => [
