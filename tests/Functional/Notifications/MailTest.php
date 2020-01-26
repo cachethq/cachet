@@ -82,6 +82,8 @@ class MailTest extends AbstractTestCase
     {
         dispatch(new SubscribeSubscriberCommand(
             $subscriberEmail,
+            true,
+            null,
             true
         ));
 
