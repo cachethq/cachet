@@ -128,13 +128,12 @@ class NewIncidentNotification extends Notification
                     ->$status()
                     ->content($content)
                     ->attachment(function ($attachment) use ($notifiable) {
-                        $attachment->title(trans('notifications.incident.new.slack.title', [$this->incident->name]))
+                        $attachment->title(trans('notifications.incident.new.slack.title', ['name' => $this->incident->name]))
                                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
                                    ->fields(array_filter([
                                         'ID'   => "#{$this->incident->id}",
                                         'Link' => $this->incident->permalink,
-                                    ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+                                    ]));
                     });
     }
 }

@@ -21,6 +21,7 @@ body.dashboard {
             margin: 0;
             padding: 0;
             list-style: none;
+            padding-bottom: 64px; /* Ensure the sidebar isn't being covered by the bottom links */
 
             .profile {
                 text-align: center;

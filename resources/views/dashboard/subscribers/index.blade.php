@@ -8,7 +8,7 @@
     <span class="uppercase">
         <i class="ion ion-ios-email-outline"></i> {{ trans('dashboard.subscribers.subscribers') }}
     </span>
-    @if($currentUser->isAdmin && $enableSubscribers)
+    @if($currentUser->isAdmin)
     <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.subscribers.create') }}">
         {{ trans('dashboard.subscribers.add.title') }}
     </a>
@@ -19,11 +19,7 @@
     <div class="row">
         <div class="col-sm-12">
             <p class="lead">
-                @if($enableSubscribers)
                 {{ trans('dashboard.subscribers.description') }}
-                @else
-                {{ trans('dashboard.subscribers.description_disabled') }}
-                @endif
             </p>
 
             <div class="striped-list">
@@ -51,6 +47,7 @@
                         @endif
                     </div>
                     <div class="col-xs-3 text-right">
+                        <a href="{{ URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]) }}" target="_blank" class="btn btn-success">{{ trans('forms.edit') }}</a>
                         <a href="{{ cachet_route('dashboard.subscribers.delete', [$subscriber->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                     </div>
                 </div>

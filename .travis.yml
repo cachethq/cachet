@@ -15,12 +15,12 @@ install:
 
 jobs:
   include:
-    - stage: Security check
-      script:
-        - phpenv config-rm xdebug.ini || true
-        - wget https://get.sensiolabs.org/security-checker.phar
-        - php security-checker.phar security:check ./composer.lock
-      php: 7.1
+#    - stage: Security check
+#      script:
+#        - phpenv config-rm xdebug.ini || true
+#        - wget https://get.sensiolabs.org/security-checker.phar
+#        - php security-checker.phar security:check ./composer.lock
+#      php: 7.1
     - stage: Unit tests
       script:
         - phpenv config-rm xdebug.ini || true

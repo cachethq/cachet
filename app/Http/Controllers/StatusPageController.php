@@ -96,7 +96,7 @@ class StatusPageController extends AbstractApiController
             $nextDate = $startDate->copy()->addDays($appIncidentDays)->toDateString();
         }
 
-        $allIncidents = Incident::with('component')->with('updates.incident')
+        $allIncidents = Incident::with('component', 'updates.incident')
             ->where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
             $endDate->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
+use PragmaRX\Google2FA\Google2FA;
 
 class AuthController extends Controller
 {
@@ -89,6 +89,10 @@ class AuthController extends Controller
      *
      * This feels very hacky, but we have to juggle authentication and codes.
      *
+     * @throws \PragmaRX\Google2FA\Exceptions\IncompatibleWithGoogleAuthenticatorException
+     * @throws \PragmaRX\Google2FA\Exceptions\InvalidCharactersException
+     * @throws \PragmaRX\Google2FA\Exceptions\SecretKeyTooShortException
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postTwoFactor()
@@ -102,7 +106,8 @@ class AuthController extends Controller
 
             $user = Auth::user();
 
-            $valid = Google2FA::verifyKey($user->google_2fa_secret, $code);
+            $google2fa = new Google2FA();
+            $valid = $google2fa->verifyKey($user->google_2fa_secret, $code);
 
             if ($valid) {
                 event(new UserPassedTwoAuthEvent($user));

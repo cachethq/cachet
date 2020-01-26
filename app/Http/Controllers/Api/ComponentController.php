@@ -14,13 +14,10 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Models\Component;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -84,23 +81,11 @@ class ComponentController extends AbstractApiController
                 Binput::get('order'),
                 Binput::get('group_id'),
                 (bool) Binput::get('enabled', true),
-                Binput::get('meta', null)
+                Binput::get('meta'),
+                Binput::get('tags')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
-        }
-
-        if (Binput::has('tags')) {
-            $component->tags()->delete();
-
-            // The component was added successfully, so now let's deal with the tags.
-            Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
-                return trim($tag);
-            })->map(function ($tag) {
-                return execute(new CreateTagCommand($tag));
-            })->each(function ($tag) use ($component) {
-                execute(new ApplyTagCommand($component, $tag));
-            });
         }
 
         return $this->item($component);
@@ -125,24 +110,12 @@ class ComponentController extends AbstractApiController
                 Binput::get('order'),
                 Binput::get('group_id'),
                 Binput::get('enabled', $component->enabled),
-                Binput::get('meta', null),
+                Binput::get('meta'),
+                Binput::get('tags'),
                 (bool) Binput::get('silent', false)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
-        }
-
-        if (Binput::has('tags')) {
-            $component->tags()->delete();
-
-            // The component was added successfully, so now let's deal with the tags.
-            Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
-                return trim($tag);
-            })->map(function ($tag) {
-                return execute(new CreateTagCommand($tag));
-            })->each(function ($tag) use ($component) {
-                execute(new ApplyTagCommand($component, $tag));
-            });
         }
 
         return $this->item($component);

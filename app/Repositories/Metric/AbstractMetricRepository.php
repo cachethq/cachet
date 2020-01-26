@@ -108,7 +108,7 @@ abstract class AbstractMetricRepository
                 $point->value = $metric->default_value;
             }
 
-            if ($point->value === 0 && $metric->default_value != $value) {
+            if ($point->value === 0 && $metric->default_value != $point->value) {
                 $point->value = $metric->default_value;
             }
 

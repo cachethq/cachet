@@ -114,12 +114,28 @@ if (!function_exists('color_contrast')) {
      */
     function color_contrast($hexcolor)
     {
-        $r = hexdec(substr($hexcolor, 0, 2));
-        $g = hexdec(substr($hexcolor, 2, 2));
-        $b = hexdec(substr($hexcolor, 4, 2));
+        $r = ctype_xdigit(substr($hexcolor, 0, 2));
+        $g = ctype_xdigit(substr($hexcolor, 2, 2));
+        $b = ctype_xdigit(substr($hexcolor, 4, 2));
         $yiq = (($r * 100) + ($g * 400) + ($b * 114)) / 1000;
 
         return ($yiq >= 128) ? 'black' : 'white';
+    }
+}
+
+if (!function_exists('cachet_route_generator')) {
+    /**
+     * Generate the route string.
+     *
+     * @param string $name
+     * @param string $method
+     * @param string $domain
+     *
+     * @return string
+     */
+    function cachet_route_generator($name, $method = 'get', $domain = 'core')
+    {
+        return "{$domain}::{$method}:{$name}";
     }
 }
 
@@ -136,7 +152,11 @@ if (!function_exists('cachet_route')) {
      */
     function cachet_route($name, $parameters = [], $method = 'get', $domain = 'core')
     {
-        return app('url')->route("{$domain}::{$method}:{$name}", $parameters, true);
+        return app('url')->route(
+            cachet_route_generator($name, $method, $domain),
+            $parameters,
+            true
+        );
     }
 }
 

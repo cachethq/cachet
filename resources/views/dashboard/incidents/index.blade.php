@@ -27,7 +27,7 @@
                             <p>{{ Str::words($incident->message, 5) }}</p>
                             @endif
                             @if ($incident->user)
-                            <p><small>&mdash; {{ trans('dashboard.incidents.reported_by', ['user' => $incident->user->username]) }}</small></p>
+                            <p><small>&mdash; {{ trans('dashboard.incidents.reported_by', ['timestamp' => $incident->created_at_diff, 'user' => $incident->user->username]) }}</small></p>
                             @endif
                         </div>
                         <div class="col-xs-6 text-right">

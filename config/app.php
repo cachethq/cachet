@@ -173,6 +173,7 @@ return [
         /*
          * Packages Service Providers...
          */
+        env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,
@@ -184,9 +185,7 @@ return [
         GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
-        Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-        PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -45,8 +45,7 @@ class MetricController extends Controller
     public function showAddMetric()
     {
         return View::make('dashboard.metrics.add')
-            ->withPageTitle(trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'))
-            ->withAcceptableThresholds(Metric::ACCEPTABLE_THRESHOLDS);
+            ->withPageTitle(trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -132,8 +131,7 @@ class MetricController extends Controller
     {
         return View::make('dashboard.metrics.edit')
             ->withPageTitle(trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'))
-            ->withMetric($metric)
-            ->withAcceptableThresholds(Metric::ACCEPTABLE_THRESHOLDS);
+            ->withMetric($metric);
     }
 
     /**

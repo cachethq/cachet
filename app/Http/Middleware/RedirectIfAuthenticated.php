@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 /**
  * This is the redirect if authenticated middleware class.
  *
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */

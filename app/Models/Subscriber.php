@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -28,7 +29,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Subscriber extends Model implements HasPresenter
 {
-    use Notifiable, ValidatingTrait;
+    use HasMeta,
+        Notifiable,
+        ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -89,16 +92,6 @@ class Subscriber extends Model implements HasPresenter
                 $user->verify_code = self::generateVerifyCode();
             }
         });
-    }
-
-    /**
-     * Get the meta relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function meta()
-    {
-        return $this->morphMany(Meta::class, 'meta');
     }
 
     /**

@@ -51,6 +51,9 @@ class SendScheduleEmailNotificationHandler
     public function handle(ScheduleEventInterface $event)
     {
         $schedule = $event->schedule;
+        if (!$event->notify) {
+            return false;
+        }
 
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get()->each(function ($subscriber) use ($schedule) {

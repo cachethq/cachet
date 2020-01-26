@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
@@ -23,7 +24,12 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Component extends Model implements HasPresenter
 {
-    use HasTags, SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use HasTags,
+        HasMeta,
+        SearchableTrait,
+        SoftDeletes,
+        SortableTrait,
+        ValidatingTrait;
 
     /**
      * List of attributes that have default values.
@@ -132,16 +138,6 @@ class Component extends Model implements HasPresenter
     public function incidents()
     {
         return $this->hasMany(Incident::class, 'component_id', 'id');
-    }
-
-    /**
-     * Get the meta relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function meta()
-    {
-        return $this->morphMany(Meta::class, 'meta');
     }
 
     /**

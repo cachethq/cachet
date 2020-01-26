@@ -15,6 +15,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\URL;
 
 /**
  * This is the verify subscription notification class.
@@ -46,10 +47,12 @@ class VerifySubscriptionNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $route = URL::signedRoute(cachet_route_generator('subscribe.verify'), ['code' => $notifiable->verify_code]);
+
         return (new MailMessage())
                     ->subject(trans('notifications.subscriber.verify.mail.subject'))
                     ->greeting(trans('notifications.subscriber.verify.mail.title', ['app_name' => Config::get('setting.app_name')]))
-                    ->action(trans('notifications.subscriber.verify.mail.action'), cachet_route('subscribe.verify', ['code' => $notifiable->verify_code]))
+                    ->action(trans('notifications.subscriber.verify.mail.action'), $route)
                     ->line(trans('notifications.subscriber.verify.mail.content', ['app_name' => Config::get('setting.app_name')]));
     }
 }

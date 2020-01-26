@@ -79,6 +79,13 @@ final class UpdateComponentCommand
     public $meta;
 
     /**
+     * The tags.
+     *
+     * @var string|null
+     */
+    public $tags;
+
+    /**
      * If this is true, we won't notify subscribers of the change.
      *
      * @var bool
@@ -114,11 +121,12 @@ final class UpdateComponentCommand
      * @param int|null                          $group_id
      * @param bool|null                         $enabled
      * @param array|null                        $meta
+     * @param string|null                       $tags
      * @param bool                              $silent
      *
      * @return void
      */
-    public function __construct(Component $component, $name = null, $description = null, $status = null, $link = null, $order = null, $group_id = null, $enabled = null, $meta = null, $silent = null)
+    public function __construct(Component $component, $name = null, $description = null, $status = null, $link = null, $order = null, $group_id = null, $enabled = null, $meta = null, $tags = null, $silent = null)
     {
         $this->component = $component;
         $this->name = $name;
@@ -129,6 +137,8 @@ final class UpdateComponentCommand
         $this->group_id = $group_id;
         $this->enabled = $enabled;
         $this->meta = $meta;
+        $this->tags = $tags;
         $this->silent = $silent;
+        $this->tags = $tags;
     }
 }

@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
+/**
+ * This is the verify csrf token middleware class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class VerifyCsrfToken extends Middleware
 {
     /**

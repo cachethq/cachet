@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 /**
  * This is the acceptable middleware class.
  *
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
 class Acceptable

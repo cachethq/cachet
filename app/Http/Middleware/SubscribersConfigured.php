@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
  * This is the subscribers configured middleware class.
  *
  * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class SubscribersConfigured
 {
@@ -52,10 +52,6 @@ class SubscribersConfigured
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$this->config->get('setting.enable_subscribers')) {
-            return cachet_redirect('status-page');
-        }
-
         return $next($request);
     }
 }

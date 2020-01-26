@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
 use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
 use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
@@ -151,6 +152,7 @@ class RouteServiceProvider extends ServiceProvider
 
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
+            $middleware[] = RemoteUserAuthenticate::class;
         }
 
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {

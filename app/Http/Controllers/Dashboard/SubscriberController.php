@@ -31,7 +31,7 @@ class SubscriberController extends Controller
     {
         return View::make('dashboard.subscribers.index')
             ->withPageTitle(trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'))
-            ->withSubscribers(Subscriber::all());
+            ->withSubscribers(Subscriber::with('subscriptions.component')->get());
     }
 
     /**
