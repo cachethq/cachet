@@ -26,8 +26,8 @@ use Illuminate\Support\Str;
  */
 class User extends Authenticatable
 {
-    use Notifiable, ValidatingTrait;
-
+    use Notifiable;
+    use ValidatingTrait;
     /**
      * The admin level of user.
      *
