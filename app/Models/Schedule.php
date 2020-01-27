@@ -24,11 +24,11 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Schedule extends Model implements HasPresenter
 {
-    use HasMeta,
-        SearchableTrait,
-        SoftDeletes,
-        SortableTrait,
-        ValidatingTrait;
+    use HasMeta;
+    use SearchableTrait;
+    use SoftDeletes;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * The upcoming status.
