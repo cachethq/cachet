@@ -104,15 +104,15 @@ $factory->define(Schedule::class, function ($faker) {
 
 $factory->define(Setting::class, function ($faker) {
     return [
-       'name'  => 'app_name',
-       'value' => 'Cachet Test Demo',
+        'name'  => 'app_name',
+        'value' => 'Cachet Test Demo',
     ];
 });
 
 $factory->define(Setting::class, function ($faker) {
     return [
-       'name'  => 'app_refresh_rate',
-       'value' => '0',
+        'name'  => 'app_refresh_rate',
+        'value' => '0',
     ];
 });
 
