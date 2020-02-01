@@ -27,8 +27,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class ComponentGroup extends Model implements HasPresenter
 {
-    use SearchableTrait, SortableTrait, ValidatingTrait;
-
+    use SearchableTrait;
+    use SortableTrait;
+    use ValidatingTrait;
     /**
      * Viewable only authenticated users.
      *
