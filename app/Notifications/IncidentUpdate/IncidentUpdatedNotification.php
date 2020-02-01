@@ -88,7 +88,7 @@ class IncidentUpdatedNotification extends Notification
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
                 'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
-        ]);
+            ]);
     }
 
     /**
@@ -136,14 +136,14 @@ class IncidentUpdatedNotification extends Notification
                     ->content($content)
                     ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title(trans('notifications.incident.update.slack.title', [
-                                        'name'       => $this->update->incident->name,
-                                        'new_status' => $this->update->human_status,
-                                    ]))
+                            'name'       => $this->update->incident->name,
+                            'new_status' => $this->update->human_status,
+                        ]))
                                    ->timestamp($this->update->getWrappedObject()->created_at)
                                    ->fields(array_filter([
-                                        'ID'   => "#{$this->update->id}",
-                                        'Link' => $this->update->permalink,
-                                    ]))
+                                       'ID'   => "#{$this->update->id}",
+                                       'Link' => $this->update->permalink,
+                                   ]))
                                    ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
