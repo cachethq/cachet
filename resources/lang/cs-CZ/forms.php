@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Kód pro Google Analytics',
             'analytics_gosquared'    => 'Kód pro GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL of your Piwik instance',
+            'analytics_piwik_url'    => 'URL vaší instance Piwik',
             'analytics_piwik_siteid' => 'Id webu Piwik',
         ],
         'localization' => [
@@ -230,8 +230,8 @@ return [
     ],
 
     'seo' => [
-        'title'        => 'SEO Title',
-        'description'  => 'SEO Description',
+        'title'        => 'SEO titulek',
+        'description'  => 'Popis SEO',
     ],
 
     // Buttons
