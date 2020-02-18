@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Poslední aktualizace :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Neznámý',
             1 => 'V provozu',
             2 => 'Problémy s výkonem',
             3 => 'Částečný výpadek',
@@ -23,19 +23,19 @@ return [
         'group' => [
             'other' => 'Ostatní služby',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Označit vše',
+        'deselect_all' => 'Odznačit vše',
     ],
 
     // Incidents
     'incidents' => [
         'none'         => 'Nejsou nahlášeny žádné incidenty',
         'past'         => 'Minulé incidenty',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
+        'stickied'     => 'Připnuté incidenty',
+        'scheduled'    => 'Plánovaná odstávka',
         'scheduled_at' => ', plánované na :timestamp',
         'posted'       => 'Posted :timestamp by :username',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Publikováno :timestamp',
         'status'       => [
             1 => 'Zkoumání příčiny',
             2 => 'Problém identifikován',
@@ -47,17 +47,17 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Blížící se',
+            1 => 'Probíhající',
+            2 => 'Hotovo',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'good'  => '[0,1] Služba je v provozu|[2,*]Všechny služby fungují bez problémů',
+        'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
+        'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
     ],
 
     'api' => [
@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'subscribe'           => 'Přihlaste se změnám stavu a aktualizacím incidentů',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Přihlásit',
         'manage_subscription' => 'Manage subscription',
