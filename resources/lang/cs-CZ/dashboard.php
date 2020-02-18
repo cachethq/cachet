@@ -83,13 +83,13 @@ return [
             'failure' => 'Něco se pokazilo při přidávání odstávky, zkus to znova.',
         ],
         'edit' => [
-            'title'   => 'Edit Maintenance',
-            'success' => 'Maintenance has been updated!',
-            'failure' => 'Something went wrong editing the Maintenance, please try again.',
+            'title'   => 'Upravit naplánovanou odstávku',
+            'success' => 'Odstávka byla aktualizovaná!',
+            'failure' => 'Něco se pokazilo při úpravě odstávky, zkus to znova.',
         ],
         'delete' => [
-            'success' => 'The Maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The Maintenance could not be deleted, please try again.',
+            'success' => 'Plánovaná odstávka byla smazána a nebude se zobrazovat na hlavní stránce.',
+            'failure' => 'Plánovaná odstávka nemohla být smazána, zkus to znova.',
         ],
     ],
 
@@ -288,16 +288,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page, :username!',
-        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
-        'close'   => 'I\'m good thanks!',
+        'welcome' => 'Vítej na tvé nové Status stránce, :username!',
+        'message' => 'Vaše stavová stránka je téměř připravena! Možná budete chtít upravit další nastavení',
+        'close'   => 'Přejít rovnou do řídícího panelu',
         'steps'   => [
-            'component'  => 'Add your components',
-            'incident'   => 'Create an incident',
-            'customize'  => 'Customize your page',
-            'team'       => 'Add your team',
-            'api'        => 'Generate an API token',
-            'two-factor' => 'Setup Two Factor Authentication',
+            'component'  => 'Vytvoření komponent',
+            'incident'   => 'Vytvoření incidentů',
+            'customize'  => 'Přizpůsobit',
+            'team'       => 'Přidat uživatele',
+            'api'        => 'Vygenerovat API token',
+            'two-factor' => 'Dvoufaktorové ověření',
         ],
     ],
 
