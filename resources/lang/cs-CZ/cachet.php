@@ -78,16 +78,16 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Přihlaste se změnám stavu a aktualizacím incidentů',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Odhlásit odběr',
         'button'              => 'Přihlásit',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Spravovat odběry',
         'manage'              => [
             'notifications'       => 'Oznámení',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => 'Spravujte oznámení pro',
             'no_subscriptions'    => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'Aktualizovat odběry',
             'my_subscriptions'    => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Spravovat odběry na :link',
         ],
         'email' => [
             'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
@@ -129,9 +129,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Podrobnosti a aktuální informace o událost :name, ke které došlo :date',
+            'schedule'  => 'Podrobnosti o plánované údržbě :name od :startDate',
+            'subscribe' => 'Přihlaste se k odběru :app, abyste obdrželi aktualizace o událostech a plánované údržbě',
             'overview'  => 'Držte krok s nejnovějšími aktualizacemi od: app.',
         ],
     ],
@@ -139,7 +139,7 @@ return [
     // Other
     'home'            => 'Hlavní stránka',
     'powered_by'      => 'Vytvořeno pomocí <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Časová zóna je :timezone.',
     'about_this_site' => 'O tomto webu',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
