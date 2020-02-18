@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Připnuté incidenty',
         'scheduled'    => 'Plánovaná odstávka',
         'scheduled_at' => ', plánované na :timestamp',
-        'posted'       => 'Posted :timestamp by :username',
+        'posted'       => 'Přidáno :timestamp od :username',
         'posted_at'    => 'Publikováno :timestamp',
         'status'       => [
             1 => 'Zkoumání příčiny',
@@ -90,10 +90,10 @@ return [
             'manage_at_link'      => 'Spravovat odběry na :link',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => 'Poslali jsme Vám e-mail, prosím klikněte na odkaz pro správu odběru',
             'subscribe'           => 'Přihlásit se k zasílání upozornění e-mailem.',
             'subscribed'          => 'Proběhlo přihlášení k e-mailovým upozorněním, potvrďte ho prosím na vašem e-mailu.',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => 'Úspěšně jste aktualizovali své odběry.',
             'verified'            => 'E-mail pro zasílání upozornění byl ověřen. Děkujeme!',
             'manage'              => 'Spravovat e-mailové odběry',
             'unsubscribe'         => 'Odhlásit z odběru e-mailových upozornění.',
