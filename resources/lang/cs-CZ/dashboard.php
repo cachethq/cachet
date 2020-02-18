@@ -35,7 +35,7 @@ return [
                 'failure' => 'Při aktualizaci incidentu se něco pokazilo',
             ],
         ],
-        'reported_by'              => 'Reported :timestamp by :user',
+        'reported_by'              => 'Nahlášeno :timestamp od :user',
         'add'                      => [
             'title'   => 'Nahlásit incident',
             'success' => 'Incident byl přidán.',
