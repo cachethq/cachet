@@ -11,7 +11,7 @@
 
 return [
     'setup'             => 'Instalace',
-    'title'             => 'Install Cachet',
+    'title'             => 'Instalace Cachet',
     'service_details'   => 'Podrobnosti o službě',
     'env_setup'         => 'Nastavení prostředí',
     'status_page_setup' => 'Nastavení Stavové stránky',
