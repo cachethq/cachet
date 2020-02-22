@@ -12,35 +12,32 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Utoljára frissítve: :timestamp',
         'status'       => [
             0 => 'Unknown',
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => 'Működik',
+            2 => 'Teljesítmény problémák',
+            3 => 'Részleges leállás',
+            4 => 'Teljes leállás',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Egyéb komponensek',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'No incidents reported',
-        'past'         => 'Past Incidents',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
-        'scheduled_at' => ', scheduled :timestamp',
-        'posted'       => 'Posted :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'none'         => 'Nincs incidens jelentve',
+        'past'         => 'Múltbeli incidensek',
+        'stickied'     => 'Kitűzőtt Incidensek',
+        'scheduled'    => 'Ütemezett karbantartás',
+        'scheduled_at' => ', ütemezett :timestamp',
+        'posted'       => 'Közzétéve :timestamp',
         'status'       => [
-            1 => 'Investigating',
-            2 => 'Identified',
-            3 => 'Watching',
-            4 => 'Fixed',
+            1 => 'Kivizsgálás',
+            2 => 'Azonosítva',
+            3 => 'Megfigyelés',
+            4 => 'Javítva',
         ],
     ],
 
@@ -55,92 +52,78 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'good'  => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
+        'bad'   => '[0,1] A rendszer problémát észlelt|[2,Inf] Több rendszer problémát észlelt',
+        'major' => '[0,1] A szolgáltatás jelenleg nem elérhető|[2,Inf] Több szolgáltatás nem elérhető',
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key',
-        'revoke'     => 'Revoke API Key',
+        'regenerate' => 'API kulcs újragenerálása',
+        'revoke'     => 'API kulcs visszavonása',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Előző óra',
+            'hourly'    => 'Elmúlt 12 óra',
+            'weekly'    => 'Heti',
+            'monthly'   => 'Havi',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Subscribe',
-        'manage_subscription' => 'Manage subscription',
-        'manage'              => [
-            'notifications'       => 'Notifications',
-            'notifications_for'   => 'Manage notifications for',
-            'no_subscriptions'    => 'You\'re currently subscribed to all updates.',
-            'update_subscription' => 'Update Subscription',
-            'my_subscriptions'    => 'You\'re currently subscribed to the following updates.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+        'subscribe'   => 'Kérjük iratkozzon fel a legújabb frissítésekért',
+        'unsubscribe' => 'Unsubscribe at :link',
+        'button'      => 'Feliratkozás',
+        'manage'      => [
+            'no_subscriptions' => 'Minden frissítésre feliratkozva.',
+            'my_subscriptions' => 'A következő frissítésekre feliratkozva.',
         ],
         'email' => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'subscribe'          => 'Feliratkozás e-mail értesítésekre.',
+            'subscribed'         => 'Ön feliratkozott e-mailen, kérjük ellenőrizze e-mail fiókját a véglegesítéshez.',
+            'verified'           => 'Feliratkozásod megerősítve. Köszönjük!',
+            'manage'             => 'Feliratkozás kezelése',
+            'unsubscribe'        => 'E-mail értesítések kikapcsolása.',
+            'unsubscribed'       => 'E-mail feliratkozás törölve.',
+            'failure'            => 'Hiba történt a feliratkozással.',
+            'already-subscribed' => ':email már fel van iratkozva.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'title'    => 'Regisztráció',
+        'username' => 'Felhasználónév',
+        'email'    => 'E-mail cím',
+        'password' => 'Jelszó',
+        'success'  => 'Fiókja elkészült.',
+        'failure'  => 'Hiba történt regisztráció közben.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Cachet frissítések találhatók! <a href="https://docs.cachethq.io/docs/updating-cachet">Itt</a> olvashatsz utána, hogyan kell frissíteni.',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Bezárás',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
-        ],
-    ],
-
-    // Meta descriptions
-    'meta' => [
-        'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'Stay up to date with the latest service updates from :app.',
+            'title'  => 'Feliratkozás komponens frissítésekre',
+            'body'   => 'Kérjük adja meg az e-mail címét hogy értesítéseket kapjon ezen komponens frissítéseire. Ha már feliratkozott, akkor nincs miért aggódnia.',
+            'button' => 'Feliratkozás',
         ],
     ],
 
     // Other
-    'home'            => 'Home',
+    'home'            => 'Kezdőoldal',
+    'description'     => 'Maradjon mindig naprakész :app legújabb frissítéseivel.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'About This Site',
+    'timezone'        => 'Alkalmazott időzóna: :timezone.',
+    'about_this_site' => 'A webhelyről',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Status Feed',
+    'feed'            => 'Státusz Feed',
 
 ];
