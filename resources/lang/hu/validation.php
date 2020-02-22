@@ -5,7 +5,7 @@
  *
  * (c) Alt Three Services Limited
  *
- * For the full copyright and license information, please view the LICENSE
+ * For A full copyright and license information, please view A LICENSE
  * file that was distributed with this source code.
  */
 
@@ -16,9 +16,9 @@ return [
     | Validation Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines contain the default error messages used by
-    | the validator class. Some of these rules have multiple versions such
-    | as the size rules. Feel free to tweak each of these messages here.
+    | A following language lines contain A default error messages used by
+    | A validator class. Some of Ase rules have multiple versions such
+    | as A size rules. Feel free to tweak each of Ase messages here.
     |
     */
 
@@ -31,60 +31,60 @@ return [
     'array'      => ':attribute csak tömb típusú lehet.',
     'before'     => ':attribute csak :date előtti dátum lehet.',
     'between'    => [
-        'numeric' => 'The :attribute must be between :min and :max.',
-        'file'    => 'The :attribute must be between :min and :max kilobytes.',
-        'string'  => 'The :attribute must be between :min and :max characters.',
+        'numeric' => 'A(z) :attribute -nak :min és :max között kell lennie.',
+        'file'    => 'A(z) :attribute -nak :min és :max közötti kilobájt lehet.',
+        'string'  => 'A(z) :attribute  :min között :max levő karakter hosszuságú lehet.',
         'array'   => ':attribute csak :min és :max elem közötti lehet.',
     ],
-    'boolean'        => 'The :attribute field must be true or false.',
-    'confirmed'      => 'The :attribute confirmation does not match.',
-    'date'           => 'The :attribute is not a valid date.',
-    'date_format'    => 'The :attribute does not match the format :format.',
-    'different'      => 'The :attribute and :other must be different.',
-    'digits'         => 'The :attribute must be :digits digits.',
-    'digits_between' => 'The :attribute must be between :min and :max digits.',
-    'email'          => 'The :attribute must be a valid email address.',
-    'exists'         => 'The selected :attribute is invalid.',
+    'boolean'        => 'A :attribute field must be true or false.',
+    'confirmed'      => 'A :attribute megerősítése nem egyezik.',
+    'date'           => 'A :attribute nem egy érvényes dátum',
+    'date_format'    => 'A :attribute nem egyezik a követelt formátummal :format.',
+    'different'      => 'A :attribute -nak és a  :oAr -nak külöbözőnek kell lennie',
+    'digits'         => 'A :attribute csak :digits szám lehet.',
+    'digits_between' => 'A :attribute -nak :min és :max közötti szám lehet.',
+    'email'          => 'A :attribute érvényes email címnek kell lennie.',
+    'exists'         => 'A kiválasztott :attribute érvénytelen.',
     'distinct'       => ':attribute mezőben másolat található.',
-    'filled'         => 'The :attribute field is required.',
+    'filled'         => 'A :attribute mező kitöltése kötelező.',
     'image'          => ':attribute csak kép lehet.',
-    'in'             => 'The selected :attribute is invalid.',
-    'in_array'       => ':attribute nem létezik itt: :other.',
-    'integer'        => 'The :attribute must be an integer.',
-    'ip'             => 'The :attribute must be a valid IP address.',
+    'in'             => 'A kiválasztott :attribute érvénytelen.',
+    'in_array'       => ':attribute nem létezik itt: :oAr.',
+    'integer'        => 'A :attribute számnak kell lennie.',
+    'ip'             => 'A :attribute érvényes IP címnek kell lennie.',
     'json'           => 'A :attribute -nak érvényes JSON stringnek kell lennie.',
     'max'            => [
-        'numeric' => 'The :attribute may not be greater than :max.',
-        'file'    => 'The :attribute may not be greater than :max kilobytes.',
-        'string'  => 'The :attribute may not be greater than :max characters.',
+        'numeric' => 'A :attribute nem lehet nagyobb ennél: :max.',
+        'file'    => 'A :attribute nem lehet nagyobb ennél: :max kilobájt',
+        'string'  => 'A :attribute nem lehet nagyobb ennél: :max karakter.',
         'array'   => ':attribute nem lehet több, mint :max elem.',
     ],
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => 'A :attribute fájl típusúnak kell lennie: :values.',
     'min'   => [
-        'numeric' => 'The :attribute must be at least :min.',
+        'numeric' => 'A :attribute nem lehet kevesebb, mint :min.',
         'file'    => ':attribute nem lehet kevesebb, mint :min kilobyte.',
-        'string'  => 'The :attribute must be at least :min characters.',
-        'array'   => 'The :attribute must have at least :min items.',
+        'string'  => 'A :attributenem lehet kevesebb, mint :min karakter.',
+        'array'   => 'A :attribute nem lehet kevesebb, mint :min item.',
     ],
-    'not_in'               => 'The selected :attribute is invalid.',
-    'numeric'              => 'The :attribute must be a number.',
+    'not_in'               => 'A kiválasztott :attribute érvénytelen.',
+    'numeric'              => 'A :attribute számnak kell lennie.',
     'present'              => ':attribute mező kitöltése kötelező.',
     'regex'                => ':attribute formátuma érvénytelen.',
-    'required'             => 'The :attribute field is required.',
-    'required_if'          => 'The :attribute field is required when :other is :value.',
-    'required_unless'      => ':attribute mező kitöltése kötelező, kivéve ha :other benne itt: :values.',
+    'required'             => 'A :attribute mező kötelező.',
+    'required_if'          => 'A :attribute kötelező amikor :oAr -nak ez az értéke :value.',
+    'required_unless'      => ':attribute mező kitöltése kötelező, kivéve ha :oAr benne itt: :values.',
     'required_with'        => ':attribute mező kitöltése kötelező, ha az értéke :values.',
     'required_with_all'    => ':attribute mező kitöltése kötelező, ha az értéke :values.',
-    'required_without'     => 'The :attribute field is required when :values is not present.',
-    'required_without_all' => 'The :attribute field is required when none of :values are present.',
-    'same'                 => 'The :attribute and :other must match.',
+    'required_without'     => 'A :attribute mező kitöltése kötelező, ha az érték :values nincsen megadva.',
+    'required_without_all' => 'A :attribute mező kitöltése kötelező, ha az értéke egyik sem :values .',
+    'same'                 => 'A :attribute és :oAr -nek eggyeznie kell.',
     'size'                 => [
-        'numeric' => 'The :attribute must be :size.',
+        'numeric' => 'A :attribute -nak ekkorának kell lennie :size.',
         'file'    => ':attribute csak :size kilobyte méretű lehet.',
         'string'  => ':attribute csak :size karakter lehet.',
-        'array'   => 'The :attribute must contain :size items.',
+        'array'   => 'A :attribute -nak tartalmaznia kell :size item-et.',
     ],
-    'string'   => 'The :attribute must be a string.',
+    'string'   => 'A :attribute must be a string.',
     'timezone' => ':attribute csak érvényes zóna lehet.',
     'unique'   => ':attribute már létezik.',
     'url'      => ':attribute formátuma érvénytelen.',
@@ -94,8 +94,8 @@ return [
     | Custom Validation Language Lines
     |--------------------------------------------------------------------------
     |
-    | Here you may specify custom validation messages for attributes using the
-    | convention "attribute.rule" to name the lines. This makes it quick to
+    | Here you may specify custom validation messages for attributes using A
+    | convention "attribute.rule" to name A lines. This makes it quick to
     | specify a specific custom language line for a given attribute rule.
     |
     */
@@ -111,7 +111,7 @@ return [
     | Custom Validation Attributes
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used to swap attribute place-holders
+    | A following language lines are used to swap attribute place-holders
     | with something more reader friendly such as E-Mail Address instead
     | of "email". This simply helps us make messages a little cleaner.
     |

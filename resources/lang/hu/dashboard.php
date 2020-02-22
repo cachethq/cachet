@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Műszerfal',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'A cachet beállításainak a könyvtára nem írható. Győződj meg róla, hogy a <code>./bootstrap/cachet</code> mappa írható a webszerver által.',
 
     // Incidents
     'incidents' => [
@@ -21,7 +21,7 @@ return [
         'logged'                   => '{0} Nincs semmilyen incidens, szép munka.|Ön egy incidenst jelentett.|Ön összesen <strong>:count</strong> incidenst jelentett.',
         'incident-create-template' => 'Sablon létrehozása',
         'incident-templates'       => 'Incidens Sablonok',
-        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
+        'updates'                  => '{0} Nulla frissítés|Egy frissítés |:count frissítések',
         'add'                      => [
             'title'   => 'Incidens jelentése',
             'success' => 'Incidens létrehozva.',
@@ -37,9 +37,9 @@ return [
             'failure' => 'Az incidenst nem lehetett törölni, kérjük próbálja újra.',
         ],
         'update' => [
-            'title'    => 'Create new incident update',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
+            'title'    => 'Incidens frissítés létrehozása',
+            'subtitle' => 'Frissítés hozzáadása a(z) <strong>:incident</strong> incidenshez.',
+            'success'  => 'Frissítés hozzáadva.',
         ],
 
         // Incident templates
@@ -219,8 +219,8 @@ return [
             'mail'  => 'Mail',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Teszt értesítés a Cachet-től.',
+                'body'    => 'Teszt értesítés a Cachet-től.',
             ],
         ],
         'security' => [

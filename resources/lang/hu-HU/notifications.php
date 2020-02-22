@@ -5,7 +5,7 @@
  *
  * (c) Alt Three Services Limited
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please Megjelenít the LICENSE
  * file that was distributed with this source code.
  */
 
@@ -13,95 +13,95 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Komponens állapota frissítve.',
+                'greeting' => 'Komponens állapota frissítve lett!',
+                'content'  => ':name állapota megváltozott errol :old_status erre :new_status.',
+                'action'   => 'Megjelenít',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Komponens állapota frissítve',
+                'content' => ':name állapota megváltozott errol :old_status erre :new_status',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name állapota megváltozott errol :old_status erre :new_status',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'subject'  => 'Új incidens bejelentve',
+                'greeting' => 'Új incidens lett bejelentve a következonél :app_name.',
+                'content'  => 'Incidens :name bejelentve',
+                'action'   => 'Megjelenít',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Incidens :name bejelentve',
+                'content' => 'Új incidens lett bejelentve a következonél :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Új incidens lett bejelentve a következonél :app_name',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'subject' => 'Új incidens bejelentve',
+                'content' => ':name frissítve',
+                'title'   => ':name frissítve erre :new_status',
+                'action'  => 'Megjelenít',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name frissítve',
+                'content' => ':name frissítve erre :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incidens :name frissítve',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'subject' => 'Új ütemezés létrehozva',
+                'content' => ':name ütemezve erre a dátumra :date',
+                'title'   => 'Ütemezett karbantartás létrehozva.',
+                'action'  => 'Megjelenít',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'Új ütemezés létrehozva!',
+                'content' => ':name ütemezve erre a dátumra :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name ütemezve erre a dátumra :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'subject' => 'Erosítsd meg a feliratkozásod',
+                'content' => 'Kattints ide, hogy megerosítsd a feliratkozásod a :app_name állapotoldalra.',
+                'title'   => 'Erosítsd meg a feliratkozásod a(z) :app_name állapotoldalra.',
+                'action'  => 'Megerosít',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
-                'title'   => 'ðŸ””',
+                'subject' => 'Ping a Cachet-tol!',
+                'content' => 'Teszt értesítés a Cachet-tol!',
+                'title'   => 'Title',
             ],
         ],
     ],
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'subject' => 'Itt a meghívód...',
+                'content' => 'Meglettél hívva a(z) :app_name állapotoldalra.',
+                'title'   => 'Meglettél hívva, hogy csatlakozz a  :app_name állapotoldalához.',
+                'action'  => 'Elfogadás',
             ],
         ],
     ],

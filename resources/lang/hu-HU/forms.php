@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Érvénytelen kulcs',
         'cookies'       => 'A bejelentkezéshez engedélyezni kell a sütiket.',
         'rate-limit'    => 'Túl sok próbálkozás.',
-        'remember_me'   => 'Remember me',
+        'remember_me'   => 'Emlékezz rám',
     ],
 
     // Incidents form fields
@@ -71,8 +71,8 @@ return [
         'status'       => 'Státusz',
         'message'      => 'Üzenet',
         'message-help' => 'Használhatsz Markdown-t is.',
-        'scheduled_at' => 'When is this maintenance scheduled for?',
-        'completed_at' => 'When did this maintenance complete?',
+        'scheduled_at' => 'Mikorra tervezik a karbantartást?',
+        'completed_at' => 'Mikor fejeződött be ez a karbantartás?',
         'templates'    => [
             'name'     => 'Név',
             'template' => 'Sablon',
@@ -107,10 +107,10 @@ return [
     'actions' => [
         'name'               => 'Név',
         'description'        => 'Leírás',
-        'start_at'           => 'Schedule start time',
+        'start_at'           => 'Ütemezés ideje',
         'timezone'           => 'Időzóna',
         'schedule_frequency' => 'Ütemezés gyakorisága (másodpercben)',
-        'completion_latency' => 'Completion latency (in seconds)',
+        'completion_latency' => 'Befejezési késés (másodpercben)',
         'group'              => 'Csoport',
         'active'             => 'Aktív?',
         'groups'             => [
@@ -133,9 +133,9 @@ return [
         'default_view'             => 'Alapértelmezett nézet',
         'threshold'                => 'Hány perc a metrikus pontok között?',
         'visibility'               => 'Láthatóság',
-        'visibility_authenticated' => 'Visible to authenticated users',
-        'visibility_public'        => 'Visible to everybody',
-        'visibility_hidden'        => 'Always hidden',
+        'visibility_authenticated' => 'Látható hitelesített felhasználók számára',
+        'visibility_public'        => 'Mindenki számára látható',
+        'visibility_hidden'        => 'Mindig rejtett',
 
         'points' => [
             'value' => 'Érték',
@@ -154,16 +154,16 @@ return [
             'banner'                       => 'Banner kép',
             'banner-help'                  => "Nem ajánlott 930 pixelnél szélesebb képet feltölteni.",
             'subscribers'                  => 'Emberek regisztrálhatnak email értesítésekre?',
-            'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
+            'skip_subscriber_verification' => 'Megerősítés kihagyása? (Legyél figyelmes, ezt ki lehet használni spam-re.)',
             'automatic_localization'       => 'Állapot oldal automatikus lokalizálása a látogató nyelvén?',
-            'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
-            'show_timezone'                => 'Show the timezone the status page is running in.',
-            'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
+            'enable_external_dependencies' => 'Harmadikféli függőségek engedélyezése (Google Fonts, Trackers, stb...)',
+            'show_timezone'                => 'Az állapotoldal által használt időzóna megjelenítése',
+            'only_disrupted_days'          => 'Csak az incidenssel rendelkező napok legyenek megjelenítve?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics kód',
             'analytics_gosquared'    => 'GoSquared Analytics kód',
-            'analytics_piwik_url'    => 'Piwik instance URL (http(s):// nélkül)',
+            'analytics_piwik_url'    => 'Piwik instance URL-ed (http(s):// nélkül)',
             'analytics_piwik_siteid' => 'Piwik site id',
         ],
         'localization' => [

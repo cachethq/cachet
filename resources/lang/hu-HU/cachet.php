@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Utoljára frissítve: :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Ismeretlen',
             1 => 'Működik',
             2 => 'Teljesítmény problémák',
             3 => 'Részleges leállás',
