@@ -87,6 +87,6 @@
     </div>
 
     @yield('bottom-content')
+    <script src="{{ asset(mix('dist/js/all.js')) }}"></script>
 </body>
-<script src="{{ asset(mix('dist/js/all.js')) }}"></script>
 </html>
