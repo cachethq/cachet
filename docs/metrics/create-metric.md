@@ -27,7 +27,7 @@ Let's explain the fields:
   What does it measure? Example: "The average response time of our API".
 - `Calculation of metrics`: What computation should be done on your data before
   displaying them in the metric? It may be either _Sum_ or _Average_. Example:
-  _Average_ to compute the average reponse time for a given time.
+  _Average_ to compute the average response time for a given time.
 - `Default view`: The default view of the metric. Viewing the datas of 1 year
   ago is not useful, but it's about your preference to see datas of the last
   hour, 12 hours, week or month. Example: _Last 12 hours_ because you want to
