@@ -23,9 +23,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Metric extends Model implements HasPresenter
 {
-    use HasMeta,
-        SortableTrait,
-        ValidatingTrait;
+    use HasMeta;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * The calculation type of sum.

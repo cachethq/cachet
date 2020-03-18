@@ -151,8 +151,8 @@ class RouteServiceProvider extends ServiceProvider
         ];
 
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
-            $middleware[] = Authenticate::class;
             $middleware[] = RemoteUserAuthenticate::class;
+            $middleware[] = Authenticate::class;
         }
 
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
