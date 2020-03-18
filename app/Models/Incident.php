@@ -31,12 +31,12 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Incident extends Model implements HasPresenter
 {
-    use HasMeta,
-        HasTags,
-        SearchableTrait,
-        SoftDeletes,
-        SortableTrait,
-        ValidatingTrait;
+    use HasMeta;
+    use HasTags;
+    use SearchableTrait;
+    use SoftDeletes;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * Status for incident being investigated.

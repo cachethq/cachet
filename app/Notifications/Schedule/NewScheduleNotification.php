@@ -86,7 +86,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                 'privacyUrl'             => cachet_route('privacy'),
                 'imprintText'            => trans('forms.settings.privacy.imprint'),
                 'imprintUrl'             => cachet_route('imprint'),
-        ]);
+        	]);
     }
 
     /**
@@ -126,9 +126,9 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                         $attachment->title($content)
                                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
                                    ->fields(array_filter([
-                                        'ID'     => "#{$this->schedule->id}",
-                                        'Status' => $this->schedule->human_status,
-                                    ]));
+                                       'ID'     => "#{$this->schedule->id}",
+                                       'Status' => $this->schedule->human_status,
+                                   ]));
                     });
     }
 }
