@@ -14,11 +14,11 @@ return [
     'components' => [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'In Maintenance',
             1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            2 => 'Alert',
+            3 => 'Reduced Performance',
+            4 => 'Down',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -57,7 +57,7 @@ return [
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are down',
     ],
 
     'api' => [
