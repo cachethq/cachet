@@ -94,8 +94,12 @@ class SubscribeController extends Controller
         $subscription->notify(new ManageSubscriptionNotification());
 
         return redirect()->back()->withSuccess(
-            sprintf('%s %s', trans('dashboard.notifications.awesome'),
-            trans('cachet.subscriber.email.manage_subscription')));
+            sprintf(
+                '%s %s',
+                trans('dashboard.notifications.awesome'),
+                trans('cachet.subscriber.email.manage_subscription')
+            )
+        );
     }
 
     /**

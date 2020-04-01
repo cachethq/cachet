@@ -101,8 +101,8 @@ class StatusPageController extends AbstractApiController
                 $endDate->format('Y-m-d').' 00:00:00',
                 $startDate->format('Y-m-d').' 23:59:59',
             ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
-            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
-        });
+                return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+            });
 
         if (!$onlyDisruptedDays) {
             $incidentDays = array_pad([], $appIncidentDays, null);

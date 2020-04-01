@@ -137,7 +137,8 @@ class MailTest extends AbstractTestCase
         ]);
 
         Notification::assertSentTo(
-            [$subscriber], NewIncidentNotification::class
+            [$subscriber],
+            NewIncidentNotification::class
         );
     }
 
@@ -161,7 +162,8 @@ class MailTest extends AbstractTestCase
         ]);
 
         Notification::assertNotSentTo(
-            [$subscriber], NewIncidentNotification::class
+            [$subscriber],
+            NewIncidentNotification::class
         );
     }
 
@@ -184,7 +186,8 @@ class MailTest extends AbstractTestCase
         ]);
 
         Notification::assertSentTo(
-            [$subscriber], IncidentUpdatedNotification::class
+            [$subscriber],
+            IncidentUpdatedNotification::class
         );
     }
 }
