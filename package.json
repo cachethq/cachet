@@ -22,14 +22,14 @@
     "popper.js": "^1.12",
     "portal-vue": "^2.0.0",
     "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.0.4",
     "vue": "^2.5.17",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "dependencies": {
+    "vue-template-compiler": "^2.6.10",
+    "tailwindcss": "^1.2.0",
     "@tailwindcss/custom-forms": "^0.2.0-beta.1",
+    "@tailwindcss/ui": "^0.1.2",
     "chart.js": "^2.8.0",
     "vue-flatpickr-component": "^8.1.2",
     "vue-router": "^3.0.2"
-  }
+  },
+  "dependencies": {}
 }
