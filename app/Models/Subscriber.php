@@ -28,9 +28,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Subscriber extends BaseModel implements HasPresenter
 {
-    use HasMeta,
-        Notifiable,
-        ValidatingTrait;
+    use HasMeta;
+    use Notifiable;
+    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

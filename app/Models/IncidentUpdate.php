@@ -23,7 +23,8 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class IncidentUpdate extends BaseModel implements HasPresenter
 {
-    use SortableTrait, ValidatingTrait;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

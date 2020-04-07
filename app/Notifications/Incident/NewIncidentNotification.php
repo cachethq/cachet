@@ -131,9 +131,9 @@ class NewIncidentNotification extends Notification
                         $attachment->title(trans('notifications.incident.new.slack.title', ['name' => $this->incident->name]))
                                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
                                    ->fields(array_filter([
-                                        'ID'   => "#{$this->incident->id}",
-                                        'Link' => $this->incident->permalink,
-                                    ]));
+                                       'ID'   => "#{$this->incident->id}",
+                                       'Link' => $this->incident->permalink,
+                                   ]));
                     });
     }
 }

@@ -23,12 +23,12 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Component extends BaseModel implements HasPresenter
 {
-    use HasTags,
-        HasMeta,
-        SearchableTrait,
-        SoftDeletes,
-        SortableTrait,
-        ValidatingTrait;
+    use HasTags;
+    use HasMeta;
+    use SearchableTrait;
+    use SoftDeletes;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * List of attributes that have default values.

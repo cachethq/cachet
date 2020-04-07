@@ -82,7 +82,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
                 'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
-        ]);
+            ]);
     }
 
     /**
@@ -122,9 +122,9 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                         $attachment->title($content)
                                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
                                    ->fields(array_filter([
-                                        'ID'     => "#{$this->schedule->id}",
-                                        'Status' => $this->schedule->human_status,
-                                    ]));
+                                       'ID'     => "#{$this->schedule->id}",
+                                       'Status' => $this->schedule->human_status,
+                                   ]));
                     });
     }
 }

@@ -31,7 +31,7 @@ return [
     |
     */
 
-   'is_docker' => env('DOCKER', false),
+    'is_docker' => env('DOCKER', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,6 +44,6 @@ return [
     |
     */
 
-   'beacon' => env('CACHET_BEACON', true),
+    'beacon' => env('CACHET_BEACON', true),
 
 ];
