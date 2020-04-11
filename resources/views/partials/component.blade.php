@@ -1,4 +1,4 @@
-<li class="list-group-item {{ $component->group_id ? "sub-component" : "component" }}">
+<li class="list-group-item {{ $component->group_id ? "sub-component" : "component" }} status-{{ $component->status }}">
     @if($component->link)
     <a href="{{ $component->link }}" target="_blank" class="links">{!! $component->name !!}</a>
     @else
