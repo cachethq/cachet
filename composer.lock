@@ -504,16 +504,16 @@
         },
         {
             "name": "chillerlan/php-qrcode",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillerlan/php-qrcode.git",
-                "reference": "5f6cbb5fd96f89da053fb37a31cd90138aa2c9ab"
+                "reference": "bf0382aaf2f79fa41c2dcb0f216675f74d633fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/5f6cbb5fd96f89da053fb37a31cd90138aa2c9ab",
-                "reference": "5f6cbb5fd96f89da053fb37a31cd90138aa2c9ab",
+                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/bf0382aaf2f79fa41c2dcb0f216675f74d633fe7",
+                "reference": "bf0382aaf2f79fa41c2dcb0f216675f74d633fe7",
                 "shasum": ""
             },
             "require": {
@@ -550,7 +550,7 @@
             "keywords": [
                 "qr code"
             ],
-            "time": "2020-04-05T22:42:33+00:00"
+            "time": "2020-04-12T07:38:35+00:00"
         },
         {
             "name": "chillerlan/php-traits",
