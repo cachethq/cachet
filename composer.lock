@@ -2519,16 +2519,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "7.4.0",
+            "version": "7.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "1dd41157edf05ca19d0af50a16ce7b09dc1b4704"
+                "reference": "47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/1dd41157edf05ca19d0af50a16ce7b09dc1b4704",
-                "reference": "1dd41157edf05ca19d0af50a16ce7b09dc1b4704",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb",
+                "reference": "47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb",
                 "shasum": ""
             },
             "require": {
@@ -2544,7 +2544,7 @@
                 "graham-campbell/analyzer": "^2.4",
                 "graham-campbell/testbench": "^5.4",
                 "mockery/mockery": "^1.3.1",
-                "phpunit/phpunit": "^6.5|^7.0|^8.0"
+                "phpunit/phpunit": "^6.5|^7.5|^8.4|^9.0"
             },
             "type": "library",
             "extra": {
@@ -2583,7 +2583,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2020-01-26T13:54:53+00:00"
+            "time": "2020-04-12T22:20:24+00:00"
         },
         {
             "name": "monolog/monolog",
