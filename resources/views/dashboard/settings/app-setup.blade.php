@@ -45,7 +45,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
-                                    <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Config::get('setting.app_incident_days', 7) }}" placeholder="{{ trans('forms.settings.app-setup.days-of-incidents') }}">
+                                    <input type="number" max="10000" name="app_incident_days" class="form-control" value="{{ Config::get('setting.app_incident_days', 7) }}" placeholder="{{ trans('forms.settings.app-setup.days-of-incidents') }}">
                                 </div>
                             </div>
                         </div>
