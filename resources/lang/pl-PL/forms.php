@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'E-Mail',
-        'username'         => 'Username',
+        'username'         => 'Nazwa Użytkownika',
         'password'         => 'Hasło',
         'site_name'        => 'Nazwa strony',
         'site_domain'      => 'Domena',
