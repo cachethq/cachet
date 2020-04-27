@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'E-post',
-        'username'         => 'Username',
+        'username'         => 'Användarnamn',
         'password'         => 'Lösenord',
         'site_name'        => 'Webbplatsens namn',
         'site_domain'      => 'Webbplatsens domän',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Användarnamn eller e-postadress',
-        'email'         => 'Email',
-        'password'      => 'Password',
+        'email'         => 'E-post',
+        'password'      => 'Lösenord',
         '2fauth'        => 'Autentiseringskod',
         'invalid'       => 'Ogiltigt användarnamn eller lösenord',
         'invalid-token' => 'Ogiltig nyckel',
