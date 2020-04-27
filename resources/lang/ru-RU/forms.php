@@ -34,7 +34,7 @@ return [
     'login' => [
         'login'         => 'Имя пользователя или Email',
         'email'         => 'Email',
-        'password'      => 'Password',
+        'password'      => 'Пароль',
         '2fauth'        => 'Код аутентификации',
         'invalid'       => 'Неверное имя пользователя или пароль',
         'invalid-token' => 'Неверный токен',
