@@ -34,7 +34,7 @@ return [
     'login' => [
         'login'         => 'Username or Email',
         'email'         => 'Email',
-        'password'      => 'Password',
+        'password'      => 'Mật khẩu',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
@@ -156,7 +156,7 @@ return [
     'user' => [
         'username'       => 'Username',
         'email'          => 'Email',
-        'password'       => 'Password',
+        'password'       => 'Mật khẩu',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
