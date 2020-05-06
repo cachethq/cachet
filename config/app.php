@@ -183,7 +183,6 @@ return [
         GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
-        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
 
         /*
          * Application Service Providers...

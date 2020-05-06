@@ -1,26 +1,26 @@
 @extends('layouts.master')
 
 @section('content')
-    <header class="py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl leading-9 font-bold text-gray-900">
-                {{ __("My Cachet Page") }}
-            </h2>
-        </div>
-    </header>
-
     <section>
-        <div class="max-w-6xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-            <div class="rounded-lg bg-red-600 text-white shadow px-4 py-5 sm:px-6 flex">
-                <div>
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+        <div class="inset-x-0 pb-2 sm:pb-5">
+          <div class="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="p-2 rounded-lg bg-red-600 shadow-lg sm:p-3">
+              <div class="flex items-center justify-between flex-wrap">
+                <div class="w-0 flex-1 flex items-center">
+                  <span class="flex p-2 rounded-lg bg-red-800">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-white w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"/>
                     </svg>
+                  </span>
+                  <p class="ml-3 font-medium text-white truncate">
+                    <span>
+                      {{ __("Sorry, we're experiencing major outages.") }}
+                    </span>
+                  </p>
                 </div>
-                <div>
-                    {{ __("Sorry, we're experiencing major outages.") }}
-                </div>
+              </div>
             </div>
+          </div>
         </div>
     </section>
 
