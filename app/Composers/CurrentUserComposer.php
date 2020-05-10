@@ -13,7 +13,6 @@ namespace App\Composers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
-use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
  * This is the current user composer class.
@@ -33,6 +32,6 @@ class CurrentUserComposer
      */
     public function compose(View $view)
     {
-        $view->withCurrentUser(AutoPresenter::decorate(Auth::user()));
+        $view->withCurrentUser(Auth::user());
     }
 }

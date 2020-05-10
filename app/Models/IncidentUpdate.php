@@ -14,14 +14,13 @@ namespace App\Models;
 use AltThree\Validator\ValidatingTrait;
 use App\Models\Traits\SortableTrait;
 use App\Presenters\IncidentUpdatePresenter;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the incident update class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class IncidentUpdate extends BaseModel implements HasPresenter
+class IncidentUpdate extends BaseModel
 {
     use SortableTrait;
     use ValidatingTrait;

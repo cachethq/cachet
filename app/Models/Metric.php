@@ -18,9 +18,8 @@ use App\Models\Traits\SortableTrait;
 use App\Presenters\MetricPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\MessageBag;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Metric extends BaseModel implements HasPresenter
+class Metric extends BaseModel
 {
     use HasMeta;
     use SortableTrait;

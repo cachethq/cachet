@@ -19,9 +19,8 @@ use App\Models\Traits\SortableTrait;
 use App\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Component extends BaseModel implements HasPresenter
+class Component extends BaseModel
 {
     use HasTags;
     use HasMeta;

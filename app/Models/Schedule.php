@@ -19,9 +19,8 @@ use App\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Schedule extends BaseModel implements HasPresenter
+class Schedule extends BaseModel
 {
     use HasMeta;
     use SearchableTrait;

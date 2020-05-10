@@ -17,14 +17,13 @@ use App\Models\Traits\SortableTrait;
 use App\Presenters\ComponentGroupPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the component group model class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ComponentGroup extends BaseModel implements HasPresenter
+class ComponentGroup extends BaseModel
 {
     use SearchableTrait;
     use SortableTrait;

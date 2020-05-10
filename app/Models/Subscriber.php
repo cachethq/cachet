@@ -17,7 +17,6 @@ use App\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the subscriber model.
@@ -26,7 +25,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Subscriber extends BaseModel implements HasPresenter
+class Subscriber extends BaseModel
 {
     use HasMeta;
     use Notifiable;
