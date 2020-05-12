@@ -18,6 +18,7 @@ use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\URL;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
@@ -73,6 +74,8 @@ class NewIncidentNotification extends Notification
             'name' => $this->incident->name,
         ]);
 
+        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+
         return (new MailMessage())
                     ->subject(trans('notifications.incident.new.mail.subject'))
                     ->markdown('notifications.incident.new', [
@@ -83,7 +86,7 @@ class NewIncidentNotification extends Notification
                         'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
                         'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                         'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                        'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                        'manageSubscriptionUrl'  => $manageUrl,
                     ]);
     }
 
