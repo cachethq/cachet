@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Notifications\Subscriber;
 
+use CachetHQ\Cachet\Models\Component;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -41,12 +42,22 @@ class ManageSubscriptionNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        if (Component::enabled()->count() > 1) {
+            $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
 
-        return (new MailMessage())
+            return (new MailMessage())
                     ->subject(trans('notifications.subscriber.manage.mail.subject'))
                     ->greeting(trans('notifications.subscriber.manage.mail.title', ['app_name' => setting('app_name')]))
                     ->action(trans('notifications.subscriber.manage.mail.action'), $route)
                     ->line(trans('notifications.subscriber.manage.mail.content', ['app_name' => setting('app_name')]));
+        }
+
+        $route = cachet_route('subscribe.unsubscribe', $notifiable->verify_code);
+
+        return (new MailMessage())
+            ->subject(trans('notifications.subscriber.already-subscribed.mail.subject'))
+            ->greeting(trans('notifications.subscriber.already-subscribed.mail.title', ['app_name' => setting('app_name')]))
+            ->action(trans('notifications.subscriber.already-subscribed.mail.action'), $route)
+            ->line(trans('notifications.subscriber.already-subscribed.mail.content', ['app_name' => setting('app_name')]));
     }
 }

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Notifications\IncidentUpdate;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use Illuminate\Bus\Queueable;
@@ -75,7 +76,14 @@ class IncidentUpdatedNotification extends Notification
             'time'    => $this->update->created_at_diff,
         ]);
 
-        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        if (Component::enabled()->count() > 1) {
+            $manageUrl = URL::signedRoute(
+                cachet_route_generator('subscribe.manage'),
+                ['code' => $notifiable->verify_code]
+            );
+        } else {
+            $manageUrl = null;
+        }
 
         return (new MailMessage())
             ->subject(trans('notifications.incident.update.mail.subject'))

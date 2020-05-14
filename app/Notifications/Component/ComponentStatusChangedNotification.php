@@ -84,7 +84,14 @@ class ComponentStatusChangedNotification extends Notification
             'new_status' => trans("cachet.components.status.{$this->status}"),
         ]);
 
-        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        if (Component::enabled()->count() > 1) {
+            $manageUrl = URL::signedRoute(
+                cachet_route_generator('subscribe.manage'),
+                ['code' => $notifiable->verify_code]
+            );
+        } else {
+            $manageUrl = null;
+        }
 
         return (new MailMessage())
             ->subject(trans('notifications.component.status_update.mail.subject'))

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Notifications\Incident;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -74,7 +75,14 @@ class NewIncidentNotification extends Notification
             'name' => $this->incident->name,
         ]);
 
-        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        if (Component::enabled()->count() > 1) {
+            $manageUrl = URL::signedRoute(
+                cachet_route_generator('subscribe.manage'),
+                ['code' => $notifiable->verify_code]
+            );
+        } else {
+            $manageUrl = null;
+        }
 
         return (new MailMessage())
                     ->subject(trans('notifications.incident.new.mail.subject'))

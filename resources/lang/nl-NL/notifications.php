@@ -85,6 +85,22 @@ return [
                 'action'  => 'Verifiëren',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Inschrijving aanpassen',
+                'content' => 'Klik om je inschrijving op de :app_name statuspagina aan te passen.',
+                'title'   => 'Inschrijving op de :app_name statuspagina aanpassen.',
+                'action'  => 'Aanpassen',
+            ],
+        ],
+        'already-subscribed' => [
+            'mail' => [
+                'subject' => 'Je inschrijving',
+                'content' => 'Je was eerder al ingeschreven. Wil je toch geen status updates ontvangen? Klik dan op de knop hierboven om je uit te schrijven.',
+                'title'   => 'Je bent ingeschreven op de :app_name status page.',
+                'action'  => 'Abonnement opzeggen',
+            ],
+        ],
     ],
     'system' => [
         'test' => [

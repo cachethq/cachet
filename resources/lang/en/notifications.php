@@ -93,6 +93,14 @@ return [
                 'action'  => 'Manage subscription',
             ],
         ],
+        'already-subscribed' => [
+            'mail' => [
+                'subject' => 'Your Subscription',
+                'content' => 'You have subscribed before. Do you want us to stop sending status updates? Click the button above to unsubscribe from the :app_name status page.',
+                'title'   => 'You are subscribed to :app_name status page.',
+                'action'  => 'Unsubscribe',
+            ],
+        ],
     ],
     'system' => [
         'test' => [

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Notifications\Schedule;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -75,7 +76,14 @@ class NewScheduleNotification extends Notification implements ShouldQueue
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
-        $manageUrl = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        if (Component::enabled()->count() > 1) {
+            $manageUrl = URL::signedRoute(
+                cachet_route_generator('subscribe.manage'),
+                ['code' => $notifiable->verify_code]
+            );
+        } else {
+            $manageUrl = null;
+        }
 
         return (new MailMessage())
             ->subject(trans('notifications.schedule.new.mail.subject'))
