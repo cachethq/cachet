@@ -125,7 +125,13 @@ class SubscribeController extends Controller
             execute(new VerifySubscriberCommand($subscriber));
         }
 
-        return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $code]))
+        if (Component::enabled()->count() > 1) {
+            $redirect = redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $code]));
+        } else {
+            $redirect = cachet_redirect('status-page');
+        }
+
+        return $redirect
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
