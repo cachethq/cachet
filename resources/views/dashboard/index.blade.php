@@ -18,21 +18,15 @@
                 </div>
             </div>
 
+            @if(!$componentGroups->isEmpty() || !$ungroupedComponents->isEmpty())
             <div class="row">
-              <div class="col-md-12">
+                <div class="col-md-12">
                   <div class="section-components no-select">
-                      @if(!$componentGroups->isEmpty() || !$ungroupedComponents->isEmpty())
                       @include('dashboard.partials.components')
-                      @else
-                      <ul class="list-group components">
-                          <li class="list-group-item">
-                              <a href="{{ cachet_route('dashboard.components.create') }}">{{ trans('dashboard.components.add.message') }}</a>
-                          </li>
-                      </ul>
-                      @endif
                   </div>
-              </div>
+                </div>
             </div>
+            @endif
 
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
