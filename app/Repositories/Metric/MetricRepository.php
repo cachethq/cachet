@@ -65,15 +65,23 @@ class MetricRepository
         $points = $this->repository->getPointsSinceMinutes($metric, $nrOfMinutes + $metric->threshold)->pluck('value', 'key')->take(-$nrOfMinutes);
 
         $timeframe = $nrOfMinutes;
+
+        //Settings counter for minutes without data
+        $minutesWithNoData = 0;
+
         for ($i = 0; $i < $timeframe; $i++) {
             if (!$points->has($pointKey)) {
                 if ($i >= $metric->threshold) {
                     $points->put($pointKey, $metric->default_value);
+                    //We put default value as metric, so we can reset counter for minutes without data
+                    $minutesWithNoData = 0;
                 } else {
-                    // The point not found is still within the threshold, so it is ignored and
-                    // the timeframe is shifted by one minute
-                    $timeframe++;
+                    //We didn't find any data, but threshold is not meet yet so we just adding to counter
+                    $minutesWithNoData++;
                 }
+            } else {
+                //We found data within this threshold, zeroing counter
+                $minutesWithNoData = 0;
             }
 
             $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('Y-m-d H:i');
