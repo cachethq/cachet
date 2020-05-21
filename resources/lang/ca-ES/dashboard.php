@@ -100,7 +100,7 @@ return [
         'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => 'Add a component',
-            'message' => 'You should add a component.',
+            'message' => 'If you have multiple separate infrastructure components you wish to communicate about you can define these components here.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],

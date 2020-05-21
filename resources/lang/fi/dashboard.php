@@ -84,7 +84,7 @@ return [
         'listed_group'       => 'Ryhmitetään :name alle',
         'add'                => [
             'title'   => 'Lisää komponentti',
-            'message' => 'You should add a component.',
+            'message' => 'If you have multiple separate infrastructure components you wish to communicate about you can define these components here.',
             'success' => 'Komponentti on luotu.',
             'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
         ],
