@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 
 /**
@@ -147,7 +148,7 @@ class MetricPointTest extends AbstractApiTestCase
         $response->assertStatus(200);
         $response->assertJsonFragment([
             'value'      => $metricPoint->value,
-            'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone($timezone)->toDateTimeString(),
+            'created_at' => app(DateFactory::class)->create('U', $timestamp)->setTimezone($timezone)->toDateTimeString(),
         ]);
     }
 
