@@ -148,7 +148,7 @@ class MetricRepository
     {
         $dateTime = $this->dates->make();
         $pointKey = $dateTime->format('Y-m-d');
-        $daysInMonth = $dateTime->format('t');
+        $daysInMonth = $dateTime->format('t')-1;
         $points = $this->repository->getPointsSinceDay($metric, $daysInMonth)->pluck('value', 'key');
 
         for ($i = 0; $i <= $daysInMonth; $i++) {
