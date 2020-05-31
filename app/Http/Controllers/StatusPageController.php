@@ -168,9 +168,9 @@ class StatusPageController extends AbstractApiController
         $metrics = app(MetricRepository::class);
 
         switch ($type) {
-            case 'last_hour': $metricData = $metrics->listPointsLastHour($metric); break;
-            case 'today': $metricData = $metrics->listPointsToday($metric); break;
-            case 'week': $metricData = $metrics->listPointsForWeek($metric); break;
+//            case 'last_hour': $metricData = $metrics->listPointsLastHour($metric); break;
+//           case 'today': $metricData = $metrics->listPointsToday($metric); break;
+//            case 'week': $metricData = $metrics->listPointsForWeek($metric); break;
             case 'month': $metricData = $metrics->listPointsForMonth($metric); break;
             default: $metricData = [];
         }
