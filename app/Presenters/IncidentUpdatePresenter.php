@@ -123,14 +123,19 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
     {
         switch ($this->wrappedObject->status) {
             case 1: // Investigating
+
                 return 'icon ion-flag oranges';
             case 2: // Identified
+
                 return 'icon ion-alert yellows';
             case 3: // Watching
+
                 return 'icon ion-eye blues';
             case 4: // Fixed
+
                 return 'icon ion-checkmark greens';
             default: // Something actually broke, this shouldn't happen.
+
                 return '';
         }
     }
