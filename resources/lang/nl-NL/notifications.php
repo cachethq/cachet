@@ -85,6 +85,14 @@ return [
                 'action'  => 'Verifiëren',
             ],
         ],
+		'manage' => [
+            'mail' => [
+                'subject' => 'Beheer je inschrijving',
+                'content' => 'Klik om je abonnement te beheren op :app_name statuspagina.',
+                'title'   => 'Klik om je abonnement te beheren op :app_name statuspagina.',
+                'action'  => 'Beheer inschrijving',
+            ],
+        ],
     ],
     'system' => [
         'test' => [
