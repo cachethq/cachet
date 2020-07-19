@@ -36,10 +36,3 @@ jobs:
         - phpenv config-rm xdebug.ini || true
         - vendor/bin/phpunit
       php: 7.3
-    - stage: Code coverage
-      script:
-        - phpenv config-rm xdebug.ini || true
-        - phpdbg -qrr vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml
-        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
-        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
-      php: 7.1
