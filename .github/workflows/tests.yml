@@ -44,7 +44,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd
-          tools: composer:v2
+          tools: composer:v1
           coverage: none
 
       - name: Setup Memcached
@@ -65,7 +65,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.1, 7.2, 7.3, 7.4]
+        php: [7.2, 7.3, 7.4]
         include:
           - php: 7.1
             stability: prefer-stable
@@ -91,7 +91,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, gd, pdo_mysql, fileinfo, ftp
-          tools: composer:v2
+          tools: composer:v1
           coverage: none
           ini-values: memory_limit=512M
 
