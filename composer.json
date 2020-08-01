@@ -66,7 +66,9 @@
         "graham-campbell/analyzer": "^2.1",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^7.4",
-        "tightenco/mailthief": "^0.3.14"
+        "tightenco/mailthief": "^0.3.14",
+        "beyondcode/laravel-dump-server": "^1.0",
+        "nunomaduro/collision": "^2.0"
     },
     "suggest": {
         "ext-apc": "APC Support cache driver."
@@ -89,14 +91,14 @@
     },
     "scripts": {
         "post-root-package-install": [
-          "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-          "@php artisan key:generate"
+            "@php artisan key:generate --ansi"
         ],
         "post-autoload-dump": [
-          "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-          "@php artisan package:discover"
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
         ]
     },
     "config": {
