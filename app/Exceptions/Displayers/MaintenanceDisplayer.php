@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Exceptions\Displayers;
+namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use Exception;
 use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;

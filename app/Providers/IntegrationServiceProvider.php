@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Providers;
+namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
 use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;

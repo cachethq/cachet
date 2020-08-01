@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Foundation\Exceptions\Displayers;
+namespace CachetHQ\Cachet\Exceptions\Displayers;
 
+use CachetHQ\Cachet\Settings\ReadException;
 use Exception;
 use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
-class ThrottleDisplayer implements DisplayerInterface
+class SettingsDisplayer implements DisplayerInterface
 {
     /**
      * The request instance.
@@ -49,7 +49,7 @@ class ThrottleDisplayer implements DisplayerInterface
      */
     public function display(Exception $exception, string $id, int $code, array $headers)
     {
-        return cachet_redirect('auth.login')->withError(trans('forms.login.rate-limit'));
+        return cachet_redirect('setup');
     }
 
     /**
@@ -73,7 +73,7 @@ class ThrottleDisplayer implements DisplayerInterface
      */
     public function canDisplay(Exception $original, Exception $transformed, int $code)
     {
-        return $transformed instanceof TooManyRequestsHttpException && $this->request->is('auth*');
+        return ($transformed instanceof ReadException) && !$this->request->is('setup*');
     }
 
     /**
