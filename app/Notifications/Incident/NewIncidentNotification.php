@@ -127,7 +127,7 @@ class NewIncidentNotification extends Notification
         return (new SlackMessage())
                     ->$status()
                     ->content($content)
-                    ->attachment(function ($attachment) use ($notifiable) {
+                    ->attachment(function ($attachment) {
                         $attachment->title(trans('notifications.incident.new.slack.title', ['name' => $this->incident->name]))
                                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
                                    ->fields(array_filter([

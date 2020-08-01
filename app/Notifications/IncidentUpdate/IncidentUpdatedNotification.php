@@ -134,7 +134,7 @@ class IncidentUpdatedNotification extends Notification
         return (new SlackMessage())
                     ->$status()
                     ->content($content)
-                    ->attachment(function ($attachment) use ($content, $notifiable) {
+                    ->attachment(function ($attachment) use ($notifiable) {
                         $attachment->title(trans('notifications.incident.update.slack.title', [
                             'name'       => $this->update->incident->name,
                             'new_status' => $this->update->human_status,
