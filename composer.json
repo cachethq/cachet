@@ -44,7 +44,7 @@
         "chillerlan/php-qrcode": "^2.0",
         "doctrine/dbal": "2.9.*",
         "fideloper/proxy": "^4.0",
-        "graham-campbell/binput": "^6.0",
+        "graham-campbell/binput": "^7.1",
         "graham-campbell/exceptions": "^11.1",
         "graham-campbell/markdown": "^10.2",
         "guzzlehttp/guzzle": "^6.3.3",
