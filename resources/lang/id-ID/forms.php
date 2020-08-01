@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Tentang halaman ini',
             'days-of-incidents'      => 'Berapa hari insiden akan ditampilkan?',
             'banner'                 => 'Gambar Banner',
-            'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner-help'            => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
             'automatic_localization' => 'Otomatis ganti bahasa halaman status anda ke bahasa pengunjung?',
         ],

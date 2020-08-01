@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Без происшествий',
         'past'          => 'Последние инциденты',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Предыдущая неделя',
+        'next_week'     => 'Следующая неделя',
         'scheduled'     => 'Плановые работы',
         'scheduled_at'  => ', запланированы :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Запланировано', // TODO: Hopefully remove this.
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
             3 => 'Под наблюдением',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Система работает исправно|[2,Inf] Все системы работают исправно',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] В настоящее время система испытывает проблемы |[2,Inf] Некоторые системы испытывают проблемы',
+        'major' => '[0,1] Значительные неполадки|[2,Inf] В системе есть неполадки',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Подпишитесь, чтобы быть в курсе недавних событий',
         'button'    => 'Подписаться',
         'manage'    => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',

@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'Email',
-        'username'         => 'Username',
+        'username'         => 'Brugernavn',
         'password'         => 'Adgangskode',
         'site_name'        => 'Sidenavn',
         'site_domain'      => 'Sidens domæne',
@@ -34,7 +34,7 @@ return [
     'login' => [
         'login'         => 'Brugernavn eller email',
         'email'         => 'Email',
-        'password'      => 'Password',
+        'password'      => 'Adgangskode',
         '2fauth'        => 'Bekræftelseskode',
         'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig token',
@@ -56,7 +56,7 @@ return [
         'public'             => 'Kan ses af alle',
         'logged_in_only'     => 'Kun synlig for brugere der er logget ind',
         'templates'          => [
-            'name'     => 'Name',
+            'name'     => 'Navn',
             'template' => 'Skabelon',
             'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
         ],
@@ -64,7 +64,7 @@ return [
 
     // Components form fields
     'components' => [
-        'name'        => 'Name',
+        'name'        => 'Navn',
         'status'      => 'Status',
         'group'       => 'Gruppe',
         'description' => 'Beskrivelse',
@@ -74,7 +74,7 @@ return [
         'enabled'     => 'Komponent er aktivt',
 
         'groups' => [
-            'name'               => 'Name',
+            'name'               => 'Navn',
             'collapsing'         => 'Choose visibility of the group',
             'visible'            => 'Altid åben',
             'collapsed'          => 'Minimer gruppen som standard',
@@ -84,10 +84,10 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'Name',
+        'name'             => 'Navn',
         'suffix'           => 'Endelse',
-        'description'      => 'Description',
-        'description-help' => 'You may also use Markdown.',
+        'description'      => 'Beskrivelse',
+        'description-help' => 'Du kan benytte Markdown.',
         'display-chart'    => 'Vis graf på statussiden?',
         'default-value'    => 'Standard værdi',
         'calc_type'        => 'Beregning af grafer',
@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner billede',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad folk at tilmelde sig email underretninger?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
@@ -156,7 +156,7 @@ return [
     'user' => [
         'username'       => 'Brugernavn',
         'email'          => 'Email',
-        'password'       => 'Password',
+        'password'       => 'Adgangskode',
         'api-token'      => 'API nøgle',
         'api-token-help' => 'Hvis du regenerere din API nøgle vil eksisterende applikationer ikke kunne tilgå API\'et.',
         'gravatar'       => 'Ændre dit profilbillede hos Gravatar.',

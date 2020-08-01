@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'E-post',
-        'username'         => 'Username',
+        'username'         => 'Användarnamn',
         'password'         => 'Lösenord',
         'site_name'        => 'Webbplatsens namn',
         'site_domain'      => 'Webbplatsens domän',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Användarnamn eller e-postadress',
-        'email'         => 'Email',
-        'password'      => 'Password',
+        'email'         => 'E-post',
+        'password'      => 'Lösenord',
         '2fauth'        => 'Autentiseringskod',
         'invalid'       => 'Ogiltigt användarnamn eller lösenord',
         'invalid-token' => 'Ogiltig nyckel',
@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
+            'banner-help'            => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

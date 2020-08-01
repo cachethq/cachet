@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '全システムが正常に稼動しています',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '一部のシステムに問題が発生しています ',
+        'major' => 'システムに深刻な問題が発生しています',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => '最新の更新情報を購読する',
         'button'    => '購読',
         'manage'    => [
             'no_subscriptions' => '現在、すべてのアップデートを購読しています。',

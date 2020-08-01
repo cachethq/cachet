@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidentes &amp; Agenda',
         'incidents'                => 'Incidentes',
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Equipe',
         'member'      => 'Membro',
         'profile'     => 'Perfil	',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
             'title'   => 'Adicionar um novo membro da equipe',
             'success' => 'Membro da equipe adicionado.',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Colaboradores',
             'license'       => 'Cachet é um projeto de código aberto com licença BSD-3, lançado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
             'backers-title' => 'Apoiadores e Patrocinadores',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => 'Se você gostaria de apoiar o desenvolvimento futuro, confira o CrowdIn e GitHub.',
             'thank-you'     => 'Agradeço a cada um dos :count colaboradores.',
         ],
     ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'Você está logado.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Bem-vindo de volta!',
         'two-factor' => 'Por favor insira o seu token.',
     ],
 
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Bem-vindo à sua nova página de status!',
+        'message' => 'Sua página de status está quase pronta! Talvez você queira checar essas configurações extras',
+        'close'   => 'Me leve direto para o meu painel de controle',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Criar componentes',
+            'incident'   => 'Criar incidentes',
+            'customize'  => 'Personalizar',
+            'team'       => 'Adicionar usuários',
+            'api'        => 'Gerar token de API',
+            'two-factor' => 'Autenticação em duas etapas',
         ],
     ],
 

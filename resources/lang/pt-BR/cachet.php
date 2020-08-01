@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Nenhum incidente reportado',
         'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Semana anterior',
+        'next_week'     => 'Próxima semana',
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Agendado', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Sistema operacional|[2,Inf] Todos os sistemas estão operacionais',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,Inf] Alguns sistemas estão com problemas',
+        'major' => '[0,1] O sistema encontra-se com uma indisponibilidade total.|[2,Inf] Alguns sistemas encontram-se totalmente indisponíveis',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
         'button'    => 'Inscreva-se',
         'manage'    => [
             'no_subscriptions' => 'Você está atualmente inscrito a todas as atualizações.',

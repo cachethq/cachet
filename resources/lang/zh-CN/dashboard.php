@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => '故障和维护计划',
         'incidents'                => '事件',
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
         'incident-create-template' => '创建模板',
@@ -164,7 +164,7 @@ return [
         'team'        => '团队',
         'member'      => '成员',
         'profile'     => '用户信息',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => '团队成员可维护组件和故障信息。',
         'add'         => [
             'title'   => '添加团队成员',
             'success' => '团队成员已添加',
@@ -224,7 +224,7 @@ return [
             'contributors'  => '贡献者',
             'license'       => 'Cachet 是 <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a> 开发的一个开源项目，使用 BSD-3 授权。',
             'backers-title' => '后勤力量和赞助商',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => '如果你想为我们后续的开发提供支持，请查看 CrowdIn 和 GitHub.',
             'thank-you'     => '感谢您和 :count 位贡献者们',
         ],
     ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => '登录',
         'logged_in'  => '您已登录',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => '欢迎回来！',
         'two-factor' => '请输入您的双重验证码。',
     ],
 
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => '欢迎来到你的新状态页面！',
+        'message' => '您的状态页面即将完成！您可能想要配置这些额外的设置',
+        'close'   => '带我直接进入控制台',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => '添加组件',
+            'incident'   => '添加故障',
+            'customize'  => '主题设置',
+            'team'       => '添加用户',
+            'api'        => '生成 API Token',
+            'two-factor' => '双因素身份验证',
         ],
     ],
 

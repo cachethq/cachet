@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => '无故障报告',
         'past'          => '历史状态',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => '上周',
+        'next_week'     => '下周',
         'scheduled'     => '计划维护',
         'scheduled_at'  => '，计划于 :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => '计划中', // TODO: Hopefully remove this.
             1 => '确认中',
             2 => '修复中',
             3 => '已更新',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] 系统工作正常|[2,Inf] 所有系统工作正常',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] 一个系统出现了问题|[2,Inf] 一些系统出现了问题',
+        'major' => '[0,1] 一个系统出现重大故障|[2,Inf] 一些系统出现重大故障',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => '订阅以获取最新更新',
         'button'    => '订阅',
         'manage'    => [
             'no_subscriptions' => '您当前已订阅所有更新。',
