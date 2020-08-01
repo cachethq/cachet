@@ -28,6 +28,13 @@ class VerifyCsrfToken extends Middleware
     protected $addHttpCookie = true;
 
     /**
+     * Indicates whether the XSRF-TOKEN cookie should be set on the response.
+     *
+     * @var bool
+     */
+    protected $addHttpCookie = true;
+
+    /**
      * The URIs that should be excluded from CSRF verification.
      *
      * @var array

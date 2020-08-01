@@ -26,7 +26,7 @@ use CachetHQ\Cachet\Http\Middleware\Throttler;
 use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
+        \App\Http\Middleware\CheckForMaintenanceMode::class,
 use Illuminate\Routing\Middleware\ValidateSignature;
 
 class Kernel extends HttpKernel
@@ -61,5 +61,20 @@ class Kernel extends HttpKernel
         'signed'          => ValidateSignature::class,
         'subscribers'     => SubscribersConfigured::class,
         'throttle'        => Throttler::class,
+    ];
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces non-global middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\Authenticate::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
     ];
 }
