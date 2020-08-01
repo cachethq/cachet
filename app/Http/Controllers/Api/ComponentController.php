@@ -88,7 +88,7 @@ class ComponentController extends AbstractApiController
             $tags = preg_split('/ ?, ?/', Binput::get('tags'));
 
             // For every tag, do we need to create it?
-            $componentTags = array_map(function ($taggable) use ($component) {
+            $componentTags = array_map(function ($taggable) {
                 return Tag::firstOrCreate([
                     'name' => $taggable,
                 ])->id;
@@ -128,7 +128,7 @@ class ComponentController extends AbstractApiController
             $tags = preg_split('/ ?, ?/', Binput::get('tags'));
 
             // For every tag, do we need to create it?
-            $componentTags = array_map(function ($taggable) use ($component) {
+            $componentTags = array_map(function ($taggable) {
                 return Tag::firstOrCreate(['name' => $taggable])->id;
             }, $tags);
 

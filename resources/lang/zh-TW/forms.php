@@ -112,7 +112,7 @@ return [
             'about-this-page'        => '關於本站',
             'days-of-incidents'      => '顯示多少天前的事件？',
             'banner'                 => 'Banner Image',
-            'banner-help'            => "橫幅寬度建議少於 930px 。",
+            'banner-help'            => '橫幅寬度建議少於 930px 。',
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
