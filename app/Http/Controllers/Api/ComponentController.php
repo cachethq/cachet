@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Models\Component;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -36,19 +35,19 @@ class ComponentController extends AbstractApiController
             $components = Component::enabled();
         }
 
-        if ($tags = Binput::get('tags')) {
+        if ($tags = request('tags')) {
             $components->withAnyTags($tags);
         }
 
-        $components->search(Binput::except(['sort', 'order', 'per_page']));
+        $components->search(request()->except(['sort', 'order', 'per_page']));
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $components->sort($sortBy, $direction);
         }
 
-        $components = $components->paginate(Binput::get('per_page', 20));
+        $components = $components->paginate(request('per_page', 20));
 
         return $this->paginator($components, Request::instance());
     }
@@ -74,15 +73,15 @@ class ComponentController extends AbstractApiController
     {
         try {
             $component = execute(new CreateComponentCommand(
-                Binput::get('name'),
-                Binput::get('description'),
-                Binput::get('status'),
-                Binput::get('link'),
-                Binput::get('order'),
-                Binput::get('group_id'),
-                (bool) Binput::get('enabled', true),
-                Binput::get('meta'),
-                Binput::get('tags')
+                request('name'),
+                request('description'),
+                request('status'),
+                request('link'),
+                request('order'),
+                request('group_id'),
+                (bool) request('enabled', true),
+                request('meta'),
+                request('tags')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -103,16 +102,16 @@ class ComponentController extends AbstractApiController
         try {
             execute(new UpdateComponentCommand(
                 $component,
-                Binput::get('name'),
-                Binput::get('description'),
-                Binput::get('status'),
-                Binput::get('link'),
-                Binput::get('order'),
-                Binput::get('group_id'),
-                Binput::get('enabled', $component->enabled),
-                Binput::get('meta'),
-                Binput::get('tags'),
-                (bool) Binput::get('silent', false)
+                request('name'),
+                request('description'),
+                request('status'),
+                request('link'),
+                request('order'),
+                request('group_id'),
+                request('enabled', $component->enabled),
+                request('meta'),
+                request('tags'),
+                (bool) request('silent', false)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

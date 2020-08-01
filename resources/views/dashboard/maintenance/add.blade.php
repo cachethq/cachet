@@ -31,7 +31,7 @@
                         @endif
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.schedules.name') }}</label>
-                            <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}" placeholder="{{ trans('forms.schedules.name') }}" v-model="name">
+                            <input type="text" class="form-control" name="name" id="incident-name" required value="{{ request()->old('name') }}" placeholder="{{ trans('forms.schedules.name') }}" v-model="name">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.schedules.status') }}</label><br>
@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.schedules.message') }}</label>
                             <div class="markdown-control">
-                                <textarea name="message" class="form-control autosize" rows="5" required placeholder="{{ trans('forms.schedules.message') }}" v-model="message">{{ Binput::old('message') }}</textarea>
+                                <textarea name="message" class="form-control autosize" rows="5" required placeholder="{{ trans('forms.schedules.message') }}" v-model="message">{{ request()->old('message') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,7 +61,7 @@
                     <input type="hidden" name="notify" value="0">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('notify', 'checked') }}">
+                            <input type="checkbox" name="notify" value="1" checked="{{ request()->old('notify', 'checked') }}">
                             {{ trans('forms.incidents.notify_subscribers') }}
                         </label>
                     </div>

@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -190,7 +189,7 @@ class SetupController extends Controller
      */
     public function postStep1()
     {
-        $postData = Binput::all();
+        $postData = request()->all();
 
         $v = Validator::make($postData, $this->rulesStep1);
 
@@ -220,7 +219,7 @@ class SetupController extends Controller
      */
     public function postStep2()
     {
-        $postData = Binput::all();
+        $postData = request()->all();
 
         $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2);
 
@@ -238,7 +237,7 @@ class SetupController extends Controller
      */
     public function postStep3()
     {
-        $postData = Binput::all();
+        $postData = request()->all();
 
         $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2 + $this->rulesStep3);
 

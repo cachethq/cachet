@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -317,12 +316,12 @@ class SettingsController extends Controller
      */
     public function postMail()
     {
-        $config = Binput::get('config');
+        $config = request('config');
 
         execute(new UpdateConfigCommand($config));
 
         return cachet_redirect('dashboard.settings.mail')
-            ->withInput(Binput::all())
+            ->withInput(request()->all())
             ->withSuccess(trans('dashboard.notifications.awesome'));
     }
 
@@ -335,14 +334,14 @@ class SettingsController extends Controller
     {
         $setting = app(Repository::class);
 
-        if (Binput::get('remove_banner') === '1') {
+        if (request('remove_banner') === '1') {
             $setting->set('app_banner', null);
         }
 
-        $parameters = Binput::all();
+        $parameters = request()->all();
 
         if (isset($parameters['header'])) {
-            if ($header = Binput::get('header', null, false, false)) {
+            if ($header = request('header', null, false, false)) {
                 $setting->set('header', $header);
             } else {
                 $setting->delete('header');
@@ -350,7 +349,7 @@ class SettingsController extends Controller
         }
 
         if (isset($parameters['footer'])) {
-            if ($footer = Binput::get('footer', null, false, false)) {
+            if ($footer = request('footer', null, false, false)) {
                 $setting->set('footer', $footer);
             } else {
                 $setting->delete('footer');
@@ -358,14 +357,14 @@ class SettingsController extends Controller
         }
 
         if (isset($parameters['stylesheet'])) {
-            if ($stylesheet = Binput::get('stylesheet', null, false, false)) {
+            if ($stylesheet = request('stylesheet', null, false, false)) {
                 $setting->set('stylesheet', $stylesheet);
             } else {
                 $setting->delete('stylesheet');
             }
         }
 
-        if (Binput::hasFile('app_banner')) {
+        if (request()->hasFile('app_banner')) {
             $this->handleUpdateBanner($setting);
         }
 
@@ -379,7 +378,7 @@ class SettingsController extends Controller
         ];
 
         try {
-            foreach (Binput::except($excludedParams) as $settingName => $settingValue) {
+            foreach (request()->except($excludedParams) as $settingName => $settingValue) {
                 if ($settingName === 'app_analytics_pi_url') {
                     $settingValue = rtrim($settingValue, '/');
                 }
@@ -390,11 +389,11 @@ class SettingsController extends Controller
             return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
-        if (Binput::has('app_locale')) {
-            Lang::setLocale(Binput::get('app_locale'));
+        if (request()->has('app_locale')) {
+            Lang::setLocale(request('app_locale'));
         }
 
-        if (Binput::has('always_authenticate')) {
+        if (request()->has('always_authenticate')) {
             Artisan::call('route:clear');
         }
 
@@ -410,7 +409,7 @@ class SettingsController extends Controller
      */
     protected function handleUpdateBanner(Repository $setting)
     {
-        $file = Binput::file('app_banner');
+        $file = request()->file('app_banner');
         $redirectUrl = $this->subMenu['theme']['url'];
 
         // Image Validation.

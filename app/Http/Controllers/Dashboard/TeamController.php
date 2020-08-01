@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
 use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
 use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -81,14 +80,14 @@ class TeamController extends Controller
     {
         try {
             execute(new CreateUserCommand(
-                Binput::get('username'),
-                Binput::get('password'),
-                Binput::get('email'),
-                Binput::get('level')
+                request('username'),
+                request('password'),
+                request('email'),
+                request('level')
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.team.create')
-                ->withInput(Binput::except('password'))
+                ->withInput(request()->except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -106,7 +105,7 @@ class TeamController extends Controller
      */
     public function postUpdateUser(User $user)
     {
-        $userData = array_filter(Binput::only(['username', 'email', 'password', 'level']));
+        $userData = array_filter(request()->only(['username', 'email', 'password', 'level']));
 
         try {
             $user->update($userData);
@@ -130,11 +129,11 @@ class TeamController extends Controller
     {
         try {
             execute(new InviteUserCommand(
-                array_unique(array_filter((array) Binput::get('emails')))
+                array_unique(array_filter((array) request('emails')))
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.team.invite')
-                ->withInput(Binput::except('password'))
+                ->withInput(request()->except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.invite.failure')))
                 ->withErrors($e->getMessageBag());
         }

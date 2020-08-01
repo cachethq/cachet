@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -67,7 +66,7 @@ class MetricController extends Controller
      */
     public function createMetricAction()
     {
-        $metricData = Binput::get('metric');
+        $metricData = request('metric');
 
         try {
             execute(new CreateMetricCommand(
@@ -85,7 +84,7 @@ class MetricController extends Controller
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -146,21 +145,21 @@ class MetricController extends Controller
         try {
             execute(new UpdateMetricCommand(
                 $metric,
-                Binput::get('name', null, false),
-                Binput::get('suffix', null, false),
-                Binput::get('description', null, false),
-                Binput::get('default_value', null, false),
-                Binput::get('calc_type', null, false),
-                Binput::get('display_chart', null, false),
-                Binput::get('places', null, false),
-                Binput::get('default_view', null, false),
-                Binput::get('threshold', null, false),
+                request('name', null, false),
+                request('suffix', null, false),
+                request('description', null, false),
+                request('default_value', null, false),
+                request('calc_type', null, false),
+                request('display_chart', null, false),
+                request('places', null, false),
+                request('default_view', null, false),
+                request('threshold', null, false),
                 null,
-                Binput::get('visible', null, false)
+                request('visible', null, false)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.edit', [$metric->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }

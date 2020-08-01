@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Models\Schedule;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -36,13 +35,13 @@ class ScheduleController extends AbstractApiController
     {
         $schedule = Schedule::query();
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $schedule->sort($sortBy, $direction);
         }
 
-        $schedule = $schedule->paginate(Binput::get('per_page', 20));
+        $schedule = $schedule->paginate(request('per_page', 20));
 
         return $this->paginator($schedule, Request::instance());
     }
@@ -68,13 +67,13 @@ class ScheduleController extends AbstractApiController
     {
         try {
             $schedule = execute(new CreateScheduleCommand(
-                Binput::get('name'),
-                Binput::get('message', null, false, false),
-                Binput::get('status'),
-                Binput::get('scheduled_at'),
-                Binput::get('completed_at'),
-                Binput::get('components', []),
-                Binput::get('notify', false)
+                request('name'),
+                request('message', null, false, false),
+                request('status'),
+                request('scheduled_at'),
+                request('completed_at'),
+                request('components', []),
+                request('notify', false)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -95,12 +94,12 @@ class ScheduleController extends AbstractApiController
         try {
             $schedule = execute(new UpdateScheduleCommand(
                 $schedule,
-                Binput::get('name'),
-                Binput::get('message'),
-                Binput::get('status'),
-                Binput::get('scheduled_at'),
-                Binput::get('completed_at'),
-                Binput::get('components', [])
+                request('name'),
+                request('message'),
+                request('status'),
+                request('scheduled_at'),
+                request('completed_at'),
+                request('components', [])
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

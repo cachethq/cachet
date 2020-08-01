@@ -22,7 +22,6 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Notifications\Subscriber\ManageSubscriptionNotification;
-use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
@@ -77,15 +76,15 @@ class SubscribeController extends Controller
      */
     public function postSubscribe()
     {
-        $email = Binput::get('email');
-        $subscriptions = Binput::get('subscriptions');
+        $email = request('email');
+        $subscriptions = request('subscriptions');
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
             $subscription = execute(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
             return cachet_redirect('status-page')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -210,10 +209,10 @@ class SubscribeController extends Controller
         }
 
         try {
-            execute(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
+            execute(new UpdateSubscriberSubscriptionCommand($subscriber, request('subscriptions')));
         } catch (ValidationException $e) {
             return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]))
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }

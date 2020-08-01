@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -31,13 +30,13 @@ class MetricController extends AbstractApiController
     {
         $metrics = Metric::query();
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $metrics->sort($sortBy, $direction);
         }
 
-        $metrics = $metrics->paginate(Binput::get('per_page', 20));
+        $metrics = $metrics->paginate(request('per_page', 20));
 
         return $this->paginator($metrics, Request::instance());
     }
@@ -63,17 +62,17 @@ class MetricController extends AbstractApiController
     {
         try {
             $metric = execute(new CreateMetricCommand(
-                Binput::get('name'),
-                Binput::get('suffix'),
-                Binput::get('description'),
-                Binput::get('default_value'),
-                Binput::get('calc_type', 0),
-                Binput::get('display_chart', true),
-                Binput::get('places', 2),
-                Binput::get('default_view', Binput::get('view', 1)),
-                Binput::get('threshold', 5),
-                Binput::get('order', 0),
-                Binput::get('visible', 1)
+                request('name'),
+                request('suffix'),
+                request('description'),
+                request('default_value'),
+                request('calc_type', 0),
+                request('display_chart', true),
+                request('places', 2),
+                request('default_view', request('view', 1)),
+                request('threshold', 5),
+                request('order', 0),
+                request('visible', 1)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -94,17 +93,17 @@ class MetricController extends AbstractApiController
         try {
             $metric = execute(new UpdateMetricCommand(
                 $metric,
-                Binput::get('name'),
-                Binput::get('suffix'),
-                Binput::get('description'),
-                Binput::get('default_value'),
-                Binput::get('calc_type'),
-                Binput::get('display_chart'),
-                Binput::get('places'),
-                Binput::get('default_view', Binput::get('view')),
-                Binput::get('threshold'),
-                Binput::get('order'),
-                Binput::get('visible')
+                request('name'),
+                request('suffix'),
+                request('description'),
+                request('default_value'),
+                request('calc_type'),
+                request('display_chart'),
+                request('places'),
+                request('default_view', request('view')),
+                request('threshold'),
+                request('order'),
+                request('visible')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

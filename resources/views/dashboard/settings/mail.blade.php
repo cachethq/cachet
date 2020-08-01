@@ -20,25 +20,25 @@
                             <select name="config[mail_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.mail_driver') }}</option>
                                 @foreach($mailDrivers as $driver => $driverName)
-                                <option value="{{ $driver }}" {{ Binput::old('config.mail_driver', $config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                                <option value="{{ $driver }}" {{ request()->old('config.mail_driver', $config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_host') }} (optional)</label>
-                            <input type="text" class="form-control" name="config[mail_host]" value="{{ Binput::old('config.mail_host', $config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}">
+                            <input type="text" class="form-control" name="config[mail_host]" value="{{ request()->old('config.mail_host', $config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_address') }}</label>
-                            <input type="text" class="form-control" name="config[mail_address]" value="{{ Binput::old('config.mail_address', $config['from']['address']) }}" placeholder="notifications@alt-three.com">
+                            <input type="text" class="form-control" name="config[mail_address]" value="{{ request()->old('config.mail_address', $config['from']['address']) }}" placeholder="notifications@alt-three.com">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_username') }}</label>
-                            <input type="text" class="form-control" name="config[mail_username]" value="{{ Binput::old('config.mail_username', $config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}">
+                            <input type="text" class="form-control" name="config[mail_username]" value="{{ request()->old('config.mail_username', $config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_password') }}</label>
-                            <input type="password" class="form-control" name="config[mail_password]" value="{{ Binput::old('config.mail_password') }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
+                            <input type="password" class="form-control" name="config[mail_password]" value="{{ request()->old('config.mail_password') }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
                         </div>
                     </fieldset>
 

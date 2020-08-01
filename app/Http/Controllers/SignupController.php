@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand;
 use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Models\Invite;
 use CachetHQ\Cachet\Models\User;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -45,8 +44,8 @@ class SignupController extends Controller
 
         return View::make('signup')
             ->withCode($invite->code)
-            ->withUsername(Binput::old('username'))
-            ->withEmail(Binput::old('email', $invite->email));
+            ->withUsername(request()->old('username'))
+            ->withEmail(request()->old('email', $invite->email));
     }
 
     /**
@@ -70,14 +69,14 @@ class SignupController extends Controller
 
         try {
             execute(new SignupUserCommand(
-                Binput::get('username'),
-                Binput::get('password'),
-                Binput::get('email'),
+                request('username'),
+                request('password'),
+                request('email'),
                 User::LEVEL_USER
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('signup.invite', [$invite->code])
-                ->withInput(Binput::except('password'))
+                ->withInput(request()->except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.signup.failure')))
                 ->withErrors($e->getMessageBag());
         }

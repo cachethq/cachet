@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -33,7 +32,7 @@ class MetricPointController extends AbstractApiController
      */
     public function index(Metric $metric, MetricPoint $metricPoint)
     {
-        $points = $metric->points()->paginate(Binput::get('per_page', 20));
+        $points = $metric->points()->paginate(request('per_page', 20));
 
         return $this->paginator($points, Request::instance());
     }
@@ -50,8 +49,8 @@ class MetricPointController extends AbstractApiController
         try {
             $metricPoint = execute(new CreateMetricPointCommand(
                 $metric,
-                Binput::get('value'),
-                Binput::get('timestamp')
+                request('value'),
+                request('timestamp')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -73,8 +72,8 @@ class MetricPointController extends AbstractApiController
         $metricPoint = execute(new UpdateMetricPointCommand(
             $metricPoint,
             $metric,
-            Binput::get('value'),
-            Binput::get('timestamp')
+            request('value'),
+            request('timestamp')
         ));
 
         return $this->item($metricPoint);

@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +43,7 @@ class AuthController extends Controller
      */
     public function postLogin()
     {
-        $loginData = Binput::only(['username', 'password', 'remember_me']);
+        $loginData = request()->only(['username', 'password', 'remember_me']);
 
         // Login with username or email.
         $loginKey = filter_var($loginData['username'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
@@ -70,7 +69,7 @@ class AuthController extends Controller
         }
 
         return cachet_redirect('auth.login')
-            ->withInput(Binput::except('password'))
+            ->withInput(request()->except('password'))
             ->withError(trans('forms.login.invalid'));
     }
 
@@ -99,7 +98,7 @@ class AuthController extends Controller
     {
         // Check that we have a session.
         if ($userId = Session::pull('2fa_id')) {
-            $code = str_replace(' ', '', Binput::get('code'));
+            $code = str_replace(' ', '', request('code'));
 
             // Maybe a temp login here.
             Auth::loginUsingId($userId);

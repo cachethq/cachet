@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -108,7 +107,7 @@ class ComponentController extends Controller
      */
     public function updateComponentAction(Component $component)
     {
-        $componentData = Binput::get('component');
+        $componentData = request('component');
 
         try {
             $component = execute(new UpdateComponentCommand(
@@ -126,7 +125,7 @@ class ComponentController extends Controller
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.edit', [$component->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -154,7 +153,7 @@ class ComponentController extends Controller
      */
     public function createComponentAction()
     {
-        $componentData = Binput::get('component');
+        $componentData = request('component');
 
         try {
             $component = execute(new CreateComponentCommand(
@@ -170,7 +169,7 @@ class ComponentController extends Controller
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
                 ->withErrors($e->getMessageBag());
         }

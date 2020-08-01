@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Schedule;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -92,17 +91,17 @@ class ScheduleController extends Controller
     {
         try {
             execute(new CreateScheduleCommand(
-                Binput::get('name'),
-                Binput::get('message', null, false, false),
-                Binput::get('status', Schedule::UPCOMING),
-                Binput::get('scheduled_at'),
-                Binput::get('completed_at'),
-                Binput::get('components', []),
-                Binput::get('notify', false)
+                request('name'),
+                request('message', null, false, false),
+                request('status', Schedule::UPCOMING),
+                request('scheduled_at'),
+                request('completed_at'),
+                request('components', []),
+                request('notify', false)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -140,16 +139,16 @@ class ScheduleController extends Controller
         try {
             $schedule = execute(new UpdateScheduleCommand(
                 $schedule,
-                Binput::get('name', null),
-                Binput::get('message', null),
-                Binput::get('status', null),
-                Binput::get('scheduled_at', null),
-                Binput::get('completed_at', null),
-                Binput::get('components', [])
+                request('name', null),
+                request('message', null),
+                request('status', null),
+                request('scheduled_at', null),
+                request('completed_at', null),
+                request('components', [])
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }

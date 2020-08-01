@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\IncidentUpdate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -105,21 +104,21 @@ class IncidentUpdateController extends Controller
         try {
             $incidentUpdate = execute(new CreateIncidentUpdateCommand(
                 $incident,
-                Binput::get('status'),
-                Binput::get('message'),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
+                request('status'),
+                request('message'),
+                request('component_id'),
+                request('component_status'),
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.updates.create', ['id' => $incident->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
         if ($incident->component) {
-            $incident->component->update(['status' => Binput::get('component_status')]);
+            $incident->component->update(['status' => request('component_status')]);
         }
 
         return cachet_redirect('dashboard.incidents')
@@ -155,13 +154,13 @@ class IncidentUpdateController extends Controller
         try {
             $incidentUpdate = execute(new UpdateIncidentUpdateCommand(
                 $incidentUpdate,
-                Binput::get('status'),
-                Binput::get('message'),
+                request('status'),
+                request('message'),
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.updates.edit', ['incident' => $incident->id, 'incident_update' => $incidentUpdate->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }

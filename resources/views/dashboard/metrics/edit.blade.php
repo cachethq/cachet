@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label for="metric-threshold">{{ trans('forms.metrics.threshold') }}</label>
-                        <input type="number" min="0" max="10" name="threshold" id="metric-threshold" value="{{ Binput::old('metric.threshold', $metric->threshold) }}" class="form-control" required>
+                        <input type="number" min="0" max="10" name="threshold" id="metric-threshold" value="{{ request()->old('metric.threshold', $metric->threshold) }}" class="form-control" required>
                     </div>
                     <div class="checkbox">
                         <label>

@@ -15,7 +15,6 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -124,12 +123,12 @@ class IncidentTemplateController extends Controller
     {
         try {
             IncidentTemplate::create([
-                'name'     => Binput::get('name'),
-                'template' => Binput::get('template', null, false, false),
+                'name'     => request('name'),
+                'template' => request('template', null, false, false),
             ]);
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -148,7 +147,7 @@ class IncidentTemplateController extends Controller
     public function editTemplateAction(IncidentTemplate $template)
     {
         try {
-            $template->update(Binput::get('template'));
+            $template->update(request('template'));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.edit', ['id' => $template->id])
                 ->withUpdatedTemplate($template)

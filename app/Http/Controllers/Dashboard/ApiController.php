@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -40,7 +39,7 @@ class ApiController extends AbstractApiController
                 $component,
                 $component->name,
                 $component->description,
-                Binput::get('status'),
+                request('status'),
                 $component->link,
                 $component->order,
                 $component->group_id,
@@ -62,7 +61,7 @@ class ApiController extends AbstractApiController
      */
     public function postUpdateComponentOrder()
     {
-        $componentData = Binput::get('ids');
+        $componentData = request('ids');
 
         foreach ($componentData as $order => $componentId) {
             try {
@@ -95,7 +94,7 @@ class ApiController extends AbstractApiController
      */
     public function postUpdateComponentGroupOrder()
     {
-        $groupData = Binput::get('ids');
+        $groupData = request('ids');
 
         foreach ($groupData as $order => $groupId) {
             $group = ComponentGroup::find($groupId);
@@ -121,7 +120,7 @@ class ApiController extends AbstractApiController
      */
     public function getIncidentTemplate()
     {
-        $templateSlug = Binput::get('slug');
+        $templateSlug = request('slug');
 
         if ($template = IncidentTemplate::where('slug', '=', $templateSlug)->first()) {
             return $template;

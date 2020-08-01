@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -47,7 +46,7 @@ class StatusPageController extends AbstractApiController
         $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
         $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
 
-        $startDate = Date::createFromFormat('Y-m-d', Binput::get('start_date', Date::now()->toDateString()));
+        $startDate = Date::createFromFormat('Y-m-d', request('start_date', Date::now()->toDateString()));
         $endDate = $startDate->copy()->subDays($appIncidentDays);
 
         $canPageForward = false;
@@ -57,7 +56,7 @@ class StatusPageController extends AbstractApiController
 
         if ($onlyDisruptedDays) {
             // In this case, start_date GET parameter means the page
-            $page = (int) Binput::get('start_date', 0);
+            $page = (int) request('start_date', 0);
 
             $allIncidentDays = Incident::where('visible', '>=', (int) !Auth::check())
                                        ->select('occurred_at')
@@ -164,7 +163,7 @@ class StatusPageController extends AbstractApiController
      */
     public function getMetrics(Metric $metric)
     {
-        $type = Binput::get('filter', AutoPresenter::decorate($metric)->view_name);
+        $type = request('filter', AutoPresenter::decorate($metric)->view_name);
         $metrics = app(MetricRepository::class);
 
         switch ($type) {
@@ -204,7 +203,7 @@ class StatusPageController extends AbstractApiController
             $component->name,
             $component->human_status,
             substr($color, 1),
-            Binput::get('style', 'flat-square')
+            request('style', 'flat-square')
         );
 
         return Response::make($badge, 200, ['Content-Type' => 'image/svg+xml']);

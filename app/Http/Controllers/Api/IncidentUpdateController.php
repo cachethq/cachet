@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentUpdate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -40,13 +39,13 @@ class IncidentUpdateController extends AbstractApiController
     {
         $updates = $incident->updates()->orderBy('created_at', 'desc');
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $updates->sort($sortBy, $direction);
         }
 
-        $updates = $updates->paginate(Binput::get('per_page', 20));
+        $updates = $updates->paginate(request('per_page', 20));
 
         return $this->paginator($updates, Request::instance());
     }
@@ -76,10 +75,10 @@ class IncidentUpdateController extends AbstractApiController
         try {
             $update = execute(new CreateIncidentUpdateCommand(
                 $incident,
-                Binput::get('status'),
-                Binput::get('message'),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
+                request('status'),
+                request('message'),
+                request('component_id'),
+                request('component_status'),
                 Auth::user()
             ));
         } catch (QueryException $e) {
@@ -102,8 +101,8 @@ class IncidentUpdateController extends AbstractApiController
         try {
             $update = execute(new UpdateIncidentUpdateCommand(
                 $update,
-                Binput::get('status'),
-                Binput::get('message'),
+                request('status'),
+                request('message'),
                 Auth::user()
             ));
         } catch (QueryException $e) {

@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Support\Facades\Request;
 
 class IncidentTemplateController extends AbstractApiController
@@ -26,13 +25,13 @@ class IncidentTemplateController extends AbstractApiController
     {
         $templates = IncidentTemplate::query();
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $templates->sort($sortBy, $direction);
         }
 
-        $templates = $templates->paginate(Binput::get('per_page', 20));
+        $templates = $templates->paginate(request('per_page', 20));
 
         return $this->paginator($templates, Request::instance());
     }

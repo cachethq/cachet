@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -34,15 +33,15 @@ class IncidentController extends AbstractApiController
 
         $incidents = Incident::where('visible', '>=', $incidentVisibility);
 
-        $incidents->search(Binput::except(['sort', 'order', 'per_page']));
+        $incidents->search(request()->except(['sort', 'order', 'per_page']));
 
-        if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+        if ($sortBy = request('sort')) {
+            $direction = request()->has('order') && request('order') == 'desc';
 
             $incidents->sort($sortBy, $direction);
         }
 
-        $incidents = $incidents->paginate(Binput::get('per_page', 20));
+        $incidents = $incidents->paginate(request('per_page', 20));
 
         return $this->paginator($incidents, Request::instance());
     }
@@ -68,18 +67,18 @@ class IncidentController extends AbstractApiController
     {
         try {
             $incident = execute(new CreateIncidentCommand(
-                Binput::get('name'),
-                Binput::get('status'),
-                Binput::get('message', null, false, false),
-                (bool) Binput::get('visible', true),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
-                (bool) Binput::get('notify', true),
-                (bool) Binput::get('stickied', false),
-                Binput::get('occurred_at'),
-                Binput::get('template'),
-                Binput::get('vars', []),
-                Binput::get('meta', [])
+                request('name'),
+                request('status'),
+                request('message', null, false, false),
+                (bool) request('visible', true),
+                request('component_id'),
+                request('component_status'),
+                (bool) request('notify', true),
+                (bool) request('stickied', false),
+                request('occurred_at'),
+                request('template'),
+                request('vars', []),
+                request('meta', [])
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -100,17 +99,17 @@ class IncidentController extends AbstractApiController
         try {
             $incident = execute(new UpdateIncidentCommand(
                 $incident,
-                Binput::get('name'),
-                Binput::get('status'),
-                Binput::get('message'),
-                (bool) Binput::get('visible', true),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
-                (bool) Binput::get('notify', true),
-                (bool) Binput::get('stickied', false),
-                Binput::get('occurred_at'),
-                Binput::get('template'),
-                Binput::get('vars', [])
+                request('name'),
+                request('status'),
+                request('message'),
+                (bool) request('visible', true),
+                request('component_id'),
+                request('component_status'),
+                (bool) request('notify', true),
+                (bool) request('stickied', false),
+                request('occurred_at'),
+                request('template'),
+                request('vars', [])
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -127,14 +126,14 @@ class ComponentGroupController extends Controller
     {
         try {
             $group = execute(new CreateComponentGroupCommand(
-                Binput::get('name'),
-                Binput::get('order', 0),
-                Binput::get('collapsed'),
-                Binput::get('visible')
+                request('name'),
+                request('order', 0),
+                request('collapsed'),
+                request('visible')
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.groups.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -155,14 +154,14 @@ class ComponentGroupController extends Controller
         try {
             $group = execute(new UpdateComponentGroupCommand(
                 $group,
-                Binput::get('name'),
+                request('name'),
                 $group->order,
-                Binput::get('collapsed'),
-                Binput::get('visible')
+                request('collapsed'),
+                request('visible')
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.groups.edit', [$group->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }

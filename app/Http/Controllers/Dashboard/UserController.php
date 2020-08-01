@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserEnabledTwoAuthEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
 use CachetHQ\Cachet\Models\User;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +45,7 @@ class UserController extends Controller
      */
     public function postUser()
     {
-        $userData = array_filter(Binput::only(['username', 'email', 'password', 'google2fa']));
+        $userData = array_filter(request()->only(['username', 'email', 'password', 'google2fa']));
 
         $enable2FA = (bool) Arr::pull($userData, 'google2fa');
 

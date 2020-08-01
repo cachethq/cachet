@@ -37,22 +37,22 @@
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                             <label class="radio-inline">
-                                <input type="radio" name="status" value="1" required {{ (int) Binput::old('status') === 1 ? 'checked' : null }}>
+                                <input type="radio" name="status" value="1" required {{ (int) request()->old('status') === 1 ? 'checked' : null }}>
                                 <i class="icon ion-flag"></i>
                                 {{ trans('cachet.incidents.status')[1] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="status" value="2" required {{ (int) Binput::old('status') === 2 ? 'checked' : null }}>
+                                <input type="radio" name="status" value="2" required {{ (int) request()->old('status') === 2 ? 'checked' : null }}>
                                 <i class="icon ion-alert-circled"></i>
                                 {{ trans('cachet.incidents.status')[2] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="status" value="3" required {{ (int) Binput::old('status') === 3 ? 'checked' : null }}>
+                                <input type="radio" name="status" value="3" required {{ (int) request()->old('status') === 3 ? 'checked' : null }}>
                                 <i class="icon ion-eye"></i>
                                 {{ trans('cachet.incidents.status')[3] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="status" value="4" required {{ (int) Binput::old('status') === 4 ? 'checked' : null }}>
+                                <input type="radio" name="status" value="4" required {{ (int) request()->old('status') === 4 ? 'checked' : null }}>
                                 <i class="icon ion-checkmark"></i>
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
@@ -98,7 +98,7 @@
                         <div class="form-group">
                             <label for="message">{{ trans('forms.incidents.message') }}</label>
                             <div class="markdown-control">
-                                <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('message') }}</textarea>
+                                <textarea name="message" class="form-control autosize" rows="5" required>{{ request()->old('message') }}</textarea>
                             </div>
                         </div>
                     </fieldset>

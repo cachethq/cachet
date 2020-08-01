@@ -20,7 +20,6 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
@@ -118,22 +117,22 @@ class IncidentController extends Controller
     {
         try {
             $incident = execute(new CreateIncidentCommand(
-                Binput::get('name'),
-                Binput::get('status'),
-                Binput::get('message', null, false, false),
-                Binput::get('visible', true),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
-                Binput::get('notify', false),
-                Binput::get('stickied', false),
-                Binput::get('occurred_at'),
+                request('name'),
+                request('status'),
+                request('message'),
+                request('visible', true),
+                request('component_id'),
+                request('component_status'),
+                request('notify', false),
+                request('stickied', false),
+                request('occurred_at'),
                 null,
                 [],
-                ['seo' => Binput::get('seo', [])]
+                ['seo' => request('seo', [])]
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.create')
-                ->withInput(Binput::all())
+                ->withInput()
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -191,12 +190,12 @@ class IncidentController extends Controller
     {
         try {
             IncidentTemplate::create([
-                'name'     => Binput::get('name'),
-                'template' => Binput::get('template', null, false, false),
+                'name'     => request('name'),
+                'template' => request('template', null, false, false),
             ]);
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.create')
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -249,28 +248,28 @@ class IncidentController extends Controller
         try {
             $incident = execute(new UpdateIncidentCommand(
                 $incident,
-                Binput::get('name'),
-                Binput::get('status'),
-                Binput::get('message'),
-                Binput::get('visible', true),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
-                Binput::get('notify', true),
-                Binput::get('stickied', false),
-                Binput::get('occurred_at'),
+                request('name'),
+                request('status'),
+                request('message'),
+                request('visible', true),
+                request('component_id'),
+                request('component_status'),
+                request('notify', true),
+                request('stickied', false),
+                request('occurred_at'),
                 null,
                 [],
-                ['seo' => Binput::get('seo', [])]
+                ['seo' => request('seo', [])]
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
-                ->withInput(Binput::all())
+                ->withInput(request()->all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
         if ($incident->component) {
-            $incident->component->update(['status' => Binput::get('component_status')]);
+            $incident->component->update(['status' => request('component_status')]);
         }
 
         return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
@@ -287,7 +286,7 @@ class IncidentController extends Controller
     public function editTemplateAction(IncidentTemplate $template)
     {
         try {
-            $template->update(Binput::get('template'));
+            $template->update(request('template'));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.edit', ['id' => $template->id])
                 ->withUpdatedTemplate($template)

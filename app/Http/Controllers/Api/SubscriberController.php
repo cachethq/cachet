@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Models\Subscriber;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -35,7 +34,7 @@ class SubscriberController extends AbstractApiController
      */
     public function index()
     {
-        $subscribers = Subscriber::paginate(Binput::get('per_page', 20));
+        $subscribers = Subscriber::paginate(request('per_page', 20));
 
         return $this->paginator($subscribers, Request::instance());
     }
@@ -47,10 +46,10 @@ class SubscriberController extends AbstractApiController
      */
     public function store()
     {
-        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
+        $verified = request('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
 
         try {
-            $subscriber = execute(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components', null)));
+            $subscriber = execute(new SubscribeSubscriberCommand(request('email'), $verified, request('components', null)));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
