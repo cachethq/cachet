@@ -26,7 +26,7 @@ use CachetHQ\Cachet\Http\Middleware\Throttler;
 use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-        \App\Http\Middleware\CheckForMaintenanceMode::class,
+        \CachetHQ\Cachet\Http\Middleware\CheckForMaintenanceMode::class,
 use Illuminate\Routing\Middleware\ValidateSignature;
 
 class Kernel extends HttpKernel
@@ -72,7 +72,7 @@ class Kernel extends HttpKernel
     protected $middlewarePriority = [
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \App\Http\Middleware\Authenticate::class,
+        \CachetHQ\Cachet\Http\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
