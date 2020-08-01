@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Informacje o tej stronie',
             'days-of-incidents'      => 'Z ilu ostatnich dni pokazywać incydenty?',
             'banner'                 => 'Baner',
-            'banner-help'            => "Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.",
+            'banner-help'            => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.',
             'subscribers'            => 'Czy zezwolić użytkownikom na subskrypcje e-mail w celu otrzymywania powiadomień?',
             'automatic_localization' => 'Automatycznie tłumaczyć twoją stronę statusu na język odwiedzającego?',
         ],

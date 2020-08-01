@@ -23,27 +23,27 @@ return [
     |
     */
 
-   'github' => [
+    'github' => [
         'token' => env('GITHUB_TOKEN'),
     ],
 
-    'mailgun' => [
-        'domain' => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
-    ],
+     'mailgun' => [
+         'domain' => env('MAIL_USERNAME'),
+         'secret' => env('MAIL_PASSWORD'),
+     ],
 
-    'mandrill' => [
-        'secret' => env('MAIL_PASSWORD'),
-    ],
+     'mandrill' => [
+         'secret' => env('MAIL_PASSWORD'),
+     ],
 
-    'ses' => [
-        'key'    => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
-        'region' => 'us-east-1',
-    ],
+     'ses' => [
+         'key'    => env('MAIL_USERNAME'),
+         'secret' => env('MAIL_PASSWORD'),
+         'region' => 'us-east-1',
+     ],
 
-    'sparkpost' => [
-        'secret' => env('MAIL_PASSWORD'),
-    ],
+     'sparkpost' => [
+         'secret' => env('MAIL_PASSWORD'),
+     ],
 
 ];

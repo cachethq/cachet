@@ -43,7 +43,7 @@ return [
     |
     */
 
-   'automatic_localization' => false,
+    'automatic_localization' => false,
 
     /*
     |--------------------------------------------------------------------------

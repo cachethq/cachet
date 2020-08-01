@@ -23,7 +23,10 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Incident extends Model implements HasPresenter
 {
-    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use SearchableTrait;
+    use SoftDeletes;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

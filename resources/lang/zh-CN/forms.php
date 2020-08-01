@@ -112,7 +112,7 @@ return [
             'about-this-page'        => '关于本页',
             'days-of-incidents'      => '每页最多显示故障天数',
             'banner'                 => '横幅图像',
-            'banner-help'            => "建议上传文件宽度不大于 930 像素。",
+            'banner-help'            => '建议上传文件宽度不大于 930 像素。',
             'subscribers'            => '允许用户订阅邮件通知',
             'automatic_localization' => '根据访客的系统语言自动本地化状态页面',
         ],
