@@ -35,7 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -74,7 +74,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Maintenance',
+        'schedule'     => 'Maintenance Planifiée',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [

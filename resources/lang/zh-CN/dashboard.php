@@ -35,7 +35,7 @@ return [
                 'failure' => '修改故障更新时出现问题',
             ],
         ],
-        'reported_by'              => '由用户 :user 报告的',
+        'reported_by'              => '在 :timestamp 由 :user 报告',
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',

@@ -35,7 +35,7 @@ return [
                 'failure' => 'Noe gikk galt ved oppdatering av hendelsesoppdateringen',
             ],
         ],
-        'reported_by'              => 'Rapportert av :user',
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Report an incident',
             'success' => 'Incident added.',

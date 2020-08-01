@@ -12,135 +12,137 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Poslední aktualizace :timestamp',
         'status'       => [
-            0 => 'Unknown',
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            0 => 'Neznámý',
+            1 => 'V provozu',
+            2 => 'Problémy s výkonem',
+            3 => 'Částečný výpadek',
+            4 => 'Závažný výpadek',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Ostatní služby',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Označit vše',
+        'deselect_all' => 'Odznačit vše',
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'No incidents reported',
-        'past'         => 'Past Incidents',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
-        'scheduled_at' => ', scheduled :timestamp',
-        'posted'       => 'Posted :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'none'         => 'Nejsou nahlášeny žádné incidenty',
+        'past'         => 'Minulé incidenty',
+        'stickied'     => 'Připnuté incidenty',
+        'scheduled'    => 'Plánovaná odstávka',
+        'scheduled_at' => ', plánované na :timestamp',
+        'posted'       => 'Přidáno :timestamp od :username',
+        'posted_at'    => 'Publikováno :timestamp',
         'status'       => [
-            1 => 'Investigating',
-            2 => 'Identified',
-            3 => 'Watching',
-            4 => 'Fixed',
+            1 => 'Zkoumání příčiny',
+            2 => 'Problém identifikován',
+            3 => 'Sledování',
+            4 => 'Opraveno',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Blížící se',
+            1 => 'Probíhající',
+            2 => 'Hotovo',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'good'  => '[0,1] Služba je v provozu|[2,*]Všechny služby fungují bez problémů',
+        'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
+        'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key',
-        'revoke'     => 'Revoke API Key',
+        'regenerate' => 'Obnovit API klíč',
+        'revoke'     => 'Zrušit API klíč',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Během poslední hodiny',
+            'hourly'    => 'Posledních 12 hodin',
+            'weekly'    => 'Týden',
+            'monthly'   => 'Měsíc',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Subscribe',
-        'manage_subscription' => 'Manage subscription',
+        'subscribe'           => 'Přihlaste se změnám stavu a aktualizacím incidentů',
+        'unsubscribe'         => 'Odhlásit odběr',
+        'button'              => 'Přihlásit',
+        'manage_subscription' => 'Spravovat odběry',
         'manage'              => [
-            'notifications'       => 'Notifications',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications'       => 'Oznámení',
+            'notifications_for'   => 'Spravujte oznámení pro',
             'no_subscriptions'    => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'Aktualizovat odběry',
             'my_subscriptions'    => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Spravovat odběry na :link',
         ],
         'email' => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'manage_subscription' => 'Poslali jsme Vám e-mail, prosím klikněte na odkaz pro správu odběru',
+            'subscribe'           => 'Přihlásit se k zasílání upozornění e-mailem.',
+            'subscribed'          => 'Proběhlo přihlášení k e-mailovým upozorněním, potvrďte ho prosím na vašem e-mailu.',
+            'updated-subscribe'   => 'Úspěšně jste aktualizovali své odběry.',
+            'verified'            => 'E-mail pro zasílání upozornění byl ověřen. Děkujeme!',
+            'manage'              => 'Spravovat e-mailové odběry',
+            'unsubscribe'         => 'Odhlásit z odběru e-mailových upozornění.',
+            'unsubscribed'        => 'Odběr e-mailových upozornění byl zrušen.',
+            'failure'             => 'Došlo k chybě při nastavení odběru e-mailů.',
+            'already-subscribed'  => 'Nelze přihlásit k odběru :email, protože je již přihlášen.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'title'    => 'Registrovat se',
+        'username' => 'Uživatelské jméno',
+        'email'    => 'E-mail',
+        'password' => 'Heslo',
+        'success'  => 'Tvůj účet byl vytvořen.',
+        'failure'  => 'Něco je špatně, nelze se registrovat.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Je k dispozici nová verze Cachet. Jak provést update najdeš <a href="https://docs.cachethq.io/docs/updating-cachet">zde</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Zavřít',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
+            'title'  => 'Přihlásit se k odběru upozornění',
+            'body'   => 'Zadej svůj email pro odběr upozornění této služby. Pokud již odebíráš upozornění, budeš nadále dostávat emaily pro tuto službu.',
+            'button' => 'Přihlásit',
         ],
     ],
 
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'Stay up to date with the latest service updates from :app.',
+            'incident'  => 'Podrobnosti a aktuální informace o událost :name, ke které došlo :date',
+            'schedule'  => 'Podrobnosti o plánované údržbě :name od :startDate',
+            'subscribe' => 'Přihlaste se k odběru :app, abyste obdrželi aktualizace o událostech a plánované údržbě',
+            'overview'  => 'Držte krok s nejnovějšími aktualizacemi od: app.',
         ],
     ],
 
     // Other
-    'home'            => 'Home',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'About This Site',
+    'home'            => 'Hlavní stránka',
+    'powered_by'      => 'Vytvořeno pomocí <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Časová zóna je :timezone.',
+    'about_this_site' => 'O tomto webu',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Status Feed',
+    'feed'            => 'Kanál stavů',
 
 ];

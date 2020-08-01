@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',
             'analytics_gosquared'    => 'Código de GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL de tu instancia Piwik (sin el http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Id de tu sitio Piwik',
         ],
         'localization' => [
@@ -227,6 +227,11 @@ return [
 
     'general' => [
         'timezone' => 'Select Timezone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons

@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Statusside oppdateringsfrekvens (i sekunder)',
             'major_outage_rate'                     => 'Større brudd terskel (i %)',
             'banner'                                => 'Bannerbilde',
-            'banner-help'                           => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler',
+            'banner-help'                           => "Det anbefales at du ikke laster opp bilder bredere enn 930 piksler",
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'Utelat notifikasjoner når hendelse inntreffer under vedlikeholdsperiode?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
@@ -227,6 +227,11 @@ return [
 
     'general' => [
         'timezone' => 'Velg tidssone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons

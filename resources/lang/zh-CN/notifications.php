@@ -85,6 +85,14 @@ return [
                 'action'  => '验证',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => '管理您的订阅',
+                'content' => '点击管理您对 :app_name 状态页的订阅。',
+                'title'   => '点击管理您对 :app_name 状态页的订阅。',
+                'action'  => '管理订阅',
+            ],
+        ],
     ],
     'system' => [
         'test' => [

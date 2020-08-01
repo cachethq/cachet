@@ -23,8 +23,8 @@ return [
         'group' => [
             'other' => 'Autres composants',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Tout sélectionner',
+        'deselect_all' => 'Tout désélectionner',
     ],
 
     // Incidents
@@ -32,9 +32,9 @@ return [
         'none'         => 'Aucun incident signalé',
         'past'         => 'Incidents antérieurs',
         'stickied'     => 'Incidents épinglés',
-        'scheduled'    => 'Maintenance',
+        'scheduled'    => 'Maintenance Planifiée',
         'scheduled_at' => ', planifé à :timestamp',
-        'posted'       => 'Posté à :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Enquête en cours',
@@ -55,8 +55,8 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'good'  => '[0,1] Système opérationnel|[2,*] Tous les systèmes sont opérationnels',
+        'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
         'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
@@ -78,26 +78,28 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Se désabonner',
         'button'              => 'S\'abonner',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Gérer l\'abonnement',
         'manage'              => [
             'notifications'       => 'Notifications',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => 'Gérer les notifications pour',
             'no_subscriptions'    => 'Vous êtes actuellement abonné à toutes les mises à jour.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'Mettre à jour l’abonnement',
             'my_subscriptions'    => 'Vous êtes actuellement abonné aux mises à jour suivantes.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Gérer vos abonnements à :link',
         ],
         'email' => [
-            'subscribe'          => 'S\'abonner aux notifications par email.',
-            'subscribed'         => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
-            'verified'           => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
-            'manage'             => 'Gérer votre abonnement',
-            'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
-            'unsubscribed'       => 'Votre abonnement aux notifications par email a été annulé.',
-            'failure'            => 'Une erreur est survenue lors de l\'abonnement.',
-            'already-subscribed' => 'Impossible de s\'abonner avec l\'adresse e-mail :email car celle-ci est déjà abonnée.',
+            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'subscribe'           => 'S\'abonner aux notifications par email.',
+            'subscribed'          => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
+            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'verified'            => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
+            'manage'              => 'Gérer votre abonnement',
+            'unsubscribe'         => 'Désinscription des mises à jour par courriel.',
+            'unsubscribed'        => 'Votre abonnement aux notifications par email a été annulé.',
+            'failure'             => 'Une erreur est survenue lors de l\'abonnement.',
+            'already-subscribed'  => 'Impossible de s\'abonner avec l\'adresse e-mail :email car celle-ci est déjà abonnée.',
         ],
     ],
 
@@ -127,9 +129,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Détails et mises à jour sur l\'incident :name qui a eu lieu le :date',
+            'schedule'  => 'Détails sur la période de maintenance planifiée :name débutant le :startDate',
+            'subscribe' => 'S’abonner à :app afin de recevoir les mises à jour des incidents et des périodes de maintenance planifiée',
             'overview'  => 'Restez à jour avec les dernières mises à jour de :app.',
         ],
     ],

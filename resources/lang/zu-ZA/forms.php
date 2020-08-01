@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'crwdns1434:0crwdne1434:0',
             'major_outage_rate'                     => 'crwdns1444:0crwdne1444:0',
             'banner'                                => 'crwdns1195:0crwdne1195:0',
-            'banner-help'                           => 'crwdns1435:0crwdne1435:0',
+            'banner-help'                           => "crwdns1435:0crwdne1435:0",
             'subscribers'                           => 'crwdns1197:0crwdne1197:0',
             'suppress_notifications_in_maintenance' => 'crwdns1427:0crwdne1427:0',
             'skip_subscriber_verification'          => 'crwdns1198:0crwdne1198:0',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'crwdns1203:0crwdne1203:0',
             'analytics_gosquared'    => 'crwdns1204:0crwdne1204:0',
-            'analytics_piwik_url'    => 'crwdns1205:0crwdne1205:0',
+            'analytics_piwik_url'    => 'crwdns1524:0crwdne1524:0',
             'analytics_piwik_siteid' => 'crwdns1206:0crwdne1206:0',
         ],
         'localization' => [
@@ -227,6 +227,11 @@ return [
 
     'general' => [
         'timezone' => 'crwdns1240:0crwdne1240:0',
+    ],
+
+    'seo' => [
+        'title'        => 'crwdns1526:0crwdne1526:0',
+        'description'  => 'crwdns1528:0crwdne1528:0',
     ],
 
     // Buttons

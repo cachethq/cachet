@@ -22,7 +22,7 @@ return [
         'site_locale'      => 'Selecione seu idioma',
         'enable_google2fa' => 'Habilitar a autenticação de dois fatores do Google',
         'cache_driver'     => 'Driver de Cache',
-        'queue_driver'     => 'Queue Driver',
+        'queue_driver'     => 'Driver na fila',
         'session_driver'   => 'Driver de Sessão',
         'mail_driver'      => 'Driver de correio',
         'mail_host'        => 'Host de correio',
@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Você deve habilitar os cookies do navegador para logar.',
         'rate-limit'    => 'Limite de acesso excedido.',
-        'remember_me'   => 'Remember me',
+        'remember_me'   => 'Lembrar-me',
     ],
 
     // Incidents form fields
@@ -49,16 +49,16 @@ return [
         'name'               => 'Nome',
         'status'             => 'Status',
         'component'          => 'Componente',
-        'component_status'   => 'Component Status',
+        'component_status'   => 'Status do componente',
         'message'            => 'Mensagem',
         'message-help'       => 'Você também pode usar o Markdown.',
-        'occurred_at'        => 'When did this incident occur?',
+        'occurred_at'        => 'Quando este incidente ocorreu?',
         'notify_subscribers' => 'Notificar os assinantes?',
-        'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
+        'notify_disabled'    => 'Devido a manutenção programada, notificações sobre este incidente ou seus componentes não serão feitas.',
         'visibility'         => 'Visibilidade do incidente',
-        'stick_status'       => 'Stick Incident',
-        'stickied'           => 'Stickied',
-        'not_stickied'       => 'Not Stickied',
+        'stick_status'       => 'Incidente fixado',
+        'stickied'           => 'Fixado',
+        'not_stickied'       => 'Não Fixado',
         'public'             => 'Visível para todos',
         'logged_in_only'     => 'Visível somente para usuários logados',
         'templates'          => [
@@ -73,8 +73,8 @@ return [
         'status'       => 'Status',
         'message'      => 'Mensagem',
         'message-help' => 'Você também pode usar o Markdown.',
-        'scheduled_at' => 'When is this maintenance scheduled for?',
-        'completed_at' => 'When did this maintenance complete?',
+        'scheduled_at' => 'Esta manutenção foi programada para quando?',
+        'completed_at' => 'Quando esta manutenção foi concluída?',
         'templates'    => [
             'name'     => 'Nome',
             'template' => 'Template',
@@ -95,13 +95,13 @@ return [
 
         'groups' => [
             'name'                     => 'Nome',
-            'collapsing'               => 'Expand/Collapse options',
+            'collapsing'               => 'Expandir/recolher opções',
             'visible'                  => 'Sempre expandido',
             'collapsed'                => 'Colapsar o grupo por padrão',
             'collapsed_incident'       => 'Colapsar o grupo, mas expandir se ocorrer algum problema',
-            'visibility'               => 'Visibility',
-            'visibility_public'        => 'Visible to public',
-            'visibility_authenticated' => 'Visible only to logged in users',
+            'visibility'               => 'Visibilidade',
+            'visibility_public'        => 'Visível ao Público',
+            'visibility_authenticated' => 'Visível apenas para usuários autenticados',
         ],
     ],
 
@@ -109,14 +109,14 @@ return [
     'actions' => [
         'name'               => 'Nome',
         'description'        => 'Descrição',
-        'start_at'           => 'Schedule start time',
-        'timezone'           => 'Timezone',
-        'schedule_frequency' => 'Schedule frequency (in seconds)',
-        'completion_latency' => 'Completion latency (in seconds)',
+        'start_at'           => 'Agendar horário de início',
+        'timezone'           => 'Fuso horário',
+        'schedule_frequency' => 'Agendar frequência (em segundos)',
+        'completion_latency' => 'Latência de conclusão (em segundos)',
         'group'              => 'Grupo',
-        'active'             => 'Active?',
+        'active'             => 'Ativado?',
         'groups'             => [
-            'name' => 'Group Name',
+            'name' => 'Nome do Grupo',
         ],
     ],
 
@@ -134,10 +134,10 @@ return [
         'places'                   => 'Casas decimais',
         'default_view'             => 'Visualização padrão',
         'threshold'                => 'Quantos minutos de limite entre os pontos das métricas?',
-        'visibility'               => 'Visibility',
-        'visibility_authenticated' => 'Visible to authenticated users',
-        'visibility_public'        => 'Visible to everybody',
-        'visibility_hidden'        => 'Always hidden',
+        'visibility'               => 'Visibilidade',
+        'visibility_authenticated' => 'Visível para usuários autenticados',
+        'visibility_public'        => 'Visível para todos',
+        'visibility_hidden'        => 'Sempre oculto',
 
         'points' => [
             'value' => 'Valor',
@@ -153,22 +153,22 @@ return [
             'display-graphs'                        => 'Exibir gráficos na página de status?',
             'about-this-page'                       => 'Sobre esta página',
             'days-of-incidents'                     => 'Quantos dias de incidentes para mostrar?',
-            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'time_before_refresh'                   => 'Frequência de atualização da página de status (em segundos)',
+            'major_outage_rate'                     => 'Limite de indisponibilidade (em %)',
             'banner'                                => 'Imagem do banner',
-            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
+            'banner-help'                           => "Recomenda-se que você envie arquivos com até 930 pixels de largura",
             'subscribers'                           => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
-            'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
-            'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
+            'suppress_notifications_in_maintenance' => 'Não enviar notificações quando o incidente ocorrer durante o período de manutenção?',
+            'skip_subscriber_verification'          => 'Ignorar verificação de usuários? (Cuidado, você pode sofrer com spam)',
             'automatic_localization'                => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
-            'enable_external_dependencies'          => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
-            'show_timezone'                         => 'Show the timezone the status page is running in',
-            'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
+            'enable_external_dependencies'          => 'Ativar dependências de terceiros (Google Fonts, Trackers, etc...)',
+            'show_timezone'                         => 'Mostrar o fuso horário no qual a página de status está sendo executada',
+            'only_disrupted_days'                   => 'Mostrar apenas os dias que contenham incidentes na linha do tempo?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',
             'analytics_gosquared'    => 'Código do GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL para a instância do Piwik (sem o http(s)://)',
+            'analytics_piwik_url'    => 'URL da sua instância Piwik',
             'analytics_piwik_siteid' => 'Id do site no Piwik',
         ],
         'localization' => [
@@ -180,8 +180,8 @@ return [
         'security' => [
             'allowed-domains'           => 'Domínios permitidos',
             'allowed-domains-help'      => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
-            'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate'       => 'Autenticar sempre',
+            'always-authenticate-help'  => 'Exigir login para ver qualquer página do sistema',
         ],
         'stylesheet' => [
             'custom-css' => 'Folha de estilos personalizada',
@@ -191,7 +191,7 @@ return [
             'background-fills'        => 'Preenchimento de Fundo (Componentes, Incidentes, Rodapé)',
             'banner-background-color' => 'Cor de Fundo do banner',
             'banner-padding'          => 'Margem interna',
-            'fullwidth-banner'        => 'Enable full width banner?',
+            'fullwidth-banner'        => 'Habilitar banner com largura total?',
             'text-color'              => 'Cor do Texto',
             'dashboard-login'         => 'Mostrar botão para painel no rodapé?',
             'reds'                    => 'Vermelho (Usado para erros)',
@@ -221,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Convide membros da sua equipe através do endereço de e-mail aqui.',
-            'email'       => 'Your Team Members Email Address',
+            'email'       => 'Endereço de e-mail dos membros da sua equipe',
         ],
     ],
 
     'general' => [
-        'timezone' => 'Select Timezone',
+        'timezone' => 'Selecione o fuso horário',
+    ],
+
+    'seo' => [
+        'title'        => 'Título para SEO',
+        'description'  => 'Descrição para SEO',
     ],
 
     // Buttons
@@ -241,7 +246,7 @@ return [
     'remove'         => 'Remover',
     'invite'         => 'Convite',
     'signup'         => 'Cadastrar-se',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gerenciar atualizações',
 
     // Other
     'optional' => '* Opcional',

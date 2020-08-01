@@ -35,7 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Report an incident',
             'success' => 'Incident added.',
@@ -179,13 +179,13 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => 'Span',
+        'member'      => 'Lid',
+        'profile'     => 'Profiel',
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
+            'success' => 'Spanlid bygevoeg.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
@@ -206,7 +206,7 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'Instellings',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
@@ -242,7 +242,7 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -260,7 +260,7 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
+        'login'      => 'Teken In',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
@@ -269,7 +269,7 @@ return [
     // Sidebar footer
     'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'logout'      => 'Teken Uit',
 
     // Notifications
     'notifications' => [

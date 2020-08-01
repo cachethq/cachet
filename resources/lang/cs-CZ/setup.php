@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Setup',
-    'title'             => 'Install Cachet',
-    'service_details'   => 'Service Details',
-    'env_setup'         => 'Environment Setup',
-    'status_page_setup' => 'Status Page Setup',
-    'show_support'      => 'Show support for Cachet?',
-    'admin_account'     => 'Administrator Account',
-    'complete_setup'    => 'Complete Setup',
-    'completed'         => 'Cachet has been configured successfully!',
-    'finish_setup'      => 'Go to dashboard',
+    'setup'             => 'Instalace',
+    'title'             => 'Instalace Cachet',
+    'service_details'   => 'Podrobnosti o službě',
+    'env_setup'         => 'Nastavení prostředí',
+    'status_page_setup' => 'Nastavení Stavové stránky',
+    'show_support'      => 'Zobrazit podporu pro Cachet?',
+    'admin_account'     => 'Účet správce',
+    'complete_setup'    => 'Dokončení instalace',
+    'completed'         => 'Cachet byl úspěšně nakonfigurován!',
+    'finish_setup'      => 'Přejít na dashboard',
 ];
