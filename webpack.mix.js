@@ -19,13 +19,13 @@ const sassOptions = {
 
 mix
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
-    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
-    .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
+    .sass('resources/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
+    .sass('resources/sass/app.scss', 'public/dist/css', sassOptions)
     .purgeCss()
     .options({
         processCssUrls: false
     })
-    .js('resources/assets/js/app.js', 'public/dist/js').extract(['vue', 'chart.js'])
+    .js('resources/js/app.js', 'public/dist/js').extract(['vue', 'chart.js'])
     .scripts([
         'public/dist/js/app.js',
         'node_modules/es5-shim/es5-shim.js',
@@ -41,7 +41,7 @@ mix
         'node_modules/sweetalert2/dist/sweetalert2.min.js',
         'node_modules/livestamp/livestamp.js',
         'node_modules/jquery-serializeobject/jquery.serializeObject.js',
-        'resources/assets/js/cachet.js',
+        'resources/js/cachet.js',
     ], 'public/dist/js/all.js')
 
 if (mix.inProduction()) {
