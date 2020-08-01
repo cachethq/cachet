@@ -69,4 +69,4 @@ the jobs immediately after they are created.
 
 To set this up change the .env file with the following setting:
 
-`QUEUE_DRIVER=sync`
+`QUEUE_CONNECTION=sync`

@@ -195,7 +195,7 @@ class InstallCommand extends Command
         $config = array_merge([
             'CACHE_DRIVER'   => null,
             'SESSION_DRIVER' => null,
-            'QUEUE_DRIVER'   => null,
+            'QUEUE_CONNECTION'   => null,
         ], $default);
 
         // Format the settings ready to display them in the table.
@@ -229,17 +229,17 @@ class InstallCommand extends Command
             $this->configureRedis();
         }
 
-        $config['QUEUE_DRIVER'] = $this->choice('Which queue driver do you want to use?', [
+        $config['QUEUE_CONNECTION'] = $this->choice('Which queue driver do you want to use?', [
             'null'       => 'None',
             'sync'       => 'Synchronous',
             'database'   => 'Database',
             'beanstalkd' => 'Beanstalk',
             'sqs'        => 'Amazon SQS',
             'redis'      => 'Redis',
-        ], $config['QUEUE_DRIVER']);
+        ], $config['QUEUE_CONNECTION']);
 
         // We need to configure Redis, but only if the cache driver wasn't redis.
-        if ($config['QUEUE_DRIVER'] === 'redis' && ($config['SESSION_DRIVER'] !== 'redis' || $config['CACHE_DRIVER'] !== 'redis')) {
+        if ($config['QUEUE_CONNECTION'] === 'redis' && ($config['SESSION_DRIVER'] !== 'redis' || $config['CACHE_DRIVER'] !== 'redis')) {
             $this->configureRedis();
         }
 
