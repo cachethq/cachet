@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => '状态页刷新速度（秒）',
             'major_outage_rate'                     => '重大故障阈值 (%)',
             'banner'                                => '横幅图像',
-            'banner-help'                           => "建议上传文件宽度不大于 930 像素。",
+            'banner-help'                           => '建议上传文件宽度不大于 930 像素。',
             'subscribers'                           => '允许用户订阅邮件通知',
             'suppress_notifications_in_maintenance' => '当计划维护发生时静默处理事件通知？',
             'skip_subscriber_verification'          => '是否跳过用户邮件验证？(小心，这可能会被滥用)',

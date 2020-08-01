@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Statuspagina verversingssnelheid (in seconden)',
             'major_outage_rate'                     => 'Drempelwaarde voor grote onderbreking (in %)',
             'banner'                                => 'Banner afbeelding',
-            'banner-help'                           => "Bij voorkeur geen afbeeldingen breder dan 930 pixels uploaden",
+            'banner-help'                           => 'Bij voorkeur geen afbeeldingen breder dan 930 pixels uploaden',
             'subscribers'                           => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
             'suppress_notifications_in_maintenance' => 'Onderdruk meldingen wanneer incident tijdens de onderhoudingsperiode voordoet?',
             'skip_subscriber_verification'          => 'Verificatie van gebruikers overslaan? (Let op, je kunt gespamd worden)',

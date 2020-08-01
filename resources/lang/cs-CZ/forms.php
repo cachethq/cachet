@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Obnovovací frekvence status stránky (v sekundách)',
             'major_outage_rate'                     => 'Hlavní doba výpadků (v %)',
             'banner'                                => 'Obrázek banneru',
-            'banner-help'                           => "Doručuje se nenahrávat soubory větší než 930 pixelů na šířku",
+            'banner-help'                           => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku',
             'subscribers'                           => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
             'suppress_notifications_in_maintenance' => 'Potlačit oznámení dojde-li k události během během času údržby?',
             'skip_subscriber_verification'          => 'Přestat ověřovat uživatele? (Pozor na spammery)',
