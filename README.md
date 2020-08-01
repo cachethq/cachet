@@ -2,7 +2,6 @@
 
 <p align="center">
 <a href="https://styleci.io/repos/26730195/"><img src="https://styleci.io/repos/26730195/shield" alt="StyleCI"></a>
-<a href="https://travis-ci.org/CachetHQ/Cachet"><a href="https://opencollective.com/Cachet" alt="Financial Contributors on Open Collective"><img src="https://opencollective.com/Cachet/all/badge.svg?label=financial+contributors" /></a> <img src="https://img.shields.io/travis/CachetHQ/Cachet/2.4.svg?style=flat-square" alt="Build Status"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square" alt="License"></a>
 <a href="https://translate.cachethq.io/project/cachet"><img src="https://d322cqt584bo4o.cloudfront.net/cachet/localized.svg" alt="Localisation"></a>
 <a href="https://github.com/CachetHQ/Cachet/releases"><img src="https://img.shields.io/github/release/cachethq/cachet.svg?style=flat-square" alt="Latest Stable Version"></a>
