@@ -53,7 +53,7 @@
         "laravel/tinker": "^1.0",
         "mccool/laravel-auto-presenter": "^7.1",
         "nexmo/client": "^1.5",
-        "pragmarx/google2fa": "^5.0",
+        "pragmarx/google2fa": "^8.0",
         "predis/predis": "^1.1",
         "twig/twig": "^2.6"
     },
