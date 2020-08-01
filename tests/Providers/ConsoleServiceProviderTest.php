@@ -9,23 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace CachetHQ\Tests\Cachet\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the repository service provider test class.
+ * This is the console service provider test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class RepositoryServiceProviderTest extends AbstractTestCase
+class ConsoleServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
-
-    public function testMetricRepositoryIsInjectable()
-    {
-        $this->assertIsInjectable(MetricRepository::class);
-    }
 }

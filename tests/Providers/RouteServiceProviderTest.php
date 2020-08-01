@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Foundation\Providers;
+namespace CachetHQ\Tests\Cachet\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
+use CachetHQ\Cachet\Providers\RouteServiceProvider;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;
