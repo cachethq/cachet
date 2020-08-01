@@ -26,6 +26,7 @@ class IncidentUpdate extends Model implements HasPresenter
 {
     use SortableTrait;
     use ValidatingTrait;
+
     /**
      * The attributes that should be casted to native types.
      *
