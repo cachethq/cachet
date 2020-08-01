@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
 
     /*
@@ -44,9 +53,9 @@ return [
     */
 
     'argon' => [
-        'memory' => 1024,
+        'memory'  => 1024,
         'threads' => 2,
-        'time' => 2,
+        'time'    => 2,
     ],
 
 ];

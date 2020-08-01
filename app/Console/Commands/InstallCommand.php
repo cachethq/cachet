@@ -193,8 +193,8 @@ class InstallCommand extends Command
     protected function configureDrivers(array $default = [])
     {
         $config = array_merge([
-            'CACHE_DRIVER'   => null,
-            'SESSION_DRIVER' => null,
+            'CACHE_DRIVER'       => null,
+            'SESSION_DRIVER'     => null,
             'QUEUE_CONNECTION'   => null,
         ], $default);
 
