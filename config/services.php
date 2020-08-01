@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 return [
 
     /*
@@ -23,33 +14,30 @@ return [
     |
     */
 
-    'github' => [
-        'token' => env('GITHUB_TOKEN'),
-    ],
-
     'mailgun' => [
-        'domain' => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
-    ],
-
-    'mandrill' => [
-        'secret' => env('MAIL_PASSWORD'),
-    ],
-
-    'nexmo' => [
-        'key'      => env('NEXMO_KEY'),
-        'secret'   => env('NEXMO_SECRET'),
-        'sms_from' => env('NEXMO_SMS_FROM'),
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
     'ses' => [
-        'key'    => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
+        'key' => env('SES_KEY'),
+        'secret' => env('SES_SECRET'),
         'region' => env('SES_REGION', 'us-east-1'),
     ],
 
     'sparkpost' => [
-        'secret' => env('MAIL_PASSWORD'),
+        'secret' => env('SPARKPOST_SECRET'),
+    ],
+
+    'stripe' => [
+        'model' => App\User::class,
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+        'webhook' => [
+            'secret' => env('STRIPE_WEBHOOK_SECRET'),
+            'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
+        ],
     ],
 
 ];
