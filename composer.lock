@@ -6468,16 +6468,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v4.2.1",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "33624bed591f76fe0237c59c235243cebd3c4305"
+                "reference": "4ecb32b63f51cb4c3991b24df31fbf32b5f8ecd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/33624bed591f76fe0237c59c235243cebd3c4305",
-                "reference": "33624bed591f76fe0237c59c235243cebd3c4305",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/4ecb32b63f51cb4c3991b24df31fbf32b5f8ecd7",
+                "reference": "4ecb32b63f51cb4c3991b24df31fbf32b5f8ecd7",
                 "shasum": ""
             },
             "require": {
@@ -6513,7 +6513,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2020-07-25T18:21:41+00:00"
+            "time": "2020-08-05T17:35:42+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
