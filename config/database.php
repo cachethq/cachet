@@ -61,6 +61,9 @@ return [
             'prefix'      => env('DB_PREFIX', null),
             'strict'      => false,
             'engine'      => null,
+	    'options' => [
+   		 PDO::MYSQL_ATTR_SSL_CA => storage_path('database.pem'),
+	    ],
         ],
 
         'pgsql' => [
