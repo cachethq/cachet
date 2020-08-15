@@ -62,7 +62,7 @@ return [
             'strict'      => false,
             'engine'      => null,
             'options' => [
-                PDO::MYSQL_ATTR_SSL_CA => storage_path('database.pem'),
+                PDO::MYSQL_ATTR_SSL_CA => storage_path('/var/www/html/storage/database.pem'),
             ],
         ],
 
