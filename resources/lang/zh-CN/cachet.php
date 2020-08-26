@@ -136,7 +136,7 @@ return [
     'home'            => '主屏幕',
     'description'     => '始终保持对 :app 服务状态的关注。',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
-    'about_this_site' => '关于我们',
+    'about_this_site' => '关于本站',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => '状态源',
