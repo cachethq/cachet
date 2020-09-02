@@ -14,11 +14,12 @@ return [
     'components' => [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'In Maintenance',
+            0 => 'Unknown',
             1 => 'Operational',
             2 => 'Alert',
             3 => 'Reduced Performance',
-            4 => 'Down',
+            4 => 'In Maintenance'
+            5 => 'Down',
         ],
         'group' => [
             'other' => 'Other Components',
