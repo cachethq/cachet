@@ -348,16 +348,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.147.10",
+            "version": "3.154.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b259aad35203d262c02be9b6353597fd62484374"
+                "reference": "5651d8a92164d98869b70a15e4c06ce4c14c7c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b259aad35203d262c02be9b6353597fd62484374",
-                "reference": "b259aad35203d262c02be9b6353597fd62484374",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5651d8a92164d98869b70a15e4c06ce4c14c7c28",
+                "reference": "5651d8a92164d98869b70a15e4c06ce4c14c7c28",
                 "shasum": ""
             },
             "require": {
@@ -429,7 +429,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-07-31T18:32:20+00:00"
+            "time": "2020-09-11T18:12:41+00:00"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -3607,12 +3607,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -3649,6 +3649,16 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tillkruss",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2016-06-16T16:22:20+00:00"
         },
@@ -7694,6 +7704,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -8391,12 +8402,12 @@
             "version": "v0.3.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tightenco/mailthief.git",
+                "url": "https://github.com/tighten/mailthief.git",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
+                "url": "https://api.github.com/repos/tighten/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "shasum": ""
             },
