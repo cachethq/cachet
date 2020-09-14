@@ -495,16 +495,16 @@
         },
         {
             "name": "bugsnag/bugsnag",
-            "version": "v3.21.0",
+            "version": "v3.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bugsnag/bugsnag-php.git",
-                "reference": "531fe1c16beb68af698e35bd5b3a19a422399e28"
+                "reference": "c9350129acc8875e620a971919018240a8bd12b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bugsnag/bugsnag-php/zipball/531fe1c16beb68af698e35bd5b3a19a422399e28",
-                "reference": "531fe1c16beb68af698e35bd5b3a19a422399e28",
+                "url": "https://api.github.com/repos/bugsnag/bugsnag-php/zipball/c9350129acc8875e620a971919018240a8bd12b4",
+                "reference": "c9350129acc8875e620a971919018240a8bd12b4",
                 "shasum": ""
             },
             "require": {
@@ -518,7 +518,8 @@
                 "mockery/mockery": "^0.9.4|^1.3.1",
                 "mtdowling/burgomaster": "dev-master#72151eddf5f0cf101502b94bf5031f9c53501a04",
                 "php-mock/php-mock-phpunit": "^1.1|^2.1",
-                "phpunit/phpunit": "^4.8.36|^7.5.15"
+                "phpunit/phpunit": "^4.8.36|^7.5.15",
+                "sebastian/version": ">=1.0.3"
             },
             "type": "library",
             "extra": {
@@ -551,27 +552,27 @@
                 "logging",
                 "tracking"
             ],
-            "time": "2020-04-29T10:59:17+00:00"
+            "time": "2020-08-20T14:44:32+00:00"
         },
         {
             "name": "bugsnag/bugsnag-laravel",
-            "version": "v2.19.0",
+            "version": "v2.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bugsnag/bugsnag-laravel.git",
-                "reference": "bebac599024d76210b9a5172372263e7ec6db9c2"
+                "reference": "66d23a6da7bc62d95efcad11a3a45aff822a4d89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bugsnag/bugsnag-laravel/zipball/bebac599024d76210b9a5172372263e7ec6db9c2",
-                "reference": "bebac599024d76210b9a5172372263e7ec6db9c2",
+                "url": "https://api.github.com/repos/bugsnag/bugsnag-laravel/zipball/66d23a6da7bc62d95efcad11a3a45aff822a4d89",
+                "reference": "66d23a6da7bc62d95efcad11a3a45aff822a4d89",
                 "shasum": ""
             },
             "require": {
                 "bugsnag/bugsnag": "^3.20",
                 "bugsnag/bugsnag-psr-logger": "^1.4",
-                "illuminate/contracts": "^5.0|^6.0|^7.0",
-                "illuminate/support": "^5.0|^6.0|^7.0",
+                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
                 "monolog/monolog": "^1.12|^2.0",
                 "php": ">=5.5"
             },
@@ -611,7 +612,7 @@
                 "logging",
                 "tracking"
             ],
-            "time": "2020-05-11T09:33:48+00:00"
+            "time": "2020-09-09T14:28:58+00:00"
         },
         {
             "name": "bugsnag/bugsnag-psr-logger",
@@ -777,16 +778,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd"
+                "reference": "8a7ecad675253e4654ea05505233285377405215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/95c63ab2117a72f48f5a55da9740a3273d45b7fd",
-                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8a7ecad675253e4654ea05505233285377405215",
+                "reference": "8a7ecad675253e4654ea05505233285377405215",
                 "shasum": ""
             },
             "require": {
@@ -835,11 +836,15 @@
                     "type": "custom"
                 },
                 {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/composer/composer",
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-08T08:27:21+00:00"
+            "time": "2020-08-23T12:54:47+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3607,12 +3612,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -3649,6 +3654,16 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tillkruss",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2016-06-16T16:22:20+00:00"
         },
@@ -7694,6 +7709,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -8391,12 +8407,12 @@
             "version": "v0.3.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tightenco/mailthief.git",
+                "url": "https://github.com/tighten/mailthief.git",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
+                "url": "https://api.github.com/repos/tighten/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "shasum": ""
             },
