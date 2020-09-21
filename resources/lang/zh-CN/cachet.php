@@ -140,7 +140,7 @@ return [
     'home'            => '主屏幕',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
     'timezone'        => '时间将以 :timezone 时区显示。',
-    'about_this_site' => '关于我们',
+    'about_this_site' => '关于本站',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => '状态源',
