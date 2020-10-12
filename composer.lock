@@ -2828,37 +2828,37 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "7.4.1",
+            "version": "7.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb"
+                "reference": "bbebb533ea6493762cd4cd6ee24b24244c6c0b8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb",
-                "reference": "47f1d82c3d76dbb3ec6f5c609cb53260e7d2fcbb",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/bbebb533ea6493762cd4cd6ee24b24244c6c0b8e",
+                "reference": "bbebb533ea6493762cd4cd6ee24b24244c6c0b8e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/container": "^5.5|^6.0|^7.0",
-                "illuminate/contracts": "^5.5|^6.0|^7.0",
-                "illuminate/events": "^5.5|^6.0|^7.0",
-                "illuminate/pagination": "^5.5|^6.0|^7.0",
-                "illuminate/support": "^5.5|^6.0|^7.0",
-                "illuminate/view": "^5.5|^6.0|^7.0",
-                "php": "^7.1.3"
+                "illuminate/container": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/contracts": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/events": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/pagination": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/view": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "php": "^7.1.3 || ^8.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^2.4",
+                "graham-campbell/analyzer": "^2.4 || ^3.0",
                 "graham-campbell/testbench": "^5.4",
                 "mockery/mockery": "^1.3.1",
-                "phpunit/phpunit": "^6.5|^7.5|^8.4|^9.0"
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.4-dev"
+                    "dev-master": "7.5-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -2902,7 +2902,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-12T22:20:24+00:00"
+            "time": "2020-10-12T10:14:54+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3607,12 +3607,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -3649,6 +3649,16 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tillkruss",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2016-06-16T16:22:20+00:00"
         },
@@ -7694,6 +7704,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -8391,12 +8402,12 @@
             "version": "v0.3.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tightenco/mailthief.git",
+                "url": "https://github.com/tighten/mailthief.git",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
+                "url": "https://api.github.com/repos/tighten/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
                 "shasum": ""
             },
