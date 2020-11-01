@@ -33,8 +33,8 @@
     "promise": "^7.3.1",
     "sortablejs": "^1.8.4",
     "sweetalert2": "^6.8.0",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   },
   "private": true,
   "dependencies": {
