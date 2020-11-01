@@ -14,7 +14,7 @@
     "animate-sass": "^0.8.2",
     "axios": "^0.19",
     "bootstrap-sass": "^3.4.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "cross-env": "^5.1",
     "es5-shim": "^4.5.14",
     "flatpickr": "^4.5.7",
