@@ -65,6 +65,7 @@ return [
                 'subject' => 'Ny tidsplan opprettet',
                 'content' => ':name ble planlagt for :dato',
                 'title'   => 'En ny planlagt vedlikehold ble opprettet.',
+                'body'    => ':message',
                 'action'  => 'Vis',
             ],
             'slack' => [

@@ -65,6 +65,7 @@ return [
                 'subject' => 'Nový plán vytvořen',
                 'content' => ':name bylo naplánováno na :date',
                 'title'   => 'Nová plánovaná údržba byla vytvořena.',
+                'body'    => ':message',
                 'action'  => 'Zobrazit',
             ],
             'slack' => [

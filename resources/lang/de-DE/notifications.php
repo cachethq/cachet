@@ -65,6 +65,7 @@ return [
                 'subject' => 'Neuer Zeitplan erstellt',
                 'content' => ':name wurde für :date geplant',
                 'title'   => 'Eine neue geplante Wartung wurde erstellt.',
+                'body'    => ':message',
                 'action'  => 'Anzeigen',
             ],
             'slack' => [

@@ -3,6 +3,8 @@
 
 {{ $content }}
 
+{{ $body }}
+
 @lang('Thanks,')<br>
 {{ Config::get('setting.app_name') }}
 

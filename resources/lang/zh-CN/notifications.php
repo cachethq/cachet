@@ -65,6 +65,7 @@ return [
                 'subject' => '新的维护计划已创建',
                 'content' => ':name 已计划于 :date 进行',
                 'title'   => '新的计划维护已创建。',
+                'body'    => ':message',
                 'action'  => '查看',
             ],
             'slack' => [

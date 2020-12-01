@@ -16,6 +16,7 @@ return [
                 'subject'  => 'Component Status Updated',
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
+                'body'    => ':message',
                 'action'   => 'View',
             ],
             'slack' => [

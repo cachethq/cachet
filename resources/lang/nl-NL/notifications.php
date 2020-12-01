@@ -65,6 +65,7 @@ return [
                 'subject' => 'Nieuw tijdschema aangemaakt',
                 'content' => ':name is ingepland voor :date',
                 'title'   => 'Nieuw gepland onderhoud aangemaakt.',
+                'body'    => ':message',
                 'action'  => 'Tonen',
             ],
             'slack' => [

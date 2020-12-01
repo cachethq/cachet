@@ -74,10 +74,15 @@ class NewScheduleNotification extends Notification implements ShouldQueue
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
+        $body = trans('notifications.schedule.new.mail.body', [
+            'message' => $this->schedule->message,
+        ]);
+
         return (new MailMessage())
             ->subject(trans('notifications.schedule.new.mail.subject'))
             ->markdown('notifications.schedule.new', [
                 'content'                => $content,
+                'body'                   => $body,
                 'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),

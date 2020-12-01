@@ -65,6 +65,7 @@ return [
                 'subject' => 'Jadwal Baru Sudah Dibuat',
                 'content' => ':name dijadwalkan pada :date',
                 'title'   => 'Pemeliharaan terjadwal baru telah dibuat.',
+                'body'    => ':message',
                 'action'  => 'Lihat',
             ],
             'slack' => [

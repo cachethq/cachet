@@ -65,6 +65,7 @@ return [
                 'subject' => 'Novo Agendamento Criado',
                 'content' => ':name foi agendado para :date',
                 'title'   => 'Uma nova manutenção agendada foi criada.',
+                'body'    => ':message',
                 'action'  => 'Visualizar',
             ],
             'slack' => [

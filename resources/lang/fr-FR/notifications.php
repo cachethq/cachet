@@ -65,6 +65,7 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
+                'body'    => ':message',
                 'action'  => 'View',
             ],
             'slack' => [
