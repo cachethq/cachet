@@ -84,7 +84,7 @@ class DashboardController extends Controller
         $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         $entries = null;
-        if ($feed = $this->feed->latest()) {
+        if ($feed = $this->feed->latest() != Feel::FAILED) {
             $entries = array_slice($feed->channel->item, 0, 5);
         }
 
