@@ -41,7 +41,7 @@ class SubscribeSubscriberCommandHandler
             return $subscriber;
         }
 
-        $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
+        $subscriber = Subscriber::firstOrCreate(['email' => $command->email], ['global' => $command->global]);
 
         // Decide what to subscribe the subscriber to.
         if ($subscriptions = $command->subscriptions) {

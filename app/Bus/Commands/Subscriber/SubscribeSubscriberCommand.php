@@ -40,6 +40,13 @@ final class SubscribeSubscriberCommand
     public $subscriptions;
 
     /**
+     * The subscriber global property.
+     *
+     * @var bool
+     */
+    public $global;
+
+    /**
      * The validation rules.
      *
      * @var array
@@ -54,13 +61,15 @@ final class SubscribeSubscriberCommand
      * @param string     $email
      * @param bool       $verified
      * @param array|null $subscriptions
+     * @param bool       $global
      *
      * @return void
      */
-    public function __construct($email, $verified = false, $subscriptions = null)
+    public function __construct($email, $verified = false, $subscriptions = null, $global = true)
     {
         $this->email = $email;
         $this->verified = $verified;
         $this->subscriptions = $subscriptions;
+        $this->global = $global;
     }
 }
