@@ -127,7 +127,7 @@ return [
         'description'              => '描述',
         'description-help'         => '你可以使用 Markdown 。',
         'display-chart'            => '在狀態頁上顯示圖表？',
-        'default-value'            => 'Default value',
+        'default-value'            => 'Default value (-1 to hide)',
         'calc_type'                => 'Calculation of metrics',
         'type_sum'                 => '總和',
         'type_avg'                 => '平均',

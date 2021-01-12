@@ -40,7 +40,7 @@ class MetricRepository
      * Create a new metric repository class.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricInterface $repository
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory          $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */
@@ -64,27 +64,29 @@ class MetricRepository
         $nrOfMinutes = 61;
         $points = $this->repository->getPointsSinceMinutes($metric, $nrOfMinutes + $metric->threshold)->pluck('value', 'key')->take(-$nrOfMinutes);
 
-        $timeframe = $nrOfMinutes;
+        if ($metric->default_value >= 0) {
+            $timeframe = $nrOfMinutes;
 
-        //Settings counter for minutes without data
-        $minutesWithNoData = 0;
+            //Settings counter for minutes without data
+            $minutesWithNoData = 0;
 
-        for ($i = 0; $i < $timeframe; $i++) {
-            if (!$points->has($pointKey)) {
-                if ($i >= $metric->threshold) {
-                    $points->put($pointKey, $metric->default_value);
-                    //We put default value as metric, so we can reset counter for minutes without data
-                    $minutesWithNoData = 0;
+            for ($i = 0; $i < $timeframe; $i++) {
+                if (!$points->has($pointKey)) {
+                    if ($i >= $metric->threshold) {
+                        $points->put($pointKey, $metric->default_value);
+                        //We put default value as metric, so we can reset counter for minutes without data
+                        $minutesWithNoData = 0;
+                    } else {
+                        //We didn't find any data, but threshold is not meet yet so we just adding to counter
+                        $minutesWithNoData++;
+                    }
                 } else {
-                    //We didn't find any data, but threshold is not meet yet so we just adding to counter
-                    $minutesWithNoData++;
+                    //We found data within this threshold, zeroing counter
+                    $minutesWithNoData = 0;
                 }
-            } else {
-                //We found data within this threshold, zeroing counter
-                $minutesWithNoData = 0;
-            }
 
-            $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('Y-m-d H:i');
+                $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('Y-m-d H:i');
+            }
         }
 
         return $points->sortBy(function ($point, $key) {
@@ -96,7 +98,7 @@ class MetricRepository
      * Returns all points as an array, by x hours.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hours
+     * @param int $hours
      *
      * @return array
      */
@@ -106,12 +108,14 @@ class MetricRepository
         $pointKey = $dateTime->format('Y-m-d H:00');
         $points = $this->repository->getPointsSinceHour($metric, $hours)->pluck('value', 'key');
 
-        for ($i = 0; $i < $hours; $i++) {
-            if (!$points->has($pointKey)) {
-                $points->put($pointKey, $metric->default_value);
-            }
+        if ($metric->default_value >= 0) {
+            for ($i = 0; $i < $hours; $i++) {
+                if (!$points->has($pointKey)) {
+                    $points->put($pointKey, $metric->default_value);
+                }
 
-            $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('Y-m-d H:00');
+                $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('Y-m-d H:00');
+            }
         }
 
         return $points->sortBy(function ($point, $key) {
@@ -132,12 +136,14 @@ class MetricRepository
         $pointKey = $dateTime->format('Y-m-d');
         $points = $this->repository->getPointsSinceDay($metric, 7)->pluck('value', 'key');
 
-        for ($i = 0; $i <= 7; $i++) {
-            if (!$points->has($pointKey)) {
-                $points->put($pointKey, $metric->default_value);
-            }
+        if ($metric->default_value >= 0) {
+            for ($i = 0; $i <= 7; $i++) {
+                if (!$points->has($pointKey)) {
+                    $points->put($pointKey, $metric->default_value);
+                }
 
-            $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
+                $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
+            }
         }
 
         return $points->sortBy(function ($point, $key) {
@@ -159,12 +165,14 @@ class MetricRepository
         $daysInMonth = $dateTime->format('t');
         $points = $this->repository->getPointsSinceDay($metric, $daysInMonth)->pluck('value', 'key');
 
-        for ($i = 0; $i <= $daysInMonth; $i++) {
-            if (!$points->has($pointKey)) {
-                $points->put($pointKey, $metric->default_value);
-            }
+        if ($metric->default_value >= 0) {
+            for ($i = 0; $i <= $daysInMonth; $i++) {
+                if (!$points->has($pointKey)) {
+                    $points->put($pointKey, $metric->default_value);
+                }
 
-            $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
+                $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
+            }
         }
 
         return $points->sortBy(function ($point, $key) {

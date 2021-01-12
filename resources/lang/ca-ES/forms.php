@@ -127,7 +127,7 @@ return [
         'description'              => 'Description',
         'description-help'         => 'You may also use Markdown.',
         'display-chart'            => 'Display chart on status page?',
-        'default-value'            => 'Default value',
+        'default-value'            => 'Default value (-1 to hide)',
         'calc_type'                => 'Calculation of metrics',
         'type_sum'                 => 'Sum',
         'type_avg'                 => 'Average',
