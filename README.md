@@ -9,6 +9,10 @@
 
 Cachet is a beautiful and powerful open source status page system.
 
+**v2.5:** Development towards [Upstram CachetHQ/Cachet](https://github.com/CachetHQ/Cachet)
+v2.4 seems to have stalled. This fork is going to skip v2.4 and get all the new
+features stable and into a v2.5 deployment.
+
 ## Overview
 
 - List your service components
