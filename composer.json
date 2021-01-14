@@ -28,6 +28,12 @@
         "paragonie/random_compat": "*",
         "symfony/polyfill-mbstring": "*"
     },
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/fiveai/TestBench"
+      }
+    ],
     "require": {
         "php": "^7.1.3",
         "ext-mbstring": "*",
@@ -59,7 +65,7 @@
     },
     "require-dev": {
         "ext-sqlite3": "*",
-        "alt-three/testbench": "^4.0",
+        "alt-three/testbench": "v5.0.0",
         "barryvdh/laravel-debugbar": "^3.2",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.8",
