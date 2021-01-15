@@ -1,0 +1,50 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "2.5" ]
+
+jobs:
+  tests:
+    name: PHP (${{ matrix.php }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.1', '7.2', '7.3']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        tools: composer:v2
+        coverage: xdebug
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php${{ matrix.php-version }}-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      if: steps.composer-cache.outputs.cache-hit != 'true'
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run test suite
+      run: composer run-script test-coverage
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+
