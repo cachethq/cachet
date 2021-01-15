@@ -46,13 +46,12 @@ class IncidentTest extends AbstractApiTestCase
     public function testGetIncidentsBySearch()
     {
         factory('CachetHQ\Cachet\Models\Incident', 3)->create([
-          'status' => 0
+            'status' => 0,
         ]);
 
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 2)->create([
-          'status' => 1
+            'status' => 1,
         ]);
-
 
         $this->get('/api/v1/incidents?status=1');
         $this->seeJson(['id' => $incidents[0]->id]);
@@ -62,13 +61,12 @@ class IncidentTest extends AbstractApiTestCase
     public function testGetIncidentsPaginatedBySearch()
     {
         factory('CachetHQ\Cachet\Models\Incident', 3)->create([
-          'status' => 0
+            'status' => 0,
         ]);
 
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 2)->create([
-          'status' => 1
+            'status' => 1,
         ]);
-
 
         $this->get('/api/v1/incidents?status=1&per_page=1&page=1');
         $this->seeJson(['id' => $incidents[0]->id]);
