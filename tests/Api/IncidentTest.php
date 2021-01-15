@@ -39,6 +39,60 @@ class IncidentTest extends AbstractApiTestCase
         $response->assertJsonFragment(['id' => $incidents[2]->id]);
     }
 
+    public function test_can_get_paginated_all_incidents()
+    {
+        $incidents = factory(Incident::class, 3)->create();
+
+        $response = $this->json('GET', '/api/v1/incidents?per_page=1&page=1');
+
+        $response->assertStatus(200);
+
+        $response->assertJsonFragment(['id' => $incidents[0]->id]);
+        $response->assertJsonCount(1, 'data');
+
+        $response = $this->json('GET', '/api/v1/incidents?per_page=1&page=2');
+
+        $response->assertStatus(200);
+
+        $response->assertJsonFragment(['id' => $incidents[1]->id]);
+        $response->assertJsonCount(1, 'data');
+    }
+
+    public function test_can_get_all_incidents_with_search()
+    {
+        factory(Incident::class, 3)->create([
+            'status' => 0
+        ]);
+        $incidents = factory(Incident::class, 2)->create([
+            'status' => 1
+        ]);
+
+        $response = $this->json('GET', '/api/v1/incidents?status=1');
+
+        $response->assertStatus(200);
+
+        $response->assertJsonFragment(['id' => $incidents[0]->id]);
+        $response->assertJsonFragment(['id' => $incidents[1]->id]);
+        $response->assertJsonCount(2, 'data');
+    }
+
+    public function test_can_get_paginated_all_incidents_with_search()
+    {
+        factory(Incident::class, 3)->create([
+            'status' => 0
+        ]);
+        $incidents = factory(Incident::class, 2)->create([
+            'status' => 1
+        ]);
+
+        $response = $this->json('GET', '/api/v1/incidents?status=1&page=1&per_page=1');
+
+        $response->assertStatus(200);
+
+        $response->assertJsonFragment(['id' => $incidents[0]->id]);
+        $response->assertJsonCount(1, 'data');
+    }
+
     public function test_cannot_get_invalid_component()
     {
         $response = $this->json('GET', '/api/v1/incidents/0');
