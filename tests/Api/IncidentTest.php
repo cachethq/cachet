@@ -30,6 +30,51 @@ class IncidentTest extends AbstractApiTestCase
         $this->assertResponseOk();
     }
 
+    public function testGetIncidentsPaginated()
+    {
+        $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
+
+        $this->get('/api/v1/incidents?per_page=1&page=1');
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->assertResponseOk();
+
+        $this->get('/api/v1/incidents?per_page=1&page=2');
+        $this->seeJson(['id' => $incidents[1]->id]);
+        $this->assertResponseOk();
+    }
+
+    public function testGetIncidentsBySearch()
+    {
+        factory('CachetHQ\Cachet\Models\Incident', 3)->create([
+          'status' => 0
+        ]);
+
+        $incidents = factory('CachetHQ\Cachet\Models\Incident', 2)->create([
+          'status' => 1
+        ]);
+
+
+        $this->get('/api/v1/incidents?status=1');
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->assertResponseOk();
+    }
+
+    public function testGetIncidentsPaginatedBySearch()
+    {
+        factory('CachetHQ\Cachet\Models\Incident', 3)->create([
+          'status' => 0
+        ]);
+
+        $incidents = factory('CachetHQ\Cachet\Models\Incident', 2)->create([
+          'status' => 1
+        ]);
+
+
+        $this->get('/api/v1/incidents?status=1&per_page=1&page=1');
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->assertResponseOk();
+    }
+
     public function testGetInvalidIncident()
     {
         $this->get('/api/v1/incidents/0');
