@@ -68,18 +68,8 @@ class ApiController extends AbstractApiController
             try {
                 $component = Component::find($componentId);
 
-                execute(new UpdateComponentCommand(
-                    $component,
-                    $component->name,
-                    $component->description,
-                    $component->status,
-                    $component->link,
-                    $order + 1,
-                    $component->group_id,
-                    $component->enabled,
-                    $component->meta,
-                    true
-                ));
+                $component->order = $order + 1;
+                $component->save();
             } catch (QueryException $e) {
                 throw new BadRequestHttpException();
             }
