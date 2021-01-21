@@ -40,8 +40,8 @@ return [
     */
 
     'extensions' => array_filter([
-        env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiExtension' : null,
-        env('CACHET_AUTO_TWITTER', true) ? 'AltThree\Twitter\TwitterExtension' : null,
+        env('CACHET_EMOJI', false) ? 'CachetHQ\Emoji\EmojiExtension' : null,
+        env('CACHET_AUTO_TWITTER', true) ? 'CachetHQ\Twitter\TwitterExtension' : null,
     ]),
 
     /*
