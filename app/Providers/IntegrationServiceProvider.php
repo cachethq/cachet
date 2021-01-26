@@ -23,6 +23,7 @@ use CachetHQ\Cachet\Integrations\Core\System;
 use CachetHQ\Cachet\Integrations\GitHub\Releases;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
+use GuzzleHttp\Client;
 
 /**
  * This is the integration service provider.
@@ -111,10 +112,11 @@ class IntegrationServiceProvider extends ServiceProvider
     protected function registerReleases()
     {
         $this->app->singleton(ReleasesContract::class, function ($app) {
+            $client = $app->make(Client::class);
             $cache = $app['cache.store'];
             $token = $app['config']->get('services.github.token');
 
-            return new Releases($cache, $token);
+            return new Releases($client, $cache, $token);
         });
     }
 }

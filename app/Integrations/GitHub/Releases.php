@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Events\System\SystemCheckedForUpdatesEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Facades\Log;
 
 class Releases implements ReleasesContract
 {
@@ -31,6 +32,14 @@ class Releases implements ReleasesContract
      * @var int
      */
     const FAILED = 1;
+
+    /**
+     * The GuzzleHTTP client instance for making the requests
+     *
+     * @var \GuzzleHttp\Client
+     *
+     */
+    protected $client;
 
     /**
      * The cache repository instance.
@@ -56,14 +65,16 @@ class Releases implements ReleasesContract
     /**
      * Creates a new releases instance.
      *
+     * @param \GuzzleHttp\Client                     $client
      * @param \Illuminate\Contracts\Cache\Repository $cache
      * @param string|null                            $token
      * @param string|null                            $url
      *
      * @return void
      */
-    public function __construct(Repository $cache, $token = null, $url = null)
+    public function __construct(Client $client, Repository $cache, $token = null, $url = null)
     {
+        $this->client = $client;
         $this->cache = $cache;
         $this->token = $token;
         $this->url = $url ?: static::URL;
@@ -85,12 +96,21 @@ class Releases implements ReleasesContract
 
             event(new SystemCheckedForUpdatesEvent());
 
-            return json_decode((new Client())->get($this->url, [
-                'headers' => $headers,
-            ])->getBody(), true);
+            try {
+                return json_decode($this->client->get($this->url, [
+                    'headers' => $headers,
+                    'timeout' => 5,
+                    'connect_timeout' => 5,
+                ])->getBody(), true);
+
+            } catch (\Exception $e) {
+                Log::warning('Unable to lookup latest Cachet release. ' . $e->getMessage());
+                return self::FAILED;
+            }
+
         });
 
-        return [
+        return $release === self::FAILED ? null : [
             'tag_name' => $release['tag_name'],
             'prelease' => $release['prerelease'],
             'draft'    => $release['draft'],
