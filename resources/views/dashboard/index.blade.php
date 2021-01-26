@@ -70,23 +70,6 @@
                     </div>
                 </div>
 
-                @if($entries)
-                <div class="col-sm-12 col-lg-6">
-                    <div class="stats-widget">
-                        <div class='stats-top'>
-                            <span class='stats-value'>{{ trans('dashboard.widgets.news') }}</span>
-                            <span class='stats-label'>{{ trans('dashboard.widgets.news_subtitle') }}</span>
-                        </div>
-                        <div class='stats-body'>
-                            <div class="list-group">
-                                @foreach($entries as $entry)
-                                <a class="list-group-item" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small> <span class="badge"><i class="ion-android-open"></i></span></a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
             </div>
             @includeWhen($welcomeUser, 'dashboard.partials.welcome-modal')
         </div>

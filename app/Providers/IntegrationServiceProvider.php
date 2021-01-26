@@ -13,12 +13,10 @@ namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
 use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;
-use CachetHQ\Cachet\Integrations\Contracts\Feed as FeedContract;
 use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Integrations\Core\Beacon;
 use CachetHQ\Cachet\Integrations\Core\Credits;
-use CachetHQ\Cachet\Integrations\Core\Feed;
 use CachetHQ\Cachet\Integrations\Core\System;
 use CachetHQ\Cachet\Integrations\GitHub\Releases;
 use Illuminate\Contracts\Container\Container;
@@ -41,7 +39,6 @@ class IntegrationServiceProvider extends ServiceProvider
     {
         $this->registerBeacon();
         $this->registerCredits();
-        $this->registerFeed();
         $this->registerSystem();
 
         $this->registerReleases();
@@ -72,20 +69,6 @@ class IntegrationServiceProvider extends ServiceProvider
             $cache = $app['cache.store'];
 
             return new Credits($cache);
-        });
-    }
-
-    /**
-     * Register the feed class.
-     *
-     * @return void
-     */
-    protected function registerFeed()
-    {
-        $this->app->singleton(FeedContract::class, function ($app) {
-            $cache = $app['cache.store'];
-
-            return new Feed($cache);
         });
     }
 
