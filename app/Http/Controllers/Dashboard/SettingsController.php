@@ -248,17 +248,20 @@ class SettingsController extends Controller
 
         $credits = app(Credits::class)->latest();
 
-        $backers = $credits['backers'];
-        $contributors = $credits['contributors'];
+        if ($credits) {
+            $backers = $credits['backers'];
+            $contributors = $credits['contributors'];
 
-        shuffle($backers);
-        shuffle($contributors);
+            shuffle($backers);
+            shuffle($contributors);
+        }
 
         return View::make('dashboard.settings.credits')
             ->withPageTitle(trans('dashboard.settings.credits.credits').' - '.trans('dashboard.dashboard'))
-            ->withBackers($backers)
-            ->withContributors($contributors)
-            ->withSubMenu($this->subMenu);
+            ->withBackers(($credits) ? $backers : false)
+            ->withContributors(($credits) ? $contributors : false)
+            ->withSubMenu($this->subMenu)
+            ->withErrors((!$credits) ? trans('dashboard.settings.credits.unable-to-load') : null);
     }
 
     /**

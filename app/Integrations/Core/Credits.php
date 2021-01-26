@@ -77,6 +77,8 @@ class Credits implements CreditsContract
             try {
                 return json_decode((new Client())->get($this->url, [
                     'headers' => ['Accept' => 'application/json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
+                    'timeout' => 5,
+                    'connect_timeout' => 5,
                 ])->getBody(), true);
             } catch (Exception $e) {
                 return self::FAILED;

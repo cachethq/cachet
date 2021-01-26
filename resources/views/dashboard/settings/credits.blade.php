@@ -11,11 +11,13 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
+                @include('partials.errors')
                 <h4>Cachet</h4>
 
                 <p>{!! trans('dashboard.settings.credits.license') !!}</p>
 
                 <hr>
+                @if($contributors)
 
                 <h4>{{ trans('dashboard.settings.credits.contributors') }}</h4>
 
@@ -30,6 +32,7 @@
                     </li>
                     @endforeach
                 </ul>
+                @endif
 
                 <hr>
             </div>
