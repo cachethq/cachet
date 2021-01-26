@@ -115,6 +115,11 @@ class SettingsController extends Controller
             ],
         ];
 
+        // Remove the credits link if we cannot look them up
+        if (Config::get('cachet.internet_lookups') === false) {
+            unset($this->subMenu['credits']);
+        }
+
         View::share([
             'subTitle' => trans('dashboard.settings.settings'),
             'subMenu'  => $this->subMenu,
@@ -244,6 +249,10 @@ class SettingsController extends Controller
      */
     public function showCreditsView()
     {
+        if (Config::get('cachet.internet_lookups') === false) {
+            abort(403, 'Outbound Internet Lookups Disabled');
+        }
+
         $this->subMenu['credits']['active'] = true;
 
         $credits = app(Credits::class)->latest();

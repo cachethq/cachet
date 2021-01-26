@@ -63,6 +63,14 @@ class Releases implements ReleasesContract
     protected $url;
 
     /**
+     * Are outbound HTTP requests to the internet allowed by
+     * this installation
+     *
+     * @var bool
+     */
+    protected $enabled;
+
+    /**
      * Creates a new releases instance.
      *
      * @param \GuzzleHttp\Client                     $client
@@ -72,10 +80,11 @@ class Releases implements ReleasesContract
      *
      * @return void
      */
-    public function __construct(Client $client, Repository $cache, $token = null, $url = null)
+    public function __construct(Client $client, Repository $cache, bool $enabled = true, $token = null, $url = null)
     {
         $this->client = $client;
         $this->cache = $cache;
+        $this->enabled = $enabled;
         $this->token = $token;
         $this->url = $url ?: static::URL;
     }
@@ -87,6 +96,10 @@ class Releases implements ReleasesContract
      */
     public function latest()
     {
+        if (!$this->enabled) {
+            return null;
+        }
+
         $release = $this->cache->remember('release.latest', 720, function () {
             $headers = ['Accept' => 'application/vnd.github.v3+json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'];
 

@@ -67,8 +67,9 @@ class IntegrationServiceProvider extends ServiceProvider
     {
         $this->app->singleton(CreditsContract::class, function ($app) {
             $cache = $app['cache.store'];
+            $enabled = $app['config']->get('cachet.internet_lookups');
 
-            return new Credits($cache);
+            return new Credits($cache, $enabled);
         });
     }
 
@@ -97,9 +98,10 @@ class IntegrationServiceProvider extends ServiceProvider
         $this->app->singleton(ReleasesContract::class, function ($app) {
             $client = $app->make(Client::class);
             $cache = $app['cache.store'];
+            $enabled = $app['config']->get('cachet.internet_lookups');
             $token = $app['config']->get('services.github.token');
 
-            return new Releases($client, $cache, $token);
+            return new Releases($client, $cache, $enabled, $token);
         });
     }
 }
