@@ -21,7 +21,9 @@ mix
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
     .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
     .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
-    .purgeCss()
+    .purgeCss({
+        whitelistPatterns: [/^tooltip/]
+    })
     .options({
         processCssUrls: false
     })
