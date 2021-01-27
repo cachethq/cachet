@@ -15,6 +15,10 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Setting;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Notification;
+use CachetHQ\Cachet\Notifications\Subscriber\VerifySubscriptionNotification;
+use CachetHQ\Cachet\Models\Subscriber;
+use Illuminate\Support\Facades\URL;
 
 /**
  * This is the smoke test class.
@@ -42,6 +46,37 @@ class SmokeTest extends AbstractTestCase
         $this->configureApp();
 
         $this->get('/incidents/1')->assertStatus(200);
+    }
+
+    /**
+     * Test the subscribe process works
+     */
+    public function test_subscribe_page()
+    {
+        $this->configureApp();
+
+        Notification::fake();
+
+        $this->get('/subscribe')->assertStatus(200);
+
+        Notification::assertNothingSent();
+
+        $this->post('/subscribe', ['email' => 'test@example.com'])->assertStatus(302);
+
+        $subscriber = Subscriber::where('email', 'test@example.com')->first();
+
+        Notification::assertSentTo(
+            [$subscriber],
+            VerifySubscriptionNotification::class
+        );
+
+        $verify_route = URL::signedRoute(cachet_route_generator('subscribe.verify'), ['code' => $subscriber->verify_code]);
+
+        $this->followingRedirects()->get($verify_route)->assertStatus(200);
+
+        # Subscriber should now be verified
+        $subscriber->refresh();
+        $this->assertEquals(true, $subscriber->getIsVerifiedAttribute());
     }
 
     public function test_dashboard_auth_page()
