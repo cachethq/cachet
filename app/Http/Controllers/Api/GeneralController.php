@@ -40,10 +40,14 @@ class GeneralController extends AbstractApiController
     {
         $latest = app()->make(Releases::class)->latest();
 
-        return $this->setMetaData([
-            'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,
-            'latest'    => $latest,
-        ])->item(CACHET_VERSION);
+        if ($latest) {
+            $this->setMetaData([
+                'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,
+                'latest'    => $latest,
+            ]);
+        }
+
+        return $this->item(CACHET_VERSION);
     }
 
     /**

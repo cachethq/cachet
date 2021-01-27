@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand;
-use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -46,13 +45,6 @@ class DashboardController extends Controller
     protected $timeZone;
 
     /**
-     * The feed integration.
-     *
-     * @var \CachetHQ\Cachet\Integrations\Contracts\Feed
-     */
-    protected $feed;
-
-    /**
      * The user session object.
      *
      * @var \Illuminate\Contracts\Auth\Guard
@@ -62,14 +54,12 @@ class DashboardController extends Controller
     /**
      * Creates a new dashboard controller instance.
      *
-     * @param \CachetHQ\Cachet\Integrations\Contracts\Feed $feed
      * @param \Illuminate\Contracts\Auth\Guard             $guard
      *
      * @return void
      */
-    public function __construct(Feed $feed, Guard $guard)
+    public function __construct(Guard $guard)
     {
-        $this->feed = $feed;
         $this->guard = $guard;
         $this->startDate = new Date();
         $this->dateTimeZone = Config::get('cachet.timezone');
@@ -104,19 +94,11 @@ class DashboardController extends Controller
             execute(new WelcomeUserCommand(Auth::user()));
         }
 
-        $entries = null;
-        if ($feed = $this->feed->latest()) {
-            if (is_object($feed)) {
-                $entries = array_slice($feed->channel->item, 0, 5);
-            }
-        }
-
         return View::make('dashboard.index')
             ->withPageTitle(trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withIncidents($incidents)
             ->withSubscribers($subscribers)
-            ->withEntries($entries)
             ->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents)
             ->withWelcomeUser($welcomeUser);

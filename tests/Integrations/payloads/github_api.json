@@ -1,0 +1,41 @@
+{
+  "url": "https://api.github.com/repos/CachetHQ/Cachet/releases/17514684",
+  "assets_url": "https://api.github.com/repos/CachetHQ/Cachet/releases/17514684/assets",
+  "upload_url": "https://uploads.github.com/repos/CachetHQ/Cachet/releases/17514684/assets{?name,label}",
+  "html_url": "https://github.com/CachetHQ/Cachet/releases/tag/v2.3.18",
+  "id": 17514684,
+  "author": {
+    "login": "GrahamCampbell",
+    "id": 2829600,
+    "node_id": "MDQ6VXNlcjI4Mjk2MDA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2829600?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/GrahamCampbell",
+    "html_url": "https://github.com/GrahamCampbell",
+    "followers_url": "https://api.github.com/users/GrahamCampbell/followers",
+    "following_url": "https://api.github.com/users/GrahamCampbell/following{/other_user}",
+    "gists_url": "https://api.github.com/users/GrahamCampbell/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/GrahamCampbell/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/GrahamCampbell/subscriptions",
+    "organizations_url": "https://api.github.com/users/GrahamCampbell/orgs",
+    "repos_url": "https://api.github.com/users/GrahamCampbell/repos",
+    "events_url": "https://api.github.com/users/GrahamCampbell/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/GrahamCampbell/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "node_id": "MDc6UmVsZWFzZTE3NTE0Njg0",
+  "tag_name": "v2.3.18",
+  "target_commitish": "2.4",
+  "name": "v2.3.18",
+  "draft": false,
+  "prerelease": false,
+  "created_at": "2019-05-14T12:27:19Z",
+  "published_at": "2019-05-22T12:43:04Z",
+  "assets": [
+
+  ],
+  "tarball_url": "https://api.github.com/repos/CachetHQ/Cachet/tarball/v2.3.18",
+  "zipball_url": "https://api.github.com/repos/CachetHQ/Cachet/zipball/v2.3.18",
+  "body": ""
+}

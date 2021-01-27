@@ -46,4 +46,16 @@ return [
 
     'beacon' => env('CACHET_BEACON', true),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Internet Lookups
+    |--------------------------------------------------------------------------
+    |
+    | Should Cachet make outbound HTTP requests to the internet to load external
+    | resources. Turn off if you're behind a Firewall with no HTTP(S) egress.
+    |
+    */
+
+    'internet_lookups' => env('CACHET_INTERNET_LOOKUPS', true),
+
 ];
