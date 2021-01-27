@@ -333,7 +333,7 @@ $(function () {
             dataType: 'json',
             url: '/api/v1/version',
         }).done(function (result) {
-            if (result.meta.on_latest === false) {
+            if (("meta" in result) && (result.meta.on_latest === false)) {
                 $('#update-alert').removeClass('hidden');
             }
         });
