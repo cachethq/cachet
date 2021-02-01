@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
             'analytics_gosquared'    => 'GoSquared Analytics Code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance',
+            'analytics_piwik_url'    => 'URL von deiner Piwik Instanz',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
         ],
         'localization' => [
@@ -220,7 +220,7 @@ return [
             'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
         ],
         'team' => [
-            'description' => 'Invite your team members by entering their email addresses here.',
+            'description' => 'Lade Mitglieder ein, indem Sie die E-Mail hier eintragen.',
             'email'       => 'Die E-Mail Adresse deines Teammitgliedes',
         ],
     ],
@@ -230,8 +230,8 @@ return [
     ],
 
     'seo' => [
-        'title'        => 'SEO Title',
-        'description'  => 'SEO Description',
+        'title'        => 'SEO Titel',
+        'description'  => 'SEO Beschreibung',
     ],
 
     // Buttons
