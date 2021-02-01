@@ -6319,10 +6319,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-sweetalert2@^6.8.0:
-  version "6.11.5"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.11.5.tgz#a1ede34089225eb864898f4b613db4fec5dbe334"
-  integrity sha512-8Otu1SlWGS/u3e31cOg+uqrwyoQbByEScKp7UupmCfwEZE9St3coO1e6CXv83YzZtzdDgowdK1hBPKPW7SRp4Q==
+sweetalert2@^10.14.0:
+  version "10.14.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.14.0.tgz#73a7487b12b56dec4c1e47d7d4926e8fe880e727"
+  integrity sha512-EBUh4k9qyRRsttm9X9j7WUhLExetvTJpcbp1VTMJCpuI2UwHLesXMIw9M+UeuqBywv0UjNMR5PKH7Qnv65m8rw==
 
 tapable@^0.2.7:
   version "0.2.9"
