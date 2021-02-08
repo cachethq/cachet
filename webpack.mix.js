@@ -22,7 +22,7 @@ mix
     .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
     .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
     .purgeCss({
-        whitelistPatterns: [/^tooltip/]
+        whitelistPatterns: [/^tooltip/, /^swal2-/]
     })
     .options({
         processCssUrls: false
