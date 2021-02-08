@@ -57,7 +57,7 @@ return [
     'service' => [
         'good'  => '[0,1] Système opérationnel|[2,*] Tous les systèmes sont opérationnels',
         'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'major' => '[0,1] Le système rencontre actuellement des problèmes d\'ordre majeur|[2,*] Certains systèmes rencontrent des problèmes d\'ordre majeur',
     ],
 
     'api' => [
@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'subscribe'           => 'S\'abonner aux notifications de changement de statut et d\'incident',
         'unsubscribe'         => 'Se désabonner',
         'button'              => 'S\'abonner',
         'manage_subscription' => 'Gérer l\'abonnement',
@@ -90,10 +90,10 @@ return [
             'manage_at_link'      => 'Gérer vos abonnements à :link',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => 'Nous vous avonc envoyé un courriel, merci de cliquer sur le lien que vous avez recu pour gérer vos abonnements',
             'subscribe'           => 'S\'abonner aux notifications par email.',
             'subscribed'          => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => 'Vous avez mis à jour vos abonnements.',
             'verified'            => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
             'manage'              => 'Gérer votre abonnement',
             'unsubscribe'         => 'Désinscription des mises à jour par courriel.',
