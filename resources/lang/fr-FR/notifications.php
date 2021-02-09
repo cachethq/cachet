@@ -14,14 +14,14 @@ return [
         'status_update' => [
             'mail' => [
                 'subject'  => 'Mise à jour du statut d\'un composant',
-                'greeting' => 'Un composant a été mis à jour!',
+                'greeting' => 'Un composant a été mis à jour !',
                 'content'  => 'Le statut de :name a changé de :old_status à :new_status.',
-                'action'   => 'View',
+                'action'   => 'Voir',
             ],
             'slack' => [
                 'title'   => 'Mise à jour du statut d\'un composant',
                 'content' => 'Le statut de :name a changé de :old_status à :new_status.',
-            ],
+            ], 
             'sms' => [
                 'content' => 'Le statut de :name a changé de :old_status à :new_status.',
             ],
@@ -33,7 +33,7 @@ return [
                 'subject'  => 'Nouvel incident signalé',
                 'greeting' => 'Un nouvel incident a été signalé pour :app_name.',
                 'content'  => 'L\'incident :name a été signalé',
-                'action'   => 'View',
+                'action'   => 'Voir',
             ],
             'slack' => [
                 'title'   => 'Incident :name signalé',
@@ -45,10 +45,10 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident :name mis à jourr',
+                'subject' => 'Incident mis à jour',
                 'content' => ':name a été mis à jour',
-                'title'   => ':name a été mmis à jour vers :new_status',
-                'action'  => 'View',
+                'title'   => ':name a été mis à jour vers :new_status',
+                'action'  => 'Voir',
             ],
             'slack' => [
                 'title'   => 'Incident :name mis à jour',
@@ -62,10 +62,10 @@ return [
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Nouveau calendrier créé!',
+                'subject' => 'Nouvel événement planifié !',
                 'content' => ':name a été planifié pour le :date',
                 'title'   => 'Une nouvelle maintenance est planifiée.',
-                'action'  => 'View',
+                'action'  => 'Voir',
             ],
             'slack' => [
                 'title'   => 'Nouveau calendrier créé!',
@@ -82,7 +82,7 @@ return [
                 'subject' => 'Vérifier votre abonnement',
                 'content' => 'Cliquer pour vérifier votre abonnement à :app_name status page.',
                 'title'   => 'Vérifier votre abonnement à :app_name status page.',
-                'action'  => 'Verify',
+                'action'  => 'Vérifier',
             ],
         ],
         'manage' => [
@@ -109,7 +109,7 @@ return [
                 'subject' => 'Votre invitation est ici...',
                 'content' => 'Vous avez été invité à joindre :app_name status page.',
                 'title'   => 'Vous avez été invité à joindre :app_name status page.',
-                'action'  => 'Accept',
+                'action'  => 'Accepter',
             ],
         ],
     ],
