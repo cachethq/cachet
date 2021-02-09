@@ -18,21 +18,21 @@ return [
     'incidents' => [
         'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}Aucun incident, bon travail.|[1]Vous avez un incident signalé.|[2,*]Vous avez  <strong>:count</strong> incidents signalés..',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'title'   => 'Mise(s) à jour pour l\'incident :incident',
+            'count'   => '{0}0 Mise à jour|[1]1 Mise à jour|[2]2 Mises à jour|[3,*]Plusieurs mises à jour',
             'add'     => [
-                'title'   => 'Créer une mise à jour d\'incident',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'title'   => 'Ajouter un incident',
+                'success' => 'Incident ajouté',
+                'failure' => 'Une erreur s\'est produite en ajoutant l\'incident, veuillez réessayer.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Modifier un incident',
+                'success' => 'Incident mis à jour.',
+                'failure' => 'Une erreur s\'est produite en modifiant l\'incident, veuillez réessayer.',
             ],
         ],
         'reported_by'              => 'Reported :timestamp by :user',
@@ -56,7 +56,7 @@ return [
             'title' => 'Modèles d\'incident',
             'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
-                'message' => 'Create your first incident template.',
+                'message' => 'Créer votre premier modèle d\'incident.',
                 'success' => 'Votre nouveau modèle d\'incident a été créé.',
                 'failure' => 'Une erreur est survenue avec le modèle d\'incident.',
             ],
@@ -163,7 +163,7 @@ return [
         'not_verified'         => 'Non vérifié',
         'subscriber'           => ':email, abonné à :date',
         'no_subscriptions'     => 'Souscrire à toutes les mises à jour',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Abonné globalement',
         'add'                  => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
