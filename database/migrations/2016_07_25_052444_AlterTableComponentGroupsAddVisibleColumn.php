@@ -26,7 +26,7 @@ class AlterTableComponentGroupsAddVisibleColumn extends Migration
             $table->tinyInteger('visible')
                 ->after('order')
                 ->unsigned()
-                ->default(\CachetHQ\Cachet\Models\ComponentGroup::VISIBLE_AUTHENTICATED);
+                ->default(\CachetHQ\Cachet\Models\ComponentGroup::VISIBLE_GUEST);
 
             $table->index('visible');
         });
