@@ -4,12 +4,12 @@
 <a href="https://styleci.io/repos/26730195/"><img src="https://styleci.io/repos/26730195/shield" alt="StyleCI"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square" alt="License"></a>
 <a href="https://translate.cachethq.io/project/cachet"><img src="https://d322cqt584bo4o.cloudfront.net/cachet/localized.svg" alt="Localisation"></a>
-<a href="https://github.com/CachetHQ/Cachet/releases"><img src="https://img.shields.io/github/release/cachethq/cachet.svg?style=flat-square" alt="Latest Stable Version"></a>
+<a href="https://github.com/fiveai/Cachet/releases"><img src="https://img.shields.io/github/release/fiveai/cachet.svg?style=flat-square" alt="Latest Stable Version"></a>
 </p>
 
 Cachet is a beautiful and powerful open source status page system.
 
-**v2.5:** Development towards [Upstram CachetHQ/Cachet](https://github.com/CachetHQ/Cachet)
+**v2.5:** Development towards [Upstream CachetHQ/Cachet](https://github.com/CachetHQ/Cachet)
 v2.4 seems to have stalled. This fork is going to skip v2.4 and get all the new
 features stable and into a v2.5 deployment.
 

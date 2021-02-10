@@ -24,7 +24,7 @@ class Releases implements ReleasesContract
      *
      * @var string
      */
-    const URL = 'https://api.github.com/repos/cachethq/cachet/releases/latest';
+    const URL = 'https://api.github.com/repos/fiveai/cachet/releases/latest';
 
     /**
      * The failed status indicator.
