@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Letztes Update :timestamp',
+        'last_updated' => 'Letzte Aktualisierung :timestamp',
         'status'       => [
             0 => 'Unbekannt',
             1 => 'Funktionsfähig',
@@ -31,10 +31,10 @@ return [
     'incidents' => [
         'none'         => 'Es liegen keine Ereignisse vor',
         'past'         => 'Vergangene Ereignisse',
-        'stickied'     => 'Angepinnte Vorfälle',
+        'stickied'     => 'Angepinnte Ereignisse',
         'scheduled'    => 'Wartungsarbeiten',
         'scheduled_at' => ', geplant :timestamp',
-        'posted'       => 'Posted :timestamp by :username',
+        'posted'       => 'Veröffentlich :timestamp von :username',
         'posted_at'    => 'Veröffentlicht am :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
@@ -77,28 +77,28 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Abonniere Status- und Vorfalländerungen',
+        'subscribe'           => 'Abonniere Status- und Ereignissaktualisierungen',
         'unsubscribe'         => 'Abmelden',
         'button'              => 'Abonnieren',
         'manage_subscription' => 'Abonnements verwalten',
         'manage'              => [
             'notifications'       => 'Benachrichtigungen',
             'notifications_for'   => 'Verwalten von Benachrichtigungen für',
-            'no_subscriptions'    => 'Du hast im Augenblick alle Updates abonniert.',
-            'update_subscription' => 'Update-Abonnement',
-            'my_subscriptions'    => 'Du hast im Augenblick folgende Updates abonniert.',
-            'manage_at_link'      => 'Verwalte deine Abonnements unter :link',
+            'no_subscriptions'    => 'Sie haben im Augenblick alle Aktualisierungen abonniert.',
+            'update_subscription' => 'Abonnement von Aktualisierungen',
+            'my_subscriptions'    => 'Sie haben im Augenblick folgende Aktualisierungen abonniert.',
+            'manage_at_link'      => 'Verwalten Sie Ihre Abonnements unter :link',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => 'Wir haben Ihnen eine E-Mail geschickt. Bitte öffnen Sie den Link, um Ihre Abonnements zu verwalten.',
             'subscribe'           => 'Aktualisierungen per E-Mail abonnieren.',
-            'subscribed'          => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
-            'verified'            => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
-            'manage'              => 'Verwalte deine Abonnements',
-            'unsubscribe'         => 'Abonnement widerrufen.',
-            'unsubscribed'        => 'Ihre E-Mail-Abonnement wurde beendet.',
-            'failure'             => 'Beim aktivieren des Abonnements ist ein Fehler aufgetreten.',
+            'subscribed'          => 'Sie haben E-Mail-Benachrichtigungen abonniert. Bitte überprüfen Sie Ihre E-Mails, um Ihr Abonnement zu bestätigen.',
+            'updated-subscribe'   => 'Sie haben Ihre Abonnements erfolgreich aktualisiert.',
+            'verified'            => 'Ihr E-Mail-Abonnement ist bestätigt worden. Danke!',
+            'manage'              => 'Ihr Abonnement verwalten',
+            'unsubscribe'         => 'Abonnements widerrufen.',
+            'unsubscribed'        => 'Ihr E-Mail-Abonnement wurde beendet.',
+            'failure'             => 'Beim Aktivieren des Abonnements ist ein Fehler aufgetreten.',
             'already-subscribed'  => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse schon registriert ist.',
         ],
     ],
@@ -113,7 +113,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Lerne <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie du updaten kannst!',
+        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Erfahren Sie <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie sie aktualisieren können!',
     ],
 
     // Modal
@@ -121,7 +121,7 @@ return [
         'close'     => 'Schließen',
         'subscribe' => [
             'title'  => 'Abonniere die Komponenten-Updates',
-            'body'   => 'Gib deine E-Mail Adresse ein, um Updates für diesen Komponenten zu erhalten. Wenn du bereits abonniert bist, erhälst du schon Updates für diesen Komponenten.',
+            'body'   => 'Tragen Sie Ihre E-Mail-Adresse ein, um Updates für diese Komponente zu erhalten. Wenn Sie diese Abonnement bereits abgeschlossen haben, erhalten Sie schon E-Mails für diese Komponente.',
             'button' => 'Abonnieren',
         ],
     ],
@@ -129,10 +129,10 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details und Aktualisierung über den :name Vorfall, die am :date aufgetreten sind',
-            'schedule'  => 'Details zu den geplanten Wartungszeitraum :name beginnend ab :startDate',
-            'subscribe' => 'Abonniere :app um Updates von Vorfällen und geplanten Wartungszeiten zu erhalten',
-            'overview'  => 'Bleiben sie auf dem Laufenden mit den neuesten Service-Updates von :app.',
+            'incident'  => 'Details und Aktualisierung über das :name Ereigniss, das am :date aufgetreten ist.',
+            'schedule'  => 'Details zu den geplanten Wartungsarbeiten :name beginnend ab :startDate',
+            'subscribe' => 'Abonnieren Sie :app um Aktualisierungen von Ereignissen und geplanten Wartungsarbeiten zu erhalten.',
+            'overview'  => 'Bleiben Sie auf dem Laufenden mit den neuesten Service-Aktualisierungen von :app.',
         ],
     ],
 
