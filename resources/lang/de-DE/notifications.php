@@ -30,22 +30,22 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Neuer Vorfall gemeldet',
-                'greeting' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
-                'content'  => 'Vorfall :name wurde gemeldet',
+                'subject'  => 'Neues Ereignis gemeldet',
+                'greeting' => 'Ein neues Ereignis wurde auf der :app_name Statusseite gemeldet.',
+                'content'  => 'Ereignis :name wurde gemeldet',
                 'action'   => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Vorfall :name gemeldet',
-                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet',
+                'title'   => 'Ereignis :name gemeldet',
+                'content' => 'Ein neues Ereignis wurde auf der :app_name Statusseite gemeldet',
             ],
             'sms' => [
-                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
+                'content' => 'Ein neues Ereignis wurde auf der :app_name Statusseite gemeldet.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Vorfall aktualisiert',
+                'subject' => 'Ereignis aktualisiert',
                 'content' => ':name wurde aktualisiert',
                 'title'   => ':name wurde auf :new_status aktualisiert',
                 'action'  => 'Anzeigen',
@@ -55,20 +55,20 @@ return [
                 'content' => ':name wurde auf :new_status aktualisiert',
             ],
             'sms' => [
-                'content' => 'Vorfall :name wurde aktualisiert',
+                'content' => 'Ereignis :name wurde aktualisiert',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Neuer Zeitplan erstellt',
+                'subject' => 'Neuer Wartungszeitpunkt erstellt',
                 'content' => ':name wurde für :date geplant',
                 'title'   => 'Eine neue geplante Wartung wurde erstellt.',
                 'action'  => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Neuer Zeitplan erstellt!',
+                'title'   => 'Neuer Wartungszeitpunkt erstellt!',
                 'content' => ':name wurde für :date geplant',
             ],
             'sms' => [
@@ -87,9 +87,9 @@ return [
         ],
         'manage' => [
             'mail' => [
-                'subject' => 'Manage Your Subscription',
-                'content' => 'Click to manage your subscription to :app_name status page.',
-                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'subject' => 'Verwalten Sie Ihre Abonnements',
+                'content' => 'Klicken Sie, um Ihre Abonnements von :app_name Statusseite zu verwalten.',
+                'title'   => 'Klicken Sie, um Ihre Abonnements von :app_name Statusseite zu verwalten.',
                 'action'  => 'Abonnements verwalten',
             ],
         ],

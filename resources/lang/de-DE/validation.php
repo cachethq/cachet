@@ -43,7 +43,7 @@ return [
     'different'      => ':attribute und :other dürfen nicht identisch sein.',
     'digits'         => ':attribute muss :digits Zeichen lang sein.',
     'digits_between' => ':attribute muss zwischen :min und :max Zeichen lang sein.',
-    'email'          => ':attribute muss eine gültige E-Mail-Ad­res­se sein.',
+    'email'          => ':attribute muss eine gültige E-Mail-Adresse sein.',
     'exists'         => 'Das ausgewählte :attribute ist ungültig.',
     'distinct'       => ':attribute hat doppelte Werte.',
     'filled'         => 'Das Feld :attribute ist erforderlich.',
@@ -55,7 +55,7 @@ return [
     'json'           => ':attribut muss ein gültiger JSON-String sein.',
     'max'            => [
         'numeric' => ':attribute darf nicht größer sein als :max.',
-        'file'    => ':attribute darf nicht größer sein als :max kilobytes.',
+        'file'    => ':attribute darf nicht größer sein als :max Kilobytes.',
         'string'  => ':attribute darf maximal :max Zeichen haben.',
         'array'   => ':attribute darf nicht mehr als :max Elemente haben.',
     ],
