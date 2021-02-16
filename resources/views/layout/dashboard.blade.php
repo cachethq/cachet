@@ -26,6 +26,7 @@
         window.Global = {}
         Global.locale = '{{ $appLocale }}';
         Global.csrfToken = '{{ csrf_token() }}';
+        Global.appUrl = '{{ $appUrl }}';
     </script>
 
     @if($enableExternalDependencies)

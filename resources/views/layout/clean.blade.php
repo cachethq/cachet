@@ -33,6 +33,7 @@
     <script type="text/javascript">
         var Global = {};
         Global.locale = '{{ $appLocale }}';
+        Global.appUrl = '{{ $appUrl }}';
     </script>
 
     <script src="{{ asset(mix('dist/js/manifest.js')) }}"></script>

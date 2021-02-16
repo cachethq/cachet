@@ -92,7 +92,7 @@ module.exports = {
         getData () {
             this.loading = true
 
-            return axios.get('/metrics/'+this.metric.id, {
+            return axios.get(window.Global.appUrl + '/metrics/'+this.metric.id, {
                 params: {
                     filter: this.view.param
                 }

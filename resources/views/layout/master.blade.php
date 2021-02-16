@@ -73,6 +73,7 @@
         }
 
         Global.locale = '{{ $appLocale }}';
+        Global.appUrl = '{{ $appUrl }}';
     </script>
     <script src="{{ asset(mix('dist/js/manifest.js')) }}"></script>
     <script src="{{ asset(mix('dist/js/vendor.js')) }}"></script>

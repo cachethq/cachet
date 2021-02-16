@@ -9,7 +9,7 @@ module.exports = {
     },
     methods: {
         getTemplate (template) {
-            axios.get('/dashboard/api/incidents/templates', {
+            axios.get(window.Global.appUrl + '/dashboard/api/incidents/templates', {
                 params: {
                     slug: template
                 }

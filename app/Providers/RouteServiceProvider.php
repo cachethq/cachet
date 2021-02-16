@@ -107,9 +107,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $appDomain = $this->app->config->get('setting.app_domain');
-        $parsedAppUrl = parse_url($appDomain);
-        $appPrefix = $parsedAppUrl['path'];
+        $appUrl = $this->app->config->get('app.url');
+        $parsedAppUrl = parse_url($appUrl);
+        $appPrefix = $parsedAppUrl['path'] ?? '';
         if (substr($appPrefix, -1) == '/') {
             $appPrefix = substr($appPrefix, 0, -1);
         }
