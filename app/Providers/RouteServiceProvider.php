@@ -107,7 +107,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
+        $appDomain = $this->app->config->get('setting.app_domain');
+        $parsedAppUrl = parse_url($appDomain);
+        $appPrefix = $parsedAppUrl['path'];
+        if (substr($appPrefix, -1) == '/') {
+            $appPrefix = substr($appPrefix, 0, -1);
+        }
+
+        $router->group([
+            'namespace' => $this->namespace,
+            'as'        => 'core::',
+            'prefix'    => $appPrefix,
+        ], function (Router $router) {
             $path = app_path('Http/Routes');
 
             $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);

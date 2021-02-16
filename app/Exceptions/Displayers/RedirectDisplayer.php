@@ -49,7 +49,7 @@ class RedirectDisplayer implements DisplayerInterface
      */
     public function display(Exception $exception, string $id, int $code, array $headers)
     {
-        return redirect()->guest('auth/login');
+        return cachet_redirect('auth.login');
     }
 
     /**
