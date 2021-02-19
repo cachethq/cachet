@@ -6,6 +6,10 @@ body.status-page {
     font-size: 1.4em;
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
+    
+    @media (min-width: 768px) {
+        column-count: 3; // Masonry: Apply only to wide screens
+    }
 
     &.no-padding {
         padding-top: 0 !important;
@@ -302,11 +306,25 @@ body.status-page {
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
+                
+                strong {
+                    flex: 1; // Masonry: Make title use all available space
+                    margin-left: 15px; // Separate title from collapsing icon (amount equals row left margin)
+                }
             }
 
             &.break {
                 padding: 1px;
                 background-color: $cachet-base-medium;
+            }
+            
+            &.sub-component {
+                display: flex; // Better layout for long item names
+                align-items: center; // Masonry: Center status indicators in case long names are multi-line
+                
+                .status-icon {
+                    margin: 0 15px;
+                }
             }
         }
 
@@ -318,10 +336,6 @@ body.status-page {
                 margin-bottom: 30px;
             }
 
-            + .components {
-                margin-top: 5px;
-            }
-
             p {
                 margin-bottom: 10px;
             }
@@ -331,8 +345,13 @@ body.status-page {
 
             a {
                 color: $cachet-base-dark !important;
+                flex: 1; // Occupy all available space (pushing indicator to the right)
             }
 
+            @media (min-width: 768px) {
+                display: inline-block;  // Masonry: Avoid cards breaking between columns
+                width: 100%; // Masonry: Make card occupy full column width
+            }
         }
     }
 
