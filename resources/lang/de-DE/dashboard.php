@@ -233,6 +233,7 @@ return [
                 'subject' => 'Test-Benachrichtigung von Cachet',
                 'body'    => 'Dies ist eine Test-Benachrichtigung von Cachet.',
             ],
+            'signature'      => 'Benutzerdefinierte HTML E-Mail Signatur',
         ],
         'security' => [
             'security'   => 'Sicherheit',
