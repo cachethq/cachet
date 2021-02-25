@@ -10,6 +10,7 @@
 @lang('Thanks,')<br>
 {{ Config::get('setting.app_name') }}
 
+{!! Config::get('setting.mail_signature') !!}
 @include('notifications.partials.subscription')
 
 @endcomponent

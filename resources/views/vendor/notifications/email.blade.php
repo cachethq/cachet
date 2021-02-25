@@ -46,6 +46,8 @@
 @lang('Regards'),<br>{{ setting('app_name', config('app.name')) }}
 @endif
 
+{!! Config::get('setting.mail_signature') !!}
+
 {{-- Subcopy --}}
 @isset($actionText)
 @component('mail::subcopy')

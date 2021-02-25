@@ -40,6 +40,10 @@
                             <label>{{ trans('forms.setup.mail_password') }}</label>
                             <input type="password" class="form-control" name="config[mail_password]" value="{{ Binput::old('config.mail_password') }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
                         </div>
+                        <div class="form-group">
+                            <label>{{ trans('dashboard.settings.mail.signature') }}</label>
+                            <textarea name="setting[mail_signature]" class="form-control" rows="10" placeholder="{{ trans('dashboard.settings.mail.signature') }}">{{ Config::get('setting.mail_signature') }}</textarea>
+                        </div>
                     </fieldset>
 
                     <div class="row">

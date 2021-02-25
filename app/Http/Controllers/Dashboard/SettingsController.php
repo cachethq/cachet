@@ -333,6 +333,17 @@ class SettingsController extends Controller
 
         execute(new UpdateConfigCommand($config));
 
+        $setting = app(Repository::class);
+        $parameters = Binput::get('setting');
+
+        if (isset($parameters['mail_signature'])) {
+            if ($mail_signature = Binput::get('setting.mail_signature', null, false, false)) {
+                $setting->set('mail_signature', $mail_signature);
+            } else {
+                $setting->delete('mail_signature');
+            }
+        }
+
         return cachet_redirect('dashboard.settings.mail')
             ->withInput(Binput::all())
             ->withSuccess(trans('dashboard.notifications.awesome'));
