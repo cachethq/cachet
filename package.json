@@ -19,7 +19,7 @@
     "es5-shim": "^4.5.14",
     "flatpickr": "^4.5.7",
     "github-markdown-css": "^2.3.0",
-    "ionicons": "~2.0",
+    "ionicons": "~5.5",
     "jquery": "^3.4.0",
     "jquery-minicolors": "^2.1.10",
     "jquery-serializeobject": "^1.0.0",
