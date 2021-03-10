@@ -13,6 +13,7 @@ return [
     'common' => [
         'salutation'       => 'Viele Grüße,',
         'alternative_link' => 'Sollten Sie Probleme mit der ":actionText" Schaltfläche haben, können Sie auch die folgende URL in Ihren Browser kopieren: :actionURL',
+        'copyright_notice' => 'Alle Rechte vorbehalten.',
     ],
     'component' => [
         'status_update' => [
