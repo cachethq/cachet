@@ -10,6 +10,9 @@
  */
 
 return [
+    'common' => [
+        'salutation' => 'Viele Grüße,',
+    ],
     'component' => [
         'status_update' => [
             'mail' => [

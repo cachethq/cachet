@@ -43,7 +43,7 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>{{ setting('app_name', config('app.name')) }}
+{{ trans('notifications.common.salutation') }}<br>{{ setting('app_name', config('app.name')) }}
 @endif
 
 {!! Config::get('setting.mail_signature') !!}
