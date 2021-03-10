@@ -11,7 +11,8 @@
 
 return [
     'common' => [
-        'salutation' => 'Thanks,',
+        'salutation'       => 'Thanks,',
+        'alternative_link' => 'If you\'re having trouble clicking the ":actionText" button, copy and paste the URL below into your web browser: :actionURL',
     ],
     'component' => [
         'status_update' => [

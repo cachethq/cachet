@@ -11,7 +11,8 @@
 
 return [
     'common' => [
-        'salutation' => 'Viele Grüße,',
+        'salutation'       => 'Viele Grüße,',
+        'alternative_link' => 'Sollten Sie Probleme mit der ":actionText" Schaltfläche haben, können Sie auch die folgende URL in Ihren Browser kopieren: :actionURL',
     ],
     'component' => [
         'status_update' => [
