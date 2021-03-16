@@ -10,6 +10,11 @@
  */
 
 return [
+    'common' => [
+        'salutation'       => 'Thanks,',
+        'alternative_link' => 'If you\'re having trouble clicking the ":actionText" button, copy and paste the URL below into your web browser: :actionURL',
+        'copyright_notice' => 'All rights reserved.',
+    ],
     'component' => [
         'status_update' => [
             'mail' => [

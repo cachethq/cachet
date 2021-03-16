@@ -43,7 +43,7 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>{{ setting('app_name', config('app.name')) }}
+{{ trans('notifications.common.salutation') }}<br>{{ setting('app_name', config('app.name')) }}
 @endif
 
 {!! Config::get('setting.mail_signature') !!}
@@ -51,14 +51,10 @@
 {{-- Subcopy --}}
 @isset($actionText)
 @component('mail::subcopy')
-@lang(
-    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-    'into your web browser: [:actionURL](:actionURL)',
-    [
+{{ trans('notifications.common.alternative_link', [
         'actionText' => $actionText,
         'actionURL' => $actionUrl,
-    ]
-)
+    ]) }}
 @endcomponent
 @endisset
 @endcomponent

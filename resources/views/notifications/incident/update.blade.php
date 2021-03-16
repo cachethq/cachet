@@ -7,7 +7,7 @@
 {{ $actionText }}
 @endcomponent
 
-@lang('Thanks,')<br>
+{{ trans('notifications.common.salutation') }}<br>
 {{ Config::get('setting.app_name') }}
 
 @include('notifications.partials.subscription')
