@@ -1,0 +1,63 @@
+/*! purgecss start ignore */
+@import "./node_modules/flatpickr/dist/flatpickr";
+
+.flatpickr-calendar {
+    width: auto;
+    min-width: 293.75px;
+    padding: rem-calc(10);
+    &.open {
+        z-index: 4 !important;
+    }
+    .flatpickr-month {
+        min-height: 30px;
+    }
+    .flatpickr-prev-month,
+    .flatpickr-current-month,
+    .flatpickr-next-month {
+        padding: 0;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+        border-radius: 1rem;
+        padding: 0.5rem;
+        &:hover {
+            background-color: $cachet-gray-light;
+            svg {
+                color: rgba(0, 0, 0, 0.9);
+                fill: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+    .flatpickr-current-month {
+        .cur-month {
+            margin-left: 1rem;
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+    .flatpickr-day {
+        line-height: 36px;
+        &:hover {
+            background-color: $cachet-gray-light;
+            border-color: $cachet-gray-light;
+        }
+    }
+    .numInputWrapper {
+        width: 4rem;
+        margin-left: 0.5rem;
+        .numInput {
+            padding: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+.flatpickr-time {
+    text-align: left;
+}
+/*! purgecss end ignore */
