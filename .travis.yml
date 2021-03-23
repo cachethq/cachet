@@ -8,7 +8,7 @@ branches:
     - l10n_2.4
 
 before_install:
-  - cp .env.example .env
+  - cp .env .env
 
 install:
   - travis_retry composer install --no-interaction --no-suggest
