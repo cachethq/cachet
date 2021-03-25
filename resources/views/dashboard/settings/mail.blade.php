@@ -25,7 +25,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.setup.mail_host') }} (optional)</label>
+                            <label>{{ trans('forms.setup.mail_host') }} (optionnel)</label>
                             <input type="text" class="form-control" name="config[mail_host]" value="{{ Binput::old('config.mail_host', $config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}">
                         </div>
                         <div class="form-group">
