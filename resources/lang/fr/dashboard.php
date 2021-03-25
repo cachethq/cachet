@@ -20,21 +20,39 @@ return [
         'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
+        'updates'                  => [
+            'title'   => 'Mises à jour des incidents pour :incident',
+            'count'   => '{0}Aucune mise à jour|[1]Une mise à jour|[2]Deux mises à jour|[3,*]Plusieurs mises à jour',
+            'add'     => [
+                'title'   => 'Ajouter un incident',
+                'success' => 'Incident ajouté.',
+                'failure' => 'Une erreur s\'est produite en ajoutant l\'incident, veuillez réessayer.',
+            ],
+            'edit' => [
+                'title'   => 'Modifier un incident',
+                'success' => 'Incident mis à jour.',
+                'failure' => 'Une erreur s\'est produite en modifiant l\'incident, veuillez réessayer.',
+            ],
+            'delete' => [
+                'success' => 'L\'incident a été supprimé et ne sera pas affiché sur votre page de statut.',
+                'failure' => 'L\'incident n\'a pas pu être supprimé. Veuillez réessayer.',
+            ],
+        ],
+        'reported_by'              => 'Rapporté :timestamp by :user',
         'add'                      => [
-            'title'   => 'Ajouter un incident',
+            'title'   => 'Signaler un incident',
             'success' => 'Incident ajouté.',
-            'failure' => 'Une erreur s\'est produite en ajoutant l\'incident, veuillez réessayer.',
+            'failure' => 'Il y a eu une erreur en ajoutant l’incident, veuillez réessayer.',
         ],
         'edit' => [
             'title'   => 'Modifier un incident',
-            'success' => 'Incident mis à jour.',
-            'failure' => 'Une erreur s\'est produite en modifiant l\'incident, veuillez réessayer.',
+            'success' => 'L’incident à été modifié.',
+            'failure' => 'Il y a eu une erreur de modification de l’incident, veuillez réessayer.',
         ],
         'delete' => [
-            'success' => 'L\'incident a été supprimé et ne sera pas affiché sur votre page de statut.',
-            'failure' => 'L\'incident n\'a pas pu être supprimé. Veuillez réessayer.',
+            'success' => 'L’incident a été supprimé et n’apparaîtra pas sur votre page d’état.',
+            'failure' => 'L’incident n’a pas pu être supprimé, veuillez réessayer.',
         ],
-
         // Incident templates
         'templates' => [
             'title' => 'Modèles d\'incident',
@@ -81,7 +99,7 @@ return [
     'components' => [
         'components'         => 'Composants',
         'component_statuses' => 'Statut des composants',
-        'listed_group'       => 'Groupés par :nom',
+        'listed_group'       => 'Groupés par : nom',
         'add'                => [
             'title'   => 'Ajouter un composant',
             'message' => 'Vous devez ajouter un composant.',
@@ -146,6 +164,7 @@ return [
         'not_verified'     => 'Non vérifié',
         'subscriber'       => ':email, abonné à :date',
         'no_subscriptions' => 'Souscrire à toutes les mises à jour',
+        'global'               => 'Globalement abonnés',
         'add'              => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
@@ -164,7 +183,7 @@ return [
         'team'        => 'Équipe',
         'member'      => 'Membre',
         'profile'     => 'Profil utilisateur',
-        'description' => 'Les membres de l\'équipe pourront ajouter &amp; modifier les composants et les incidents.',
+        'description' => 'Les membres de l\'équipe pourront ajouter, modifier les composants et les incidents.',
         'add'         => [
             'title'   => 'Ajouter un nouveau membre de l\'équipe',
             'success' => 'Membre de l\'équipe a ajouté.',
