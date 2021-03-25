@@ -24,7 +24,7 @@
                             <div :class="{ 'input-group': canRemove }">
                                 <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email') }}" v-model="email.email">
                                 <span class="input-group-btn" v-if="canRemove">
-                                    <button type="button" @click="remove(index)" class="btn btn-danger">Remove</button>
+                                    <button type="button" @click="remove(index)" class="btn btn-danger">Retirer</button>
                                 </span>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
                             <a class="btn btn-default" href="{{ cachet_route('dashboard.team') }}">{{ trans('forms.cancel') }}</a>
-                            <button type="button" @click="add" class="btn btn-primary">Add</button>
+                            <button type="button" @click="add" class="btn btn-primary">Ajouter</button>
                         </div>
                     </div>
                 </form>
