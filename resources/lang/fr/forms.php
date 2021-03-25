@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Activer l\'authentification à deux facteurs de Google',
         'cache_driver'     => 'Gestionnaire de cache',
         'session_driver'   => 'Gestionnaire de session',
+        'mail_driver'      => 'Driver de mail',
+        'mail_host'        => 'Hôte de mail',
+        'mail_address'     => 'Mail de l\'adresse',
+        'mail_username'    => 'Nom d\'utilisateur mail' ,
+        'mail_password'    => 'Mot de passe du mail',
     ],
 
     // Login form fields
@@ -44,15 +49,33 @@ return [
         'component'          => 'Composant',
         'message'            => 'Message',
         'message-help'       => 'Vous pouvez également utiliser le format Markdown.',
+        'occurred_at'        => 'Quand cet incident s’est-il produit ?',
         'scheduled_at'       => 'Quand planifier la maintenance ?',
         'incident_time'      => 'Quand s\'est produit cet incident ?',
         'notify_subscribers' => 'Notifier les abonnés ?',
         'visibility'         => 'Visibilité de l\'incident',
+        'stick_status'       => 'Coller l\'incident',
+        'stickied'           => 'Coller l\'incident',
+        'not_stickied'       => 'Ne pas coller l\'incident',
         'public'             => 'Visible par le public',
         'logged_in_only'     => 'Uniquement visible par les utilisateurs enregistrés',
         'templates'          => [
             'name'     => 'Nom',
             'template' => 'Modèle',
+            'twig'     => 'Vous pouvez utiliser <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> pour créer des modèles par langues pour les modèles d\'incidents.',
+        ],
+    ],
+
+    'schedules' => [
+        'name'         => 'Nom',
+        'status'       => 'Status',
+        'message'      => 'Message',
+        'message-help' => 'Vous pouvez également utiliser Markdown.',
+        'scheduled_at' => 'Quand cette maintenance est-elle programmée ?',
+        'completed_at' => 'Quand cette maintenance s’est-elle terminée ?',
+        'templates'    => [
+            'name'     => 'Nom',
+            'template' => 'Template',
             'twig'     => 'Vous pouvez utiliser <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> pour créer des modèles par langues pour les modèles d\'incidents.',
         ],
     ],
@@ -91,7 +114,10 @@ return [
         'places'           => 'Nombre de chiffres après la virgule',
         'default_view'     => 'Vue par défaut',
         'threshold'        => 'Quel intervalle en minutes entre chaque point de métrique ?',
-
+        'visibility'               => 'Visibilité',
+        'visibility_authenticated' => 'Visible aux utilisateurs authentifiés',
+        'visibility_public'        => 'Visible pour tous',
+        'visibility_hidden'        => 'Toujours caché',
         'points' => [
             'value' => 'Valeur',
         ],
@@ -101,15 +127,22 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Nom du site',
-            'site-url'               => 'URL du site',
-            'display-graphs'         => 'Afficher les graphiques sur la page de statut ?',
-            'about-this-page'        => 'À propos de cette page',
-            'days-of-incidents'      => 'Combien de jours d\'incidents à montrer ?',
-            'banner'                 => 'Image d\'en-tête',
-            'banner-help'            => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
-            'subscribers'            => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
-            'automatic_localization' => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
+            'site-name'                             => 'Nom du site',
+            'site-url'                              => 'URL du site',
+            'display-graphs'                        => 'Afficher les graphiques sur la page de statut ?',
+            'about-this-page'                       => 'À propos de cette page',
+            'days-of-incidents'                     => 'Combien de jours d\'incidents à montrer ?',
+            'time_before_refresh'                   => 'Taux de rafraîchissement de la page d’état (en secondes)',
+            'major_outage_rate'                     => 'Seuil d’arrêt majeur (en %)',
+            'banner'                                => 'Image d\'en-tête',
+            'banner-help'                           => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'subscribers'                           => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
+            'suppress_notifications_in_maintenance' => 'Supprimer les notifications lorsque l’incident se produit pendant la période de maintenance ?',
+            'skip_subscriber_verification'          => 'Sauter la vérification des utilisateurs? (Soyez averti, vous pourriez être spammé)',
+            'automatic_localization'                => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
+            'enable_external_dependencies'          => 'Activer les dépendances tierces (Google Fonts, Trackers, etc...)',
+            'show_timezone'                         => 'Afficher le fuseau horaire de la page d’état',
+            'only_disrupted_days'                   => 'Ne montrez que les jours contenant des incidents dans le calendrier?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
@@ -126,6 +159,8 @@ return [
         'security' => [
             'allowed-domains'      => 'Domaines autorisés',
             'allowed-domains-help' => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
+            'always-authenticate'       => 'Toujours s’authentifier',
+            'always-authenticate-help'  => 'Besoin d’ouvrir une session pour afficher n’importe quelle page Cachet',
         ],
         'stylesheet' => [
             'custom-css' => 'Feuille de style personnalisée',
@@ -151,7 +186,7 @@ return [
     'user' => [
         'username'       => 'Nom d\'utilisateur',
         'email'          => 'Email',
-        'password'       => 'Mot de passe ',
+        'password'       => 'Mot de passe',
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API empêchera les applications existantes d\'accéder à Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -169,6 +204,7 @@ return [
         ],
     ],
 
+
     // Buttons
     'add'    => 'Ajouter',
     'save'   => 'Enregistrer',
@@ -181,6 +217,7 @@ return [
     'remove' => 'Enlever',
     'invite' => 'Inviter',
     'signup' => 'Inscription',
+    'manage_updates' => 'Gérer les mises à jour',
 
     // Other
     'optional' => '* Optionnel',
