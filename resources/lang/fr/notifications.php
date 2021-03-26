@@ -16,6 +16,7 @@ return [
                 'greeting' => 'L’état d’un composant a été mis à jour !',
                 'content'  => ':name statut changé de  :old_status à :new_status.',
                 'action'   => 'Affichage',
+                'thanks'   => 'Cordialement,',
             ],
             'slack' => [
                 'title'   => 'État des composants mis à jour',
@@ -33,6 +34,7 @@ return [
                 'greeting' => 'Un nouvel incident a été signalé à l\'adresse :app_name.',
                 'content'  => 'Incident :name a été signalé',
                 'action'   => 'Affichage',
+                'thanks'   => 'Cordialement,',
             ],
             'slack' => [
                 'title'   => 'Incident :name a été signalé',
@@ -48,6 +50,7 @@ return [
                 'content' => ':name a été mis à jour',
                 'title'   => ':name a été mis à jour pour :new_status',
                 'action'  => 'Affichage',
+                'thanks'   => 'Cordialement,',
             ],
             'slack' => [
                 'title'   => ':name a été mis à jour',
@@ -65,6 +68,7 @@ return [
                 'content' => ':name est prévue pour :date',
                 'title'   => 'Une nouvelle maintenance planifiée a été créée.',
                 'action'  => 'Affichage',
+                'thanks'   => 'Cordialement,',
             ],
             'slack' => [
                 'title'   => 'Nouveau calendrier créé!',
@@ -108,8 +112,16 @@ return [
                 'subject' => 'YVotre invitation est à l’intérieur...',
                 'content' => 'Vous avez été invité à vous joindre à la page d\'état:app_name.',
                 'title'   => 'Vous êtes invité à rejoindre la page d\'état :app_name.',
-                'action'  => 'Accept',
+                'action'  => 'Accepte',
             ],
+        ],
+    ],
+
+    'vendor' => [
+        'email' => [
+            'hello'   => 'Bonjour !',
+            'regards' => 'Cordialement',
+            'content' => "Si vous avez de la difficulté à cliquer sur le bouton \":actionText\" copiez et collez l’URL ci-dessous<br>dans votre navigateur web : :actionURL"
         ],
     ],
 ];

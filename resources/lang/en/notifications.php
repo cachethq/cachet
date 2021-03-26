@@ -17,6 +17,7 @@ return [
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
                 'action'   => 'View',
+                'thanks'   => 'Thanks,',
             ],
             'slack' => [
                 'title'   => 'Component Status Updated',
@@ -34,6 +35,7 @@ return [
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
                 'action'   => 'View',
+                'thanks'   => 'Thanks,',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -49,6 +51,7 @@ return [
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
                 'action'  => 'View',
+                'thanks'   => 'Thanks,',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -66,6 +69,7 @@ return [
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
                 'action'  => 'View',
+                'thanks'   => 'Thanks,',
             ],
             'slack' => [
                 'title'   => 'New Schedule Created!',
@@ -111,6 +115,14 @@ return [
                 'title'   => 'You\'re invited to join :app_name status page.',
                 'action'  => 'Accept',
             ],
+        ],
+    ],
+
+    'vendor' => [
+        'email' => [
+            'hello'   => 'Hello !',
+            'regards' => 'Regards',
+            'content' => "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below <br> into your web browser: :actionURL "
         ],
     ],
 ];
