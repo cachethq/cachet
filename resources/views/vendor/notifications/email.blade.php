@@ -6,7 +6,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('Bonjour!')
+# {{trans('notifications.vendor.email.hello')}}
 @endif
 @endif
 
@@ -19,7 +19,8 @@
 {{-- Action Button --}}
 @isset($actionText)
 <?php
-    switch ($level) {
+
+;switch ($level) {
         case 'success':
         case 'error':
             $color = $level;
@@ -43,20 +44,14 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Cordialement'),<br>{{ setting('app_name', config('app.name')) }}
+    {{trans('notifications.vendor.email.regards')}},
+    {{ setting('app_name', config('app.name')) }}
 @endif
 
 {{-- Subcopy --}}
 @isset($actionText)
 @component('mail::subcopy')
-@lang(
-    "Si vous avez de la difficulté à cliquer sur le bouton  \":actionText\", copiez et collez l’URL ci-dessous\n".
-    'dans votre navigateur web: [:actionURL](:actionURL)',
-    [
-        'actionText' => $actionText,
-        'actionURL' => $actionUrl,
-    ]
-)
+@lang(trans('notifications.vendor.email.content'), ['actionText' => $actionText,'actionURL' => $actionUrl])
 @endcomponent
 @endisset
 @endcomponent
