@@ -7,7 +7,7 @@
 {{ $actionText }}
 @endcomponent
 
-@lang('Cordialement,')<br>
+{{ trans('notifications.incident.new.mail.thanks') }}<br>
 {{ Config::get('setting.app_name') }}
 
 @include('notifications.partials.subscription')

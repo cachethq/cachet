@@ -3,7 +3,7 @@
 
 {{ $content }}
 
-@lang('Cordialement,')<br>
+{{ trans('notifications.schedule.new.mail.thanks') }}<br>
 {{ Config::get('setting.app_name') }}
 
 @include('notifications.partials.subscription')
