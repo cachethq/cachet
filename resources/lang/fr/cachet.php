@@ -68,6 +68,7 @@ return [
         'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
         'unsubscribe' => 'Se désabonner',
         'button'    => 'S\'abonner',
+        'manage_subscription' => 'Gérer l\'abonnement',
         'manage'    => [
             'notifications'       => 'Notifications',
             'notifications_for'   => 'Gérer les notifications pour',
