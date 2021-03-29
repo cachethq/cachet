@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "animate-sass": "^0.8.2",
-    "axios": "^0.19",
+    "axios": "^0.21",
     "bootstrap-sass": "^3.4.1",
     "chart.js": "^2.9.3",
     "cross-env": "^5.1",
