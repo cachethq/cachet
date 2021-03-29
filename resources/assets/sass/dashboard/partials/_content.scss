@@ -8,6 +8,9 @@ body.dashboard {
             &.header-fixed {
                 margin-top: 60px;
             }
+            textarea[name="stylesheet"] {
+                resize: vertical;
+            }       
         }
         .header {
             position: relative;
