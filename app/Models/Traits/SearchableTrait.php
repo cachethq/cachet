@@ -34,10 +34,11 @@ trait SearchableTrait
             return $query;
         }
 
-        if (!array_intersect(array_keys($search), $this->searchable)) {
+        $allowed_search = array_intersect_key($search, array_flip($this->searchable));
+        if (!$allowed_search) {
             return $query;
         }
 
-        return $query->where($search);
+        return $query->where($allowed_search);
     }
 }
