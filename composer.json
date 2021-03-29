@@ -33,10 +33,10 @@
         "ext-mbstring": "*",
         "ext-openssl": "*",
         "ext-xml": "*",
-        "alt-three/badger": "^5.1",
         "alt-three/bus": "^4.1",
-        "alt-three/emoji": "^7.0",
-        "alt-three/twitter": "^3.1",
+        "cachethq/badger": "^2.0",
+        "cachethq/emoji": "^3.0",
+        "cachethq/twitter": "^3.0",
         "alt-three/validator": "^4.1",
         "aws/aws-sdk-php": "^3.7",
         "barryvdh/laravel-cors": "^0.11.0",
@@ -46,7 +46,7 @@
         "fideloper/proxy": "^4.0",
         "graham-campbell/binput": "^6.0",
         "graham-campbell/exceptions": "^11.1",
-        "graham-campbell/markdown": "^10.2",
+        "graham-campbell/markdown": "^11.2",
         "guzzlehttp/guzzle": "^6.3.3",
         "jenssegers/date": "^3.4",
         "laravel/framework": "5.7.*",
@@ -59,7 +59,7 @@
     },
     "require-dev": {
         "ext-sqlite3": "*",
-        "alt-three/testbench": "^4.0",
+        "alt-three/testbench": "5.0.x-dev",
         "barryvdh/laravel-debugbar": "^3.2",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.8",
@@ -97,6 +97,14 @@
         "post-autoload-dump": [
           "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
           "@php artisan package:discover"
+        ],
+        "test": [
+          "@php artisan config:clear",
+          "vendor/bin/phpunit"
+        ],
+        "test-coverage": [
+          "@php artisan config:clear",
+          "vendor/bin/phpunit --coverage-clover=coverage.xml"
         ]
     },
     "config": {
