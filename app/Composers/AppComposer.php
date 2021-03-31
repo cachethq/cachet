@@ -61,7 +61,13 @@ class AppComposer
      */
     public function compose(View $view)
     {
-        $view->withAboutApp(Markdown::convertToHtml($this->config->get('setting.app_about')));
+        if ($this->config->get('setting.app_about')) {
+            $about = Markdown::convertToHtml($this->config->get('setting.app_about'));
+        } else {
+            $about = '';
+        }
+        
+        $view->withAboutApp($about);
         $view->withAppAnalytics($this->config->get('setting.app_analytics'));
         $view->withAppAnalyticsGoSquared($this->config->get('setting.app_analytics_gs'));
         $view->withAppAnalyticsPiwikUrl($this->config->get('setting.app_analytics_piwik_url'));
