@@ -35,7 +35,7 @@ class AlterJobsDropReserved extends Migration
     public function down()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->tinyInteger('reserved')->unsigned()->after('attempts');
+            $table->tinyInteger('reserved')->unsigned()->default(0)->after('attempts');
         });
     }
 }
