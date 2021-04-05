@@ -42,7 +42,7 @@
         "barryvdh/laravel-cors": "^0.11.0",
         "bugsnag/bugsnag-laravel": "^2.15",
         "chillerlan/php-qrcode": "^2.0",
-        "doctrine/dbal": "2.9.*",
+        "doctrine/dbal": "2.13.*",
         "fideloper/proxy": "^4.0",
         "graham-campbell/binput": "^6.0",
         "graham-campbell/exceptions": "^11.1",
