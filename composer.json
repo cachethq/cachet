@@ -49,7 +49,7 @@
         "graham-campbell/markdown": "^11.2",
         "guzzlehttp/guzzle": "^6.3.3",
         "jenssegers/date": "^3.4",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "mccool/laravel-auto-presenter": "^7.1",
         "nexmo/client": "^1.5",
