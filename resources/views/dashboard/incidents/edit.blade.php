@@ -29,22 +29,22 @@
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="1" {{ ($incident->status == 1) ? "checked='checked'" : "" }}>
+                            <input type="radio" name="status" value="1" {{ ($incident->status == 1) ? "checked='checked'" : "" }} required>
                             <i class="ion ion-flag"></i>
                             {{ trans('cachet.incidents.status')[1] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="2" {{ ($incident->status == 2) ? "checked='checked'" : "" }}>
+                            <input type="radio" name="status" value="2" {{ ($incident->status == 2) ? "checked='checked'" : "" }} required>
                             <i class="ion ion-alert-circled"></i>
                             {{ trans('cachet.incidents.status')[2] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="3" {{ ($incident->status == 3) ? "checked='checked'" : "" }}>
+                            <input type="radio" name="status" value="3" {{ ($incident->status == 3) ? "checked='checked'" : "" }} required>
                             <i class="ion ion-eye"></i>
                             {{ trans('cachet.incidents.status')[3] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="4" {{ ($incident->status == 4) ? "checked='checked'" : "" }}>
+                            <input type="radio" name="status" value="4" {{ ($incident->status == 4) ? "checked='checked'" : "" }} required>
                             <i class="ion ion-checkmark"></i>
                             {{ trans('cachet.incidents.status')[4] }}
                         </label>
