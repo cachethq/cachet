@@ -23,6 +23,25 @@ use Dotenv\Exception\InvalidPathException;
 class UpdateConfigCommandHandler
 {
     /**
+     * The filesystem instance.
+     *
+     * @var \Illuminate\Filesystem\Filesystem
+     */
+    protected $files;
+
+    /**
+     * Create a new update config command handler instance.
+     *
+     * @param \Illuminate\Filesystem\Filesystem $files
+     *
+     * @return void
+     */
+    public function __construct(Filesystem $files)
+    {
+        $this->files = $files;
+    }
+
+    /**
      * Handle update config command handler instance.
      *
      * @param \CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand $command
@@ -33,6 +52,11 @@ class UpdateConfigCommandHandler
     {
         foreach ($command->values as $setting => $value) {
             $this->writeEnv($setting, $value);
+        }
+
+        // Clears the cached config file like artisan config:clear does.
+        if (app()->configurationIsCached()) {
+            $this->files->delete(app()->getCachedConfigPath());
         }
     }
 
