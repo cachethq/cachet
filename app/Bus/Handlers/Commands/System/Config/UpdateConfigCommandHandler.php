@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\System\Config;
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
+use Illuminate\Filesystem\Filesystem;
 
 /**
  * This is the update config command handler class.
