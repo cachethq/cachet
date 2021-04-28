@@ -1,0 +1,109 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: aws/aws-sdk-php
+    versions:
+    - 3.172.0
+    - 3.172.4
+    - 3.173.13
+    - 3.173.18
+    - 3.173.23
+    - 3.173.28
+    - 3.173.4
+    - 3.173.8
+    - 3.175.0
+    - 3.176.2
+  - dependency-name: symfony/http-kernel
+    versions:
+    - 4.4.18
+    - 4.4.19
+    - 4.4.20
+    - 4.4.21
+  - dependency-name: filp/whoops
+    versions:
+    - 2.11.0
+    - 2.9.2
+  - dependency-name: alt-three/testbench
+    versions:
+    - 4.3.0
+  - dependency-name: bugsnag/bugsnag-laravel
+    versions:
+    - 2.21.0
+    - 2.22.0
+  - dependency-name: twig/twig
+    versions:
+    - 2.13.1
+  - dependency-name: barryvdh/laravel-debugbar
+    versions:
+    - 3.4.2
+  - dependency-name: predis/predis
+    versions:
+    - 1.1.6
+  - dependency-name: mockery/mockery
+    versions:
+    - 1.3.3
+    - 1.3.4
+  - dependency-name: mccool/laravel-auto-presenter
+    versions:
+    - 7.5.0
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: moment
+    versions:
+    - 2.29.1
+  - dependency-name: ionicons
+    versions:
+    - 5.2.3
+    - 5.4.0
+    - 5.5.0
+  - dependency-name: ini
+    versions:
+    - 1.3.7
+  - dependency-name: sweetalert2
+    versions:
+    - 10.12.6
+    - 10.14.0
+    - 10.15.5
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+    - 4.17.21
+  - dependency-name: axios
+    versions:
+    - 0.21.1
+  - dependency-name: cross-env
+    versions:
+    - 7.0.3
+  - dependency-name: vue-template-compiler
+    versions:
+    - 2.6.12
+  - dependency-name: vue
+    versions:
+    - 2.6.12
+  - dependency-name: elliptic
+    versions:
+    - 6.5.4
+  - dependency-name: chart.js
+    versions:
+    - 2.9.4
+  - dependency-name: promise
+    versions:
+    - 8.1.0
+  - dependency-name: laravel-mix-purgecss
+    versions:
+    - 5.0.0
+  - dependency-name: laravel-mix
+    versions:
+    - 5.0.4
+  - dependency-name: opencollective-postinstall
+    versions:
+    - 2.0.3
