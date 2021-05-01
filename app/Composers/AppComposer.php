@@ -66,7 +66,7 @@ class AppComposer
         } else {
             $about = '';
         }
-        
+
         $view->withAboutApp($about);
         $view->withAppAnalytics($this->config->get('setting.app_analytics'));
         $view->withAppAnalyticsGoSquared($this->config->get('setting.app_analytics_gs'));
