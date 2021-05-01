@@ -16,7 +16,7 @@
     "bootstrap-sass": "^3.4.1",
     "chart.js": "^2.9.3",
     "cross-env": "^5.1",
-    "es5-shim": "^4.5.14",
+    "es5-shim": "^4.5.15",
     "flatpickr": "^4.5.7",
     "github-markdown-css": "^2.3.0",
     "ionicons": "~2.0",
