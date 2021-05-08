@@ -27,7 +27,7 @@
     "laravel-mix": "^2.1",
     "laravel-mix-purgecss": "^3.0.0",
     "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "messenger": "git+https://github.com/HubSpot/messenger.git",
     "moment": "^2.24.0",
     "promise": "^7.3.1",
