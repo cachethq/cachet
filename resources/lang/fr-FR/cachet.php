@@ -34,8 +34,8 @@ return [
         'stickied'     => 'Incidents épinglés',
         'scheduled'    => 'Maintenance Planifiée',
         'scheduled_at' => ', planifé à :timestamp',
-        'posted'       => 'Posted :timestamp by :username',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted'       => 'Pasté à :timestamp par :username',
+        'posted_at'    => 'Posté à :timestamp',
         'status'       => [
             1 => 'Enquête en cours',
             2 => 'Identifié',
@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'subscribe'           => 'S\'abonner aux changements de statuts et aux mises à jour d\'incidents',
         'unsubscribe'         => 'Se désabonner',
         'button'              => 'S\'abonner',
         'manage_subscription' => 'Gérer l\'abonnement',
@@ -90,10 +90,10 @@ return [
             'manage_at_link'      => 'Gérer vos abonnements à :link',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => 'Nous vous avons envoyé un email, s\'il vous plaît cliquez sur le lien pour gérer vos abonnements',
             'subscribe'           => 'S\'abonner aux notifications par email.',
             'subscribed'          => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => 'Vous abonnments ont bien été mis à jour.',
             'verified'            => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
             'manage'              => 'Gérer votre abonnement',
             'unsubscribe'         => 'Désinscription des mises à jour par courriel.',

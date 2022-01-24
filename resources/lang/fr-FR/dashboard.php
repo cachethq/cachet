@@ -18,24 +18,24 @@ return [
     'incidents' => [
         'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}Il n\'y a pas d\'incidents, bon travail.|[1]Vous avez enregistré un incident.|[2,*]Vous avez signalé <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'title'   => 'Mise à jour de l\'incident : :incident',
+            'count'   => '{0}Pas de mise à jour|[1]Une mise à jour|[2]Deux mises à jour|[3,*]Plusieurs mises à jour',
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Votre nouvelle mise à jour d\'inciden a été créée.',
+                'failure' => 'Quelque chose a mal tourné avec la mise à jour de l\'incident.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Modifier la mise à jour d\'incident',
+                'success' => 'La mise à jour de l\'incident a été mise à jour.',
+                'failure' => 'Quelque chose a mal tourné en mettant à jour la mise à jour d\'incident',
             ],
         ],
-        'reported_by'              => 'Reported :timestamp by :user',
+        'reported_by'              => 'Signalé le :timestamp par :user',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Modèles d\'incident',
             'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
-                'message' => 'Create your first incident template.',
+                'message' => 'Créer votre premier modèle d\'incident.',
                 'success' => 'Votre nouveau modèle d\'incident a été créé.',
                 'failure' => 'Une erreur est survenue avec le modèle d\'incident.',
             ],
@@ -75,21 +75,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance Planifiée',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0}Il n\'y a pas de Maintenance, bon travail.|[1]Vous avez planifié une Maintenance.|[2,*]Vous avez planifié <strong>:count</strong> Maintenances.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
             'title'   => 'Add Maintenance',
-            'success' => 'Maintenance added.',
-            'failure' => 'Something went wrong adding the Maintenance, please try again.',
+            'success' => 'Maintenance ajoutée.',
+            'failure' => 'Quelque chose a mal tourné en ajoutant la Maintenance, s\'il vous plaît essayez à nouveau.',
         ],
         'edit' => [
-            'title'   => 'Edit Maintenance',
-            'success' => 'Maintenance has been updated!',
-            'failure' => 'Something went wrong editing the Maintenance, please try again.',
+            'title'   => 'Modifier la Maintenance',
+            'success' => 'La Maintenance a été mise à jour!',
+            'failure' => 'Quelque chose a mal tourné en modifiant la Maintenance, s\'il vous plaît essayez à nouveau.',
         ],
         'delete' => [
-            'success' => 'The Maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The Maintenance could not be deleted, please try again.',
+            'success' => 'La Maintenance a été supprimée et ne s\'affichera pas sur votre page de statuts.',
+            'failure' => 'La Maintenance n\'a pas pu être supprimée, essayez à nouveau.',
         ],
     ],
 
