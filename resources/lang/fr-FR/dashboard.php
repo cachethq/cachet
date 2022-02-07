@@ -78,7 +78,7 @@ return [
         'logged'       => '{0}Il n\'y a pas de Maintenance, bon travail.|[1]Vous avez planifié une Maintenance.|[2,*]Vous avez planifié <strong>:count</strong> Maintenances.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
-            'title'   => 'Add Maintenance',
+            'title'   => 'Ajouter une Maintenance',
             'success' => 'Maintenance ajoutée.',
             'failure' => 'Quelque chose a mal tourné en ajoutant la Maintenance, s\'il vous plaît essayez à nouveau.',
         ],
