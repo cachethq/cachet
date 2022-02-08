@@ -34,8 +34,8 @@ return [
         'stickied'     => 'Incidents en cours',
         'scheduled'    => 'Maintenance Planifiée',
         'scheduled_at' => ', planifé à :timestamp',
-        'posted'       => 'Posté à :timestamp par :username',
-        'posted_at'    => 'Posté à :timestamp',
+        'posted'       => 'Posté :timestamp par :username',
+        'posted_at'    => 'Posté le :timestamp',
         'status'       => [
             1 => 'Analyse en cours',
             2 => 'Correctif en cours de développement',

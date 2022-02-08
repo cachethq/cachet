@@ -56,9 +56,9 @@ return [
         'notify_subscribers' => 'Notifier les abonnés ?',
         'notify_disabled'    => 'A cause de la maintenance prévue, les notifications pour cet incident ou ses composants seront supprimées.',
         'visibility'         => 'Visibilité de l\'incident',
-        'stick_status'       => 'Incident épinglé',
-        'stickied'           => 'Épinglé',
-        'not_stickied'       => 'Non épinglé',
+        'stick_status'       => 'Incident en cours',
+        'stickied'           => 'En cours',
+        'not_stickied'       => 'Terminé',
         'public'             => 'Visible par le public',
         'logged_in_only'     => 'Uniquement visible par les utilisateurs enregistrés',
         'templates'          => [
