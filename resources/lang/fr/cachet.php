@@ -34,8 +34,8 @@ return [
         'scheduled_at'  => ', planifé à :timestamp',
         'status'        => [
             0 => 'Planifié', // TODO: Hopefully remove this.
-            1 => 'Enquête en cours',
-            2 => 'Identifié',
+            1 => 'Analyse en cours',
+            2 => 'Correctif en cours de développement',
             3 => 'Sous surveillance',
             4 => 'Corrigé',
         ],

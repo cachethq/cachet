@@ -88,8 +88,8 @@ return [
         'manage' => [
             'mail' => [
                 'subject' => 'Gérer votre Abonnement',
-                'content' => 'Cliquer pour gérer votre abonnement à la page de statuts de :app_name.',
-                'title'   => 'Cliquer pour gérer votre abonnement à la page de statuts de :app_name.',
+                'content' => 'Cliquez pour gérer votre abonnement à la page de statuts de :app_name.',
+                'title'   => 'Cliquez pour gérer votre abonnement à la page de statuts de :app_name.',
                 'action'  => 'Gérer l\'abonnement',
             ],
         ],

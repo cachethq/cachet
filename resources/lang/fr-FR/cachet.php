@@ -31,14 +31,14 @@ return [
     'incidents' => [
         'none'         => 'Aucun incident signalé',
         'past'         => 'Incidents antérieurs',
-        'stickied'     => 'Incidents épinglés',
+        'stickied'     => 'Incidents en cours',
         'scheduled'    => 'Maintenance Planifiée',
         'scheduled_at' => ', planifé à :timestamp',
-        'posted'       => 'Pasté à :timestamp par :username',
+        'posted'       => 'Posté à :timestamp par :username',
         'posted_at'    => 'Posté à :timestamp',
         'status'       => [
-            1 => 'Enquête en cours',
-            2 => 'Identifié',
+            1 => 'Analyse en cours',
+            2 => 'Correctif en cours de développement',
             3 => 'Sous surveillance',
             4 => 'Corrigé',
         ],
