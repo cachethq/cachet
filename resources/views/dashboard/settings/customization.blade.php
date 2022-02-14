@@ -19,7 +19,11 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('dashboard.settings.customization.header') }}</label>
-                                    <textarea name="header" class="form-control" rows="10" placeholder="{{ trans('dashboard.settings.customization.header') }}">{{ Config::get('setting.header') }}</textarea>
+                                    <textarea name="header" class="form-control" rows="10" placeholder="{{ trans('dashboard.settings.customization.header') }}">
+                                        <!-- {{ Config::get('setting.header') }} -->
+                                        <!-- Test pour réinitialiser le header -->
+                                        Test
+                                    </textarea>
                                 </div>
                             </div>
                         </div>
