@@ -58,7 +58,7 @@
     ]
 ) -->
 @lang(
-    "Si vous avez de la difficulté à cliquer sur le bouton \":actionText\", copiez/collez l'URL ci-dessous\n".
+    "Si vous avez de la difficulté à cliquer sur le bouton \":actionText\", copiez-collez l'URL ci-dessous\n".
     'dans votre navigateur : [:actionURL](:actionURL)',
     [
         'actionText' => $actionText,
