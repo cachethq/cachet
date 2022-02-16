@@ -29,7 +29,7 @@
             <div class="content-wrapper">
                 <div class="moment first">
                     <div class="row event clearfix">
-                        <div class="col-sm-">
+                        <div class="col-sm-1">
                             <div class="status-icon">
                                 <i class="bi bi-tools"></i>
                             </div>
