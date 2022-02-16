@@ -29,7 +29,11 @@
             <div class="content-wrapper">
                 <div class="moment first">
                     <div class="row event clearfix">
-                        <div class="col-sm-"></div>
+                        <div class="col-sm-">
+                            <div class="status-icon">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                        </div>
                         <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                             <div class="panel panel-message incident">
                                 <div class="panel-heading">
