@@ -28,23 +28,26 @@
         <div class="timeline">
             <div class="content-wrapper">
                 <div class="moment first">
-                    <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
-                        <div class="panel panel-message incident">
-                            <div class="panel-heading">
-                                <strong>{{ $schedule->name }}</strong>
-                                <br>
-                                <small class="date">
-                                    <a href="#" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></a>
-                                </small>
-                                <div class="panel-body markdown-body">
-                                    {!! $schedule->formatted_message !!}
-                                </div> 
-                                @if($schedule->components->count() > 0)
-                                    <hr>
-                                    @foreach($schedule->components as $affectedComponent)
-                                        <span class="label label-primary">{{ $affectedComponent->component->name }}</span>
-                                    @endforeach
-                                @endif
+                    <div class="row event clearfix">
+                        <div class="col-sm-"></div>
+                        <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
+                            <div class="panel panel-message incident">
+                                <div class="panel-heading">
+                                    <strong>{{ $schedule->name }}</strong>
+                                    <br>
+                                    <small class="date">
+                                        <a href="#" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></a>
+                                    </small>
+                                    <div class="panel-body markdown-body">
+                                        {!! $schedule->formatted_message !!}
+                                    </div> 
+                                    @if($schedule->components->count() > 0)
+                                        <hr>
+                                        @foreach($schedule->components as $affectedComponent)
+                                            <span class="label label-primary">{{ $affectedComponent->component->name }}</span>
+                                        @endforeach
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
