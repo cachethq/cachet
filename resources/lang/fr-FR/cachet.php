@@ -93,7 +93,7 @@ return [
             'manage_subscription' => 'Nous vous avons envoyé un email, s\'il vous plaît cliquez sur le lien pour gérer vos abonnements',
             'subscribe'           => 'S\'abonner aux notifications par email.',
             'subscribed'          => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
-            'updated-subscribe'   => 'Vous abonnments ont bien été mis à jour.',
+            'updated-subscribe'   => 'Vos abonnments ont bien été mis à jour.',
             'verified'            => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
             'manage'              => 'Gérer votre abonnement',
             'unsubscribe'         => 'Désinscription des mises à jour par courriel.',
