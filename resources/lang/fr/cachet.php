@@ -30,7 +30,7 @@ return [
         'past'          => 'Incidents antérieurs',
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
-        'scheduled'     => 'Maintenance Planifiée',
+        'scheduled'     => 'Maintenances Planifiées',
         'scheduled_at'  => ', planifé à :timestamp',
         'status'        => [
             0 => 'Planifié', // TODO: Hopefully remove this.
