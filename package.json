@@ -29,7 +29,7 @@
     "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
     "lodash": "^4.17.13",
     "messenger": "git+https://github.com/HubSpot/messenger.git",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "promise": "^7.3.1",
     "sortablejs": "^1.8.4",
     "sweetalert2": "^6.8.0",
