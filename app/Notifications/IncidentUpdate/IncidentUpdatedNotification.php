@@ -19,6 +19,7 @@ use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
+use Illuminate\Support\Facades\URL;
 
 /**
  * This is the incident updated notification class.
@@ -74,6 +75,8 @@ class IncidentUpdatedNotification extends Notification
             'time'    => $this->update->created_at_diff,
         ]);
 
+        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        
         return (new MailMessage())
             ->subject(trans('notifications.incident.update.mail.subject'))
             ->markdown('notifications.incident.update', [
@@ -87,7 +90,8 @@ class IncidentUpdatedNotification extends Notification
                 'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                // 'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                'manageSubscriptionUrl'  => $route,
             ]);
     }
 
