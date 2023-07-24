@@ -36,3 +36,8 @@ jobs:
         - phpenv config-rm xdebug.ini || true
         - vendor/bin/phpunit
       php: 7.3
+    - stage: Unit tests
+      script:
+        - phpenv config-rm xdebug.ini || true
+        - vendor/bin/phpunit
+      php: 8.1

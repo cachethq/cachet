@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentUpdatePresenter;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +24,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 class IncidentUpdate extends Model implements HasPresenter
 {
     use SortableTrait;
-    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

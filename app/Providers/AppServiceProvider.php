@@ -11,10 +11,11 @@
 
 namespace CachetHQ\Cachet\Providers;
 
-use AltThree\Bus\Dispatcher;
-use AltThree\Validator\ValidatingMiddleware;
+
+//use AltThree\Validator\ValidatingMiddleware;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use CachetHQ\Cachet\Bus\Dispatcher\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -32,16 +33,17 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      *
-     * @param \AltThree\Bus\Dispatcher $dispatcher
+     * @param \CachetHQ\Cachet\Bus\Dispatcher $dispatcher
      *
      * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
         Schema::defaultStringLength(191);
-
+        
         $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Bus', 'CachetHQ\Cachet\Bus\Handlers');
+            return 'CachetHQ\Cachet\Bus\Handlers'
+            . '\\' . trim(str_replace('CachetHQ\Cachet\Bus', '', get_class($command)), '\\').'Handler';
         });
 
         $dispatcher->pipeThrough([UseDatabaseTransactions::class, ValidatingMiddleware::class]);

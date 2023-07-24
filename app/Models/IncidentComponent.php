@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -21,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class IncidentComponent extends Model
 {
-    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
@@ -29,7 +28,6 @@ class ComponentGroup extends Model implements HasPresenter
 {
     use SearchableTrait;
     use SortableTrait;
-    use ValidatingTrait;
     /**
      * Viewable only authenticated users.
      *

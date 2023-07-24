@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
@@ -28,7 +27,6 @@ class Schedule extends Model implements HasPresenter
     use SearchableTrait;
     use SoftDeletes;
     use SortableTrait;
-    use ValidatingTrait;
 
     /**
      * The upcoming status.

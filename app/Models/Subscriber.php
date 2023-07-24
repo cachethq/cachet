@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
@@ -31,7 +30,6 @@ class Subscriber extends Model implements HasPresenter
 {
     use HasMeta;
     use Notifiable;
-    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

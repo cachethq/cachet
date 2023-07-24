@@ -11,13 +11,11 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Subscription extends Model
 {
-    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.

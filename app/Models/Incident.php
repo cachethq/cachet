@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
@@ -36,7 +35,6 @@ class Incident extends Model implements HasPresenter
     use SearchableTrait;
     use SoftDeletes;
     use SortableTrait;
-    use ValidatingTrait;
 
     /**
      * Status for incident being investigated.

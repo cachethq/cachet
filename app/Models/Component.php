@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
@@ -29,7 +28,6 @@ class Component extends Model implements HasPresenter
     use SearchableTrait;
     use SoftDeletes;
     use SortableTrait;
-    use ValidatingTrait;
 
     /**
      * List of attributes that have default values.

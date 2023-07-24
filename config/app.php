@@ -149,7 +149,7 @@ return [
          */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        AltThree\Bus\BusServiceProvider::class,
+        CachetHQ\Cachet\Bus\Dispatcher\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
@@ -174,11 +174,11 @@ return [
          * Packages Service Providers...
          */
         env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
-        Barryvdh\Cors\ServiceProvider::class,
-        env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
-        CachetHQ\Badger\BadgerServiceProvider::class,
-        CachetHQ\Emoji\EmojiServiceProvider::class,
-        CachetHQ\Twitter\TwitterServiceProvider::class,
+//        Barryvdh\Cors\ServiceProvider::class,
+//        env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
+//        CachetHQ\Badger\BadgerServiceProvider::class,
+//        CachetHQ\Emoji\EmojiServiceProvider::class,
+//        CachetHQ\Twitter\TwitterServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,

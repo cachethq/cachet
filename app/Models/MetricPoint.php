@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Carbon\Carbon;
 use DateTime;
@@ -27,7 +26,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class MetricPoint extends Model implements HasPresenter
 {
-    use ValidatingTrait;
 
     /**
      * The accessors to append to the model's array form.

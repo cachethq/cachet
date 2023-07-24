@@ -46,8 +46,16 @@ return [
      * - Illuminate\Http\Request::HEADER_X_FORWARDED_ALL (use all x-forwarded-* headers to establish trust)
      * - Illuminate\Http\Request::HEADER_FORWARDED (use the FORWARDED header to establish trust)
      *
+     *  UPDATE!
+     * 
+     * HEADER_X_FORWARDED_ALL got replaced by HEADER_X_FORWARDED_FOR | HEADER_X_FORWARDED_HOST | HEADER_X_FORWARDED_PORT | HEADER_X_FORWARDED_PROTO | HEADER_X_FORWARDED_AWS_ELB
+     * 
      * @link https://symfony.com/doc/current/deployment/proxies.html
+     * @link https://laravel.com/docs/9.x/upgrade#the-assert-deleted-method
      */
-    'headers' => Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
-
+    'headers' => Illuminate\Http\Request::HEADER_X_FORWARDED_FOR |
+        Illuminate\Http\Request::HEADER_X_FORWARDED_HOST |
+        Illuminate\Http\Request::HEADER_X_FORWARDED_PORT |
+        Illuminate\Http\Request::HEADER_X_FORWARDED_PROTO |
+        Illuminate\Http\Request::HEADER_X_FORWARDED_AWS_ELB,
 ];

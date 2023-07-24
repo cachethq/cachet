@@ -22,6 +22,8 @@ $app = new Illuminate\Foundation\Application(realpath(__DIR__.'/../'));
 |
 */
 
+$app->singleton(GrahamCampbell\Exceptions\Identifier\IdentifierInterface::class, GrahamCampbell\Exceptions\Identifier\HashingIdentifier::class); 
+
 $app->singleton(Illuminate\Contracts\Http\Kernel::class, CachetHQ\Cachet\Http\Kernel::class);
 
 $app->singleton(Illuminate\Contracts\Console\Kernel::class, CachetHQ\Cachet\Console\Kernel::class);

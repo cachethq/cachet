@@ -11,8 +11,6 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
-use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
@@ -25,7 +23,6 @@ class Metric extends Model implements HasPresenter
 {
     use HasMeta;
     use SortableTrait;
-    use ValidatingTrait;
 
     /**
      * The calculation type of sum.
@@ -207,7 +204,7 @@ class Metric extends Model implements HasPresenter
     /**
      * Validate the model before save.
      *
-     * @throws \AltThree\Validator\ValidationException
+     * @throws Exception
      *
      * @return void
      */
@@ -220,7 +217,7 @@ class Metric extends Model implements HasPresenter
         }
 
         if ($messages) {
-            throw new ValidationException(new MessageBag($messages));
+            throw new Exception(new MessageBag($messages));
         }
     }
 
@@ -229,8 +226,7 @@ class Metric extends Model implements HasPresenter
      *
      * @return string
      */
-    public function getPresenterClass()
-    {
+    public function getPresenterClass(){
         return MetricPresenter::class;
     }
 }

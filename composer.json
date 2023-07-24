@@ -4,7 +4,6 @@
     "keywords": [
         "laravel",
         "cachet",
-        "alt-three",
         "status",
         "page"
     ],
@@ -29,30 +28,24 @@
         "symfony/polyfill-mbstring": "*"
     },
     "require": {
-        "php": "^7.1.3",
+        "php": "^8.0.2",
         "ext-mbstring": "*",
         "ext-openssl": "*",
         "ext-xml": "*",
-        "alt-three/bus": "^4.1",
-        "cachethq/badger": "^2.0",
-        "cachethq/emoji": "^3.0",
-        "cachethq/twitter": "^3.0",
-        "alt-three/validator": "^4.1",
         "aws/aws-sdk-php": "^3.7",
-        "barryvdh/laravel-cors": "^0.11.0",
-        "bugsnag/bugsnag-laravel": "^2.15",
+        "bugsnag/bugsnag-laravel": "^2.26.0",
         "chillerlan/php-qrcode": "^2.0",
-        "doctrine/dbal": "2.9.*",
+        "doctrine/dbal": "^3.6.4",
         "fideloper/proxy": "^4.0",
-        "graham-campbell/binput": "^6.0",
-        "graham-campbell/exceptions": "^11.1",
-        "graham-campbell/markdown": "^11.2",
-        "guzzlehttp/guzzle": "^6.3.3",
-        "jenssegers/date": "^3.4",
-        "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0",
-        "mccool/laravel-auto-presenter": "^7.1",
-        "nexmo/client": "^1.5",
+        "graham-campbell/binput": "^10.0.0",
+        "graham-campbell/exceptions": "^17.0.0-dev",
+        "graham-campbell/markdown": "^15.0.0",
+        "guzzlehttp/guzzle": "^7.7.0",
+        "jenssegers/date": "^4.0.0",
+        "laravel/framework": "9.0.*",
+        "laravel/tinker": "^2.8.1",
+        "mccool/laravel-auto-presenter": "^7.7.0",
+        "nexmo/client": "^2.4.0",
         "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
         "twig/twig": "^2.6"
@@ -60,13 +53,12 @@
     "require-dev": {
         "ext-sqlite3": "*",
         "alt-three/testbench": "5.0.x-dev",
-        "barryvdh/laravel-debugbar": "^3.2",
+        "barryvdh/laravel-debugbar": "^3.8.x-dev",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.8",
-        "graham-campbell/analyzer": "^2.1",
+        "graham-campbell/analyzer": "^4.0.0",
         "mockery/mockery": "^1.2",
-        "phpunit/phpunit": "^7.4",
-        "tightenco/mailthief": "^0.3.14"
+        "phpunit/phpunit": "^9.3.8"
     },
     "suggest": {
         "ext-apc": "APC Support cache driver."
@@ -109,11 +101,14 @@
     },
     "config": {
         "platform": {
-            "php": "7.1.3"
+            "php": "8.0.2"
         },
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     },
     "extra": {
         "branch-alias": {

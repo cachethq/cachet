@@ -61,16 +61,16 @@ class AppResetCommand extends Command
      */
     public function handle()
     {
-        $this->events->fire('command.resetting', $this);
-        $this->events->fire('command.generatekey', $this);
-        $this->events->fire('command.cacheconfig', $this);
-        $this->events->fire('command.cacheroutes', $this);
-        $this->events->fire('command.publishvendors', $this);
-        $this->events->fire('command.resetmigrations', $this);
-        $this->events->fire('command.runmigrations', $this);
-        $this->events->fire('command.runseeding', $this);
-        $this->events->fire('command.updatecache', $this);
-        $this->events->fire('command.extrastuff', $this);
-        $this->events->fire('command.reset', $this);
+        $this->events->dispatch('command.resetting', $this);
+        $this->events->dispatch('command.generatekey', $this);
+        $this->events->dispatch('command.cacheconfig', $this);
+        $this->events->dispatch('command.cacheroutes', $this);
+        $this->events->dispatch('command.publishvendors', $this);
+        $this->events->dispatch('command.resetmigrations', $this);
+        $this->events->dispatch('command.runmigrations', $this);
+        $this->events->dispatch('command.runseeding', $this);
+        $this->events->dispatch('command.updatecache', $this);
+        $this->events->dispatch('command.extrastuff', $this);
+        $this->events->dispatch('command.reset', $this);
     }
 }
