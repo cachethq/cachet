@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/logs/laravel.log
 /vendor
 /.idea
 /.vagrant

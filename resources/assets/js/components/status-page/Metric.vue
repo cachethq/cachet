@@ -1,4 +1,4 @@
-<template>
+template: `
     <div>
         <div class="row">
             <div class="col-xs-10">
@@ -28,9 +28,8 @@
             </div>
         </div>
     </div>
-</template>
+`
 
-<script>
 const Chart = require('chart.js')
 const _ = require('lodash')
 
@@ -192,4 +191,3 @@ module.exports = {
         }
     }
 }
-</script>

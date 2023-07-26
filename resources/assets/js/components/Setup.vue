@@ -1,4 +1,3 @@
-<script>
 module.exports = {
     props: [],
     data () {
@@ -52,4 +51,3 @@ module.exports = {
         }
     }
 }
-</script>

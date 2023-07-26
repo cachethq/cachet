@@ -13,14 +13,35 @@ require('laravel-mix-purgecss')
  |
  */
 
+// Set sassOptions for external includePaths
+mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                includePaths: ['./node_modules/'],
+                            },
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+});
+
 const sassOptions = {
     includePaths: ['node_modules'],
 };
 
 mix
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
-    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
-    .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
+    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard')
+    .sass('resources/assets/sass/app.scss', 'public/dist/css')
     .purgeCss()
     .options({
         processCssUrls: false

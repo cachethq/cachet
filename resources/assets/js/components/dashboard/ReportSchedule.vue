@@ -1,4 +1,3 @@
-<script>
 module.exports = {
     data () {
         return {
@@ -27,4 +26,3 @@ module.exports = {
         }
     }
 }
-</script>

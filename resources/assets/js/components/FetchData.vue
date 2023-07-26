@@ -1,4 +1,3 @@
-<script>
 export default {
     props: ['url'],
     data() {
@@ -28,4 +27,3 @@ export default {
         })
     },
 }
-</script>

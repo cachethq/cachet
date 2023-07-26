@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Routes\Dashboard;
 
-use Illuminate\Contracts\Routing\Registrar;
+use Illuminate\Support\Facades\Route;
 
 /**
  * This is the dashboard api routes class.
@@ -31,21 +31,15 @@ class ApiRoutes
     /**
      * Define the dashboard api routes.
      *
-     * @param \Illuminate\Contracts\Routing\Registrar $router
-     *
      * @return void
      */
-    public function map(Registrar $router)
+    public function map()
     {
-        $router->group([
-            'middleware' => ['auth'],
-            'namespace'  => 'Dashboard',
-            'prefix'     => 'dashboard/api',
-        ], function (Registrar $router) {
-            $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
-            $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
-            $router->post('components/order', 'ApiController@postUpdateComponentOrder');
-            $router->any('components/{component}', 'ApiController@postUpdateComponent');
+        Route::middleware(['auth'])->prefix('dashboard/api')->namespace('Dashboard')->group(function () {
+            Route::get('incidents/templates', 'ApiController@getIncidentTemplate');
+            Route::post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
+            Route::post('components/order', 'ApiController@postUpdateComponentOrder');
+            Route::match(['put', 'patch', 'post'], 'components/{component}', 'ApiController@postUpdateComponent');
         });
     }
 }

@@ -1,10 +1,9 @@
-<script>
 const Vue = require('vue');
 
-Vue.component('report-incident', require('./ReportIncident'));
-Vue.component('update-incident', require('./UpdateIncident'));
-Vue.component('report-schedule', require('./ReportSchedule'));
-Vue.component('invite-team', require('./InviteTeam'));
+Vue.component('report-incident', require('./ReportIncident.vue'));
+Vue.component('update-incident', require('./UpdateIncident.vue'));
+Vue.component('report-schedule', require('./ReportSchedule.vue'));
+Vue.component('invite-team', require('./InviteTeam.vue'));
 
 module.exports = {
     props: ['user'],
@@ -23,4 +22,3 @@ module.exports = {
         }
     }
 }
-</script>

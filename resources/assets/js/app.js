@@ -32,7 +32,7 @@ const Flatpickr = require('flatpickr');
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
-    Vue.component('fetch-data', require('./components/FetchData'));
+    Vue.component('fetch-data', require('./components/FetchData.vue'));
 
     new Vue({
         el: '#app',
@@ -56,9 +56,9 @@ const Flatpickr = require('flatpickr');
             });
         },
         components: {
-            'setup': require('./components/Setup'),
-            'dashboard': require('./components/dashboard/Dashboard'),
-            'metric-chart': require('./components/status-page/Metric'),
+            'setup': require('./components/Setup.vue'),
+            'dashboard': require('./components/dashboard/Dashboard.vue'),
+            'metric-chart': require('./components/status-page/Metric.vue'),
         }
     });
 })()
