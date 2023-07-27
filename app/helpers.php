@@ -135,7 +135,7 @@ if (!function_exists('cachet_route_generator')) {
      */
     function cachet_route_generator($name, $method = 'get', $domain = 'core')
     {
-        return "{$domain}::{$method}:{$name}";
+        return "{$method}:{$name}";
     }
 }
 
@@ -154,8 +154,7 @@ if (!function_exists('cachet_route')) {
     {
         return app('url')->route(
             cachet_route_generator($name, $method, $domain),
-            $parameters,
-            true
+            $parameters
         );
     }
 }

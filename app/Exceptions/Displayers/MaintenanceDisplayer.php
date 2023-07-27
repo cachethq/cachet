@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Http\Exceptions\MaintenanceModeException;
 use Illuminate\Http\Response;
@@ -46,14 +46,14 @@ class MaintenanceDisplayer implements DisplayerInterface
     /**
      * Get the error response associated with the given exception.
      *
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * @param string     $id
      * @param int        $code
      * @param string[]   $headers
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers) : \Symfony\Component\HttpFoundation\Response
     {
         return new Response($this->render(), $code, array_merge($headers, ['Content-Type' => $this->contentType()]));
     }
@@ -73,7 +73,7 @@ class MaintenanceDisplayer implements DisplayerInterface
      *
      * @return string
      */
-    public function contentType()
+    public function contentType() :string
     {
         return 'text/html';
     }
@@ -81,13 +81,13 @@ class MaintenanceDisplayer implements DisplayerInterface
     /**
      * Can we display the exception?
      *
-     * @param \Exception $original
-     * @param \Exception $transformed
+     * @param \Throwable $original
+     * @param \Throwable $transformed
      * @param int        $code
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code) : bool
     {
         return $transformed instanceof MaintenanceModeException;
     }
@@ -97,7 +97,7 @@ class MaintenanceDisplayer implements DisplayerInterface
      *
      * @return bool
      */
-    public function isVerbose()
+    public function isVerbose() : bool
     {
         return false;
     }

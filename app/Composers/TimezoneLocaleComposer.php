@@ -88,7 +88,7 @@ class TimezoneLocaleComposer
 
             foreach ($zones as $timezone) {
                 // Lets sample the time there right now
-                $time = new DateTime(null, new DateTimeZone($timezone));
+                $time = new DateTime("now", new DateTimeZone($timezone));
 
                 if ($timezone !== 'UTC') {
                     // Remove region name and add a sample time

@@ -1,12 +1,6 @@
 {
+    "/dist/js/vendor.js": "/dist/js/vendor.js",
     "/dist/js/app.js": "/dist/js/app.js",
     "/dist/js/manifest.js": "/dist/js/manifest.js",
-    "/dist/css/app.css": "/dist/css/app.css",
-    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
-    "/dist/js/vendor.js": "/dist/js/vendor.js",
-    "/fonts/ionicons.eot": "/fonts/ionicons.eot",
-    "/fonts/ionicons.svg": "/fonts/ionicons.svg",
-    "/fonts/ionicons.ttf": "/fonts/ionicons.ttf",
-    "/fonts/ionicons.woff": "/fonts/ionicons.woff",
     "/dist/js/all.js": "/dist/js/all.js"
 }

@@ -12,9 +12,10 @@
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use CachetHQ\Cachet\Settings\ReadException;
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class SettingsDisplayer implements DisplayerInterface
 {
@@ -40,14 +41,14 @@ class SettingsDisplayer implements DisplayerInterface
     /**
      * Get the error response associated with the given exception.
      *
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * @param string     $id
      * @param int        $code
      * @param string[]   $headers
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers) : Response
     {
         return cachet_redirect('setup');
     }
@@ -57,7 +58,7 @@ class SettingsDisplayer implements DisplayerInterface
      *
      * @return string
      */
-    public function contentType()
+    public function contentType() : string
     {
         return 'text/html';
     }
@@ -65,13 +66,13 @@ class SettingsDisplayer implements DisplayerInterface
     /**
      * Can we display the exception?
      *
-     * @param \Exception $original
-     * @param \Exception $transformed
+     * @param \Throwable $original
+     * @param \Throwable $transformed
      * @param int        $code
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code) : bool
     {
         return ($transformed instanceof ReadException) && !$this->request->is('setup*');
     }
@@ -81,7 +82,7 @@ class SettingsDisplayer implements DisplayerInterface
      *
      * @return bool
      */
-    public function isVerbose()
+    public function isVerbose() : bool
     {
         return false;
     }

@@ -27,7 +27,7 @@ class WriteException extends SettingsException
      *
      * @return void
      */
-    public function __construct(Exception $e)
+    public function __construct(Throwable $e)
     {
         parent::__construct('Unable to write Cachet settings', $e);
     }

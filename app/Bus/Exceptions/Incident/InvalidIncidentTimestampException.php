@@ -18,7 +18,7 @@ use Exception;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class InvalidIncidentTimestampException extends Exception implements IncidentExceptionInterface
+class InvalidIncidentTimestampException implements Throwable, IncidentExceptionInterface
 {
     //
 }
