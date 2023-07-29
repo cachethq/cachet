@@ -14,7 +14,7 @@
                         <div class="panel-heading">
                             @if($currentUser)
                             <div class="pull-right btn-group">
-                                <a href="{{ cachet_route('dashboard.incidents.edit', ['id' => $incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                                <a href="{{ cachet_route('dashboard.incidents.edit', ['id' => $incidents->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                                 <a href="{{ cachet_route('dashboard.incidents.delete', ['id' => $incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                             </div>
                             @endif

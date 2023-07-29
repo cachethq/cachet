@@ -1,5 +1,5 @@
 template: `
-    <div>
+<div>
         <div class="row">
             <div class="col-xs-10">
                 <strong>
@@ -8,7 +8,7 @@ template: `
                     <i class="ion ion-ios-help-outline" data-toggle="tooltip" :data-title="metric.description" v-if="metric.description"></i>
                 </strong>
             </div>
-            <div class="col-xs-2">
+<div class="col-xs-2">
                 <div class="dropdown pull-right">
                     <a href='javascript: void(0)' class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{view.title || metric.default_view_name}}</span> <span class="caret"></span></a>
 
@@ -22,7 +22,7 @@ template: `
                 </div>
             </div>
         </div>
-        <div class="row">
+<div class="row">
             <div class="col-xs-12">
                 <canvas :id="metricId" height="160" width="600"></canvas>
             </div>
@@ -34,9 +34,9 @@ const Chart = require('chart.js')
 const _ = require('lodash')
 
 // Configure Chart.js
-Chart.defaults.global.elements.point.hitRadius = 10
-Chart.defaults.global.responsiveAnimationDuration = 1000
-Chart.defaults.global.legend.display = false
+// Chart.defaults.elements.point.hitRadius = 10
+//Chart.defaults.global.responsiveAnimationDuration = 1000 TODO implement
+//Chart.defaults.plugins.legend.display = false
 
 module.exports = {
     props: [
@@ -185,6 +185,16 @@ module.exports = {
                             label: function(tooltipItem, data) {
                                 return tooltipItem.yLabel + ' ' + metric.suffix;
                             }
+                        }
+                    },
+                    elements: {
+                        point: {
+                            hitRadius: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
                         }
                     }
             }})

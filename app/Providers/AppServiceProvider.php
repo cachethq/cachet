@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
             . '\\' . trim(str_replace('CachetHQ\Cachet\Bus', '', get_class($command)), '\\').'Handler';
         });
 
-        $dispatcher->pipeThrough([UseDatabaseTransactions::class, ValidatingMiddleware::class]);
+        $dispatcher->pipeThrough([UseDatabaseTransactions::class]);
 
         Str::macro('canonicalize', function ($url) {
             return preg_replace('/([^\/])$/', '$1/', $url);

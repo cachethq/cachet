@@ -135,9 +135,9 @@ $factory->define(User::class, function ($faker) {
     return [
         'username'       => $faker->userName,
         'email'          => $faker->safeEmail,
-        'password'       => str_random(10),
-        'remember_token' => str_random(10),
-        'api_key'        => str_random(20),
+        'password'       => Illuminate\Support\Str::random(10),
+        'remember_token' => Illuminate\Support\Str::random(10),
+        'api_key'        => Illuminate\Support\Str::random(20),
         'active'         => true,
         'level'          => 1,
     ];

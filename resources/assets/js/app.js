@@ -21,9 +21,9 @@ window.axios.defaults.headers.common = {
 };
 
 /**
- * Flatpickr.
+ * flatpickr.
  */
-const Flatpickr = require('flatpickr');
+import flatpickr from "flatpickr";
 
 ((win, doc) => {
     /**
@@ -49,9 +49,9 @@ const Flatpickr = require('flatpickr');
             }
         },
         mounted () {
-            Flatpickr('.flatpickr');
+            flatpickr(".flatpickr");
 
-            Flatpickr('.flatpickr-time', {
+            flatpickr('.flatpickr-time', {
                 enableTime: true
             });
         },

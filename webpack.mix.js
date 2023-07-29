@@ -32,6 +32,11 @@ mix.webpackConfig({
             },
         ],
     },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    },
 });
 
 const sassOptions = {
