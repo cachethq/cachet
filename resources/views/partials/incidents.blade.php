@@ -14,8 +14,8 @@
                         <div class="panel-heading">
                             @if($currentUser)
                             <div class="pull-right btn-group">
-                                <a href="{{ cachet_route('dashboard.incidents.edit', ['id' => $incidents->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                                <a href="{{ cachet_route('dashboard.incidents.delete', ['id' => $incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                                <a href="{{ cachet_route('dashboard.incidents.edit', ['incident' => $incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                                <a href="{{ cachet_route('dashboard.incidents.delete', ['incident' => $incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                             </div>
                             @endif
                             @if($incident->component)
@@ -24,10 +24,10 @@
                             <strong>{{ $incident->name }}</strong>{{ $incident->isScheduled ? trans("cachet.incidents.scheduled_at", ["timestamp" => $incident->scheduled_at_diff]) : null }}
                             <br>
                             <small class="date">
-                                <a href="{{ cachet_route('incident', ['id' => $incident->id]) }}" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr></a>
+                                <a href="{{ cachet_route('incident', ['incident' => $incident->id]) }}" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr></a>
                             </small>
                         </div>
-                        <div class="panel-body markdown-body">
+                        <div class="panel-body">
                             {!! $incident->formatted_message !!}
                         </div>
                         @if($incident->updates->isNotEmpty())

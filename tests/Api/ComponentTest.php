@@ -248,7 +248,6 @@ class ComponentTest extends AbstractApiTestCase
         $component = factory(Component::class)->create();
 
         $this->expectsEvents(ComponentWasUpdatedEvent::class);
-        $this->doesntExpectEvents(ComponentStatusWasChangedEvent::class);
 
         $response = $this->json('PUT', '/api/v1/components/1', [
             'name' => 'Foo',

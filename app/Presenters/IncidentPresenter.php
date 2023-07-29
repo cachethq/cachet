@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Presenters;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
@@ -69,7 +68,8 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function formatted_message()
     {
-        return Markdown::convertToHtml($this->wrappedObject->message);
+        $converter = new \League\CommonMark\CommonMarkConverter();
+        return $converter->convert($this->wrappedObject->message)->getContent();
     }
 
     /**

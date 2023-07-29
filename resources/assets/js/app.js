@@ -24,6 +24,8 @@ window.axios.defaults.headers.common = {
  * flatpickr.
  */
 import flatpickr from "flatpickr";
+import swal from 'sweetalert2';
+window.Swal = swal;
 
 ((win, doc) => {
     /**

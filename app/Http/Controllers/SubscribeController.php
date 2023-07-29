@@ -23,7 +23,6 @@ use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Notifications\Subscriber\ManageSubscriptionNotification;
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
@@ -66,8 +65,13 @@ class SubscribeController extends Controller
      */
     public function showSubscribe()
     {
+        $converter = new \League\CommonMark\CommonMarkConverter();
+        if(is_null(Config::get('setting.app_about'))){
+            return View::make('subscribe.subscribe')
+                ->withAboutApp('');
+        }
         return View::make('subscribe.subscribe')
-            ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
+            ->withAboutApp($converter->convert(Config::get('setting.app_about'))->getContent());
     }
 
     /**

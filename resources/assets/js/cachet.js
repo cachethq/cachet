@@ -339,22 +339,23 @@ $(function () {
         });
     }
 
-    function askConfirmation(callback, cancelCallback) {
-        swal({
-            type: "warning",
+    async function askConfirmation(callback, cancelCallback) {
+        const accept = await Swal.fire({
+            icon: "warning",
             title: "Confirm your action",
             text: "Are you sure you want to do this?",
             buttonsStyling: false,
             reverseButtons: true,
             confirmButtonText: "Yes",
-            confirmButtonClass: "btn btn-lg btn-danger",
-            cancelButtonClass: "btn btn-lg btn-default",
+            customClass: {
+                confirmButton: "btn btn-lg btn-danger",
+                cancelButton: "btn btn-lg btn-default",
+                validationMessage: "text-left"
+            },
             showCancelButton: true,
             focusCancel: true
-        }).then(function () {
-            if (_.isFunction(callback)) callback();
-        }, function () {
-            if (_.isFunction(cancelCallback)) cancelCallback();
         });
+        if (accept.isConfirmed) if (_.isFunction(callback)) callback();
+        else if (_.isFunction(cancelCallback)) cancelCallback();
     }
 });

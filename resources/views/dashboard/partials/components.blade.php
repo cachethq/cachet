@@ -8,7 +8,7 @@
     </li>
     <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
         @foreach($componentGroup->enabled_components()->get() as $component)
-        @include('dashboard.partials.component', compact($component))
+        @include('dashboard.partials.component', @compact($component))
         @endforeach
     </div>
 </ul>

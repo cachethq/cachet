@@ -154,6 +154,6 @@ return [
     |
     */
 
-    'max_nesting_level' => INF,
+    'max_nesting_level' => 800,
 
 ];

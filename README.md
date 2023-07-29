@@ -51,6 +51,18 @@ To test out the demo, you can log in to the [Dashboard](https://dev.cachethq.io/
 
 > The demo resets every 30 minutes.
 
+## Todo's
+
+Since upgrading to PHP 8.0.2/Laravel 9 we have new things to do:
+
+- [ ] Rewrite [alt-three/validator](github.com/AltThree/Validator)
+- [ ] Upgrade tests
+- [ ] Upgrading Vue
+
+Possible features
+
+- [ ] Implement SMS notifications
+
 ## Translate Cachet
 
 If you'd like to contribute translations, please check out our [Crowdin project](https://crowdin.com/project/cachet).

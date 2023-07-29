@@ -29,7 +29,7 @@ class AnalysisTest extends TestCase
      *
      * @return string[]
      */
-    protected function getPaths()
+    protected static function getPaths() : array
     {
         return [
             realpath(__DIR__.'/../app'),

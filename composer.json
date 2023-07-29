@@ -42,8 +42,9 @@
         "graham-campbell/markdown": "^15.0.0",
         "guzzlehttp/guzzle": "^7.7.0",
         "jenssegers/date": "^4.0.0",
-        "laravel/framework": "9.0.*",
+        "laravel/framework": "^9.52",
         "laravel/tinker": "^2.8.1",
+        "league/commonmark": "^2.3.9",
         "mccool/laravel-auto-presenter": "^7.7.0",
         "nexmo/client": "^2.4.0",
         "pragmarx/google2fa": "^5.0",
@@ -52,10 +53,10 @@
     },
     "require-dev": {
         "ext-sqlite3": "*",
-        "alt-three/testbench": "5.0.x-dev",
+        "graham-campbell/testbench-core": "v4.0.0",
         "barryvdh/laravel-debugbar": "^3.8.x-dev",
         "filp/whoops": "^2.3",
-        "fzaninotto/faker": "^1.8",
+        "fzaninotto/faker": "^1.9.x-dev",
         "graham-campbell/analyzer": "^4.0.0",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^9.3.8"

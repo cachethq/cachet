@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
@@ -62,7 +61,8 @@ class AppComposer
     public function compose(View $view)
     {
         if ($this->config->get('setting.app_about')) {
-            $about = Markdown::convertToHtml($this->config->get('setting.app_about'));
+            $converter = new \League\CommonMark\CommonMarkConverter();
+            $about = $converter->convert($this->config->get('setting.app_about'))->getContent();
         } else {
             $about = '';
         }
