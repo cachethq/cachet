@@ -165,6 +165,11 @@ return [
             'show_timezone'                         => 'Show the timezone the status page is running in',
             'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
+        'notifications' => [
+            'mail'      => 'Enable mail notifications?',
+            'slack'     => 'Enable Slack notifications?',
+            'nexmo'       => 'Enable nexmo notifications?',
+        ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',

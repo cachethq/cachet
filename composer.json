@@ -52,7 +52,6 @@
         "laravel/tinker": "^2.8.1",
         "league/commonmark": "^2.3.9",
         "mccool/laravel-auto-presenter": "^7.7.0",
-        "nexmo/client": "^2.4.0",
         "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
         "twig/twig": "^2.6"

@@ -46,6 +46,10 @@ class SettingRoutes
                 'as'   => 'get:dashboard.settings.setup',
                 'uses' => 'SettingsController@showSetupView',
             ]);
+            $router->get('notifications', [
+                'as'   => 'get:dashboard.settings.notifications',
+                'uses' => 'SettingsController@showNotificationsView',
+            ]);
             $router->get('analytics', [
                 'as'   => 'get:dashboard.settings.analytics',
                 'uses' => 'SettingsController@showAnalyticsView',

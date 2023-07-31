@@ -53,6 +53,12 @@ class SettingsController extends Controller
                 'icon'   => 'ion-gear-b',
                 'active' => false,
             ],
+            'notifications' =>[
+                'title' => trans('dashboard.settings.notifications.notifications'),
+                'url' => cachet_route('dashboard.settings.notifications'),
+                'icon' => 'ion-gear-b',
+                'active' => false,
+            ],
             'theme' => [
                 'title'  => trans('dashboard.settings.theme.theme'),
                 'url'    => cachet_route('dashboard.settings.theme'),
@@ -137,6 +143,23 @@ class SettingsController extends Controller
             ->withSubMenu($this->subMenu)
             ->withRawAppAbout(Config::get('setting.app_about'));
     }
+
+    /**
+     * Shows the settings notifications view.
+     * 
+     * @return \Illuminate\View\View
+     */
+
+     public function showNotificationsView()
+     {
+        $this->subMenu['notifications']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['notifications']['url']);
+
+        return View::make('dashboard.settings.notifications')
+            ->withPageTitle(trans('dashboard.settings.notifications.notifications') . ' - ' . trans('dashboard.dashboard'))
+            ->withSubMenu($this->subMenu);
+     }
 
     /**
      * Shows the settings analytics view.

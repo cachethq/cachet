@@ -57,7 +57,19 @@ class IncidentUpdatedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'nexmo', 'slack'];
+        $ret = [];
+
+        if (\Config::get('setting.enable_mail')) {
+            array_push($ret, 'mail');
+        }
+        if (\Config::get('setting.enable_slack')) {
+            array_push($ret, 'slack');
+        }
+        if (\Config::get('setting.enable_nexmo')) {
+            array_push($ret, 'nexmo');
+        }
+
+        return $ret;
     }
 
     /**

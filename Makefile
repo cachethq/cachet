@@ -16,4 +16,4 @@ test:
 	php artisan config:clear -vvv
 	php artisan cache:clear -vvv
 	composer dump-autoload -o -vvv -d /home/flo/Cachet/
-	./vendor/bin/phpunit -v --stop-on-failure
+	./vendor/bin/phpunit -v

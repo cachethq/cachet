@@ -119,15 +119,16 @@ class DemoSeederCommand extends Command
     {
         $defaultGroups = [
             [
-                'name'      => 'Websites',
-                'order'     => 1,
+                'name' => 'Websites',
+                'order' => 1,
                 'collapsed' => 0,
-                'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
-            ], [
-                'name'      => 'Alt Three',
-                'order'     => 2,
+                'visible' => ComponentGroup::VISIBLE_AUTHENTICATED,
+            ],
+            [
+                'name' => 'Alt Three',
+                'order' => 2,
                 'collapsed' => 1,
-                'visible'   => ComponentGroup::VISIBLE_GUEST,
+                'visible' => ComponentGroup::VISIBLE_GUEST,
             ],
         ];
 
@@ -147,47 +148,52 @@ class DemoSeederCommand extends Command
     {
         $defaultComponents = [
             [
-                'name'        => 'API',
+                'name' => 'API',
                 'description' => 'Used by third-parties to connect to us',
-                'status'      => 1,
-                'order'       => 0,
-                'group_id'    => 0,
-                'link'        => '',
-            ], [
-                'name'        => 'Documentation',
+                'status' => 1,
+                'order' => 0,
+                'group_id' => 0,
+                'link' => '',
+            ],
+            [
+                'name' => 'Documentation',
                 'description' => 'Kindly powered by Readme.io',
-                'status'      => 1,
-                'order'       => 0,
-                'group_id'    => 1,
-                'link'        => 'https://docs.cachethq.io',
-            ], [
-                'name'        => 'Website',
+                'status' => 1,
+                'order' => 0,
+                'group_id' => 1,
+                'link' => 'https://docs.cachethq.io',
+            ],
+            [
+                'name' => 'Website',
                 'description' => '',
-                'status'      => 1,
-                'order'       => 0,
-                'group_id'    => 1,
-                'link'        => 'https://cachethq.io',
-            ], [
-                'name'        => 'Blog',
+                'status' => 1,
+                'order' => 0,
+                'group_id' => 1,
+                'link' => 'https://cachethq.io',
+            ],
+            [
+                'name' => 'Blog',
                 'description' => 'The Alt Three Blog.',
-                'status'      => 1,
-                'order'       => 0,
-                'group_id'    => 2,
-                'link'        => 'https://blog.alt-three.com',
-            ], [
-                'name'        => 'StyleCI',
+                'status' => 1,
+                'order' => 0,
+                'group_id' => 2,
+                'link' => 'https://blog.alt-three.com',
+            ],
+            [
+                'name' => 'StyleCI',
                 'description' => 'The PHP Coding Style Service.',
-                'status'      => 1,
-                'order'       => 1,
-                'group_id'    => 2,
-                'link'        => 'https://styleci.io',
-            ], [
-                'name'        => 'GitHub',
+                'status' => 1,
+                'order' => 1,
+                'group_id' => 2,
+                'link' => 'https://styleci.io',
+            ],
+            [
+                'name' => 'GitHub',
                 'description' => '',
-                'status'      => 1,
-                'order'       => 0,
-                'group_id'    => 0,
-                'link'        => 'https://github.com/CachetHQ/Cachet',
+                'status' => 1,
+                'order' => 0,
+                'group_id' => 0,
+                'link' => 'https://github.com/CachetHQ/Cachet',
             ],
         ];
 
@@ -217,24 +223,24 @@ EINCIDENT;
 
         $defaultIncidents = [
             [
-                'name'         => 'Our monkeys aren\'t performing',
-                'message'      => 'We\'re investigating an issue with our monkeys not performing as they should be.',
-                'status'       => Incident::INVESTIGATING,
+                'name' => 'Our monkeys aren\'t performing',
+                'message' => 'We\'re investigating an issue with our monkeys not performing as they should be.',
+                'status' => Incident::INVESTIGATING,
                 'component_id' => 0,
-                'visible'      => 1,
-                'stickied'     => false,
-                'user_id'      => 1,
-                'occurred_at'  => Carbon::now(),
+                'visible' => 1,
+                'stickied' => false,
+                'user_id' => 1,
+                'occurred_at' => Carbon::now(),
             ],
             [
-                'name'         => 'This is an unresolved incident',
-                'message'      => 'Unresolved incidents are left without a **Fixed** update.',
-                'status'       => Incident::INVESTIGATING,
+                'name' => 'This is an unresolved incident',
+                'message' => 'Unresolved incidents are left without a **Fixed** update.',
+                'status' => Incident::INVESTIGATING,
                 'component_id' => 0,
-                'visible'      => 1,
-                'stickied'     => false,
-                'user_id'      => 1,
-                'occurred_at'  => Carbon::now(),
+                'visible' => 1,
+                'stickied' => false,
+                'user_id' => 1,
+                'occurred_at' => Carbon::now(),
             ],
         ];
 
@@ -268,22 +274,24 @@ EINCIDENT;
         $defaultUpdates = [
             1 => [
                 [
-                    'status'  => Incident::FIXED,
+                    'status' => Incident::FIXED,
                     'message' => 'The monkeys are back and rested!',
                     'user_id' => 1,
-                ], [
-                    'status'  => Incident::WATCHED,
+                ],
+                [
+                    'status' => Incident::WATCHED,
                     'message' => 'Our monkeys need a break from performing. They\'ll be back after a good rest.',
                     'user_id' => 1,
-                ], [
-                    'status'  => Incident::IDENTIFIED,
+                ],
+                [
+                    'status' => Incident::IDENTIFIED,
                     'message' => 'We have identified the issue with our lovely performing monkeys.',
                     'user_id' => 1,
                 ],
             ],
             2 => [
                 [
-                    'status'  => Incident::WATCHED,
+                    'status' => Incident::WATCHED,
                     'message' => 'We\'re actively watching this issue, so it remains unresolved.',
                     'user_id' => 1,
                 ],
@@ -310,11 +318,11 @@ EINCIDENT;
 
         // Generate 11 hours of metric points
         for ($i = 0; $i < 11; $i++) {
-            $metricTime = (new DateTime())->sub(new DateInterval('PT'.$i.'H'));
+            $metricTime = (new DateTime())->sub(new DateInterval('PT' . $i . 'H'));
 
             MetricPoint::create([
-                'metric_id'  => 1,
-                'value'      => random_int(1, 10),
+                'metric_id' => 1,
+                'value' => random_int(1, 10),
                 'created_at' => $metricTime,
                 'updated_at' => $metricTime,
             ]);
@@ -330,11 +338,11 @@ EINCIDENT;
     {
         $defaultMetrics = [
             [
-                'name'          => 'Cups of coffee',
-                'suffix'        => 'Cups',
-                'description'   => 'How many cups of coffee we\'ve drank.',
+                'name' => 'Cups of coffee',
+                'suffix' => 'Cups',
+                'description' => 'How many cups of coffee we\'ve drank.',
                 'default_value' => 0,
-                'calc_type'     => 1,
+                'calc_type' => 1,
                 'display_chart' => 1,
             ],
         ];
@@ -355,9 +363,9 @@ EINCIDENT;
     {
         $defaultSchedules = [
             [
-                'name'         => 'Demo resets every half hour!',
-                'message'      => 'You can schedule downtime for _your_ service!',
-                'status'       => Schedule::UPCOMING,
+                'name' => 'Demo resets every half hour!',
+                'message' => 'You can schedule downtime for _your_ service!',
+                'status' => Schedule::UPCOMING,
                 'scheduled_at' => (new DateTime())->add(new DateInterval('PT2H')),
             ],
         ];
@@ -378,40 +386,63 @@ EINCIDENT;
     {
         $defaultSettings = [
             [
-                'key'   => 'app_name',
+                'key' => 'app_name',
                 'value' => 'Cachet Demo',
-            ], [
-                'key'   => 'app_domain',
+            ],
+            [
+                'key' => 'app_domain',
                 'value' => 'https://demo.cachethq.io',
-            ], [
-                'key'   => 'show_support',
+            ],
+            [
+                'key' => 'show_support',
                 'value' => '1',
-            ], [
-                'key'   => 'app_locale',
+            ],
+            [
+                'key' => 'app_locale',
                 'value' => 'en',
-            ], [
-                'key'   => 'app_timezone',
+            ],
+            [
+                'key' => 'app_timezone',
                 'value' => 'Europe/London',
-            ], [
-                'key'   => 'app_incident_days',
+            ],
+            [
+                'key' => 'app_incident_days',
                 'value' => '7',
-            ], [
-                'key'   => 'app_refresh_rate',
+            ],
+            [
+                'key' => 'app_refresh_rate',
                 'value' => '0',
-            ], [
-                'key'   => 'app_analytics',
+            ],
+            [
+                'key' => 'app_analytics',
                 'value' => 'UA-58442674-3',
-            ], [
-                'key'   => 'app_analytics_gs',
+            ],
+            [
+                'key' => 'app_analytics_gs',
                 'value' => 'GSN-712462-P',
-            ], [
-                'key'   => 'display_graphs',
+            ],
+            [
+                'key' => 'display_graphs',
                 'value' => '1',
-            ], [
-                'key'   => 'app_about',
+            ],
+            [
+                'key' => 'app_about',
                 'value' => 'This is the demo instance of [Cachet](https://cachethq.io?ref=demo). The open source status page system, for everyone. An [Alt Three](https://alt-three.com) product.',
-            ], [
-                'key'   => 'enable_subscribers',
+            ],
+            [
+                'key' => 'enable_subscribers',
+                'value' => '0',
+            ],
+            [
+                'key' => 'enable_mail',
+                'value' => '0',
+            ],
+            [
+                'key' => 'enable_slack',
+                'value' => '0',
+            ],
+            [
+                'key' => 'enable_nexmo',
                 'value' => '0',
             ],
         ];
@@ -444,9 +475,9 @@ EINCIDENT;
             [
                 'username' => 'test',
                 'password' => 'test123',
-                'email'    => 'test@example.com',
-                'level'    => User::LEVEL_ADMIN,
-                'api_key'  => '9yMHsdioQosnyVK4iCVR',
+                'email' => 'test@example.com',
+                'level' => User::LEVEL_ADMIN,
+                'api_key' => '9yMHsdioQosnyVK4iCVR',
             ],
         ];
 

@@ -112,7 +112,7 @@ class IncidentUpdateController extends Controller
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.incidents.updates.create', ['id' => $incident->id])
+            return cachet_redirect('dashboard.incidents.updates.create', ['incident' => $incident->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.add.failure')))
                 ->withErrors($e->getMessageBag());
