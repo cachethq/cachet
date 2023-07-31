@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Settings;
 
-use Exception;
+use Throwable;
 
 /**
  * This is the write exception class.

@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\MessageBag;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+use Exception;
+
 class Metric extends Model implements HasPresenter
 {
     use HasMeta;

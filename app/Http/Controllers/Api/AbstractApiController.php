@@ -177,7 +177,7 @@ abstract class AbstractApiController extends Controller
     /**
      * Build the response.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     protected function respond()
     {

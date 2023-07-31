@@ -51,7 +51,7 @@ class ApiRoutes
                 $router->get('incidents/templates', 'IncidentTemplateController@index');
                 $router->get('incidents/templates/{incident_template}', 'IncidentTemplateController@show');
 
-                $router->get('incidents/{id}', 'IncidentController@show');
+                $router->get('incidents/{incident}', 'IncidentController@show');
                 $router->get('incidents/{incident}/updates', 'IncidentUpdateController@index');
                 $router->get('incidents/{incident}/updates/{update}', 'IncidentUpdateController@show');
 
@@ -85,7 +85,7 @@ class ApiRoutes
 
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@destroy');
                 $router->delete('components/{component}', 'ComponentController@destroy');
-                $router->delete('incidents/{id}', 'IncidentController@destroy');
+                $router->delete('incidents/{incident}', 'IncidentController@destroy');
                 $router->delete('incidents/{incident}/updates/{update}', 'IncidentUpdateController@destroy');
                 $router->delete('metrics/{metric}', 'MetricController@destroy');
                 $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@destroy');

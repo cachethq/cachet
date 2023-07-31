@@ -56,7 +56,7 @@ To test out the demo, you can log in to the [Dashboard](https://dev.cachethq.io/
 Since upgrading to PHP 8.0.2/Laravel 9 we have new things to do:
 
 - [ ] Rewrite [alt-three/validator](github.com/AltThree/Validator)
-- [ ] Upgrade tests
+- [ ] Upgrade tests (legacy-factory)
 - [ ] Upgrading Vue
 
 Possible features

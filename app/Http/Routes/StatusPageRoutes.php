@@ -44,7 +44,7 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@showIndex',
             ]);
 
-            $router->get('incidents/{id}', [
+            $router->get('incidents/{incident}', [
                 'as'   => 'get:incident',
                 'uses' => 'StatusPageController@showIncident',
             ]);

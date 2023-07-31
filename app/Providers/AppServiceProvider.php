@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      *
-     * @param \CachetHQ\Cachet\Bus\Dispatcher $dispatcher
+     * @param \CachetHQ\Cachet\Bus\Dispatcher\Dispatcher $dispatcher
      *
      * @return void
      */

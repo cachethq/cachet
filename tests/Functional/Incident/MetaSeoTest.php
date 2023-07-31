@@ -61,14 +61,14 @@ class MetaSeoTest extends AbstractTestCase
     /**
      * Setup the application.
      */
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
         $this->app->make(SettingsRepository::class)->set('app_name', $this->appName);
         $this->app->config->set('setting.app_name', $this->appName);
         $this->incidents = [
-            ['title' => 'Foo '.Str::random(16), 'description' => 'Foo Bar Baz '.Str::random(32)],
-            ['title' => 'Foe '.Str::random(16), 'description' => 'Foe Baz Bar '.Str::random(32)],
+            ['title' => 'Foo ' . Str::random(16), 'description' => 'Foo Bar Baz ' . Str::random(32)],
+            ['title' => 'Foe ' . Str::random(16), 'description' => 'Foe Baz Bar ' . Str::random(32)],
         ];
     }
 
@@ -83,11 +83,11 @@ class MetaSeoTest extends AbstractTestCase
         $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['description' => $expectedDescription]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta name="description" content="%s">', $expectedDescription),
             $page->content()
         );
@@ -104,11 +104,11 @@ class MetaSeoTest extends AbstractTestCase
         $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['title' => $title]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:title" content="%s | %s">', $title, $this->appName),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<title>%s | %s</title>', $title, $this->appName),
             $page->content()
         );
@@ -132,11 +132,11 @@ class MetaSeoTest extends AbstractTestCase
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta name="description" content="%s">', $expectedDescription),
             $page->content()
         );
@@ -153,11 +153,14 @@ class MetaSeoTest extends AbstractTestCase
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:title" content="%s">', $expectedTitle),
             $page->content()
         );
-        $this->assertContains(sprintf('<title>%s</title>', $expectedTitle), $page->content());
+        $this->assertStringContainsString(
+            sprintf('<title>%s</title>', $expectedTitle),
+            $page->content()
+        );
     }
 
     /**
@@ -172,20 +175,22 @@ class MetaSeoTest extends AbstractTestCase
         $name = $incident['title'];
         $message = $incident['description'];
 
-        dispatch(new CreateIncidentCommand(
-            $name,
-            $this->fakerFactory->numberBetween(0, 3),
-            $message,
-            $this->fakerFactory->boolean,
-            null,
-            null,
-            false,
-            $this->fakerFactory->boolean,
-            $this->fakerFactory->date('Y-m-d H:i'),
-            null,
-            [],
-            $meta
-        ));
+        dispatch(
+            new CreateIncidentCommand(
+                $name,
+                $this->fakerFactory->numberBetween(0, 3),
+                $message,
+                $this->fakerFactory->boolean,
+                null,
+                null,
+                false,
+                $this->fakerFactory->boolean,
+                $this->fakerFactory->date('Y-m-d H:i'),
+                null,
+                [],
+                $meta
+            )
+        );
 
         return Incident::where('name', '=', $name)->where('message', '=', $message)->firstOrFail();
     }

@@ -26,18 +26,18 @@ class EventServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
 
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         $split = explode('\\', (new ReflectionClass($this))->getName());
         $class = substr(end($split), 0, -4);
 
-        return "{$split[0]}\\{$split[2]}\\Foundation\\Providers\\{$class}";
+        return "{$split[0]}\\{$split[2]}\\Providers\\{$class}";
     }
 
     public function testIsAnEventServiceProvider()
     {
 
-        $class = $this->getServiceProviderClass($this->app);
+        $class = $this->getServiceProviderClass();
 
         $reflection = new ReflectionClass($class);
 

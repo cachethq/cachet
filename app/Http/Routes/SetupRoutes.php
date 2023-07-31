@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
-use Illuminate\Support\Facades\Route;
 
 /**
  * This is the setup routes class.
@@ -38,8 +37,14 @@ class SetupRoutes
      */
     public function map(Registrar $router)
     {
-        Route::middleware(['setup'])->prefix('setup')->group(function () {
-            Route::get('/', 'SetupController@getIndex')->name('get:setup');
+        $router->group([
+            'middleware' => ['setup'],
+            'prefix' => 'setup',
+        ], function (Registrar $router) {
+            $router->get('/', [
+                'as' => 'get:setup',
+                'uses' => 'SetupController@getIndex',
+            ]);
         });
     }
 }

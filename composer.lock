@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9028f527417fd386cc457b8eda47fe31",
+    "content-hash": "f5a16e2b0ca7a41ac6c6e1c6f42808c3",
     "packages": [
         {
             "name": "aws/aws-crt-php",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awslabs/aws-crt-php.git",
-                "reference": "1926277fc71d253dfa820271ac5987bdb193ccf5"
+                "reference": "2f1dc7b7eda080498be96a4a6d683a41583030e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/1926277fc71d253dfa820271ac5987bdb193ccf5",
-                "reference": "1926277fc71d253dfa820271ac5987bdb193ccf5",
+                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/2f1dc7b7eda080498be96a4a6d683a41583030e9",
+                "reference": "2f1dc7b7eda080498be96a4a6d683a41583030e9",
                 "shasum": ""
             },
             "require": {
@@ -56,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/awslabs/aws-crt-php/issues",
-                "source": "https://github.com/awslabs/aws-crt-php/tree/v1.2.1"
+                "source": "https://github.com/awslabs/aws-crt-php/tree/v1.2.2"
             },
-            "time": "2023-03-24T20:22:19+00:00"
+            "time": "2023-07-20T16:49:55+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -3802,20 +3802,20 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "cacdbf5a91a657ede665c541eda28941d4b09c1e"
+                "reference": "9124157137da01b1f5a5a22d6486cb975f26db7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/cacdbf5a91a657ede665c541eda28941d4b09c1e",
-                "reference": "cacdbf5a91a657ede665c541eda28941d4b09c1e",
+                "url": "https://api.github.com/repos/nette/utils/zipball/9124157137da01b1f5a5a22d6486cb975f26db7e",
+                "reference": "9124157137da01b1f5a5a22d6486cb975f26db7e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0 <8.3"
+                "php": ">=8.0 <8.4"
             },
             "conflict": {
                 "nette/finder": "<3",
@@ -3823,7 +3823,7 @@
             },
             "require-dev": {
                 "jetbrains/phpstorm-attributes": "dev-master",
-                "nette/tester": "^2.4",
+                "nette/tester": "^2.5",
                 "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.9"
             },
@@ -3883,9 +3883,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.0"
+                "source": "https://github.com/nette/utils/tree/v4.0.1"
             },
-            "time": "2023-02-02T10:41:53+00:00"
+            "time": "2023-07-30T15:42:21+00:00"
         },
         {
             "name": "nexmo/client",
@@ -8479,25 +8479,24 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v4.0.0",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "421fd2bedc07c7bb1e57fc01ce8d4e0e6e10378d"
+                "reference": "f62a3d0200cbea9f8156ac2cd7d16684ad324c8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/421fd2bedc07c7bb1e57fc01ce8d4e0e6e10378d",
-                "reference": "421fd2bedc07c7bb1e57fc01ce8d4e0e6e10378d",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/f62a3d0200cbea9f8156ac2cd7d16684ad324c8d",
+                "reference": "f62a3d0200cbea9f8156ac2cd7d16684ad324c8d",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4.15 || ^8.0.2",
-                "symfony/polyfill-php80": "^1.26"
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^4.0",
-                "phpunit/phpunit": "^9.5 || ^10.0"
+                "graham-campbell/analyzer": "^2.4 || ^3.0",
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.0 || ^9.0 || ^10.0"
             },
             "suggest": {
                 "illuminate/support": "Required to use the laravel trait.",
@@ -8535,7 +8534,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Laravel-TestBench-Core/issues",
-                "source": "https://github.com/GrahamCampbell/Laravel-TestBench-Core/tree/v4.0.0"
+                "source": "https://github.com/GrahamCampbell/Laravel-TestBench-Core/tree/v3.4.1"
             },
             "funding": [
                 {
@@ -8547,7 +8546,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-25T20:13:18+00:00"
+            "time": "2023-02-25T15:19:33+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -8599,6 +8598,62 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel/legacy-factories",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/legacy-factories.git",
+                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/cc6720da81094c82ea9f4737d615dd3d71f7f43d",
+                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/macroable": "^8.0|^9.0|^10.0",
+                "php": "^7.3|^8.0",
+                "symfony/finder": "^3.4|^4.0|^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Illuminate\\Database\\Eloquent\\LegacyFactoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Illuminate\\Database\\Eloquent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The legacy version of the Laravel Eloquent factories.",
+            "homepage": "http://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2023-01-09T14:49:00+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -10521,6 +10576,64 @@
                 }
             ],
             "time": "2020-09-28T06:39:44+00:00"
+        },
+        {
+            "name": "steffjenl/testbench",
+            "version": "4.3.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/steffjenl/TestBench.git",
+                "reference": "db3ee35ef3caaa9a0cdd6f359f5200e47c27d005"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/steffjenl/TestBench/zipball/db3ee35ef3caaa9a0cdd6f359f5200e47c27d005",
+                "reference": "db3ee35ef3caaa9a0cdd6f359f5200e47c27d005",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/testbench-core": "^3.2",
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.4 || ^3.0",
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.4 || ^9.0"
+            },
+            "suggest": {
+                "laravel/framework": "Enables the use of most traits."
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\TestBench\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "AltThree\\Tests\\TestBench\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alt Three",
+                    "email": "support@alt-three.com"
+                }
+            ],
+            "description": "Provides some testing traits for apps",
+            "keywords": [
+                "Alt Three",
+                "TestBench",
+                "app",
+                "testbench"
+            ],
+            "support": {
+                "source": "https://github.com/steffjenl/TestBench/tree/4.3"
+            },
+            "time": "2022-12-26T23:09:20+00:00"
         },
         {
             "name": "theseer/tokenizer",

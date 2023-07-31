@@ -27,6 +27,12 @@
         "paragonie/random_compat": "*",
         "symfony/polyfill-mbstring": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/steffjenl/TestBench"
+        }
+    ],
     "require": {
         "php": "^8.0.2",
         "ext-mbstring": "*",
@@ -53,13 +59,14 @@
     },
     "require-dev": {
         "ext-sqlite3": "*",
-        "graham-campbell/testbench-core": "v4.0.0",
         "barryvdh/laravel-debugbar": "^3.8.x-dev",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.9.x-dev",
         "graham-campbell/analyzer": "^4.0.0",
+        "laravel/legacy-factories": "^1.3",
         "mockery/mockery": "^1.2",
-        "phpunit/phpunit": "^9.3.8"
+        "phpunit/phpunit": "^9.3.8",
+        "steffjenl/testbench": "^4.3"
     },
     "suggest": {
         "ext-apc": "APC Support cache driver."
@@ -77,27 +84,29 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "CachetHQ\\Tests\\Cachet\\": "tests/"
+            "CachetHQ\\Tests\\Cachet\\": "tests/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeds/"
         }
     },
     "scripts": {
         "post-root-package-install": [
-          "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-          "@php artisan key:generate"
+            "@php artisan key:generate"
         ],
         "post-autoload-dump": [
-          "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-          "@php artisan package:discover"
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
         ],
         "test": [
-          "@php artisan config:clear",
-          "vendor/bin/phpunit"
+            "@php artisan config:clear",
+            "vendor/bin/phpunit"
         ],
         "test-coverage": [
-          "@php artisan config:clear",
-          "vendor/bin/phpunit --coverage-clover=coverage.xml"
+            "@php artisan config:clear",
+            "vendor/bin/phpunit --coverage-clover=coverage.xml"
         ]
     },
     "config": {
