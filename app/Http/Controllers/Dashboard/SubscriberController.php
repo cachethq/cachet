@@ -60,11 +60,11 @@ class SubscriberController extends Controller
             foreach ($subscribers as $subscriber) {
                 execute(new SubscribeSubscriberCommand($subscriber, $verified));
             }
-        } catch (ValidationException $e) {
+        } catch (ValidationException | \Symfony\Component\Mime\Exception\RfcComplianceException $e) {
             return cachet_redirect('dashboard.subscribers.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
-                ->withErrors($e->getMessageBag());
+                ->withErrors($e->getMessage());
         }
 
         return cachet_redirect('dashboard.subscribers.create')

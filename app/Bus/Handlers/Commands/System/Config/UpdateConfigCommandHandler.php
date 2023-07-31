@@ -51,16 +51,26 @@ class UpdateConfigCommandHandler
         $path = "{$dir}/{$file}";
 
         try {
-            (new Dotenv($dir, $file))->load();
-
             $envKey = strtoupper($key);
             $envValue = env($envKey) ?: 'null';
 
-            file_put_contents($path, str_replace(
+            $data = file_get_contents($path);
+
+            $cnt = \Illuminate\Support\Str::replace(
                 "{$envKey}={$envValue}",
                 "{$envKey}={$value}",
-                file_get_contents($path)
-            ));
+                $data
+            );
+
+            file_put_contents(
+                $path,
+                $cnt
+            );
+
+            return cachet_redirect('dashboard.subscribers.create')
+                ->withInput(\GrahamCampbell\Binput\Facades\Binput::all())
+                ->withTitle(sprintf('%s', trans('dashboard.notifications.awesome')))
+                ->withErrors("ENV gets applied after restart!");
         } catch (InvalidPathException $e) {
             throw $e;
         }

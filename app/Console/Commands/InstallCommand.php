@@ -132,19 +132,19 @@ class InstallCommand extends Command
     protected function configureDatabase(array $default = [])
     {
         $config = array_merge([
-            'DB_DRIVER'   => null,
-            'DB_HOST'     => null,
+            'DB_DRIVER' => null,
+            'DB_HOST' => null,
             'DB_DATABASE' => null,
             'DB_USERNAME' => null,
             'DB_PASSWORD' => null,
-            'DB_PORT'     => null,
-            'DB_PREFIX'   => null,
+            'DB_PORT' => null,
+            'DB_PREFIX' => null,
         ], $default);
 
         $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
-            'mysql'      => 'MySQL',
-            'pgsql'      => 'PostgreSQL',
-            'sqlite'     => 'SQLite',
+            'mysql' => 'MySQL',
+            'pgsql' => 'PostgreSQL',
+            'sqlite' => 'SQLite',
         ], $config['DB_DRIVER']);
 
         if ($config['DB_DRIVER'] === 'sqlite') {
@@ -193,21 +193,21 @@ class InstallCommand extends Command
     protected function configureDrivers(array $default = [])
     {
         $config = array_merge([
-            'CACHE_DRIVER'   => null,
+            'CACHE_DRIVER' => null,
             'SESSION_DRIVER' => null,
-            'QUEUE_DRIVER'   => null,
+            'QUEUE_DRIVER' => null,
         ], $default);
 
         // Format the settings ready to display them in the table.
         $this->formatConfigsTable($config);
 
         $config['CACHE_DRIVER'] = $this->choice('Which cache driver do you want to use?', [
-            'apc'       => 'APC(u)',
-            'array'     => 'Array',
-            'database'  => 'Database',
-            'file'      => 'File',
+            'apc' => 'APC(u)',
+            'array' => 'Array',
+            'database' => 'Database',
+            'file' => 'File',
             'memcached' => 'Memcached',
-            'redis'     => 'Redis',
+            'redis' => 'Redis',
         ], $config['CACHE_DRIVER']);
 
         // We need to configure Redis.
@@ -216,12 +216,12 @@ class InstallCommand extends Command
         }
 
         $config['SESSION_DRIVER'] = $this->choice('Which session driver do you want to use?', [
-            'apc'       => 'APC(u)',
-            'array'     => 'Array',
-            'database'  => 'Database',
-            'file'      => 'File',
+            'apc' => 'APC(u)',
+            'array' => 'Array',
+            'database' => 'Database',
+            'file' => 'File',
             'memcached' => 'Memcached',
-            'redis'     => 'Redis',
+            'redis' => 'Redis',
         ], $config['SESSION_DRIVER']);
 
         // We need to configure Redis.
@@ -230,12 +230,12 @@ class InstallCommand extends Command
         }
 
         $config['QUEUE_DRIVER'] = $this->choice('Which queue driver do you want to use?', [
-            'null'       => 'None',
-            'sync'       => 'Synchronous',
-            'database'   => 'Database',
+            'null' => 'None',
+            'sync' => 'Synchronous',
+            'database' => 'Database',
             'beanstalkd' => 'Beanstalk',
-            'sqs'        => 'Amazon SQS',
-            'redis'      => 'Redis',
+            'sqs' => 'Amazon SQS',
+            'redis' => 'Redis',
         ], $config['QUEUE_DRIVER']);
 
         // We need to configure Redis, but only if the cache driver wasn't redis.
@@ -265,13 +265,13 @@ class InstallCommand extends Command
     protected function configureMail(array $config = [])
     {
         $config = array_merge([
-            'MAIL_DRIVER'     => null,
-            'MAIL_HOST'       => null,
-            'MAIL_PORT'       => null,
-            'MAIL_USERNAME'   => null,
-            'MAIL_PASSWORD'   => null,
-            'MAIL_ADDRESS'    => null,
-            'MAIL_NAME'       => null,
+            'MAIL_DRIVER' => null,
+            'MAIL_HOST' => null,
+            'MAIL_PORT' => null,
+            'MAIL_USERNAME' => null,
+            'MAIL_PASSWORD' => null,
+            'MAIL_ADDRESS' => null,
+            'MAIL_NAME' => null,
             'MAIL_ENCRYPTION' => null,
         ], $config);
 
@@ -281,14 +281,14 @@ class InstallCommand extends Command
         }
 
         $config['MAIL_DRIVER'] = $this->choice('What driver do you want to use to send notifications?', [
-            'smtp'      => 'SMTP',
-            'mail'      => 'Mail',
-            'sendmail'  => 'Sendmail',
-            'mailgun'   => 'Mailgun',
-            'mandrill'  => 'Mandrill',
-            'ses'       => 'Amazon SES',
+            'smtp' => 'SMTP',
+            'mail' => 'Mail',
+            'sendmail' => 'Sendmail',
+            'mailgun' => 'Mailgun',
+            'mandrill' => 'Mandrill',
+            'ses' => 'Amazon SES',
             'sparkpost' => 'SparkPost',
-            'log'       => 'Log (Testing)',
+            'log' => 'Log (Testing)',
         ]);
 
         if (!$config['MAIL_DRIVER'] === 'log') {
@@ -356,9 +356,9 @@ class InstallCommand extends Command
 
         $user = [
             'username' => $this->ask('Please enter your username'),
-            'email'    => $this->ask('Please enter your email'),
+            'email' => $this->ask('Please enter your email'),
             'password' => $this->secret('Please enter your password'),
-            'level'    => User::LEVEL_ADMIN,
+            'level' => User::LEVEL_ADMIN,
         ];
 
         User::create($user);
@@ -372,9 +372,9 @@ class InstallCommand extends Command
     protected function configureRedis()
     {
         $config = [
-            'REDIS_HOST'     => null,
+            'REDIS_HOST' => null,
             'REDIS_DATABASE' => null,
-            'REDIS_PORT'     => null,
+            'REDIS_PORT' => null,
         ];
 
         $config['REDIS_HOST'] = $this->ask('What is the host of your redis server?');
@@ -411,7 +411,7 @@ class InstallCommand extends Command
      */
     protected function getFreshConfiguration()
     {
-        $app = require $this->laravel->bootstrapPath().'/app.php';
+        $app = require $this->laravel->bootstrapPath() . '/app.php';
         $app->make(Kernel::class)->bootstrap();
     }
 
@@ -430,17 +430,20 @@ class InstallCommand extends Command
         $path = "{$dir}/{$file}";
 
         try {
-            (new Dotenv($dir, $file))->load();
-
             $envKey = strtoupper($key);
             $envValue = env($envKey) ?: 'null';
 
             $envFileContents = file_get_contents($path);
-            $envFileContents = str_replace("{$envKey}={$envValue}", "{$envKey}={$value}", $envFileContents, $count);
-            if ($count < 1 && $envValue === 'null') {
-                $envFileContents = str_replace("{$envKey}=", "{$envKey}={$value}", $envFileContents);
+            $envFileContents = \Illuminate\Support\Str::replace("{$envKey}={$envValue}", "{$envKey}={$value}", $envFileContents);
+            if ($envValue === 'null') {
+                $envFileContents = \Illuminate\Support\Str::replace("{$envKey}=", "{$envKey}={$value}", $envFileContents);
             }
             file_put_contents($path, $envFileContents);
+
+            return cachet_redirect('dashboard.subscribers.create')
+                ->withInput(\GrahamCampbell\Binput\Facades\Binput::all())
+                ->withTitle(sprintf('%s', trans('dashboard.notifications.awesome')))
+                ->withErrors("ENV gets applied after restart!");
         } catch (InvalidPathException $e) {
             throw $e;
         }
