@@ -159,7 +159,7 @@ class InstallCommand extends Command
 
             $config['DB_USERNAME'] = $this->ask('What username should we connect with?', $config['DB_USERNAME']);
 
-            $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
+            $config['DB_PASSWORD'] = $this->secret('What password should we connect with?');
 
             $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
             if ($this->confirm('Is your database listening on a non-standard port number?')) {
@@ -428,6 +428,8 @@ class InstallCommand extends Command
         $dir = app()->environmentPath();
         $file = app()->environmentFile();
         $path = "{$dir}/{$file}";
+
+        // TODO Check if key exists
 
         try {
             $envKey = strtoupper($key);

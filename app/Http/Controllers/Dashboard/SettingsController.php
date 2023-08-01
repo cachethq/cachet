@@ -56,7 +56,7 @@ class SettingsController extends Controller
             'notifications' =>[
                 'title' => trans('dashboard.settings.notifications.notifications'),
                 'url' => cachet_route('dashboard.settings.notifications'),
-                'icon' => 'ion-gear-b',
+                'icon' => 'ion-android-notifications',
                 'active' => false,
             ],
             'theme' => [
