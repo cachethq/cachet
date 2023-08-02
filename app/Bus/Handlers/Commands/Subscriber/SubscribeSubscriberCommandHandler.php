@@ -37,11 +37,20 @@ class SubscribeSubscriberCommandHandler
      */
     public function handle(SubscribeSubscriberCommand $command)
     {
-        if ($subscriber = Subscriber::where('email', '=', $command->email)->first()) {
-            return $subscriber;
-        }
+        $subscriber = null;
 
-        $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
+        if ($command->email) {
+            if ($subscriber = Subscriber::where('email', '=', $command->email)->first()) {
+                return $subscriber;
+            }
+            $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
+        }
+        if ($command->phone_number) {
+            if ($subscriber = Subscriber::where('phone_number', '=', $command->phone_number)->first()) {
+                return $subscriber;
+            }
+            $subscriber = Subscriber::firstOrCreate(['phone_number' => $command->phone_number]);
+        }
 
         // Decide what to subscribe the subscriber to.
         if ($subscriptions = $command->subscriptions) {
@@ -53,7 +62,7 @@ class SubscribeSubscriberCommandHandler
         $components->each(function ($component) use ($subscriber) {
             Subscription::create([
                 'subscriber_id' => $subscriber->id,
-                'component_id'  => $component->id,
+                'component_id' => $component->id,
             ]);
         });
 

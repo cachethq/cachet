@@ -31,6 +31,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/steffjenl/TestBench"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Florian-Mahlberg/twilio-notification-channel"
         }
     ],
     "require": {
@@ -43,6 +47,7 @@
         "chillerlan/php-qrcode": "^2.0",
         "doctrine/dbal": "^3.6.4",
         "fideloper/proxy": "^4.0",
+        "florian-mahlberg/twilio-notification-channel": "^3.0",
         "graham-campbell/binput": "^10.0.0",
         "graham-campbell/exceptions": "^17.0.0-dev",
         "graham-campbell/markdown": "^15.0.0",
@@ -54,7 +59,8 @@
         "mccool/laravel-auto-presenter": "^7.7.0",
         "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
-        "twig/twig": "^2.6"
+        "twig/twig": "^2.6",
+        "twilio/sdk": "^7.7"
     },
     "require-dev": {
         "ext-sqlite3": "*",

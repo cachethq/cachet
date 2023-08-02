@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Notifications\Component;
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\NexmoMessage;
+use Illuminate\Notifications\Messages\TwilioMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -73,8 +73,8 @@ class ComponentStatusChangedNotification extends Notification
         if (\Config::get('setting.enable_slack')) {
             array_push($ret, 'slack');
         }
-        if (\Config::get('setting.enable_nexmo')) {
-            array_push($ret, 'nexmo');
+        if (\Config::get('setting.enable_twilio')) {
+            array_push($ret, 'twilio');
         }
 
         return $ret;
@@ -108,13 +108,13 @@ class ComponentStatusChangedNotification extends Notification
     }
 
     /**
-     * Get the Nexmo / SMS representation of the notification.
+     * Get the Twilio / SMS representation of the notification.
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\NexmoMessage
+     * @return \Illuminate\Notifications\Messages\TwilioMessage
      */
-    public function toNexmo($notifiable)
+    public function toTwilio($notifiable)
     {
         $content = trans('notifications.component.status_update.sms.content', [
             'name'       => $this->component->name,
@@ -122,7 +122,7 @@ class ComponentStatusChangedNotification extends Notification
             'new_status' => trans("cachet.components.status.{$this->status}"),
         ]);
 
-        return (new NexmoMessage())->content($content);
+        return (new TwilioMessage())->content($content);
     }
 
     /**

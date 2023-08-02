@@ -94,7 +94,7 @@ class AppComposer
         $view->withOnlyDisruptedDays($this->config->get('setting.only_disrupted_days'));
         $view->withDashboardLink($this->config->get('setting.dashboard_login_link'));
         $view->withEnableSubscribers($this->config->get('setting.enable_subscribers'));
-        $view->withEnableNexmo($this->config->get('setting.enable_nexmo'));
+        $view->withEnableTwilio($this->config->get('setting.enable_twilio'));
         $view->withEnableMail($this->config->get('setting.enable_mail'));
         $view->withEnableSlack($this->config->get('setting.enable_slack'));
     }

@@ -14,8 +14,8 @@ namespace CachetHQ\Cachet\Notifications\Incident;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
+use Illuminate\Notifications\Messages\TwilioMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -65,8 +65,8 @@ class NewIncidentNotification extends Notification
         if (\Config::get('setting.enable_slack')) {
             array_push($ret, 'slack');
         }
-        if (\Config::get('setting.enable_nexmo')) {
-            array_push($ret, 'nexmo');
+        if (\Config::get('setting.enable_twilio')) {
+            array_push($ret, 'twilio');
         }
 
         return $ret;
@@ -100,15 +100,15 @@ class NewIncidentNotification extends Notification
     }
 
     /**
-     * Get the Nexmo / SMS representation of the notification.
+     * Get the Twilio / SMS representation of the notification.
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\NexmoMessage
+     * @return \Illuminate\Notifications\Messages\TwilioMessage
      */
-    public function toNexmo($notifiable)
+    public function toTwilio($notifiable)
     {
-        return (new NexmoMessage())->content(trans('notifications.incident.new.sms.content', [
+        return (new TwilioMessage())->content(trans('notifications.incident.new.sms.content', [
             'name' => $this->incident->name,
         ]));
     }

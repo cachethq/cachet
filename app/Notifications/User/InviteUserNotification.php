@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Notifications\User;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\TwilioMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
 
@@ -34,7 +35,16 @@ class InviteUserNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        $ret = [];
+
+        if (\Config::get('setting.enable_mail')) {
+            array_push($ret, 'mail');
+        }
+        if (\Config::get('setting.enable_twilio')) {
+            array_push($ret, 'twilio');
+        }
+
+        return $ret;
     }
 
     /**
@@ -51,5 +61,24 @@ class InviteUserNotification extends Notification
                     ->greeting(trans('notifications.user.invite.mail.title', ['app_name' => Config::get('setting.app_name')]))
                     ->action(trans('notifications.user.invite.mail.action'), cachet_route('signup.invite', [$notifiable->code]))
                     ->line(trans('notifications.user.invite.mail.content', ['app_name' => Config::get('setting.app_name')]));
+    }
+
+    /**
+     * Get the Twilio / SMS representation of the notification.
+     * 
+     * @param mixed $notifiable
+     * 
+     * @return \Illuminate\Notifications\Messages\TwilioMessage
+     */
+    public function toTwilio($notifiable)
+    {
+        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+
+        $content = trans('notifications.user.invite.sms.content', [
+            'app_name' => Config::get('setting.app_name'),
+            'link'     => $route,
+        ]);
+
+        return (new TwilioMessage())->content($content);
     }
 }

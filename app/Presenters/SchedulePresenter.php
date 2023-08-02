@@ -54,7 +54,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
     public function formatted_message()
     {
         $converter = new \League\CommonMark\CommonMarkConverter();
-        return $converter->convert($this->config->get('setting.app_about'))->getContent();
+        return $converter->convert($this->wrappedObject->message)->getContent();
     }
 
     /**

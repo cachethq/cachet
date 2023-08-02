@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\PhoneSubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
@@ -66,7 +67,7 @@ class SubscribeController extends Controller
     public function showSubscribe()
     {
         $converter = new \League\CommonMark\CommonMarkConverter();
-        if(is_null(Config::get('setting.app_about'))){
+        if (is_null(Config::get('setting.app_about'))) {
             return View::make('subscribe.subscribe')
                 ->withAboutApp('');
         }
@@ -81,17 +82,30 @@ class SubscribeController extends Controller
      */
     public function postSubscribe()
     {
+        $phone = Binput::get('phone');
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
-        try {
-            $subscription = execute(new SubscribeSubscriberCommand($email, $verified));
-        } catch (ValidationException $e) {
-            return cachet_redirect('status-page')
-                ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
-                ->withErrors($e->getMessageBag());
+        if ($email) {
+            try {
+                $subscription = execute(new SubscribeSubscriberCommand($email, $verified));
+            } catch (ValidationException $e) {
+                return cachet_redirect('status-page')
+                    ->withInput(Binput::all())
+                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                    ->withErrors($e->getMessageBag());
+            }
+        }
+        if ($phone) {
+            try {
+                $subscription = execute(new SubscribeSubscriberCommand(verified: $verified, phone_number: $phone));
+            } catch (ValidationException $e) {
+                return cachet_redirect('status-page')
+                    ->withInput(Binput::all())
+                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                    ->withErrors($e->getMessageBag());
+            }
         }
 
         // Send the subscriber a link to manage their subscription.

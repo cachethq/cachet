@@ -33,7 +33,16 @@ class SystemTestNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        $ret = [];
+
+        if (\Config::get('setting.enable_mail')) {
+            array_push($ret, 'mail');
+        }
+        if (\Config::get('setting.enable_twilio')) {
+            array_push($ret, 'twilio');
+        }
+
+        return $ret;
     }
 
     /**
@@ -49,5 +58,22 @@ class SystemTestNotification extends Notification
                     ->subject(trans('notifications.system.test.mail.subject'))
                     ->greeting(trans('notifications.system.test.mail.title'))
                     ->line(trans('notifications.system.test.mail.content'));
+    }
+
+    /**
+     * Get the Twilio / SMS representation of the notification.
+     * 
+     * @param mixed $notifiable
+     * 
+     * @return \Illuminate\Notifications\Messages\TwilioMessage
+     */
+    public function toTwilio($notifiable)
+    {
+        \Illuminate\Support\Facades\Log::debug('toTwilio');
+        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+
+        $content = trans('notifications.system.test.sms.content');
+
+        return (new TwilioMessage())->content($content);
     }
 }

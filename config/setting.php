@@ -57,14 +57,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Enable nexmo
+    | Enable twilio
     |--------------------------------------------------------------------------
     |
-    | Whether to send any Nexmo notifications.
+    | Whether to send any Twilio notifications.
     |
     */
 
-    'enable_nexmo' => true,
+    'enable_twilio' => true,
 
     /*
     |--------------------------------------------------------------------------

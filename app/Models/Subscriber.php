@@ -162,11 +162,11 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
-     * Route notifications for the Nexmo channel.
+     * Route notifications for the Twilio channel.
      *
      * @return string
      */
-    public function routeNotificationForNexmo()
+    public function routeNotificationForTwilio()
     {
         return $this->phone_number;
     }

@@ -90,3 +90,13 @@
 .btn-danger.btn-outline:hover {
     color: #fff;
 }
+
+.bnt-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.button-container .btn {
+    flex: 1;
+}

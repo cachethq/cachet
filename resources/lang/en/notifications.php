@@ -84,6 +84,9 @@ return [
                 'title'   => 'Verify your subscription to :app_name status page.',
                 'action'  => 'Verify',
             ],
+            'sms' => [
+                'content' => 'C Click to verify your subscription to :app_name status page. :link',
+            ],	
         ],
         'manage' => [
             'mail' => [
@@ -91,6 +94,9 @@ return [
                 'content' => 'Click to manage your subscription to :app_name status page.',
                 'title'   => 'Click to manage your subscription to :app_name status page.',
                 'action'  => 'Manage subscription',
+            ],
+            'sms' => [
+                'content' => 'B Click to manage your subscription to :app_name status page. :link',
             ],
         ],
     ],
@@ -101,6 +107,9 @@ return [
                 'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
+            'sms' => [
+                'content' => 'This is a test notification from Cachet!',
+            ],
         ],
     ],
     'user' => [
@@ -110,6 +119,9 @@ return [
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
                 'action'  => 'Accept',
+            ],
+            'sms' => [
+                'content' => 'You have been invited to join :app_name status page. Please click to accept: :link.',
             ],
         ],
     ],

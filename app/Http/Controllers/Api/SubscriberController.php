@@ -49,10 +49,20 @@ class SubscriberController extends AbstractApiController
     {
         $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
 
-        try {
-            $subscriber = execute(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components', null)));
-        } catch (QueryException $e) {
-            throw new BadRequestHttpException();
+        if (Binput::get('email')) {
+            try {
+                $subscriber = execute(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components', null)));
+            } catch (QueryException $e) {
+                throw new BadRequestHttpException();
+            }
+        }
+
+        if (Binput::get('phone')) {
+            try {
+                $subscriber = execute(new SubscribeSubscriberCommand(verified: $verified, subscriptions: Binput::get('components', null), phone_number: Binput::get('phone')));
+            } catch (QueryException $e) {
+                throw new BadRequestHttpException();
+            }
         }
 
         return $this->item($subscriber);

@@ -168,7 +168,7 @@ return [
         'notifications' => [
             'mail'      => 'Enable mail notifications?',
             'slack'     => 'Enable Slack notifications?',
-            'nexmo'       => 'Enable nexmo notifications?',
+            'twilio'       => 'Enable twilio notifications?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

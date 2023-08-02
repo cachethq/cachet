@@ -30,7 +30,7 @@ class SubscriberController extends Controller
     public function showSubscribers()
     {
         return View::make('dashboard.subscribers.index')
-            ->withPageTitle(trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'))
+            ->withPageTitle(trans('dashboard.subscribers.subscribers') . ' - ' . trans('dashboard.dashboard'))
             ->withSubscribers(Subscriber::with('subscriptions.component')->get());
     }
 
@@ -42,7 +42,7 @@ class SubscriberController extends Controller
     public function showAddSubscriber()
     {
         return View::make('dashboard.subscribers.add')
-            ->withPageTitle(trans('dashboard.subscribers.add.title').' - '.trans('dashboard.dashboard'));
+            ->withPageTitle(trans('dashboard.subscribers.add.title') . ' - ' . trans('dashboard.dashboard'));
     }
 
     /**

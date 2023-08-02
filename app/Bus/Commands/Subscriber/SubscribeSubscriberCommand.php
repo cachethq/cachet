@@ -21,7 +21,7 @@ final class SubscribeSubscriberCommand
     /**
      * The subscriber email.
      *
-     * @var string
+     * @var string|null
      */
     public $email;
 
@@ -40,12 +40,19 @@ final class SubscribeSubscriberCommand
     public $subscriptions;
 
     /**
+     * The subscriber phone_number.
+     * @var string|null
+     */
+    public $phone_number;
+
+    /**
      * The validation rules.
      *
      * @var array
      */
     public $rules = [
         'email' => 'required|email',
+        'phone_number' => 'required|phone_number',
     ];
 
     /**
@@ -57,10 +64,11 @@ final class SubscribeSubscriberCommand
      *
      * @return void
      */
-    public function __construct($email, $verified = false, $subscriptions = null)
+    public function __construct($email = null, $verified = false, $subscriptions = null, $phone_number = null)
     {
         $this->email = $email;
         $this->verified = $verified;
         $this->subscriptions = $subscriptions;
+        $this->phone_number = $phone_number;
     }
 }

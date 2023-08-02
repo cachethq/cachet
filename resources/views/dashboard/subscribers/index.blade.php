@@ -26,7 +26,15 @@
                 @foreach($subscribers as $subscriber)
                 <div class="row striped-list-item">
                     <div class="col-xs-3">
-                        <p>{{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email, 'date' => $subscriber->created_at]) }}</p>
+                        <p>
+                            @if(isset($subscriber->email) && isset($subscriber->phone_number))
+                                {{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email . ', ' . $subscriber->phone_number, 'date' => $subscriber->created_at]) }}
+                            @elseif(isset($subscriber->email))
+                                {{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email, 'date' => $subscriber->created_at]) }}
+                            @elseif(isset($subscriber->phone_number))
+                                {{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->phone_number, 'date' => $subscriber->created_at]) }}
+                            @endif
+                        </p>
                     </div>
                     <div class="col-xs-3">
                         @if(is_null($subscriber->getOriginal('verified_at')))

@@ -11780,6 +11780,16 @@ textarea {
   color: #fff;
 }
 
+.bnt-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.button-container .btn {
+  flex: 1;
+}
+
 .pager li > a, .pager li > span {
   border-radius: 3px;
 }

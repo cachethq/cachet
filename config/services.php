@@ -36,10 +36,9 @@ return [
         'secret' => env('MAIL_PASSWORD'),
     ],
 
-    'nexmo' => [
-        'key'      => env('NEXMO_KEY'),
-        'secret'   => env('NEXMO_SECRET'),
-        'sms_from' => env('NEXMO_SMS_FROM'),
+    'twilio' => [
+        'sid'     => env('TWILIO_SID'),
+        'token'   => env('TWILIO_TOKEN'),
     ],
 
     'ses' => [

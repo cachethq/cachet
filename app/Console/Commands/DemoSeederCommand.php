@@ -442,7 +442,7 @@ EINCIDENT;
                 'value' => '0',
             ],
             [
-                'key' => 'enable_nexmo',
+                'key' => 'enable_twilio',
                 'value' => '0',
             ],
         ];

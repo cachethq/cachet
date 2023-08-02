@@ -41,9 +41,9 @@
                             <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="hidden" value="0" name="enable_nexmo">
-                                        <input type="checkbox" value="1" name="enable_nexmo" {{ Config::get('setting.enable_nexmop') ? 'checked' : null }}>
-                                        {{ trans('forms.settings.notifications.nexmo') }}
+                                        <input type="hidden" value="0" name="enable_twilio">
+                                        <input type="checkbox" value="1" name="enable_twilio" {{ Config::get('setting.enable_twilio') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.notifications.twilio') }}
                                     </label>
                                 </div>
                             </div>
