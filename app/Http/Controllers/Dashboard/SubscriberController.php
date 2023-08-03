@@ -58,9 +58,17 @@ class SubscriberController extends Controller
             $subscribers = preg_split("/\r\n|\n|\r/", Binput::get('email'));
 
             foreach ($subscribers as $subscriber) {
-                execute(new SubscribeSubscriberCommand($subscriber, $verified));
+                if(filter_var($subscriber, FILTER_VALIDATE_EMAIL)) {
+                    execute(new SubscribeSubscriberCommand($subscriber, $verified));
+                }
+                elseif(preg_match('/^(?=(?:\+|0{2})?(?:(?:[\(\-\)\.\/ \t\f]*\d){7,10})?(?:[\-\.\/ \t\f]?\d{2,3})(?:[\-\s]?[ext]{1,3}[\-\.\/ \t\f]?\d{1,4})?$)((?:\+|0{2})\d{0,3})?(?:[\-\.\/ \t\f]?)(\(0\d[ ]?\d{0,4}\)|\(\d{0,4}\)|\d{0,4})(?:[\-\.\/ \t\f]{0,2}\d){3,8}(?:[\-\s]?(?:x|ext)[\-\t\f ]?(\d{1,4}))?$/', $subscriber)) {
+                    execute(new SubscribeSubscriberCommand(verified:$verified, phone_number:$subscriber));
+                }
+                else{
+                    throw new \Symfony\Component\Mime\Exception\RfcComplianceException;
+                }
             }
-        } catch (ValidationException | \Symfony\Component\Mime\Exception\RfcComplianceException $e) {
+        } catch (ValidationException | \Symfony\Component\Mime\Exception\RfcComplianceException | \Twilio\Exceptions\RestException $e) {
             return cachet_redirect('dashboard.subscribers.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))

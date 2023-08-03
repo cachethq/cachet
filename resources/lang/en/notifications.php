@@ -85,7 +85,7 @@ return [
                 'action'  => 'Verify',
             ],
             'sms' => [
-                'content' => 'C Click to verify your subscription to :app_name status page. :link',
+                'content' => 'Click to verify your subscription to :app_name status page. :link',
             ],	
         ],
         'manage' => [
@@ -96,7 +96,7 @@ return [
                 'action'  => 'Manage subscription',
             ],
             'sms' => [
-                'content' => 'B Click to manage your subscription to :app_name status page. :link',
+                'content' => 'Click to manage your subscription to :app_name status page. :link',
             ],
         ],
     ],

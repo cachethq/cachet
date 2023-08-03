@@ -100,6 +100,11 @@ return [
             'unsubscribed'        => 'Your email subscription has been cancelled.',
             'failure'             => 'Something went wrong with the subscription.',
             'already-subscribed'  => 'Cannot subscribe :email because they\'re already subscribed.',
+            'disabled'            => 'Mail notifications disabled by admin.',
+        ],
+        'sms'   => [
+            'subscribe'           => 'Subscribe to SMS updates.',
+            'disabled'            => 'SMS notifications disabled by admin.',
         ],
     ],
 
