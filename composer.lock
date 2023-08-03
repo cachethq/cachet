@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c46c1cbd5c5f00afa7d2098df06eb532",
+    "content-hash": "6ed45812d269ff4314130f64c1378dfd",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1362,19 +1362,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Florian-Mahlberg/twilio-notification-channel.git",
-                "reference": "9f70f9592a87025ef7980c2886722fedf2e62809"
+                "reference": "1b1f68f3f549cd24d60feb340625321f94593ce9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Florian-Mahlberg/twilio-notification-channel/zipball/9f70f9592a87025ef7980c2886722fedf2e62809",
-                "reference": "9f70f9592a87025ef7980c2886722fedf2e62809",
+                "url": "https://api.github.com/repos/Florian-Mahlberg/twilio-notification-channel/zipball/1b1f68f3f549cd24d60feb340625321f94593ce9",
+                "reference": "1b1f68f3f549cd24d60feb340625321f94593ce9",
                 "shasum": ""
             },
             "require": {
                 "illuminate/notifications": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
                 "php": "^8.0",
-                "twilio/sdk": "^7.7"
+                "twilio/sdk": "*"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^7.2",
@@ -1426,7 +1426,7 @@
             "support": {
                 "source": "https://github.com/Florian-Mahlberg/twilio-notification-channel/tree/3.x"
             },
-            "time": "2023-08-03T12:21:17+00:00"
+            "time": "2023-08-03T13:01:45+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -4778,6 +4778,67 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "steffjenl/validator",
+            "version": "4.5.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/steffjenl/Validator.git",
+                "reference": "594c145e89e234c94234a985f96670c9360fc89c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/steffjenl/Validator/zipball/594c145e89e234c94234a985f96670c9360fc89c",
+                "reference": "594c145e89e234c94234a985f96670c9360fc89c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+                "php": "^7.1.3 || ^8.0",
+                "psr/log": "^3.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.4 || ^3.0",
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.4 || ^9.0 || ^10.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Validator\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "AltThree\\Tests\\Validator\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alt Three",
+                    "email": "support@alt-three.com"
+                },
+                {
+                    "name": "MonkeySoft",
+                    "email": "hallo@monkeysoft.nl"
+                }
+            ],
+            "description": "A validation wrapper for Laravel",
+            "keywords": [
+                "Alt Three",
+                "Validator",
+                "validation",
+                "validator"
+            ],
+            "support": {
+                "source": "https://github.com/steffjenl/Validator/tree/4.5"
+            },
+            "time": "2023-08-02T20:27:33+00:00"
         },
         {
             "name": "symfony/console",

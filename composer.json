@@ -34,6 +34,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/steffjenl/Validator"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/Florian-Mahlberg/twilio-notification-channel"
         }
     ],
@@ -59,6 +63,7 @@
         "mccool/laravel-auto-presenter": "^7.7.0",
         "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
+        "steffjenl/validator": "^4.0",
         "twig/twig": "^2.6",
         "twilio/sdk": "^7.7"
     },
