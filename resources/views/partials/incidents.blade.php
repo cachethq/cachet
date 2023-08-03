@@ -27,7 +27,7 @@
                                 <a href="{{ cachet_route('incident', ['incident' => $incident->id]) }}" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr></a>
                             </small>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body form-group">
                             {!! $incident->formatted_message !!}
                         </div>
                         @if($incident->updates->isNotEmpty())

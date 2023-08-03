@@ -15,7 +15,7 @@
 
 <hr>
 
-<div class="">
+<div class="form-group">
     {!! $incident->formatted_message !!}
 </div>
 
@@ -38,7 +38,7 @@
                                 <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                             </div>
                             @endif
-                            <div class="">
+                            <div class="form-group">
                                 {!! $update->formatted_message !!}
                             </div>
                         </div>
