@@ -40,7 +40,7 @@ return [
                 'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'A new incident was reported at :app_name. Read more: :link',
             ],
         ],
         'update' => [
@@ -55,7 +55,7 @@ return [
                 'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incident :name was updated to :new_status. Read more: :link',
             ],
         ],
     ],
@@ -72,7 +72,7 @@ return [
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name was scheduled for :date Read more: :link',
             ],
         ],
     ],

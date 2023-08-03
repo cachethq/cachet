@@ -69,9 +69,6 @@ class SystemTestNotification extends Notification
      */
     public function toTwilio($notifiable)
     {
-        \Illuminate\Support\Facades\Log::debug('toTwilio');
-        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
-
         $content = trans('notifications.system.test.sms.content');
 
         return (new TwilioMessage())->content($content);

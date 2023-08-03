@@ -15,6 +15,22 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     @include('partials.errors')
                     <fieldset>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.notifications.shortlinkTplIncident') }}</label>
+                                        <input type="text" class="form-control" name="shortlinkTplIncident" value="{{Config::get('setting.shortlinkTplIncident')}}" placeholder="{{ trans('forms.settings.notifications.iShort') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.notifications.shortlinkTplMaintenance') }}</label>
+                                        <input type="text" class="form-control" name="shortlinkTplMaintenance" value="{{Config::get('setting.shortlinkTplMaintenance')}}" placeholder="{{ trans('forms.settings.notifications.mShort') }}">
+                                    </div>
+                                </div>
+                            </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="checkbox">

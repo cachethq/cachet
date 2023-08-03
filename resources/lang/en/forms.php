@@ -166,9 +166,13 @@ return [
             'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
         'notifications' => [
-            'mail'      => 'Enable mail notifications?',
-            'slack'     => 'Enable Slack notifications?',
-            'twilio'       => 'Enable twilio notifications?',
+            'shortlinkTplIncident'      => 'Template for shortened links to incidents',
+            'shortlinkTplMaintenance'   => 'Template for shortened links to scheduled maintenance',
+            'iShort'                    => 'https://cachethq.io/i/{id}',
+            'mShort'                    => 'https://cachethq.io/m/{id}',
+            'mail'                      => 'Enable mail notifications?',
+            'slack'                     => 'Enable Slack notifications?',
+            'twilio'                    => 'Enable twilio notifications?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

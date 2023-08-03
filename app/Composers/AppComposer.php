@@ -97,5 +97,7 @@ class AppComposer
         $view->withEnableTwilio($this->config->get('setting.enable_twilio'));
         $view->withEnableMail($this->config->get('setting.enable_mail'));
         $view->withEnableSlack($this->config->get('setting.enable_slack'));
+        $view->withShortlinkTemplateIncident($this->config->get('setting.shortlinkTplIncident'));
+        $view->withShortlinkTemplateMaintenance($this->config->get('setting.shortlinkTplIncident'));
     }
 }

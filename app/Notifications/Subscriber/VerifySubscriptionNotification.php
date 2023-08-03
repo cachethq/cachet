@@ -76,7 +76,7 @@ class VerifySubscriptionNotification extends Notification
     public function toTwilio($notifiable)
     {
 
-        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
+        $route = URL::signedRoute(cachet_route_generator('subscribe.verify'), ['code' => $notifiable->verify_code]);
 
         $content = trans('notifications.subscriber.verify.sms.content', [
             'app_name' => Config::get('setting.app_name'),

@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.277.6",
+            "version": "3.277.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "014d8eef8a24a2ef66a8284a7785a7aa48cb9b57"
+                "reference": "906caee3dc8ddffeb992062c84f4552dc2e2da19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/014d8eef8a24a2ef66a8284a7785a7aa48cb9b57",
-                "reference": "014d8eef8a24a2ef66a8284a7785a7aa48cb9b57",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/906caee3dc8ddffeb992062c84f4552dc2e2da19",
+                "reference": "906caee3dc8ddffeb992062c84f4552dc2e2da19",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.277.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.277.7"
             },
-            "time": "2023-08-01T18:07:27+00:00"
+            "time": "2023-08-02T18:04:32+00:00"
         },
         {
             "name": "brick/math",
@@ -1362,19 +1362,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Florian-Mahlberg/twilio-notification-channel.git",
-                "reference": "90a5b2132c9013fe5c3bac60449c562c373b91d1"
+                "reference": "9f70f9592a87025ef7980c2886722fedf2e62809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Florian-Mahlberg/twilio-notification-channel/zipball/90a5b2132c9013fe5c3bac60449c562c373b91d1",
-                "reference": "90a5b2132c9013fe5c3bac60449c562c373b91d1",
+                "url": "https://api.github.com/repos/Florian-Mahlberg/twilio-notification-channel/zipball/9f70f9592a87025ef7980c2886722fedf2e62809",
+                "reference": "9f70f9592a87025ef7980c2886722fedf2e62809",
                 "shasum": ""
             },
             "require": {
                 "illuminate/notifications": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
                 "php": "^8.0",
-                "twilio/sdk": "*"
+                "twilio/sdk": "^7.7"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^7.2",
@@ -1426,7 +1426,7 @@
             "support": {
                 "source": "https://github.com/Florian-Mahlberg/twilio-notification-channel/tree/3.x"
             },
-            "time": "2023-08-02T09:36:22+00:00"
+            "time": "2023-08-03T12:21:17+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -2440,16 +2440,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.52.13",
+            "version": "v9.52.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4e591ce0ffe9e09e230c4d3fb6430ac8e23f88b7"
+                "reference": "5366a9035100f858589e1b43bbcb134ffcc81a73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4e591ce0ffe9e09e230c4d3fb6430ac8e23f88b7",
-                "reference": "4e591ce0ffe9e09e230c4d3fb6430ac8e23f88b7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5366a9035100f858589e1b43bbcb134ffcc81a73",
+                "reference": "5366a9035100f858589e1b43bbcb134ffcc81a73",
                 "shasum": ""
             },
             "require": {
@@ -2634,7 +2634,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-08-01T14:07:54+00:00"
+            "time": "2023-08-02T14:58:02+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -3102,16 +3102,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd"
+                "reference": "c7f2872fb273bf493811473dafc88d60ae829f48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
-                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/c7f2872fb273bf493811473dafc88d60ae829f48",
+                "reference": "c7f2872fb273bf493811473dafc88d60ae829f48",
                 "shasum": ""
             },
             "require": {
@@ -3142,7 +3142,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.11.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.12.0"
             },
             "funding": [
                 {
@@ -3154,7 +3154,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-17T13:12:02+00:00"
+            "time": "2023-08-03T07:14:11+00:00"
         },
         {
             "name": "mccool/laravel-auto-presenter",
@@ -10139,21 +10139,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/steffjenl/TestBench.git",
-                "reference": "db3ee35ef3caaa9a0cdd6f359f5200e47c27d005"
+                "reference": "74f327e3575e2f10a5ba28d2d278ebe647228900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/steffjenl/TestBench/zipball/db3ee35ef3caaa9a0cdd6f359f5200e47c27d005",
-                "reference": "db3ee35ef3caaa9a0cdd6f359f5200e47c27d005",
+                "url": "https://api.github.com/repos/steffjenl/TestBench/zipball/74f327e3575e2f10a5ba28d2d278ebe647228900",
+                "reference": "74f327e3575e2f10a5ba28d2d278ebe647228900",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/testbench-core": "^3.2",
-                "php": "^7.0 || ^8.0"
+                "php": "^7.0 || ^8.0 || ^8.1"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.4 || ^3.0",
-                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.4 || ^9.0"
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.4 || ^9.0 || ^10.0"
             },
             "suggest": {
                 "laravel/framework": "Enables the use of most traits."
@@ -10189,7 +10189,7 @@
             "support": {
                 "source": "https://github.com/steffjenl/TestBench/tree/4.3"
             },
-            "time": "2022-12-26T23:09:20+00:00"
+            "time": "2023-08-02T20:39:54+00:00"
         },
         {
             "name": "theseer/tokenizer",

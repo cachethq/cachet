@@ -89,11 +89,11 @@ class NewScheduleNotification extends Notification implements ShouldQueue
         return (new MailMessage())
             ->subject(trans('notifications.schedule.new.mail.subject'))
             ->markdown('notifications.schedule.new', [
-                'content'                => $content,
-                'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
-                'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
+                'content' => $content,
+                'unsubscribeText' => trans('cachet.subscriber.unsubscribe'),
+                'unsubscribeUrl' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                'manageSubscriptionUrl' => cachet_route('subscribe.manage', $notifiable->verify_code),
             ]);
     }
 
@@ -106,9 +106,21 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function toTwilio($notifiable)
     {
+
+        $schedule_link = "";
+        
+        \Illuminate\Support\Facades\Log::info("shortlinkTplIncident: " . \Illuminate\Support\Facades\Config::get('setting.shortlinkTplMaintenance'));
+
+        if (\Illuminate\Support\Facades\Config::get('setting.shortlinkTplMaintenance')) {
+            $schedule_link = \Illuminate\Support\Str::replace("{id}", $this->schedule->id, \Illuminate\Support\Facades\Config::get('setting.shortlinkTplMaintenance'));
+        } else {
+            $schedule_link = cachet_route('schedule', [$this->schedule]);
+        }
+        
         $content = trans('notifications.schedule.new.sms.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
+            'link' => $schedule_link,
         ]);
 
         return (new TwilioMessage())->content($content);
@@ -129,14 +141,14 @@ class NewScheduleNotification extends Notification implements ShouldQueue
         ]);
 
         return (new SlackMessage())
-                    ->content(trans('notifications.schedule.new.slack.title'))
-                    ->attachment(function ($attachment) use ($content) {
-                        $attachment->title($content)
-                                   ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
-                                   ->fields(array_filter([
-                                       'ID'     => "#{$this->schedule->id}",
-                                       'Status' => $this->schedule->human_status,
-                                   ]));
-                    });
+            ->content(trans('notifications.schedule.new.slack.title'))
+            ->attachment(function ($attachment) use ($content) {
+                $attachment->title($content)
+                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
+                    ->fields(array_filter([
+                        'ID' => "#{$this->schedule->id}",
+                        'Status' => $this->schedule->human_status,
+                    ]));
+            });
     }
 }

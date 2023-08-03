@@ -108,8 +108,19 @@ class NewIncidentNotification extends Notification
      */
     public function toTwilio($notifiable)
     {
+        $incident_link = "";
+
+        if(Config::get('setting.shortlinkTplIncident')){
+            $incident_link = \Illuminate\Support\Str::replace("{id}",$this->incident->id,Config::get('setting.shortlinkTplIncident'));
+        }
+        else{
+            $incident_link = $this->incident->permalink;
+        }
+
         return (new TwilioMessage())->content(trans('notifications.incident.new.sms.content', [
             'name' => $this->incident->name,
+            'link' => $incident_link,
+            'app_name' => Config::get('setting.app_name'),
         ]));
     }
 

@@ -406,7 +406,6 @@ class SettingsController extends Controller
                 if ($settingName === 'app_analytics_pi_url') {
                     $settingValue = rtrim($settingValue, '/');
                 }
-
                 $setting->set($settingName, $settingValue);
             }
         } catch (Exception $e) {
