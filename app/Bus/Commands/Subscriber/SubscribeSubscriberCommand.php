@@ -61,6 +61,7 @@ final class SubscribeSubscriberCommand
      * @param string     $email
      * @param bool       $verified
      * @param array|null $subscriptions
+     * @param string|null $phone_number
      *
      * @return void
      */
