@@ -36,7 +36,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_mail">
-                                        <input type="checkbox" value="1" name="enable_mail" {{ Config::get('setting.enable_mail') ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="enable_mail" {{ Config::get('setting.enable_mail') ? 'checked' : null }} {{(Config::get('mail.host') && Config::get('mail.port') && Config::get('mail.username') && Config::get('mail.password')) || (Config::get('mail.driver') === 'log') || Config::get('setting.enable_mail') ? null : 'disabled'}}>
                                         {{ trans('forms.settings.notifications.mail') }}
                                     </label>
                                 </div>
