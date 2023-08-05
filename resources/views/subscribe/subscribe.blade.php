@@ -57,8 +57,8 @@
             <div class="panel-heading">{{ trans('cachet.subscriber.subscribe') }}</div>
             <div class="panel-body">
                 <div class="bnt-container">
-                    <button style="width: 100%; height:100%;" id="email_bnt" value="Email" onclick="showMail()" title="{{ Config::get('setting.enable_mail') ? trans('cachet.subscriber.email.subscribe') : trans('cachet.subscriber.email.disabled') }}" {{Config::get('setting.enable_mail') ? "" : "disabled"}} class="btn btn-primary"><div class="ion-android-mail"/> Email</button>
-                    <button style="width: 100%; height:100%;" id="tel_bnt" value="Phone" onclick="showTel()" title="{{Config::get('setting.enable_twilio') ? trans('cachet.subscriber.sms.subscribe') : trans('cachet.subscriber.sms.disabled')}}"  {{Config::get('setting.enable_twilio') ? "" : "disabled"}} class="btn btn-inverse"><div class="ion-ios-telephone"/> Phone</button>
+                    <button style="width: 100%; height:100%;" id="email_bnt" value="Email" onclick="showMail()" title="{{ Config::get('setting.enable_mail') ? trans('cachet.subscriber.email.subscribe') : trans('cachet.subscriber.email.disabled') }}" {{Config::get('setting.enable_mail') ? "" : "disabled"}} class="btn btn-primary {{Config::get('setting.enable_mail') ? '' : 'hidden' }}"><div class="ion-android-mail"/> Email</button>
+                    <button style="width: 100%; height:100%;" id="tel_bnt" value="Phone" onclick="showTel()" title="{{Config::get('setting.enable_twilio') ? trans('cachet.subscriber.sms.subscribe') : trans('cachet.subscriber.sms.disabled')}}"  {{Config::get('setting.enable_twilio') ? "" : "disabled"}} class="btn btn-inverse {{Config::get('setting.enable_twilio') ? '' : 'hidden' }}"><div class="ion-ios-telephone"/> Phone</button>
                 </div>
                 <form action="{{ cachet_route('subscribe', [], 'post') }}" method="POST" class="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
