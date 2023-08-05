@@ -157,7 +157,7 @@ return [
             'major_outage_rate'                     => 'Større brudd terskel (i %)',
             'banner'                                => 'Bannerbilde',
             'banner-help'                           => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler',
-            'subscribers'                           => 'Allow people to signup to email notifications?',
+            'subscribers'                           => 'Allow people to signup to notifications?',
             'suppress_notifications_in_maintenance' => 'Utelat notifikasjoner når hendelse inntreffer under vedlikeholdsperiode?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Automatically localise your status page to your visitor\'s language?',

@@ -108,7 +108,7 @@ return [
             'days-of-incidents'      => 'כמה ימים של אירועים להראות?',
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
-            'subscribers'            => 'Allow people to signup to email notifications?',
+            'subscribers'            => 'Allow people to signup to notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [

@@ -157,7 +157,7 @@ return [
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner Image',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
-            'subscribers'                           => 'Allow people to signup to email notifications?',
+            'subscribers'                           => 'Allow people to signup to notifications?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Automatically localise your status page to your visitor\'s language?',

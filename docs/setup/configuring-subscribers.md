@@ -11,7 +11,7 @@ page whenever an incident is created.
 > the mail][1] and the [queue][2].
 
 Once you've [Configuring Mail][1], you need to login to your Dashboard and enable
-the Allow people to signup to email notifications? setting found in the
+the Allow people to signup to notifications? setting found in the
 Application Setup panel.
 
 Once you've enabled this setting you'll see a Subscribe button in the footer
