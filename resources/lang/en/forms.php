@@ -173,6 +173,11 @@ return [
             'mail'                      => 'Enable mail notifications?',
             'slack'                     => 'Enable Slack notifications?',
             'twilio'                    => 'Enable twilio notifications?',
+            'notAvailable'              => [
+                'twilio'                => 'Twilio notifications require the :env environment variable(s) to be set.',
+                'mail'                  => 'Mail notifications require the :env environment variable(s) to be set.',
+                'slack'                 => 'Slack notifications are not yet supported.',
+            ],
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
