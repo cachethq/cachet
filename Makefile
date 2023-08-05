@@ -15,3 +15,6 @@ test:
 	php artisan config:clear -vvv
 	php artisan cache:clear -vvv
 	./vendor/bin/phpunit -v
+reload:
+	php artisan cache:clear
+	php artisan config:clear
