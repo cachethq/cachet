@@ -18,3 +18,5 @@ test:
 reload:
 	php artisan cache:clear
 	php artisan config:clear
+	-sudo systemctl restart php8.1-fpm
+	-sudo systemctl restart nginx
