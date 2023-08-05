@@ -58,7 +58,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_twilio">
-                                        <input type="checkbox" value="1" name="enable_twilio" {{ Config::get('setting.enable_twilio') ? 'checked' : null }} {{ Config::get('services.twilio.token') && Config::get('setting.enable_twilio') ? null : 'disabled'}}>
+                                        <input type="checkbox" value="1" name="enable_twilio" {{ Config::get('setting.enable_twilio') ? 'checked' : null }} {{ Config::get('services.twilio.token') || Config::get('setting.enable_twilio') ? null : 'disabled'}}>
                                         {{ trans('forms.settings.notifications.twilio') }}
                                     </label>
                                 </div>
