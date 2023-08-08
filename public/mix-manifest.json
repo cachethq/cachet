@@ -1,12 +1,12 @@
 {
-    "/dist/js/app.js": "/dist/js/app.js?id=3641dd2606ab0ded72af2b97d39ecbd0",
-    "/dist/js/manifest.js": "/dist/js/manifest.js?id=69bac774ffe52ee28784bcf824aee5b3",
-    "/dist/css/app.css": "/dist/css/app.css?id=4bd9816902a6e3f95f4267589f6e627e",
-    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css?id=157e2b89aa58de93587afcff1628d100",
-    "/dist/js/vendor.js": "/dist/js/vendor.js?id=0437a3d7cdd16690bdf34b1a36400c16",
-    "/fonts/ionicons.eot": "/fonts/ionicons.eot?id=6954ee31d03dbff1c0976d1c05d39975",
-    "/fonts/ionicons.svg": "/fonts/ionicons.svg?id=28df6ee7b407fd8a14b40bc01f4fd3ae",
-    "/fonts/ionicons.ttf": "/fonts/ionicons.ttf?id=df66f7c1d2cc391b16e7acd04aba3575",
-    "/fonts/ionicons.woff": "/fonts/ionicons.woff?id=0822c9961317a6fe99362ebc0e4c45a1",
-    "/dist/js/all.js": "/dist/js/all.js?id=de4e20014dd9bbf8980d3cfc55b0e4e8"
+    "/dist/js/app.js": "/dist/js/app.js",
+    "/dist/js/manifest.js": "/dist/js/manifest.js",
+    "/dist/css/app.css": "/dist/css/app.css",
+    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
+    "/dist/js/vendor.js": "/dist/js/vendor.js",
+    "/fonts/ionicons.eot": "/fonts/ionicons.eot",
+    "/fonts/ionicons.svg": "/fonts/ionicons.svg",
+    "/fonts/ionicons.ttf": "/fonts/ionicons.ttf",
+    "/fonts/ionicons.woff": "/fonts/ionicons.woff",
+    "/dist/js/all.js": "/dist/js/all.js"
 }

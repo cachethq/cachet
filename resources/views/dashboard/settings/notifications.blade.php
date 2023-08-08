@@ -5,8 +5,8 @@
     const twilioEnabled = {{ (Config::get('services.twilio.token') &&  Config::get('services.twilio.sid') && Config::get('services.twilio.from'))|| Config::get('setting.enable_twilio') ? 'true' : 'false'}};
     const mailEnabled = {{(Config::get('mail.driver') && Config::get('mail.address') && Config::get('mail.username') && Config::get('mail.password')) || (Config::get('mail.driver') === 'log') || Config::get('setting.enable_mail') ? 'true' : 'false'}};
 
-    const twilioText = (twilioEnabled ? '{{trans('forms.settings.notifications.twilio')}}' : '{{trans('forms.settings.notifications.notAvailable.twilio', ['env' => implode(',', array_filter([Config::get('services.twilio.token')? null :"TWILIO_TOKEN", Config::get('services.twilio.sid')? null:"TWILIO_SID", Config::get('services.twilio.from')? null:"TWILIO_FROM"]))])}}');
-    const mailText = (mailEnabled ? '{{trans('forms.settings.notifications.mail')}}' : '{{trans('forms.settings.notifications.notAvailable.mail', ['env' => implode(',', array_filter([Config::get('mail.driver')? null :"MAIL_DRIVER", Config::get('mail.address')? null :"MAIL_ADDRESS", Config::get('mail.username')? null :"MAIL_USERNAME", Config::get('mail.password')? null :"MAIL_PASSWORD"]))])}}');
+    const twilioText = (twilioEnabled ? '{{trans('forms.settings.notifications.twilio')}}' : '{{trans('forms.settings.notifications.notAvailable.twilio', ['env' => implode(', ', array_filter([Config::get('services.twilio.token')? null :"TWILIO_TOKEN", Config::get('services.twilio.sid')? null:"TWILIO_SID", Config::get('services.twilio.from')? null:"TWILIO_FROM"]))])}}');
+    const mailText = (mailEnabled ? '{{trans('forms.settings.notifications.mail')}}' : '{{trans('forms.settings.notifications.notAvailable.mail', ['env' => implode(', ', array_filter([Config::get('mail.driver')? null :"MAIL_DRIVER", Config::get('mail.address')? null :"MAIL_ADDRESS", Config::get('mail.username')? null :"MAIL_USERNAME", Config::get('mail.password')? null :"MAIL_PASSWORD"]))])}}');
 
     const twilioCbox = document.getElementById('twilio_cbox');
     const mailCbox = document.getElementById('mail_cbox');
