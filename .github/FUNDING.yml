@@ -1,3 +1,5 @@
 # These are supported funding model platforms
 
-github: jbrooksuk
+github:
+  - jbrooksuk
+  - cachethq
