@@ -48,9 +48,12 @@ class RepositoryServiceProvider extends ServiceProvider
             $config = $app->make(ConfigRepository::class);
 
             switch ($config->get('database.default')) {
-                case 'mysql': $repository = new MySqlRepository($config); break;
-                case 'pgsql': $repository = new PgSqlRepository($config); break;
-                case 'sqlite': $repository = new SqliteRepository($config); break;
+                case 'mysql': $repository = new MySqlRepository($config);
+                    break;
+                case 'pgsql': $repository = new PgSqlRepository($config);
+                    break;
+                case 'sqlite': $repository = new SqliteRepository($config);
+                    break;
             }
 
             $dates = $app->make(DateFactory::class);

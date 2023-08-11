@@ -168,10 +168,14 @@ class StatusPageController extends AbstractApiController
         $metrics = app(MetricRepository::class);
 
         switch ($type) {
-            case 'last_hour': $metricData = $metrics->listPointsLastHour($metric); break;
-            case 'today': $metricData = $metrics->listPointsToday($metric); break;
-            case 'week': $metricData = $metrics->listPointsForWeek($metric); break;
-            case 'month': $metricData = $metrics->listPointsForMonth($metric); break;
+            case 'last_hour': $metricData = $metrics->listPointsLastHour($metric);
+                break;
+            case 'today': $metricData = $metrics->listPointsToday($metric);
+                break;
+            case 'week': $metricData = $metrics->listPointsForWeek($metric);
+                break;
+            case 'month': $metricData = $metrics->listPointsForMonth($metric);
+                break;
             default: $metricData = [];
         }
 
@@ -193,10 +197,14 @@ class StatusPageController extends AbstractApiController
         $component = AutoPresenter::decorate($component);
 
         switch ($component->status_color) {
-            case 'reds': $color = Config::get('setting.style_reds', '#FF6F6F'); break;
-            case 'blues': $color = Config::get('setting.style_blues', '#3498DB'); break;
-            case 'greens': $color = Config::get('setting.style_greens', '#7ED321'); break;
-            case 'yellows': $color = Config::get('setting.style_yellows', '#F7CA18'); break;
+            case 'reds': $color = Config::get('setting.style_reds', '#FF6F6F');
+                break;
+            case 'blues': $color = Config::get('setting.style_blues', '#3498DB');
+                break;
+            case 'greens': $color = Config::get('setting.style_greens', '#7ED321');
+                break;
+            case 'yellows': $color = Config::get('setting.style_yellows', '#F7CA18');
+                break;
             default: $color = null;
         }
 
