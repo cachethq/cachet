@@ -24,7 +24,7 @@
     </li>
     @endif
     @foreach($ungroupedComponents as $component)
-    @include('dashboard.partials.component', compact($component))
+    @include('dashboard.partials.component')
     @endforeach
 </ul>
 @endif

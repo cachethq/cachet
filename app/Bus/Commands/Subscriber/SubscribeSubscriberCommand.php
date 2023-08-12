@@ -40,10 +40,18 @@ final class SubscribeSubscriberCommand
     public $subscriptions;
 
     /**
-     * The subscriber phone_number.
+     * The subscriber phone number.
+     * 
      * @var string|null
      */
     public $phone_number;
+
+    /**
+     * The subscriber ip.
+     * 
+     * @var string|null
+     */
+    public $ip;
 
     /**
      * The validation rules.
@@ -51,25 +59,27 @@ final class SubscribeSubscriberCommand
      * @var array
      */
     public $rules = [
-        'email' => 'required|email',
-        'phone_number' => 'required|phone_number',
+        'email' => 'nullable|email',
+        'phone_number' => ['nullable','regex:/^(?=(?:\+|0{2})?(?:(?:[\(\-\)\.\/ \t\f]*\d){7,10})?(?:[\-\.\/ \t\f]?\d{2,3})(?:[\-\s]?[ext]{1,3}[\-\.\/ \t\f]?\d{1,4})?$)((?:\+|0{2})\d{0,3})?(?:[\-\.\/ \t\f]?)(\(0\d[ ]?\d{0,4}\)|\(\d{0,4}\)|\d{0,4})(?:[\-\.\/ \t\f]{0,2}\d){3,8}(?:[\-\s]?(?:x|ext)[\-\t\f ]?(\d{1,4}))?$/'],
     ];
 
     /**
      * Create a new subscribe subscriber command instance.
      *
-     * @param string     $email
-     * @param bool       $verified
-     * @param array|null $subscriptions
+     * @param string|null $email
+     * @param bool        $verified
+     * @param array|null  $subscriptions
      * @param string|null $phone_number
+     * @param string|null $ip
      *
      * @return void
      */
-    public function __construct($email = null, $verified = false, $subscriptions = null, $phone_number = null)
+    public function __construct($email = null, $verified = false, $subscriptions = null, $phone_number = null, $ip = null)
     {
         $this->email = $email;
         $this->verified = $verified;
         $this->subscriptions = $subscriptions;
         $this->phone_number = $phone_number;
+        $this->ip = $ip;
     }
 }

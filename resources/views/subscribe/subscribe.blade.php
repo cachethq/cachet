@@ -5,6 +5,9 @@
             document.getElementById('tel').classList.remove('hidden');
             document.getElementById('email').classList.add('hidden');
 
+            document.getElementById('tel_dis').classList.remove('hidden');
+            document.getElementById('email_dis').classList.add('hidden');
+
             document.getElementById('tel_bnt').classList.remove('btn-inverse');
             document.getElementById('tel_bnt').classList.add('btn-primary');
 
@@ -14,6 +17,9 @@
         function showMail(){
             document.getElementById('tel').classList.add('hidden');
             document.getElementById('email').classList.remove('hidden');
+
+            document.getElementById('tel_dis').classList.add('hidden');
+            document.getElementById('email_dis').classList.remove('hidden');
 
             document.getElementById('tel_bnt').classList.remove('btn-primary');
             document.getElementById('tel_bnt').classList.add('btn-inverse');
@@ -49,8 +55,6 @@
 
 @include('partials.errors')
 
-<!-- TODO add translation -->
-
 <div class="row">
     <div class="col-xs-12 col-lg-offset-2 col-lg-8">
         <div class="panel panel-default">
@@ -67,6 +71,11 @@
                     </div>
                     <div class="form-group {{Config::get('setting.enable_mail') ? "hidden" : '' }}" id="tel">
                         <input class="form-control" type="tel" name="phone"  placeholder="+49 123 456789" required>
+                    </div>
+                    <div>
+                        <label>{{trans('cachet.subscriber.disclaimer')}}</label>
+                        <label class="form-group {{Config::get('setting.enable_mail') ? : "hidden"}}" id="email_dis">{{trans('cachet.subscriber.email.disclaimer')}}</label>
+                        <label class="form-group {{Config::get('setting.enable_mail') ? "hidden" : '' }}" id="tel_dis">{{trans('cachet.subscriber.sms.disclaimer')}}</label>
                     </div>
                     <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
                 </form>

@@ -43,6 +43,8 @@ class Subscriber extends Model implements HasPresenter
         'verify_code'       => 'string',
         'verified_at'       => 'date',
         'global'            => 'bool',
+        'ip'                => 'string',
+        'subscription_time' => 'datetime',
     ];
 
     /**
@@ -56,6 +58,8 @@ class Subscriber extends Model implements HasPresenter
         'slack_webhook_url',
         'verified_at',
         'global',
+        'ip',
+        'subscription_time',
     ];
 
     /**
@@ -90,6 +94,19 @@ class Subscriber extends Model implements HasPresenter
                 $user->verify_code = self::generateVerifyCode();
             }
         });
+    }
+
+    /**
+     * Subscribe amount
+     * 
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string                                $ip
+     * 
+     * @return int
+     */
+    public static function subscribeAmount(Builder $query, $ip)
+    {
+        return $query->where('ip', $ip)->count();
     }
 
     /**

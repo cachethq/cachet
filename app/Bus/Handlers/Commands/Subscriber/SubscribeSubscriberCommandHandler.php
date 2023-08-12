@@ -33,7 +33,7 @@ class SubscribeSubscriberCommandHandler
      *
      * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand $command
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \CachetHQ\Cachet\Models\Subscriber | \Illuminate\Http\RedirectResponse
      */
     public function handle(SubscribeSubscriberCommand $command)
     {
@@ -43,13 +43,13 @@ class SubscribeSubscriberCommandHandler
             if ($subscriber = Subscriber::where('email', '=', $command->email)->first()) {
                 return $subscriber;
             }
-            $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
+            $subscriber = Subscriber::firstOrCreate(['email' => $command->email, 'ip' => $command->ip, 'subscription_time' => (new \Jenssegers\Date\Date())->getTimestamp()]);
         }
         if ($command->phone_number) {
             if ($subscriber = Subscriber::where('phone_number', '=', $command->phone_number)->first()) {
                 return $subscriber;
             }
-            $subscriber = Subscriber::firstOrCreate(['phone_number' => $command->phone_number]);
+            $subscriber = Subscriber::firstOrCreate(['phone_number' => $command->phone_number, 'ip' => $command->ip, 'subscription_time' => (new \DateTime())->getTimestamp()]);
         }
 
         // Decide what to subscribe the subscriber to.

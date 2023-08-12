@@ -80,7 +80,7 @@ class InstallCommand extends Command
         $this->events->dispatch('command.installing', $this);
         $this->events->dispatch('command.generatekey', $this);
         $this->events->dispatch('command.cacheconfig', $this);
-        $this->events->dispatch('command.cacheroutes', $this);
+//        $this->events->dispatch('command.cacheroutes', $this);
         $this->events->dispatch('command.publishvendors', $this);
         $this->events->dispatch('command.runmigrations', $this);
         $this->events->dispatch('command.runseeding', $this);

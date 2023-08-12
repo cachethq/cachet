@@ -173,6 +173,7 @@ return [
             'mail'                      => 'Enable mail notifications?',
             'slack'                     => 'Enable Slack notifications?',
             'twilio'                    => 'Enable twilio notifications?',
+            'rate_limit'                => 'How many SMS messages can be sent per hour from one IP?',
             'notAvailable'              => [
                 'twilio'                => 'Twilio notifications require the :env environment variable(s) to be set.',
                 'mail'                  => 'Mail notifications require the :env environment variable(s) to be set.',

@@ -85,10 +85,11 @@ class SubscribeController extends Controller
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
+        $ip = request()->ip();
 
         if ($email) {
             try {
-                $subscription = execute(new SubscribeSubscriberCommand($email, $verified));
+                $subscription = execute(new SubscribeSubscriberCommand($email, $verified, ip: $ip));
             } catch (ValidationException $e) {
                 return cachet_redirect('status-page')
                     ->withInput(Binput::all())
@@ -97,8 +98,19 @@ class SubscribeController extends Controller
             }
         }
         if ($phone) {
+
+            $count = Subscriber::where('ip', '=', $ip)->whereNotNull('phone_number')
+                ->where('subscription_time', '>=', \DB::raw('DATE_SUB(NOW(), INTERVAL 1 HOUR)'))->count();
+
+            if ($count >= \Config::get('setting.sms_rate') && \Config::get('setting.sms_rate') > 0) {
+                return cachet_redirect('status-page')
+                    ->withInput(Binput::all())
+                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                    ->withErrors(trans('cachet.subscriber.sms.too_many'));
+            }
+
             try {
-                $subscription = execute(new SubscribeSubscriberCommand(verified: $verified, phone_number: $phone));
+                $subscription = execute(new SubscribeSubscriberCommand(verified: $verified, phone_number: $phone, ip: $ip));
             } catch (ValidationException $e) {
                 return cachet_redirect('status-page')
                     ->withInput(Binput::all())

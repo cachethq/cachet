@@ -445,6 +445,10 @@ EINCIDENT;
                 'key' => 'enable_twilio',
                 'value' => '0',
             ],
+            [
+                'key' => 'sms_rate',
+                'value' => '5',
+            ]
         ];
 
         $this->settings->clear();

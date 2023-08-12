@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Providers;
 
 
 //use AltThree\Validator\ValidatingMiddleware;
+use AltThree\Validator\ValidatingMiddleware;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Bus\Dispatcher\Dispatcher;
@@ -46,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
             . '\\' . trim(str_replace('CachetHQ\Cachet\Bus', '', get_class($command)), '\\').'Handler';
         });
 
-        $dispatcher->pipeThrough([UseDatabaseTransactions::class]);
+        $dispatcher->pipeThrough([UseDatabaseTransactions::class, ValidatingMiddleware::class]);
 
         Str::macro('canonicalize', function ($url) {
             return preg_replace('/([^\/])$/', '$1/', $url);

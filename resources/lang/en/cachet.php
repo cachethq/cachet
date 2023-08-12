@@ -77,6 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
+        'disclaimer'          => 'By subscribing you agree that we will store the IP address from which the subscription has been made to prevent abuse of our services.',
         'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Subscribe',
@@ -90,6 +91,7 @@ return [
             'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
+            'disclaimer'          => 'You will need to confirm your address before receiving notifications. Afterwards you can always unsubscribe through a link included in every email.',
             'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
             'subscribe'           => 'Subscribe to email updates.',
             'subscribed'          => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
@@ -103,6 +105,8 @@ return [
             'disabled'            => 'Mail notifications disabled by admin.',
         ],
         'sms'   => [
+            'disclaimer'          => 'You will need to confirm your mobile number before receiving notifications. Afterwards you can always unsubscribe by replying with the word STOP.',
+            'too_many'            => 'You\'ve subscribed with too many numbers, please try again later.',
             'subscribe'           => 'Subscribe to SMS updates.',
             'disabled'            => 'SMS notifications disabled by admin.',
         ],
