@@ -39,7 +39,7 @@ Here are some useful quick links:
 
 ### Demo
 
-To test out the demo, you can log in to the [Dashboard](https://dev.cachethq.io/dashboard) with the following credentials:
+To test out the demo, you can log in to the [Dashboard](https://demo.cachethq.io/dashboard) with the following credentials:
 
 - **Username:** `test` or `test@example.com`
 - **Password:** `test123`
