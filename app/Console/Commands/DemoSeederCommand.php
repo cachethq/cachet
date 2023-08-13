@@ -124,7 +124,7 @@ class DemoSeederCommand extends Command
                 'collapsed' => 0,
                 'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
             ], [
-                'name'      => 'Alt Three',
+                'name'      => 'Services',
                 'order'     => 2,
                 'collapsed' => 1,
                 'visible'   => ComponentGroup::VISIBLE_GUEST,
@@ -168,26 +168,26 @@ class DemoSeederCommand extends Command
                 'group_id'    => 1,
                 'link'        => 'https://cachethq.io',
             ], [
-                'name'        => 'Blog',
-                'description' => 'The Alt Three Blog.',
+                'name'        => 'Laravel Artisan Cheatsheet',
+                'description' => 'A searchable, bookmarkable cheatsheet for Laravel\'s Artisan commands.',
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 2,
-                'link'        => 'https://blog.alt-three.com',
+                'link'        => 'https://artisan.page',
             ], [
-                'name'        => 'StyleCI',
-                'description' => 'The PHP Coding Style Service.',
+                'name'        => 'Checkmango',
+                'description' => 'The Full-Stack A/B Testing Platform',
                 'status'      => 1,
                 'order'       => 1,
                 'group_id'    => 2,
-                'link'        => 'https://styleci.io',
+                'link'        => 'https://checkmango.com',
             ], [
                 'name'        => 'GitHub',
                 'description' => '',
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 0,
-                'link'        => 'https://github.com/CachetHQ/Cachet',
+                'link'        => 'https://github.com/cachethq/cachet',
             ],
         ];
 
