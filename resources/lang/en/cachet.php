@@ -94,7 +94,7 @@ return [
             'disclaimer'          => 'You will need to confirm your address before receiving notifications. Afterwards you can always unsubscribe through a link included in every email.',
             'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
             'subscribe'           => 'Subscribe to email updates.',
-            'subscribed'          => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'subscribed'          => 'You\'ve been subscribed to email notifications!',
             'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
             'verified'            => 'Your email subscription has been confirmed. Thank you!',
             'manage'              => 'Manage your subscription',
@@ -105,6 +105,7 @@ return [
             'disabled'            => 'Mail notifications disabled by admin.',
         ],
         'sms'   => [
+            'subscribed'          => 'You\'ve been subscribed to SMS notifications!',
             'disclaimer'          => 'You will need to confirm your mobile number before receiving notifications. Afterwards you can always unsubscribe by replying with the word STOP.',
             'too_many'            => 'You\'ve subscribed with too many numbers, please try again later.',
             'subscribe'           => 'Subscribe to SMS updates.',

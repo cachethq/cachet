@@ -25,7 +25,7 @@
             <div class="striped-list">
                 @foreach($subscribers as $subscriber)
                 <div class="row striped-list-item">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <p>
                             @if(isset($subscriber->email) && isset($subscriber->phone_number))
                                 {{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email . ', ' . $subscriber->phone_number, 'date' => $subscriber->created_at]) }}
@@ -36,14 +36,21 @@
                             @endif
                         </p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         @if(is_null($subscriber->getOriginal('verified_at')))
                         <b class="text-danger">{{ trans('dashboard.subscribers.not_verified') }}</b>
                         @else
                         <b class="text-success">{{ trans('dashboard.subscribers.verified') }}</b>
                         @endif
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
+                        @if(isset($subscriber->ip))
+                            <p> {{$subscriber->ip}} </p>
+                        @else
+                            <p> No IP available </p>
+                        @endif
+                    </div>
+                    <div class="col-xs-2">
                         @if($subscriber->global)
                         <p>{{ trans('dashboard.subscribers.global') }}</p>
                         @elseif($subscriber->subscriptions->isNotEmpty())
@@ -54,7 +61,7 @@
                         <p>{{ trans('dashboard.subscribers.no_subscriptions') }}</p>
                         @endif
                     </div>
-                    <div class="col-xs-3 text-right">
+                    <div class="col-xs-2  text-right">
                         <a href="{{ URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]) }}" target="_blank" class="btn btn-success">{{ trans('forms.edit') }}</a>
                         <a href="{{ cachet_route('dashboard.subscribers.delete', [$subscriber->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                     </div>
