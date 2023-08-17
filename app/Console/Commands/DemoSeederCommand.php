@@ -399,17 +399,11 @@ EINCIDENT;
                 'key'   => 'app_refresh_rate',
                 'value' => '0',
             ], [
-                'key'   => 'app_analytics',
-                'value' => 'UA-58442674-3',
-            ], [
-                'key'   => 'app_analytics_gs',
-                'value' => 'GSN-712462-P',
-            ], [
                 'key'   => 'display_graphs',
                 'value' => '1',
             ], [
                 'key'   => 'app_about',
-                'value' => 'This is the demo instance of [Cachet](https://cachethq.io?ref=demo). The open source status page system, for everyone. An [Alt Three](https://alt-three.com) product.',
+                'value' => 'This is the demo instance of [Cachet](https://cachethq.io?ref=demo). The open-source status page system, for everyone. 3.x is coming soon! [Read the announcement](https://github.com/cachethq/cachet/discussions/4342).',
             ], [
                 'key'   => 'enable_subscribers',
                 'value' => '0',
