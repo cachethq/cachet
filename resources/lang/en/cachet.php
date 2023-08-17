@@ -95,7 +95,7 @@ return [
             'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
             'subscribe'           => 'Subscribe to email updates.',
             'subscribed'          => 'You\'ve been subscribed to email notifications!',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => 'You\'ve successfully updated your subscriptions.',
             'verified'            => 'Your email subscription has been confirmed. Thank you!',
             'manage'              => 'Manage your subscription',
             'unsubscribe'         => 'Unsubscribe from email updates.',
