@@ -61,7 +61,7 @@ class SubscriberController extends Controller
                 if(filter_var($subscriber, FILTER_VALIDATE_EMAIL)) {
                     execute(new SubscribeSubscriberCommand($subscriber, $verified));
                 }
-                elseif(preg_match('/^(?=(?:\+|0{2})?(?:(?:[\(\-\)\.\/ \t\f]*\d){7,10})?(?:[\-\.\/ \t\f]?\d{2,3})(?:[\-\s]?[ext]{1,3}[\-\.\/ \t\f]?\d{1,4})?$)((?:\+|0{2})\d{0,3})?(?:[\-\.\/ \t\f]?)(\(0\d[ ]?\d{0,4}\)|\(\d{0,4}\)|\d{0,4})(?:[\-\.\/ \t\f]{0,2}\d){3,8}(?:[\-\s]?(?:x|ext)[\-\t\f ]?(\d{1,4}))?$/', $subscriber)) {
+                elseif(preg_match('/^(?=(?:\+)(?:(?:\d){7,10})?(?:[\-\.\/ \t\f]?\d{2,3})(?:[\-\s]?[ext]{1,3}[\-\.\/ \t\f]?\d{1,4})?$)((?:\+|0{2})\d{0,3})?(?:[\-\.\/ \t\f]?)(\(0\d[ ]?\d{0,4}\)|\(\d{0,4}\)|\d{0,4})(?:[\-\.\/ \t\f]{0,2}\d){3,8}(?:[\-\s]?(?:x|ext)[\-\t\f ]?(\d{1,4}))?$/', $subscriber)) {
                     execute(new SubscribeSubscriberCommand(verified:$verified, phone_number:$subscriber));
                 }
                 else{

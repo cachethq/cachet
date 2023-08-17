@@ -110,6 +110,7 @@ return [
             'too_many'            => 'You\'ve subscribed with too many numbers, please try again later.',
             'subscribe'           => 'Subscribe to SMS updates.',
             'disabled'            => 'SMS notifications disabled by admin.',
+            'wrong_format'        => 'Please use the same format as given in the example.',
         ],
     ],
 

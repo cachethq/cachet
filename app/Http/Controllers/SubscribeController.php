@@ -81,7 +81,7 @@ class SubscribeController extends Controller
      */
     public function postSubscribe()
     {
-        $phone = Binput::get('phone');
+        $phone = trim(Binput::get('phone'));
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
@@ -111,7 +111,7 @@ class SubscribeController extends Controller
 
             try {
                 $subscription = execute(new SubscribeSubscriberCommand(verified: $verified, phone_number: $phone, ip: $ip));
-            } catch (ValidationException $e) {
+            } catch (ValidationException | \Twilio\Exceptions\RestException $e) {
                 return cachet_redirect('status-page')
                     ->withInput(Binput::all())
                     ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
