@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Exceptions\Filters;
 
-use Exception;
+use Throwable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -28,7 +28,7 @@ class ApiFilter
      *
      * @return \GrahamCampbell\Exceptions\Displayer\DisplayerInterface[]
      */
-    public function filter(array $displayers, Request $request, Exception $original, Exception $transformed, int $code)
+    public function filter(array $displayers, Request $request, Throwable $original, Throwable $transformed, int $code)
     {
         if ($request->is('api*')) {
             foreach ($displayers as $index => $displayer) {

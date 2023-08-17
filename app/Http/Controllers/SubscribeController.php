@@ -111,17 +111,32 @@ class SubscribeController extends Controller
 
             try {
                 $subscription = execute(new SubscribeSubscriberCommand(verified: $verified, phone_number: $phone, ip: $ip));
-            } catch (ValidationException | \Twilio\Exceptions\RestException $e) {
+            } catch (ValidationException $e) {
                 return cachet_redirect('status-page')
                     ->withInput(Binput::all())
-                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.sms.failure')))
                     ->withErrors($e->getMessageBag());
+            }
+            catch(\Twilio\Exceptions\RestException $e){
+                return cachet_redirect('status-page')
+                    ->withInput(Binput::all())
+                    ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.sms.failure')))
+                    ->withErrors(trans('cachet.subscriber.sms.wrong_format'));
             }
         }
 
         // Send the subscriber a link to manage their subscription.
         $subscription->notify(new ManageSubscriptionNotification());
 
+        if($phone){
+            return redirect()->back()->withSuccess(
+                sprintf(
+                    '%s %s',
+                    trans('dashboard.notifications.awesome'),
+                    trans('cachet.subscriber.sms.manage_subscription')
+                )
+            );
+        }
         return redirect()->back()->withSuccess(
             sprintf(
                 '%s %s',

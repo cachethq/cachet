@@ -105,6 +105,8 @@ return [
             'disabled'            => 'Mail notifications disabled by admin.',
         ],
         'sms'   => [
+            'manage_subscription' => 'We\'ve sent you an sms, please click the link to manage your subscription',
+            'failure'             => 'Something went wrong with the subscription.',
             'subscribed'          => 'You\'ve been subscribed to SMS notifications!',
             'disclaimer'          => 'You will need to confirm your mobile number before receiving notifications. Afterwards you can always unsubscribe by replying with the word STOP.',
             'too_many'            => 'You\'ve subscribed with too many numbers, please try again later.',
