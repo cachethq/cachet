@@ -43,7 +43,7 @@ To test out the demo, you can log in to the [Cachet dashboard](https://demo.cach
 - **Username:** `test` or `test@example.com`
 - **Password:** `test123`
 
-> ![NOTE]
+> **Note**
 > The demo will automatically reset every 30 minutes.
 
 ## Security Vulnerabilities
