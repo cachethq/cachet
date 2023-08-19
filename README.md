@@ -33,18 +33,18 @@ You can find documentation at [https://docs.cachethq.io](https://docs.cachethq.i
 
 Here are some useful quick links:
 
-- [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
-- [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
-- [Installing Cachet on Windows](https://docs.cachethq.io/docs/installing-cachet-on-windows)
+- [Installing Cachet](https://docs.cachethq.io/installation/)
+- [Getting started with Docker](https://docs.cachethq.io/installation/docker)
 
 ### Demo
 
-To test out the demo, you can log in to the [Dashboard](https://demo.cachethq.io/dashboard) with the following credentials:
+To test out the demo, you can log in to the [Cachet dashboard](https://demo.cachethq.io/dashboard) with the following credentials:
 
 - **Username:** `test` or `test@example.com`
 - **Password:** `test123`
 
-> The demo resets every 30 minutes.
+> ![NOTE]
+> The demo will automatically reset every 30 minutes.
 
 ## Security Vulnerabilities
 
