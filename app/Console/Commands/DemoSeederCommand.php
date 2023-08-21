@@ -408,7 +408,7 @@ EINCIDENT;
                 'key'   => 'enable_subscribers',
                 'value' => '0',
             ], [
-                'key' => 'header',
+                'key'   => 'header',
                 'value' => '<script src="https://cdn.usefathom.com/script.js" data-site="NQKCLYJJ" defer></script>',
             ],
         ];
