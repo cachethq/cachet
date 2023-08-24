@@ -1,4 +1,9 @@
-<p align="center"><img src="https://demo.cachethq.io/img/cachet-logo.svg" width="33%"></p>
+<p align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cachethq.io/assets/cachet-logo-dark.svg">
+      <img alt="Cachet Logo" src="https://cachethq.io/assets/cachet-logo-light.svg">
+    </picture>
+</p>
 
 Cachet, the open-source status page system.
 
