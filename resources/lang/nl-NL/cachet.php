@@ -30,7 +30,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Geen incidenten gemeld',
-        'past'         => 'Oude incidenten',
+        'past'         => 'Incidenten',
         'stickied'     => 'Vastgezette incidenten',
         'scheduled'    => 'Gepland onderhoud',
         'scheduled_at' => ', gepland :timestamp',
