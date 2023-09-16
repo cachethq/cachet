@@ -27,7 +27,7 @@ For more information on the Cachet rebuild and our plans for 3.x, you can read t
 
 ## Requirements
 
-- PHP 7.1.3 – 7.3
+- PHP 7.3 – 8.1
 - HTTP server with PHP support (e.g.: Apache, Nginx, Caddy)
 - [Composer](https://getcomposer.org)
 - A supported database: MySQL, PostgreSQL or SQLite
