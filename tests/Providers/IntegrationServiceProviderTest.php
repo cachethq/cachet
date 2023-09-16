@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Integrations\Contracts\Releases;
 use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use CachetHQ\Tests\Cachet\ServiceProviderTestCase;
 
 /**
  * This is the integration service provider test class.
@@ -25,9 +26,8 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class IntegrationServiceProviderTest extends AbstractTestCase
+class IntegrationServiceProviderTest extends ServiceProviderTestCase
 {
-    use ServiceProviderTrait;
 
     public function testBeaconIsInjectable()
     {

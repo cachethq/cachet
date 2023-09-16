@@ -15,15 +15,15 @@ use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use CachetHQ\Tests\Cachet\ServiceProviderTestCase;
 
 /**
  * This is the config service provider test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class ConfigServiceProviderTest extends AbstractTestCase
+class ConfigServiceProviderTest extends ServiceProviderTestCase
 {
-    use ServiceProviderTrait;
 
     public function testCacheIsInjectable()
     {

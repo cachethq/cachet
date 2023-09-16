@@ -15,6 +15,7 @@ use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Providers\RouteServiceProvider;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use CachetHQ\Tests\Cachet\ServiceProviderTestCase;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\Router;
@@ -24,9 +25,8 @@ use Illuminate\Routing\Router;
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class RouteServiceProviderTest extends AbstractTestCase
+class RouteServiceProviderTest extends ServiceProviderTestCase
 {
-    use ServiceProviderTrait;
 
     /**
      * The login routes should always be available regardless of the always authenticate setting.

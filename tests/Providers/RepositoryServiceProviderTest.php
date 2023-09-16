@@ -14,15 +14,17 @@ namespace CachetHQ\Tests\Cachet\Providers;
 use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use CachetHQ\Tests\Cachet\ServiceProviderTestCase;
+use GrahamCampbell\TestBenchCore\LaravelTrait;
 
 /**
  * This is the repository service provider test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class RepositoryServiceProviderTest extends AbstractTestCase
+class RepositoryServiceProviderTest extends ServiceProviderTestCase
 {
-    use ServiceProviderTrait;
+    use LaravelTrait;
 
     public function testMetricRepositoryIsInjectable()
     {

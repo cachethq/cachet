@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
- * This file is part of Cachet.
+ * This file is part of Laravel Exceptions.
  *
- * (c) Alt Three Services Limited
+ * (c) Graham Campbell <hello@gjcampbell.co.uk>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,10 +28,12 @@ return [
     */
 
     'transformers' => [
-        'GrahamCampbell\Exceptions\Transformer\AuthTransformer',
-        'GrahamCampbell\Exceptions\Transformer\CsrfTransformer',
-        'GrahamCampbell\Exceptions\Transformer\ModelTransformer',
-        'CachetHQ\Cachet\Exceptions\Transformers\BusTransformer',
+        //GrahamCampbell\Exceptions\Transformer\BadHeadersTransformer::class,
+        //GrahamCampbell\Exceptions\Transformer\BadHostTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\AuthTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\CsrfTransformer::class,
+        GrahamCampbell\Exceptions\Transformer\ModelTransformer::class,
+        CachetHQ\Cachet\Exceptions\Transformers\BusTransformer::class,
     ],
 
     /*
@@ -47,15 +51,16 @@ return [
     */
 
     'displayers' => [
-        'CachetHQ\Cachet\Exceptions\Displayers\MaintenanceDisplayer',
-        'CachetHQ\Cachet\Exceptions\Displayers\SettingsDisplayer',
-        'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
-        'CachetHQ\Cachet\Exceptions\Displayers\ThrottleDisplayer',
-        'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
-        'GrahamCampbell\Exceptions\Displayer\DebugDisplayer',
-        'GrahamCampbell\Exceptions\Displayer\HtmlDisplayer',
-        'GrahamCampbell\Exceptions\Displayer\JsonDisplayer',
-        'GrahamCampbell\Exceptions\Displayer\JsonApiDisplayer',
+        CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer::class,
+        CachetHQ\Cachet\Exceptions\Displayers\MaintenanceDisplayer::class,
+        CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer::class,
+        CachetHQ\Cachet\Exceptions\Displayers\SettingsDisplayer::class,
+        CachetHQ\Cachet\Exceptions\Displayers\ThrottleDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\DebugDisplayer::class,
+        // GrahamCampbell\Exceptions\Displayer\ViewDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\HtmlDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\JsonDisplayer::class,
+        GrahamCampbell\Exceptions\Displayer\JsonApiDisplayer::class,
     ],
 
     /*
@@ -72,10 +77,10 @@ return [
     */
 
     'filters' => [
-        'GrahamCampbell\Exceptions\Filter\VerboseFilter',
-        'GrahamCampbell\Exceptions\Filter\CanDisplayFilter',
-        'GrahamCampbell\Exceptions\Filter\ContentTypeFilter',
-        'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
+        CachetHQ\Cachet\Exceptions\Filters\ApiFilter::class,
+        GrahamCampbell\Exceptions\Filter\VerboseFilter::class,
+        GrahamCampbell\Exceptions\Filter\CanDisplayFilter::class,
+        GrahamCampbell\Exceptions\Filter\ContentTypeFilter::class,
     ],
 
     /*
@@ -90,7 +95,7 @@ return [
     |
     */
 
-    'default' => 'GrahamCampbell\Exceptions\Displayer\HtmlDisplayer',
+    'default' => GrahamCampbell\Exceptions\Displayer\HtmlDisplayer::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -105,12 +110,15 @@ return [
     */
 
     'levels' => [
-        'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
-        'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
-        'Illuminate\Session\TokenMismatchException'                     => 'notice',
-        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'notice',
-        'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
-        'Exception'                                                     => 'error',
+        Illuminate\Auth\Access\AuthorizationException::class                           => 'warning',
+        Illuminate\Database\Eloquent\ModelNotFoundException::class                     => 'warning',
+        Illuminate\Session\TokenMismatchException::class                               => 'notice',
+        //Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface::class    => 'notice',
+        //Symfony\Component\HttpKernel\Exception\NotFoundHttpException::class            => 'notice',
+        //Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException::class => 'error',
+        Symfony\Component\HttpKernel\Exception\HttpExceptionInterface::class           => 'warning',
+        Exception::class                                                               => 'error',
+        Throwable::class                                                               => 'critical',
     ],
 
 ];

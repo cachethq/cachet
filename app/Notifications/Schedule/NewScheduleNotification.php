@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\VonageMessage;
+use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -57,7 +57,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail', 'vonage', 'slack'];
+        return ['mail', 'nexmo', 'slack'];
     }
 
     /**
@@ -90,16 +90,16 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\VonageMessage
+     * @return \Illuminate\Notifications\Messages\NexmoMessage
      */
-    public function toVonage($notifiable)
+    public function toNexmo($notifiable)
     {
         $content = trans('notifications.schedule.new.sms.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
-        return (new VonageMessage())->content($content);
+        return (new NexmoMessage())->content($content);
     }
 
     /**
