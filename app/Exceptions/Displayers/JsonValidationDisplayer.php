@@ -12,24 +12,23 @@
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use AltThree\Validator\ValidationException;
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
-use GrahamCampbell\Exceptions\Displayers\JsonDisplayer;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterface
+class JsonValidationDisplayer implements DisplayerInterface
 {
     /**
      * Get the error response associated with the given exception.
      *
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * @param string     $id
      * @param int        $code
      * @param string[]   $headers
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers)
     {
         $info = $this->info->generate($exception, $id, 400);
 
@@ -41,14 +40,34 @@ class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterfac
     /**
      * Can we display the exception?
      *
-     * @param \Exception $original
-     * @param \Exception $transformed
+     * @param \Throwable $original
+     * @param \Throwable $transformed
      * @param int        $code
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code)
     {
         return $transformed instanceof ValidationException;
+    }
+
+    /**
+     * Get the supported content type.
+     *
+     * @return string
+     */
+    public function contentType()
+    {
+        return 'application/json';
+    }
+
+    /**
+     * Do we provide verbose information about the exception?
+     *
+     * @return bool
+     */
+    public function isVerbose()
+    {
+        return false;
     }
 }

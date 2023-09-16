@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
-use Exception;
-use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
+use Throwable;
+use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
@@ -40,14 +40,14 @@ class ThrottleDisplayer implements DisplayerInterface
     /**
      * Get the error response associated with the given exception.
      *
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * @param string     $id
      * @param int        $code
      * @param string[]   $headers
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, string $id, int $code, array $headers)
+    public function display(Throwable $exception, string $id, int $code, array $headers)
     {
         return cachet_redirect('auth.login')->withError(trans('forms.login.rate-limit'));
     }
@@ -65,13 +65,13 @@ class ThrottleDisplayer implements DisplayerInterface
     /**
      * Can we display the exception?
      *
-     * @param \Exception $original
-     * @param \Exception $transformed
+     * @param \Throwable $original
+     * @param \Throwable $transformed
      * @param int        $code
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, int $code)
+    public function canDisplay(Throwable $original, Throwable $transformed, int $code)
     {
         return $transformed instanceof TooManyRequestsHttpException && $this->request->is('auth*');
     }
