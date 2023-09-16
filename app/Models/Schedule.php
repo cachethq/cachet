@@ -17,12 +17,15 @@ use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\SchedulePresenter;
 use Carbon\Carbon;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Schedule extends Model implements HasPresenter
+class Schedule extends Model implements Feedable, HasPresenter
 {
     use HasMeta;
     use SearchableTrait;
@@ -215,5 +218,59 @@ class Schedule extends Model implements HasPresenter
     public function getPresenterClass()
     {
         return SchedulePresenter::class;
+    }
+
+    /**
+     * Renders the message from Markdown into HTML.
+     *
+     * @return string
+     */
+    public function getFormattedMessageAttribute()
+    {
+        return Markdown::convertToHtml($this->message);
+    }
+
+    /**
+     * Return the raw text of the message, even without Markdown.
+     *
+     * @return string
+     */
+    public function getRawMessageAttribute()
+    {
+        return strip_tags($this->formattedMessage);
+    }
+
+    /**
+     * Get the incident permalink.
+     *
+     * @return string
+     */
+    public function getPermalinkAttribute()
+    {
+        return cachet_route('schedule', [$this->id]);
+    }
+
+    /**
+     * @return array|\Spatie\Feed\FeedItem
+     */
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->name)
+            ->summary($this->rawMessage)
+            ->updated($this->updated_at)
+            ->link($this->permalink)
+            ->author(setting('app_name', config('app.name')));
+    }
+
+    /**
+     * Get all incident feed items.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public static function getFeedItems()
+    {
+        return self::all();
     }
 }

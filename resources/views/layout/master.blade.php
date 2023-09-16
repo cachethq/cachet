@@ -7,6 +7,9 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
+    <!-- RSS -->
+    @include('feed::links')
+
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">

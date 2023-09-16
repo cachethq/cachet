@@ -21,6 +21,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 /**
  * This is the incident model.
@@ -29,7 +32,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author Joseph Cohen <joseph@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class Incident extends Model implements HasPresenter
+class Incident extends Model implements Feedable, HasPresenter
 {
     use HasMeta;
     use HasTags;
@@ -81,7 +84,7 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $attributes = [
-        'stickied'      => false,
+        'stickied' => false,
         'notifications' => false,
     ];
 
@@ -91,14 +94,14 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'component_id'  => 'int',
-        'status'        => 'int',
-        'user_id'       => 'int',
-        'visible'       => 'int',
-        'stickied'      => 'bool',
+        'component_id' => 'int',
+        'status' => 'int',
+        'user_id' => 'int',
+        'visible' => 'int',
+        'stickied' => 'bool',
         'notifications' => 'bool',
-        'occurred_at'   => 'datetime',
-        'deleted_at'    => 'date',
+        'occurred_at' => 'datetime',
+        'deleted_at' => 'date',
     ];
 
     /**
@@ -126,14 +129,14 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'user_id'       => 'nullable|int',
-        'component_id'  => 'nullable|int',
-        'name'          => 'required|string',
-        'status'        => 'required|int',
-        'visible'       => 'required|bool',
-        'stickied'      => 'required|bool',
+        'user_id' => 'nullable|int',
+        'component_id' => 'nullable|int',
+        'name' => 'required|string',
+        'status' => 'required|int',
+        'visible' => 'required|bool',
+        'stickied' => 'required|bool',
         'notifications' => 'nullable|bool',
-        'message'       => 'required|string',
+        'message' => 'required|string',
     ];
 
     /**
@@ -239,10 +242,10 @@ class Incident extends Model implements HasPresenter
     public function getIsResolvedAttribute()
     {
         if ($updates = $this->updates->first()) {
-            return (int) $updates->status === self::FIXED;
+            return (int)$updates->status === self::FIXED;
         }
 
-        return (int) $this->status === self::FIXED;
+        return (int)$this->status === self::FIXED;
     }
 
     /**
@@ -253,5 +256,59 @@ class Incident extends Model implements HasPresenter
     public function getPresenterClass()
     {
         return IncidentPresenter::class;
+    }
+
+    /**
+     * Renders the message from Markdown into HTML.
+     *
+     * @return string
+     */
+    public function getFormattedMessageAttribute()
+    {
+        return Markdown::convertToHtml($this->message);
+    }
+
+    /**
+     * Return the raw text of the message, even without Markdown.
+     *
+     * @return string
+     */
+    public function getRawMessageAttribute()
+    {
+        return strip_tags($this->formattedMessage);
+    }
+
+    /**
+     * Get the incident permalink.
+     *
+     * @return string
+     */
+    public function getPermalinkAttribute()
+    {
+        return cachet_route('incident', [$this->id]);
+    }
+
+    /**
+     * @return array|\Spatie\Feed\FeedItem
+     */
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->name)
+            ->summary($this->rawMessage)
+            ->updated($this->updated_at)
+            ->link($this->permalink)
+            ->author($this->user->email);
+    }
+
+    /**
+     * Get all incident feed items.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public static function getFeedItems()
+    {
+        return self::all();
     }
 }
