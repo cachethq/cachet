@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http;
 
-use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
@@ -39,6 +38,7 @@ class Kernel extends HttpKernel
     protected $middleware = [
         TrustProxies::class,
         CheckForMaintenanceMode::class,
+        \Fruitcake\Cors\HandleCors::class,
     ];
 
     /**
@@ -53,7 +53,7 @@ class Kernel extends HttpKernel
         'auth'            => Authenticate::class,
         'cache'           => CacheControl::class,
         'can'             => Authorize::class,
-        'cors'            => HandleCors::class,
+        'cors'            => \Fruitcake\Cors\HandleCors::class,
         'guest'           => RedirectIfAuthenticated::class,
         'localize'        => Localize::class,
         'ready'           => ReadyForUse::class,

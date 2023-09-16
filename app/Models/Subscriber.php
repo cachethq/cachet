@@ -168,7 +168,7 @@ class Subscriber extends Model implements HasPresenter
      *
      * @return string
      */
-    public function routeNotificationForNexmo()
+    public function routeNotificationForVonage()
     {
         return $this->phone_number;
     }

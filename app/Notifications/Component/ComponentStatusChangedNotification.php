@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Notifications\Component;
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\NexmoMessage;
+use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -65,7 +65,7 @@ class ComponentStatusChangedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'nexmo', 'slack'];
+        return ['mail', 'vonage', 'slack'];
     }
 
     /**
@@ -100,9 +100,9 @@ class ComponentStatusChangedNotification extends Notification
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\NexmoMessage
+     * @return \Illuminate\Notifications\Messages\VonageMessage
      */
-    public function toNexmo($notifiable)
+    public function toVonage($notifiable)
     {
         $content = trans('notifications.component.status_update.sms.content', [
             'name'       => $this->component->name,
@@ -110,7 +110,7 @@ class ComponentStatusChangedNotification extends Notification
             'new_status' => trans("cachet.components.status.{$this->status}"),
         ]);
 
-        return (new NexmoMessage())->content($content);
+        return (new VonageMessage())->content($content);
     }
 
     /**
@@ -139,17 +139,17 @@ class ComponentStatusChangedNotification extends Notification
         }
 
         return (new SlackMessage())
-                    ->$status()
-                    ->content(trans('notifications.component.status_update.slack.title'))
-                    ->attachment(function ($attachment) use ($content, $notifiable) {
-                        $attachment->title($content, cachet_route('status-page'))
-                                   ->fields(array_filter([
-                                       'Component'  => $this->component->name,
-                                       'Old Status' => $this->component->human_status,
-                                       'New Status' => trans("cachet.components.status.{$this->status}"),
-                                       'Link'       => $this->component->link,
-                                   ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
-                    });
+            ->$status()
+            ->content(trans('notifications.component.status_update.slack.title'))
+            ->attachment(function ($attachment) use ($content, $notifiable) {
+                $attachment->title($content, cachet_route('status-page'))
+                    ->fields(array_filter([
+                        'Component'  => $this->component->name,
+                        'Old Status' => $this->component->human_status,
+                        'New Status' => trans("cachet.components.status.{$this->status}"),
+                        'Link'       => $this->component->link,
+                    ]))
+                    ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+            });
     }
 }

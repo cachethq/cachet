@@ -42,10 +42,10 @@ class ApiRoutes
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/api',
         ], function (Registrar $router) {
-            $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
-            $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
-            $router->post('components/order', 'ApiController@postUpdateComponentOrder');
-            $router->any('components/{component}', 'ApiController@postUpdateComponent');
+            $router->get('incidents/templates', 'ApiController@getIncidentTemplate')->name('get:dashboard.incidents.templates');
+            $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder')->name('post:dashboard.components.groups.ouder');
+            $router->post('components/order', 'ApiController@postUpdateComponentOrder')->name('post:dashboard.components.orders');
+            $router->any('components/{component}', 'ApiController@postUpdateComponent')->name('any:dashboard.components');
         });
     }
 }

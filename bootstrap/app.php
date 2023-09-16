@@ -28,6 +28,7 @@ $app->singleton(Illuminate\Contracts\Console\Kernel::class, CachetHQ\Cachet\Cons
 
 $app->singleton(Illuminate\Contracts\Debug\ExceptionHandler::class, GrahamCampbell\Exceptions\ExceptionHandler::class);
 
+$app->singleton(GrahamCampbell\Exceptions\Identifier\IdentifierInterface::class, GrahamCampbell\Exceptions\Identifier\HashingIdentifier::class);
 /*
 |--------------------------------------------------------------------------
 | Return The Application

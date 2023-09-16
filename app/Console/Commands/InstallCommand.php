@@ -77,17 +77,17 @@ class InstallCommand extends Command
 
         $this->line('Installing Cachet...');
 
-        $this->events->fire('command.installing', $this);
-        $this->events->fire('command.generatekey', $this);
-        $this->events->fire('command.cacheconfig', $this);
-        $this->events->fire('command.cacheroutes', $this);
-        $this->events->fire('command.publishvendors', $this);
-        $this->events->fire('command.runmigrations', $this);
-        $this->events->fire('command.runseeding', $this);
-        $this->events->fire('command.updatecache', $this);
-        $this->events->fire('command.linkstorage', $this);
-        $this->events->fire('command.extrastuff', $this);
-        $this->events->fire('command.installed', $this);
+        $this->events->dispatch('command.installing', $this);
+        $this->events->dispatch('command.generatekey', $this);
+        $this->events->dispatch('command.cacheconfig', $this);
+        $this->events->dispatch('command.cacheroutes', $this);
+        $this->events->dispatch('command.publishvendors', $this);
+        $this->events->dispatch('command.runmigrations', $this);
+        $this->events->dispatch('command.runseeding', $this);
+        $this->events->dispatch('command.updatecache', $this);
+        $this->events->dispatch('command.linkstorage', $this);
+        $this->events->dispatch('command.extrastuff', $this);
+        $this->events->dispatch('command.installed', $this);
 
         $this->info('Cachet is installed ⚡');
     }

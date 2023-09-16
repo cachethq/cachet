@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Notifications\Incident;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\NexmoMessage;
+use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
@@ -57,7 +57,7 @@ class NewIncidentNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'nexmo', 'slack'];
+        return ['mail', 'vonage', 'slack'];
     }
 
     /**
@@ -74,17 +74,17 @@ class NewIncidentNotification extends Notification
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.incident.new.mail.subject'))
-                    ->markdown('notifications.incident.new', [
-                        'incident'               => $this->incident,
-                        'content'                => $content,
-                        'actionText'             => trans('notifications.incident.new.mail.action'),
-                        'actionUrl'              => cachet_route('incident', [$this->incident]),
-                        'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
-                        'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
-                        'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                        'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
-                    ]);
+            ->subject(trans('notifications.incident.new.mail.subject'))
+            ->markdown('notifications.incident.new', [
+                'incident'               => $this->incident,
+                'content'                => $content,
+                'actionText'             => trans('notifications.incident.new.mail.action'),
+                'actionUrl'              => cachet_route('incident', [$this->incident]),
+                'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
+                'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
+                'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
+                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+            ]);
     }
 
     /**
@@ -92,11 +92,11 @@ class NewIncidentNotification extends Notification
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\NexmoMessage
+     * @return \Illuminate\Notifications\Messages\VonageMessage
      */
-    public function toNexmo($notifiable)
+    public function toVonage($notifiable)
     {
-        return (new NexmoMessage())->content(trans('notifications.incident.new.sms.content', [
+        return (new VonageMessage())->content(trans('notifications.incident.new.sms.content', [
             'name' => $this->incident->name,
         ]));
     }
@@ -125,15 +125,15 @@ class NewIncidentNotification extends Notification
         }
 
         return (new SlackMessage())
-                    ->$status()
-                    ->content($content)
-                    ->attachment(function ($attachment) {
-                        $attachment->title(trans('notifications.incident.new.slack.title', ['name' => $this->incident->name]))
-                                   ->timestamp($this->incident->getWrappedObject()->occurred_at)
-                                   ->fields(array_filter([
-                                       'ID'   => "#{$this->incident->id}",
-                                       'Link' => $this->incident->permalink,
-                                   ]));
-                    });
+            ->$status()
+            ->content($content)
+            ->attachment(function ($attachment) {
+                $attachment->title(trans('notifications.incident.new.slack.title', ['name' => $this->incident->name]))
+                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
+                    ->fields(array_filter([
+                        'ID'   => "#{$this->incident->id}",
+                        'Link' => $this->incident->permalink,
+                    ]));
+            });
     }
 }

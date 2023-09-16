@@ -144,5 +144,6 @@ return [
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
+    'thanks'          => 'Thanks,',
 
 ];

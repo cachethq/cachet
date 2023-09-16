@@ -12,3 +12,4 @@ npm-debug.log
 package-lock.json
 docker-compose.yml
 docker
+.phpunit.result.cache
