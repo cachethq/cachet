@@ -29,7 +29,7 @@
     "symfony/polyfill-mbstring": "*"
   },
   "require": {
-    "php": "^7.3.3",
+    "php": "^7.3",
     "ext-mbstring": "*",
     "ext-openssl": "*",
     "ext-xml": "*",
@@ -37,38 +37,42 @@
     "alt-three/validator": "^4.1",
     "aws/aws-sdk-php": "^3.7",
     "bugsnag/bugsnag-laravel": "^2.15",
-    "steffjenl/badger": "^2.0",
-    "steffjenl/emoji": "^3.0",
-    "steffjenl/twitter": "^3.0",
     "chillerlan/php-qrcode": "^2.0",
-    "doctrine/dbal": "2.9.*",
+    "doctrine/dbal": "3.3.*",
     "fideloper/proxy": "^4.0",
-    "fruitcake/laravel-cors": "^2.1",
+    "fruitcake/laravel-cors": "^v2.2.0",
     "graham-campbell/binput": "^9.1",
     "graham-campbell/exceptions": "^14.1",
     "graham-campbell/markdown": "^13.1",
-    "guzzlehttp/guzzle": "^7.8",
-    "jenssegers/date": "^4.0",
+    "guzzlehttp/guzzle": "^7.0.1",
+    "jenssegers/date": "^v4.0.0",
     "laravel/framework": "^8.0",
     "laravel/helpers": "^1.5",
-    "laravel/nexmo-notification-channel": "^2.1",
-    "laravel/slack-notification-channel": "^2.5",
-    "laravel/tinker": "^2.0",
+    "laravel/legacy-factories": "^1.3",
+    "laravel/nexmo-notification-channel": "^2.5",
+    "laravel/sanctum": "^2.11",
+    "laravel/slack-notification-channel": "^2.4",
+    "laravel/tinker": "^2.5",
     "mccool/laravel-auto-presenter": "^7.1",
-    "nexmo/client": "^2.4",
+    "nexmo/laravel": "^2.4",
     "pragmarx/google2fa": "^5.0",
     "predis/predis": "^1.1",
+    "filp/whoops": "^2.3",
+    "steffjenl/badger": "^2.0",
+    "steffjenl/emoji": "^3.0",
+    "steffjenl/twitter": "^3.0",
     "twig/twig": "^2.6"
   },
   "require-dev": {
     "ext-sqlite3": "*",
-    "alt-three/testbench": "5.0.x-dev",
+    "steffjenl/testbench": "^4.2",
     "barryvdh/laravel-debugbar": "^3.2",
-    "filp/whoops": "^2.3",
-    "fzaninotto/faker": "^1.8",
-    "graham-campbell/analyzer": "^2.1",
-    "mockery/mockery": "^1.2",
-    "phpunit/phpunit": "^8.5"
+    "fakerphp/faker": "^1.9.1",
+    "graham-campbell/analyzer": "^2.4",
+    "laravel/sail": "^1.0.1",
+    "mockery/mockery": "^1.4.4",
+    "nunomaduro/collision": "^5.10",
+    "phpunit/phpunit": "^9.5.10"
   },
   "suggest": {
     "ext-apc": "APC Support cache driver."
@@ -81,7 +85,9 @@
       "app/helpers.php"
     ],
     "psr-4": {
-      "CachetHQ\\Cachet\\": "app/"
+      "CachetHQ\\Cachet\\": "app/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/"
     }
   },
   "autoload-dev": {
@@ -130,15 +136,19 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com:steffjenl/Twitter.git"
+      "url": "https://github.com/steffjenl/Twitter.git"
     },
     {
       "type": "vcs",
-      "url": "git@github.com:steffjenl/Emoji.git"
+      "url": "https://github.com/steffjenl/Emoji.git"
     },
     {
       "type": "vcs",
-      "url": "git@github.com:steffjenl/Badger.git"
+      "url": "https://github.com/steffjenl/Badger.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/steffjenl/TestBench.git"
     }
   ]
 }

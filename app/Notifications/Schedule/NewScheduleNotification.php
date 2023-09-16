@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\NexmoMessage;
+use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -57,7 +57,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail', 'nexmo', 'slack'];
+        return ['mail', 'vonage', 'slack'];
     }
 
     /**
@@ -90,16 +90,16 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      *
      * @param mixed $notifiable
      *
-     * @return \Illuminate\Notifications\Messages\NexmoMessage
+     * @return \Illuminate\Notifications\Messages\VonageMessage
      */
-    public function toNexmo($notifiable)
+    public function toVonage($notifiable)
     {
         $content = trans('notifications.schedule.new.sms.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
-        return (new NexmoMessage())->content($content);
+        return (new VonageMessage())->content($content);
     }
 
     /**
@@ -117,14 +117,14 @@ class NewScheduleNotification extends Notification implements ShouldQueue
         ]);
 
         return (new SlackMessage())
-                    ->content(trans('notifications.schedule.new.slack.title'))
-                    ->attachment(function ($attachment) use ($content) {
-                        $attachment->title($content)
-                                   ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
-                                   ->fields(array_filter([
-                                       'ID'     => "#{$this->schedule->id}",
-                                       'Status' => $this->schedule->human_status,
-                                   ]));
-                    });
+            ->content(trans('notifications.schedule.new.slack.title'))
+            ->attachment(function ($attachment) use ($content) {
+                $attachment->title($content)
+                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
+                    ->fields(array_filter([
+                        'ID'     => "#{$this->schedule->id}",
+                        'Status' => $this->schedule->human_status,
+                    ]));
+            });
     }
 }

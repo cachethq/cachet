@@ -53,7 +53,7 @@ class Kernel extends HttpKernel
         'auth'            => Authenticate::class,
         'cache'           => CacheControl::class,
         'can'             => Authorize::class,
-        'cors'            => HandleCors::class,
+        'cors'            => \Fruitcake\Cors\HandleCors::class,
         'guest'           => RedirectIfAuthenticated::class,
         'localize'        => Localize::class,
         'ready'           => ReadyForUse::class,

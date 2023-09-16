@@ -83,11 +83,11 @@ class MetaSeoTest extends AbstractTestCase
         $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['description' => $expectedDescription]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta name="description" content="%s">', $expectedDescription),
             $page->content()
         );
@@ -104,11 +104,11 @@ class MetaSeoTest extends AbstractTestCase
         $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['title' => $title]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:title" content="%s | %s">', $title, $this->appName),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<title>%s | %s</title>', $title, $this->appName),
             $page->content()
         );
@@ -132,11 +132,11 @@ class MetaSeoTest extends AbstractTestCase
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
             $page->content()
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta name="description" content="%s">', $expectedDescription),
             $page->content()
         );
@@ -153,11 +153,11 @@ class MetaSeoTest extends AbstractTestCase
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             sprintf('<meta property="og:title" content="%s">', $expectedTitle),
             $page->content()
         );
-        $this->assertContains(sprintf('<title>%s</title>', $expectedTitle), $page->content());
+        $this->assertStringContainsString(sprintf('<title>%s</title>', $expectedTitle), $page->content());
     }
 
     /**
