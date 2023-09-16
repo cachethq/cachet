@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\URL;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event;
-use Spatie\IcalendarGenerator\Properties\TextProperty;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -61,7 +60,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      *
      * @return string[]
      */
-    public function via($notifiable)
+    public function via($notifiable): array
     {
         return ['mail', 'nexmo', 'slack'];
     }
@@ -100,11 +99,11 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                 'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
-                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                'manageSubscriptionUrl'  => $manageUrl,
             ])
             ->attachData($calendar->get(), 'schedule.ics', [
                 'mime' => 'text/calendar; charset=UTF-8',
-            ]);;
+            ]);
     }
 
     /**
