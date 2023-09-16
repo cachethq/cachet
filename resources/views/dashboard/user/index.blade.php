@@ -55,7 +55,7 @@
                                 <?php
                                 $google2fa = (new \PragmaRX\Google2FA\Google2FA());
                                 $google2fa_url = $google2fa->getQRCodeUrl(
-                                    'Cachet',
+                                    $siteTitle,
                                     $currentUser->email,
                                     $currentUser->google_2fa_secret
                                 );

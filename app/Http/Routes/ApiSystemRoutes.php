@@ -41,9 +41,9 @@ class ApiSystemRoutes
             'prefix'     => 'api/v1',
         ], function (Registrar $router) {
             $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
-                $router->get('ping', 'GeneralController@ping');
-                $router->get('version', 'GeneralController@version');
-                $router->get('status', ['uses' => 'GeneralController@status', 'middleware' => ['cache']]);
+                $router->get('ping', 'GeneralController@ping')->name('get:api.ping');
+                $router->get('version', 'GeneralController@version')->name('get:api.version');
+                $router->get('status', ['uses' => 'GeneralController@status', 'middleware' => ['cache']])->name('get:api.status');
             });
         });
     }
