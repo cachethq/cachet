@@ -62,7 +62,8 @@
     "steffjenl/emoji": "^3.0",
     "steffjenl/twitter": "^3.0",
     "twig/twig": "^2.6",
-    "spatie/laravel-feed": "^2.7"
+    "spatie/laravel-feed": "^2.7",
+    "spatie/icalendar-generator": "^1.0"
   },
   "require-dev": {
     "ext-sqlite3": "*",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "606771eb98c10d8718d5265aaea21925",
+    "content-hash": "a295ba6d86963cc0028ef8c2fa96b61e",
     "packages": [
         {
             "name": "alt-three/bus",
@@ -5187,6 +5187,132 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/enum",
+            "version": "2.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/enum.git",
+                "reference": "49bd478efff2552df50ef42b9d70c32178b953bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/enum/zipball/49bd478efff2552df50ef42b9d70c32178b953bd",
+                "reference": "49bd478efff2552df50ef42b9d70c32178b953bd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev@gummibeer.de",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Enums",
+            "homepage": "https://github.com/spatie/enum",
+            "keywords": [
+                "enum",
+                "enumerable",
+                "spatie"
+            ],
+            "support": {
+                "docs": "https://docs.spatie.be/enum",
+                "issues": "https://github.com/spatie/enum/issues",
+                "source": "https://github.com/spatie/enum"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-17T20:06:15+00:00"
+        },
+        {
+            "name": "spatie/icalendar-generator",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/icalendar-generator.git",
+                "reference": "fd8f50cd2d365ff953275b726f7784f565c58fb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/icalendar-generator/zipball/fd8f50cd2d365ff953275b726f7784f565c58fb1",
+                "reference": "fd8f50cd2d365ff953275b726f7784f565c58fb1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.2|^8.0",
+                "spatie/enum": "^2.3"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^8.2",
+                "vimeo/psalm": "^3.11"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\IcalendarGenerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ruben Van Assche",
+                    "email": "ruben@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Build calendars in the iCalendar format",
+            "homepage": "https://github.com/spatie/icalendar-generator",
+            "keywords": [
+                "calendar",
+                "iCalendar",
+                "ical",
+                "ics",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/icalendar-generator/issues",
+                "source": "https://github.com/spatie/icalendar-generator/tree/1.0.6"
+            },
+            "time": "2020-11-26T11:51:25+00:00"
         },
         {
             "name": "spatie/laravel-feed",
