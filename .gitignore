@@ -10,3 +10,5 @@ Homestead.yaml
 npm-debug.log
 .env
 package-lock.json
+docker-compose.yml
+docker

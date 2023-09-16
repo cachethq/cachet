@@ -14,8 +14,10 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use MailThief\Testing\InteractsWithMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 /**
  * This is the component status was changed event test.
@@ -25,7 +27,6 @@ use MailThief\Testing\InteractsWithMail;
 class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 {
     use DatabaseMigrations;
-    use InteractsWithMail;
 
     public function testComponentUpdateEmailWasSent()
     {
@@ -41,15 +42,23 @@ class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
-        $this->app['events']->fire(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
+        Notification::fake();
+        $this->app['events']->dispatch(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
 
-        $this->seeMessageFor($subscriber->email);
-        $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
+        Notification::assertSentTo(
+            [$subscriber],
+            ComponentStatusChangedNotification::class,
+            function ($notification, $channels) use ($subscriber) {
 
-        $message = $this->getMailer()->lastMessage();
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('Component Status Updated', $mail['subject']);
 
-        $this->assertTrue($message->contains($component->name));
-        $this->assertTrue($message->contains(trans('cachet.components.status.'.$component->status)));
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                $this->assertStringContainsString('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            }
+        );
     }
 
     protected function objectHasHandlers()

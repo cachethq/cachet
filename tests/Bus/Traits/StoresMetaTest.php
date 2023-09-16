@@ -27,7 +27,7 @@ class StoresMetaTest extends AbstractTestCase
     /**
      * Set up the testcase by mocking the Meta::class.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -42,7 +42,7 @@ class StoresMetaTest extends AbstractTestCase
     /**
      * Our Mockery expectations should count as assertions to prevent warnings from PHPUnit.
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->addToAssertionCount(Mockery::getContainer()->mockery_getExpectationCount());
         parent::tearDown();

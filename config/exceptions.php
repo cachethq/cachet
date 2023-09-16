@@ -26,9 +26,9 @@ return [
     */
 
     'transformers' => [
-        'GrahamCampbell\Exceptions\Transformers\AuthTransformer',
-        'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'GrahamCampbell\Exceptions\Transformers\ModelTransformer',
+        'GrahamCampbell\Exceptions\Transformer\AuthTransformer',
+        'GrahamCampbell\Exceptions\Transformer\CsrfTransformer',
+        'GrahamCampbell\Exceptions\Transformer\ModelTransformer',
         'CachetHQ\Cachet\Exceptions\Transformers\BusTransformer',
     ],
 
@@ -52,10 +52,10 @@ return [
         'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\ThrottleDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer',
+        'GrahamCampbell\Exceptions\Displayer\DebugDisplayer',
+        'GrahamCampbell\Exceptions\Displayer\HtmlDisplayer',
+        'GrahamCampbell\Exceptions\Displayer\JsonDisplayer',
+        'GrahamCampbell\Exceptions\Displayer\JsonApiDisplayer',
     ],
 
     /*
@@ -72,9 +72,9 @@ return [
     */
 
     'filters' => [
-        'GrahamCampbell\Exceptions\Filters\VerboseFilter',
-        'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
-        'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
+        'GrahamCampbell\Exceptions\Filter\VerboseFilter',
+        'GrahamCampbell\Exceptions\Filter\CanDisplayFilter',
+        'GrahamCampbell\Exceptions\Filter\ContentTypeFilter',
         'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
     ],
 
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'default' => 'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+    'default' => 'GrahamCampbell\Exceptions\Displayer\HtmlDisplayer',
 
     /*
     |--------------------------------------------------------------------------
