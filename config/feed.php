@@ -20,7 +20,7 @@ return [
 
             'title' => 'Incidents',
             'description' => 'All Incidents',
-            'language' => 'nl-NL',
+            'language' => config('app.locale'),
 
             /*
              * The format of the feed. Acceptable values are 'rss', 'atom', or 'json'.
@@ -50,7 +50,7 @@ return [
 
             'title' => 'Maintenance',
             'description' => 'All Maintenance Windows',
-            'language' => 'en-US',
+            'language' => config('app.locale'),
 
             /*
              * The format of the feed. Acceptable values are 'rss', 'atom', or 'json'.
