@@ -33,7 +33,7 @@
                     </li>
                     <div class="form-group group-items {{ $componentGroup->has_subscriber($subscriptions) ? null : "hide" }}">
                         @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-                        @include('partials.component_input', compact($component))
+                        @include('partials.component_input', $component)
                         @endforeach
                     </div>
                 @endif
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 @foreach($ungroupedComponents as $component)
-                @include('partials.component_input', compact($component))
+                @include('partials.component_input', $component)
                 @endforeach
             </ul>
             @endif
