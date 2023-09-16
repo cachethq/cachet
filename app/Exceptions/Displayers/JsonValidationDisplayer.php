@@ -12,12 +12,32 @@
 namespace CachetHQ\Cachet\Exceptions\Displayers;
 
 use AltThree\Validator\ValidationException;
+use GrahamCampbell\Exceptions\Information\InformationInterface;
 use Throwable;
 use GrahamCampbell\Exceptions\Displayer\DisplayerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class JsonValidationDisplayer implements DisplayerInterface
 {
+    /**
+     * The exception information instance.
+     *
+     * @var \GrahamCampbell\Exceptions\Information\InformationInterface
+     */
+    private $info;
+
+    /**
+     * Create a new json displayer instance.
+     *
+     * @param \GrahamCampbell\Exceptions\Information\InformationInterface $info
+     *
+     * @return void
+     */
+    public function __construct(InformationInterface $info)
+    {
+        $this->info = $info;
+    }
+
     /**
      * Get the error response associated with the given exception.
      *

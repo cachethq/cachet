@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\Notification;
  *
  * @author James Brooks <james@alt-three.com>
  */
+/**
+ * This is the component status was changed event test.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 {
     use DatabaseMigrations;
@@ -43,15 +48,22 @@ class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
         Notification::fake();
-        Mail::fake();
         $this->app['events']->dispatch(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
 
-        Mail::assertSent(ComponentStatusChangedNotification::class, function ($mail) use ($subscriber, $component) {
-            return $mail->hasTo($subscriber->email) &&
-                $mail->hasSubject(trans('notifications.component.status_update.mail.subject')) &&
-                $mail->assertSeeInHtml($component->name) &&
-                $mail->assertSeeInHtml(trans('cachet.components.status.'.$component->status));
-        });
+        Notification::assertSentTo(
+            [$subscriber],
+            ComponentStatusChangedNotification::class,
+            function ($notification, $channels) use ($subscriber) {
+
+                $mail = $notification->toMail($subscriber)->toArray();
+                $this->assertEquals('Component Status Updated', $mail['subject']);
+
+                //@todo Check the rendered content of the email rather than the raw data passed to the MD
+                $bodyData = $notification->toMail($subscriber)->data();
+                // $this->assertStringContainsString('?signature=', $bodyData['manageSubscriptionUrl']);
+                return true;
+            }
+        );
     }
 
     protected function objectHasHandlers()

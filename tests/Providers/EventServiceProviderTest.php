@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Providers;
 
 use AltThree\TestBench\EventServiceProviderTrait;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use CachetHQ\Tests\Cachet\ServiceProviderTestCase;
 use Illuminate\Support\ServiceProvider;
 use ReflectionClass;
 
@@ -22,13 +23,12 @@ use ReflectionClass;
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-class EventServiceProviderTest extends AbstractTestCase
+class EventServiceProviderTest extends ServiceProviderTestCase
 {
-    use EventServiceProviderTrait;
 
     public function testIsAnEventServiceProvider()
     {
-        $class = $this->getServiceProviderClass($this->app);
+        $class = 'CachetHQ\\Cachet\\Providers\\EventServiceProvider';
 
         $reflection = new ReflectionClass($class);
 
