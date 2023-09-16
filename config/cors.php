@@ -21,12 +21,12 @@ return [
      |
      */
 
-    'supportsCredentials'    => false,
-    'allowedOrigins'         => ['*'],
-    'allowedOriginsPatterns' => [],
-    'allowedHeaders'         => ['X-Cachet-Token'],
-    'allowedMethods'         => ['*'],
-    'exposedHeaders'         => [],
-    'maxAge'                 => 3600,
+    'supports_credentials'    => false,
+    'allowed_origins'         => ['*'],
+    'allowed_originsPatterns' => [],
+    'allowed_headers'         => ['X-Cachet-Token'],
+    'allowed_methods'         => ['*'],
+    'exposed_headers'         => [],
+    'max_age'                 => 3600,
 
 ];

@@ -174,15 +174,10 @@ return [
          * Packages Service Providers...
          */
         env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
-        Barryvdh\Cors\ServiceProvider::class,
         env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
         CachetHQ\Badger\BadgerServiceProvider::class,
         CachetHQ\Emoji\EmojiServiceProvider::class,
         CachetHQ\Twitter\TwitterServiceProvider::class,
-        //GrahamCampbell\Binput\BinputServiceProvider::class,
-        //GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
-        //GrahamCampbell\Markdown\MarkdownServiceProvider::class,
-        //GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,

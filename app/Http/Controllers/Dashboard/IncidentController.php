@@ -273,7 +273,7 @@ class IncidentController extends Controller
             $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
-        return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
+        return cachet_redirect('dashboard.incidents.edit', ['incident' => $incident->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.edit.success')));
     }
 
@@ -289,12 +289,12 @@ class IncidentController extends Controller
         try {
             $template->update(Binput::get('template'));
         } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.templates.edit', ['id' => $template->id])
+            return cachet_redirect('dashboard.templates.edit', ['incident_template' => $template->id])
                 ->withUpdatedTemplate($template)
                 ->withTemplateErrors($e->getMessageBag()->getErrors());
         }
 
-        return cachet_redirect('dashboard.templates.edit', ['id' => $template->id])
+        return cachet_redirect('dashboard.templates.edit', ['incident_template' => $template->id])
             ->withUpdatedTemplate($template);
     }
 }

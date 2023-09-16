@@ -36,26 +36,26 @@
     "alt-three/bus": "^4.1",
     "alt-three/validator": "^4.1",
     "aws/aws-sdk-php": "^3.7",
-    "barryvdh/laravel-cors": "^0.11.0",
     "bugsnag/bugsnag-laravel": "^2.15",
-    "cachethq/badger": "^2.0",
-    "cachethq/emoji": "^3.0",
-    "cachethq/twitter": "^3.0",
+    "steffjenl/badger": "^2.0",
+    "steffjenl/emoji": "^3.0",
+    "steffjenl/twitter": "^3.0",
     "chillerlan/php-qrcode": "^2.0",
     "doctrine/dbal": "2.9.*",
     "fideloper/proxy": "^4.0",
-    "graham-campbell/binput": "^6.0",
-    "graham-campbell/exceptions": "^13.1",
-    "graham-campbell/markdown": "^11.2",
-    "guzzlehttp/guzzle": "^6.3.3",
-    "jenssegers/date": "^3.4",
-    "laravel/framework": "^6.0",
+    "fruitcake/laravel-cors": "^2.1",
+    "graham-campbell/binput": "^9.1",
+    "graham-campbell/exceptions": "^14.1",
+    "graham-campbell/markdown": "^13.1",
+    "guzzlehttp/guzzle": "^7.8",
+    "jenssegers/date": "^4.0",
+    "laravel/framework": "^8.0",
     "laravel/helpers": "^1.5",
     "laravel/nexmo-notification-channel": "^2.1",
     "laravel/slack-notification-channel": "^2.5",
-    "laravel/tinker": "^1.0",
+    "laravel/tinker": "^2.0",
     "mccool/laravel-auto-presenter": "^7.1",
-    "nexmo/client": "^1.5",
+    "nexmo/client": "^2.4",
     "pragmarx/google2fa": "^5.0",
     "predis/predis": "^1.1",
     "twig/twig": "^2.6"
@@ -68,7 +68,7 @@
     "fzaninotto/faker": "^1.8",
     "graham-campbell/analyzer": "^2.1",
     "mockery/mockery": "^1.2",
-    "phpunit/phpunit": "^7.4"
+    "phpunit/phpunit": "^8.5"
   },
   "suggest": {
     "ext-apc": "APC Support cache driver."
@@ -126,5 +126,19 @@
     }
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:steffjenl/Twitter.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:steffjenl/Emoji.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:steffjenl/Badger.git"
+    }
+  ]
 }
