@@ -34,6 +34,15 @@ trait SearchableTrait
             return $query;
         }
 
+        // Only add searchable fields in where clause and protect them.
+        foreach($search as $key => $value)
+        {
+            if (!in_array($key, $this->searchable))
+            {
+                return $query;
+            }
+        }
+
         if (!array_intersect(array_keys($search), $this->searchable)) {
             return $query;
         }
