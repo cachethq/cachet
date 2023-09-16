@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Http\Request;
 
 /**
  * This is the subscribe controller.
@@ -109,10 +110,14 @@ class SubscribeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function getVerify($code = null)
+    public function getVerify(Request $request, $code = null)
     {
         if ($code === null) {
             throw new NotFoundHttpException();
+        }
+
+        if (! $request->hasValidSignature()) {
+            abort(401);
         }
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
@@ -166,10 +171,14 @@ class SubscribeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function showManage($code = null)
+    public function showManage(Request $request, $code = null)
     {
         if ($code === null) {
             throw new NotFoundHttpException();
+        }
+
+        if (! $request->hasValidSignature()) {
+            abort(401);
         }
 
         $includePrivate = $this->auth->check();
