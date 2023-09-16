@@ -28,6 +28,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\Facades\Route;
 
 /**
  * This is the route service provider.
@@ -81,7 +82,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function bind(Router $router)
+    public function bind(Router $router): void
     {
         $router->model('component', 'CachetHQ\Cachet\Models\Component');
         $router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
@@ -107,6 +108,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        Route::feeds();
+
         $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
