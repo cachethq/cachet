@@ -7,8 +7,10 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
+    @if(!$app['config']->get('setting.always_authenticate', false))
     <!-- RSS -->
     @include('feed::links')
+    @endif
 
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">
