@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Notifications\Component;
 
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
@@ -25,7 +26,7 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ComponentStatusChangedNotification extends Notification
+class ComponentStatusChangedNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 

@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Notifications\System;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -20,7 +21,7 @@ use Illuminate\Notifications\Notification;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class SystemTestNotification extends Notification
+class SystemTestNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 

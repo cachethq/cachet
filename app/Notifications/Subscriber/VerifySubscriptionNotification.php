@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Notifications\Subscriber;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\URL;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class VerifySubscriptionNotification extends Notification
+class VerifySubscriptionNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 

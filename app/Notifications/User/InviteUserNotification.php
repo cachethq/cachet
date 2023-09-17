@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Notifications\User;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Config;
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Config;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class InviteUserNotification extends Notification
+class InviteUserNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
