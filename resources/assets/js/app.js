@@ -11,7 +11,7 @@ const Promise = require('promise')
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
 
 window.axios = require('axios');
 
@@ -23,7 +23,7 @@ window.axios.defaults.headers.common = {
 /**
  * Flatpickr.
  */
-const Flatpickr = require('flatpickr');
+import Flatpickr from 'flatpickr'
 
 ((win, doc) => {
     /**
@@ -32,7 +32,7 @@ const Flatpickr = require('flatpickr');
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
-    Vue.component('fetch-data', require('./components/FetchData'));
+    Vue.component('fetch-data', require('./components/FetchData').default);
 
     new Vue({
         el: '#app',
@@ -56,9 +56,9 @@ const Flatpickr = require('flatpickr');
             });
         },
         components: {
-            'setup': require('./components/Setup'),
-            'dashboard': require('./components/dashboard/Dashboard'),
-            'metric-chart': require('./components/status-page/Metric'),
+            'setup': require('./components/Setup').default,
+            'dashboard': require('./components/dashboard/Dashboard').default,
+            'metric-chart': require('./components/status-page/Metric').default,
         }
     });
-})()
+})();
