@@ -29,7 +29,7 @@
     "symfony/polyfill-mbstring": "*"
   },
   "require": {
-    "php": "^7.3",
+    "php": "^7.3 || ^8.0 || ^8.1",
     "ext-mbstring": "*",
     "ext-openssl": "*",
     "ext-xml": "*",
@@ -58,19 +58,19 @@
     "pragmarx/google2fa": "^8.0",
     "predis/predis": "^1.1",
     "filp/whoops": "^2.3",
-    "steffjenl/badger": "^2.0",
-    "steffjenl/emoji": "^3.0",
-    "steffjenl/twitter": "^3.0",
+    "cachethq/badger": "^2.0",
+    "cachethq/emoji": "^3.0",
+    "cachethq/twitter": "^3.0",
     "twig/twig": "^2.6",
-    "spatie/laravel-feed": "^2.7",
-    "spatie/icalendar-generator": "^1.0"
+    "spatie/laravel-feed": "^2.7 || ^3.0",
+    "spatie/icalendar-generator": "^1.0 || ^2.0"
   },
   "require-dev": {
     "ext-sqlite3": "*",
     "steffjenl/testbench": "^4.2",
     "barryvdh/laravel-debugbar": "^3.2",
     "fakerphp/faker": "^1.9.1",
-    "graham-campbell/analyzer": "^2.4",
+    "graham-campbell/analyzer": "^2.4 || ^3.0",
     "laravel/sail": "^1.0.1",
     "mockery/mockery": "^1.4.4",
     "nunomaduro/collision": "^5.10",
@@ -118,9 +118,6 @@
     ]
   },
   "config": {
-    "platform": {
-      "php": "7.3.33"
-    },
     "preferred-install": "dist",
     "sort-packages": true,
     "optimize-autoloader": true,

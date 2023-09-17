@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Functional\Bus\Commands\Incident;
+namespace CachetHQ\Tests\Cachet\Functional\Incident;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
