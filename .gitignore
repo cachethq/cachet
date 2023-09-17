@@ -13,3 +13,4 @@ package-lock.json
 docker-compose.yml
 docker
 .phpunit.result.cache
+composer.lock
