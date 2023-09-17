@@ -31,15 +31,15 @@
 </template>
 
 <script>
-const Chart = require('chart.js')
+import Chart from 'chart.js/auto';
 const _ = require('lodash')
 
 // Configure Chart.js
-Chart.defaults.global.elements.point.hitRadius = 10
-Chart.defaults.global.responsiveAnimationDuration = 1000
-Chart.defaults.global.legend.display = false
+Chart.defaults.elements.point.hitRadius = 10
+Chart.defaults.animation.duration = 1000
+Chart.defaults.plugins.legend.display = false
 
-module.exports = {
+export default {
     props: [
         'metric',
         'theme',
@@ -150,10 +150,10 @@ module.exports = {
                 },
                 options: {
                     scales: {
-                        yAxes: [{
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 0.1,
                             ticks: {
-                                beginAtZero: true,
-                                suggestedMax: 0.1,
                                 // fixedStepSize: result.data.metric.places,
                                 callback: function(tickValue, index, ticks) {
                                     let delta = ticks[1] - ticks[0]
@@ -165,7 +165,7 @@ module.exports = {
                                         }
                                     }
 
-                                    const logDelta = Chart.helpers.log10(Math.abs(delta))
+                                    const logDelta = Math.log10(Math.abs(delta))
                                     let tickString = ''
 
                                     if (tickValue !== 0) {
@@ -179,16 +179,18 @@ module.exports = {
                                     return tickString
                                 }
                             }
-                        }]
+                        }
                     },
-                    tooltips: {
-                        callbacks: {
-                            label: function(tooltipItem, data) {
-                                return tooltipItem.yLabel + ' ' + metric.suffix;
+                    plugins: {
+                        tooltips: {
+                            callbacks: {
+                                label: function (tooltipItem, data) {
+                                    return tooltipItem.yLabel + ' ' + metric.suffix;
+                                }
                             }
                         }
                     }
-            }})
+                }})
         }
     }
 }
