@@ -58,6 +58,11 @@ class ConfigServiceProvider extends ServiceProvider
             //
         }
 
+        // Set the app name.
+        if ($appDomain = $this->app->config->get('setting.app_name')) {
+            $this->app->config->set('app.name', $appDomain);
+        }
+
         // Set the app url.
         if ($appDomain = $this->app->config->get('setting.app_domain')) {
             $this->app->config->set('app.url', $appDomain);
