@@ -81,7 +81,7 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         // Set allowed domains for CORS.
-        $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
+        $allowedOrigins = [];
 
         if ($allowedDomains = $this->app->config->get('setting.allowed_domains')) {
             $domains = explode(',', $allowedDomains);
@@ -92,7 +92,8 @@ class ConfigServiceProvider extends ServiceProvider
             $allowedOrigins[] = $this->app->config->get('app.url');
         }
 
-        $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
+        $this->app->config->set('cors.allowed_origins', $allowedOrigins);
+
 
         // Set the mail from address.
         if (!$this->app->config->get('mail.from.address')) {
