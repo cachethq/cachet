@@ -48,6 +48,11 @@ class UpdateIncidentCommandHandler
     protected $dates;
 
     /**
+     * Twig configuration array.
+     */
+    protected $twigConfig;
+
+    /**
      * Create a new update incident command handler instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard            $auth
@@ -59,6 +64,8 @@ class UpdateIncidentCommandHandler
     {
         $this->auth = $auth;
         $this->dates = $dates;
+
+        $this->twigConfig = $twigConfig = config("cachet.twig");
     }
 
     /**
@@ -140,6 +147,28 @@ class UpdateIncidentCommandHandler
         });
     }
 
+    protected function sandboxedTwigTemplateData(String $templateData) {
+        $policy = new \Twig\Sandbox\SecurityPolicy($this->twigConfig["tags"], 
+        $this->twigConfig["filters"],
+        $this->twigConfig["methods"],
+        $this->twigConfig["props"], 
+        $this->twigConfig["functions"]);
+        $sandbox = new \Twig\Extension\SandboxExtension($policy);
+
+        $templateBasicLoader = new \Twig\Loader\ArrayLoader([
+            'firstStageLoader' => $templateData
+        ]);
+
+        $sandBoxBasicLoader = new \Twig\Loader\ArrayLoader([
+            'secondStageLoader' => '{% sandbox %}{% include "firstStageLoader" %} {% endsandbox %}'
+        ]);
+
+        $hardenedLoader = new \Twig\Loader\ChainLoader([$templateBasicLoader, $sandBoxBasicLoader]);
+        $twig = new \Twig\Environment($hardenedLoader);
+        $twig->addExtension($sandbox);
+        return $twig;
+    }
+
     /**
      * Compiles an incident template into an incident message.
      *
@@ -150,8 +179,7 @@ class UpdateIncidentCommandHandler
      */
     protected function parseTemplate(IncidentTemplate $template, UpdateIncidentCommand $command)
     {
-        $env = new Twig_Environment(new Twig_Loader_Array([]));
-        $template = $env->createTemplate($template->template);
+        $template = $this->sandboxedTwigTemplateData($template->template);
 
         $vars = array_merge($command->template_vars, [
             'incident' => [
@@ -166,7 +194,7 @@ class UpdateIncidentCommandHandler
                 'component_status' => $command->component_status,
             ],
         ]);
-
-        return $template->render($vars);
+        
+        return $template->render('secondStageLoader', $vars);
     }
 }

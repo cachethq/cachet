@@ -46,4 +46,22 @@ return [
 
     'beacon' => env('CACHET_BEACON', true),
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Templates configurations
+    |--------------------------------------------------------------------------
+    |
+    | Security fix: now user can provide information which will be included to the Twig sandbox settings
+    |
+    | Default: Described below
+    |
+    */
+    'twig' => [
+        'methods' => [], 
+        'functions' => [],
+        'filters' => ['escape'],
+        'tags' => ['if'],
+        'props' => [],
+    ]
 ];
