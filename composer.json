@@ -55,7 +55,7 @@
         "nexmo/client": "^1.5",
         "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
-        "twig/twig": "^2.6"
+        "twig/twig": "^3.0"
     },
     "require-dev": {
         "ext-sqlite3": "*",
