@@ -46,7 +46,6 @@ return [
 
     'beacon' => env('CACHET_BEACON', true),
 
-
     /*
     |--------------------------------------------------------------------------
     | Templates configurations
@@ -58,10 +57,10 @@ return [
     |
     */
     'twig' => [
-        'methods' => [], 
+        'methods'   => [],
         'functions' => [],
-        'filters' => ['escape'],
-        'tags' => ['if'],
-        'props' => [],
-    ]
+        'filters'   => ['escape'],
+        'tags'      => ['if'],
+        'props'     => [],
+    ],
 ];

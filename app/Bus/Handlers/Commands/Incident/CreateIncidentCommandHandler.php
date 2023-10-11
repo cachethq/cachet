@@ -23,11 +23,8 @@ use CachetHQ\Cachet\Models\Meta;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
-
 use Twig\Environment as Twig_Environment;
 use Twig\Loader\ArrayLoader as Twig_Loader_Array;
-
-
 
 /**
  * This is the create incident command handler.
@@ -67,7 +64,7 @@ class CreateIncidentCommandHandler
         $this->auth = $auth;
         $this->dates = $dates;
 
-        $this->twigConfig = config("cachet.twig");
+        $this->twigConfig = config('cachet.twig');
     }
 
     /**
@@ -138,31 +135,34 @@ class CreateIncidentCommandHandler
         return $incident;
     }
 
-    protected function sandboxedTwigTemplateData(String $templateData) {
-
+    protected function sandboxedTwigTemplateData(string $templateData)
+    {
         if (!$templateData) {
-            return "";
+            return '';
         }
 
-        $policy = new \Twig\Sandbox\SecurityPolicy($this->twigConfig["tags"], 
-        $this->twigConfig["filters"],
-        $this->twigConfig["methods"],
-        $this->twigConfig["props"], 
-        $this->twigConfig["functions"]);
+        $policy = new \Twig\Sandbox\SecurityPolicy(
+            $this->twigConfig['tags'],
+            $this->twigConfig['filters'],
+            $this->twigConfig['methods'],
+            $this->twigConfig['props'],
+            $this->twigConfig['functions']
+        );
 
         $sandbox = new \Twig\Extension\SandboxExtension($policy);
 
         $templateBasicLoader = new Twig_Loader_Array([
-            'firstStageLoader' => $templateData
+            'firstStageLoader' => $templateData,
         ]);
 
         $sandBoxBasicLoader = new Twig_Loader_Array([
-            'secondStageLoader' => '{% sandbox %}{% include "firstStageLoader" %} {% endsandbox %}'
+            'secondStageLoader' => '{% sandbox %}{% include "firstStageLoader" %} {% endsandbox %}',
         ]);
 
         $hardenedLoader = new \Twig\Loader\ChainLoader([$templateBasicLoader, $sandBoxBasicLoader]);
         $twig = new Twig_Environment($hardenedLoader);
         $twig->addExtension($sandbox);
+
         return $twig;
     }
 
@@ -191,7 +191,7 @@ class CreateIncidentCommandHandler
                 'component_status' => $command->component_status,
             ],
         ]);
-        
+
         return $template->render('secondStageLoader', $vars);
     }
 }
