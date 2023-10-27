@@ -1,6 +1,5 @@
 <script>
-module.exports = {
-    props: [],
+export default {
     data () {
         return {
             env: {

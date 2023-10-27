@@ -25,6 +25,10 @@ window.axios.defaults.headers.common = {
  */
 const Flatpickr = require('flatpickr');
 
+import Metric from './components/status-page/Metric.vue';
+import Dashboard from './components/dashboard/Dashboard.vue';
+import Setup from './components/Setup.vue';
+
 ((win, doc) => {
     /**
      * Next, we will create a fresh Vue application instance and attach it to
@@ -56,9 +60,9 @@ const Flatpickr = require('flatpickr');
             });
         },
         components: {
-            'setup': require('./components/Setup'),
-            'dashboard': require('./components/dashboard/Dashboard'),
-            'metric-chart': require('./components/status-page/Metric'),
+            'setup': Setup,
+            'dashboard': Dashboard,
+            'metric-chart': Metric,
         }
     });
 })()

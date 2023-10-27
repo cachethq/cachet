@@ -34,7 +34,7 @@
                         <div class="list-group">
                             @foreach($incident->updates as $update)
                             <li class="list-group-item incident-update-item">
-                                
+
                                 <i class="{{ $update->icon }}" title="{{ $update->human_status }}" data-toggle="tooltip"></i>
                                 {!! $update->formatted_message !!}
                                 <small>

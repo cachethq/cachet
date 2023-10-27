@@ -1,4 +1,4 @@
-$(function () {
+(function () {
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         var token;
@@ -310,22 +310,6 @@ $(function () {
         sparkLine();
     }
 
-    function goToStep(current, next) {
-        // validation was ok. We can go on next step.
-        $('.block-' + current)
-          .removeClass('show')
-          .addClass('hidden');
-
-        $('.block-' + next)
-          .removeClass('hidden')
-          .addClass('show');
-
-        $('.steps .step')
-            .removeClass("active")
-            .filter(":lt(" + (next) + ")")
-            .addClass("active");
-    }
-
     // Check for updates.
     if ($('#update-alert').length > 0) {
         $.ajax({
@@ -357,4 +341,4 @@ $(function () {
             if (_.isFunction(cancelCallback)) cancelCallback();
         });
     }
-});
+}());
