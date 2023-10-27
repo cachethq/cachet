@@ -36,6 +36,7 @@ body.status-page {
     }
 
     .tooltip {
+        background-color: black;
         .tooltip-inner {
             padding: 8px 12px;
             font-size: 14px;
@@ -226,6 +227,8 @@ body.status-page {
                 }
 
                 .panel-heading {
+                    padding-top: 1em;
+                    padding-bottom: 1.4em;
                     strong {
                         font-size: 1.1em;
                     }

@@ -24,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <canvas :id="metricId" height="160" width="600"></canvas>
+                <canvas :id="metricId" height="200" width="900"></canvas>
             </div>
         </div>
     </div>
@@ -32,20 +32,14 @@
 
 <script>
 const Chart = require('chart.js')
-const _ = require('lodash')
 
-// Configure Chart.js
-Chart.defaults.global.elements.point.hitRadius = 10
-Chart.defaults.global.responsiveAnimationDuration = 1000
-Chart.defaults.global.legend.display = false
-
-module.exports = {
-    props: [
-        'metric',
-        'theme',
-        'theme-light',
-        'theme-dark'
-    ],
+export default {
+    props: {
+        metric: Object,
+        theme: String,
+        themeLight: String,
+        themeDark: String,
+    },
     data () {
         return {
             canvas: null,
@@ -77,15 +71,15 @@ module.exports = {
             this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
 
             this.context.fillStyle = "#666"
-            this.context.font = '44px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+            this.context.font = '20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
 
-            const textString = "Loading data",
-                textWidth = this.context.measureText(textString).width
+            const textString = "Loading metrics..."
+            const textWidth = this.context.measureText(textString).width
 
             this.canvas.textBaseline = 'middle'
             this.canvas.textAlign = "center"
 
-            this.context.fillText(textString , (this.canvas.width / 2) - (textWidth / 2), 100)
+            this.context.fillText(textString, (this.canvas.width / 2) - (textWidth / 2), 100)
         }
     },
     methods: {
@@ -134,6 +128,7 @@ module.exports = {
                     data_keys[i] = data_keys[i].substr(11);
                 }
             }
+
             this.chart = new Chart(this.context, {
                 type: 'line',
                 data: {
@@ -149,6 +144,14 @@ module.exports = {
                     }]
                 },
                 options: {
+                    elements: {
+                        point: {
+                            hitRadius: 5
+                        }
+                    },
+                    legend: {
+                        display: false
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {
