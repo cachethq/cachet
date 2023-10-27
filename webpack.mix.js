@@ -13,14 +13,10 @@ require('laravel-mix-purgecss')
  |
  */
 
-const sassOptions = {
-    includePaths: ['node_modules'],
-};
-
 mix
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
-    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard', sassOptions)
-    .sass('resources/assets/sass/app.scss', 'public/dist/css', sassOptions)
+    .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard')
+    .sass('resources/assets/sass/app.scss', 'public/dist/css')
     .purgeCss()
     .options({
         processCssUrls: false
