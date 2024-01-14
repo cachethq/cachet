@@ -54,3 +54,7 @@ To test out the demo, you can log in to the [Cachet dashboard](https://demo.cach
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Cachet, please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Security%20Vulnerability). All security vulnerabilities are reviewed on a case-by-case basis.
+
+## Third-Party Hosting
+
+[![Deploy on RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploy.png)](https://repocloud.io/details/?app_id=96)
