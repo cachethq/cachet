@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 return [
 
     /*
@@ -20,7 +11,7 @@ return [
     | passwords for your application. By default, the bcrypt algorithm is
     | used; however, you remain free to modify this option if you wish.
     |
-    | Supported: "bcrypt", "argon"
+    | Supported: "bcrypt", "argon", "argon2id"
     |
     */
 
@@ -38,7 +29,8 @@ return [
     */
 
     'bcrypt' => [
-        'rounds' => env('BCRYPT_ROUNDS', 10),
+        'rounds' => env('BCRYPT_ROUNDS', 12),
+        'verify' => true,
     ],
 
     /*
@@ -53,9 +45,10 @@ return [
     */
 
     'argon' => [
-        'memory'  => 1024,
-        'threads' => 2,
-        'time'    => 2,
+        'memory' => 65536,
+        'threads' => 1,
+        'time' => 4,
+        'verify' => true,
     ],
 
 ];

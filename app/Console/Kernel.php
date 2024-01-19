@@ -1,59 +1,27 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace App\Console;
 
-namespace CachetHQ\Cachet\Console;
-
-use CachetHQ\Cachet\Console\Commands\AppResetCommand;
-use CachetHQ\Cachet\Console\Commands\AppUpdateCommand;
-use CachetHQ\Cachet\Console\Commands\BeaconCommand;
-use CachetHQ\Cachet\Console\Commands\DemoMetricPointSeederCommand;
-use CachetHQ\Cachet\Console\Commands\DemoSeederCommand;
-use CachetHQ\Cachet\Console\Commands\InstallCommand;
-use CachetHQ\Cachet\Console\Commands\VersionCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
-/**
- * This is the console kernel class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- * @author Joseph Cohen <joe@alt-three.com>
- * @author James Brooks <james@alt-three.com>
- */
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
+     * Define the application's command schedule.
      */
-    protected $commands = [
-        AppResetCommand::class,
-        AppUpdateCommand::class,
-        BeaconCommand::class,
-        DemoMetricPointSeederCommand::class,
-        DemoSeederCommand::class,
-        InstallCommand::class,
-        VersionCommand::class,
-    ];
+    protected function schedule(Schedule $schedule): void
+    {
+        // $schedule->command('inspire')->hourly();
+    }
 
     /**
-     * Define the application's command schedule.
-     *
-     * @param \Illuminate\Console\Scheduling\Schedule $schedule
-     *
-     * @return void
+     * Register the commands for the application.
      */
-    protected function schedule(Schedule $schedule)
+    protected function commands(): void
     {
-        $schedule->command('cachet:beacon')->twiceDaily(0, 12);
+        $this->load(__DIR__.'/Commands');
+
+        require base_path('routes/console.php');
     }
 }

@@ -1,31 +1,16 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace App\Http\Middleware;
 
-namespace CachetHQ\Cachet\Http\Middleware;
-
-use Fideloper\Proxy\TrustProxies as Middleware;
+use Illuminate\Http\Middleware\TrustProxies as Middleware;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 
-/**
- * This is the trust proxies middleware class.
- *
- * @author James Brooks <james@alt-three.com>
- */
 class TrustProxies extends Middleware
 {
     /**
      * The trusted proxies for this application.
      *
-     * @var array
+     * @var array<int, string>|string|null
      */
     protected $proxies;
 
@@ -34,17 +19,10 @@ class TrustProxies extends Middleware
      *
      * @var int
      */
-    protected $headers = Request::HEADER_X_FORWARDED_ALL;
-
-    /**
-     * Create new trust proxies instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $proxies = Config::get('trustedproxies.proxies');
-
-        $this->proxies = empty($proxies) ? '*' : explode(',', trim($proxies));
-    }
+    protected $headers =
+        Request::HEADER_X_FORWARDED_FOR |
+        Request::HEADER_X_FORWARDED_HOST |
+        Request::HEADER_X_FORWARDED_PORT |
+        Request::HEADER_X_FORWARDED_PROTO |
+        Request::HEADER_X_FORWARDED_AWS_ELB;
 }

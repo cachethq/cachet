@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 return [
 
     /*
@@ -17,39 +8,27 @@ return [
     |--------------------------------------------------------------------------
     |
     | This file is for storing the credentials for third party services such
-    | as Stripe, Mailgun, SparkPost and others. This file provides a sane
-    | default location for this type of information, allowing packages
-    | to have a conventional place to find your various credentials.
+    | as Mailgun, Postmark, AWS and more. This file provides the de facto
+    | location for this type of information, allowing packages to have
+    | a conventional file to locate the various service credentials.
     |
     */
 
-    'github' => [
-        'token' => env('GITHUB_TOKEN'),
-    ],
-
     'mailgun' => [
-        'domain' => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+        'scheme' => 'https',
     ],
 
-    'mandrill' => [
-        'secret' => env('MAIL_PASSWORD'),
-    ],
-
-    'nexmo' => [
-        'key'      => env('NEXMO_KEY'),
-        'secret'   => env('NEXMO_SECRET'),
-        'sms_from' => env('NEXMO_SMS_FROM'),
+    'postmark' => [
+        'token' => env('POSTMARK_TOKEN'),
     ],
 
     'ses' => [
-        'key'    => env('MAIL_USERNAME'),
-        'secret' => env('MAIL_PASSWORD'),
-        'region' => env('SES_REGION', 'us-east-1'),
-    ],
-
-    'sparkpost' => [
-        'secret' => env('MAIL_PASSWORD'),
+        'key' => env('AWS_ACCESS_KEY_ID'),
+        'secret' => env('AWS_SECRET_ACCESS_KEY'),
+        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
 ];

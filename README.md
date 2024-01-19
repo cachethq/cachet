@@ -9,8 +9,6 @@ Cachet, the open-source status page system.
 
 ## Cachet 3.x Announcement
 
-We are shifting our attention and resources to Cachet 3.x and will no longer be supporting the 2.x version.
-
 For more information on the Cachet rebuild and our plans for 3.x, you can read the announcement [here](https://github.com/CachetHQ/Cachet/discussions/4342).
 
 ## Features
@@ -27,8 +25,7 @@ For more information on the Cachet rebuild and our plans for 3.x, you can read t
 
 ## Requirements
 
-- PHP 7.1.3 – 7.3
-- HTTP server with PHP support (e.g.: Apache, Nginx, Caddy)
+- PHP 8.1 or later
 - [Composer](https://getcomposer.org)
 - A supported database: MySQL, PostgreSQL or SQLite
 
@@ -43,9 +40,9 @@ Here are some useful quick links:
 
 ### Demo
 
-To test out the demo, you can log in to the [Cachet dashboard](https://demo.cachethq.io/dashboard) with the following credentials:
+To test out the v3 demo, you can log in to the [Cachet dashboard](https://v3.cachethq.io/dashboard) with the following credentials:
 
-- **Username:** `test` or `test@example.com`
+- **Email:** `test@example.com`
 - **Password:** `test123`
 
 > **Note**
