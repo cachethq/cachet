@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,10 +23,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
-//             'name' => 'Test User',
-             'email' => 'test@test.com',
-             'password' => bcrypt('test123'),
-         ]);
+        \App\Models\User::factory()->create([
+            //             'name' => 'Test User',
+            'email'    => 'test@test.com',
+            'password' => bcrypt('test123'),
+        ]);
     }
 }
