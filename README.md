@@ -42,7 +42,7 @@ Here are some useful quick links:
 
 To test out the v3 demo, you can log in to the [Cachet dashboard](https://v3.cachethq.io/dashboard) with the following credentials:
 
-- **Email:** `test@example.com`
+- **Email:** `test@test.com`
 - **Password:** `test123`
 
 > **Note**
