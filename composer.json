@@ -10,8 +10,8 @@
     ],
     "repositories": {
         "cachet-core": {
-            "type": "path",
-            "url": "../core"
+            "type": "vcs",
+            "url": "git@github.com:cachethq/core.git"
         }
     },
     "require": {
