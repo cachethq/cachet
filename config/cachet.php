@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 return [
 
     /*
@@ -30,9 +21,19 @@ return [
      |
      | This is the URI path where Cachet will be accessible from.
      */
-    'path' => env('CACHET_PATH', ''),
+    'path' => env('CACHET_PATH', 'status'),
 
     'guard' => env('CACHET_GUARD', null),
+
+    /*
+     |--------------------------------------------------------------------------
+     | The User Model.
+     |--------------------------------------------------------------------------
+     |
+     | This is the model that will be used to authenticate users. This model
+     | must be an instance of Illuminate\Foundation\Auth\User.
+     */
+    'user_model' => App\Models\User::class,
 
     /*
      |--------------------------------------------------------------------------
@@ -75,13 +76,25 @@ return [
 
     /*
      |--------------------------------------------------------------------------
+     | Cachet API Rate Limit (attempts per minute)
+     |--------------------------------------------------------------------------
+     |
+     | This is the rate limit for the Cachet API. By default, the API is rate
+     | limited to 300 requests a minute (or 5 requests a second). You can
+     | adjust the limit as needed by your application.
+     |
+     */
+    'api_rate_limit' => env('CACHET_API_RATE_LIMIT', 300),
+
+    /*
+     |--------------------------------------------------------------------------
      | Cachet Major Outage Threshold
      |--------------------------------------------------------------------------
      |
      | This is the threshold at which a major outage is declared.
      |
      */
-    'major_outage' => 50.0,
+    'major_outage' => 25.0,
 
     'beacon' => env('CACHET_BEACON', true),
 ];
