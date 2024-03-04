@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Taux de rafraîchissement de la page de statut (en secondes)',
             'major_outage_rate'                     => 'Seuil pour les pannes majeures (en %)',
             'banner'                                => 'Image d’entête',
-            'banner-help'                           => "Il est recommandé de téléverser des images d’une largeur d’au plus 930 pixels.",
+            'banner-help'                           => 'Il est recommandé de téléverser des images d’une largeur d’au plus 930 pixels.',
             'subscribers'                           => 'Permettre aux personnes de s’inscrire aux notifications par courriel ?',
             'suppress_notifications_in_maintenance' => 'Désactiver les notifications lorsqu’un incident se produit pendant une période de maintenance ?',
             'skip_subscriber_verification'          => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
