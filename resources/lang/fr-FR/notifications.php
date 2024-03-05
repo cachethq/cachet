@@ -1,4 +1,4 @@
-<?php
+?php
 
 /*
  * This file is part of Cachet.
@@ -13,17 +13,17 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Évolution du statut d’un composant',
-                'greeting' => 'Le statut d’un composant a été mis-à-jour !',
-                'content'  => 'L’état du composant :name est passé de :old_status à :new_status.',
+                'subject'  => 'Évolution du statut d’un service',
+                'greeting' => 'Le statut d’un service a été mis-à-jour !',
+                'content'  => 'L’état du service :name est passé de :old_status à :new_status.',
                 'action'   => 'Voir le statut',
             ],
             'slack' => [
-                'title'   => 'Évolution du statut d’un composant',
-                'content' => 'L’état du composant :name est passé de :old_status à :new_status.',
+                'title'   => 'Évolution du statut d’un service',
+                'content' => 'L’état du service :name est passé de :old_status à :new_status.',
             ],
             'sms' => [
-                'content' => 'L’état du composant :name est passé de :old_status à :new_status.',
+                'content' => 'L’état du service :name est passé de :old_status à :new_status.',
             ],
         ],
     ],
