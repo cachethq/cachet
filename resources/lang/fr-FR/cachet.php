@@ -21,7 +21,7 @@ return [
             4 => 'Panne majeure',
         ],
         'group' => [
-            'other' => 'Autres composants',
+            'other' => 'Autres services',
         ],
         'select_all'   => 'Tout sélectionner',
         'deselect_all' => 'Tout désélectionner',
@@ -55,9 +55,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => 'Aucun incident n’est signalé',
-        'bad'   => '[0,1]Un incident est signalé|[2,Inf]Plusieurs incidents sont signalés',
-        'major' => '[0,1]Un incident majeur est signalé|[2,Inf]Plusieurs incidents majeurs sont signalés',
+        'good'  => 'Aucun incident signalé',
+        'bad'   => 'Incident en cours',
+        'major' => 'Incident majeur en cours',
     ],
 
     'api' => [
@@ -120,8 +120,8 @@ return [
     'modal' => [
         'close'     => 'Fermer',
         'subscribe' => [
-            'title'  => 'S’abonner aux mises-à-jour du statut du composant',
-            'body'   => 'Entrez votre adresse mail pour vous abonner aux mises-à-jour de ce composant. Si vous êtes déjà abonné, vous recevez déjà des notifications pour ce composant.',
+            'title'  => 'S’abonner aux mises-à-jour du statut du service',
+            'body'   => 'Entrez votre adresse mail pour vous abonner aux mises-à-jour de ce service. Si vous êtes déjà abonné, vous recevez déjà des notifications pour ce service.',
             'button' => 'S’abonner',
         ],
     ],
