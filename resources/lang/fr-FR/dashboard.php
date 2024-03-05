@@ -95,42 +95,43 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Composants',
-        'component_statuses' => 'Statut des composants',
+        'components'         => 'Services',
+        'component_statuses' => 'Statut des services',
         'listed_group'       => 'Groupé par :name',
         'add'                => [
-            'title'   => 'Ajouter un composant',
-            'message' => 'Vous devez ajouter un composant.',
-            'success' => 'Composant créé.',
-            'failure' => 'Un problème est survenu avec la création du composant. Veuillez réessayer.',
+            'title'   => 'Ajouter un service',
+            'message' => 'Vous devez ajouter un service.',
+            'success' => 'Service créé.',
+            'failure' => 'Un problème est survenu avec la création du service. Veuillez réessayer.',
         ],
         'edit' => [
-            'title'   => 'Modifier un composant',
-            'success' => 'Composant modifié.',
-            'failure' => 'Un problème est survenu avec la modification composant. Veuillez réessayer.',
+            'title'   => 'Modifier un service',
+            'success' => 'Service modifié.',
+            'failure' => 'Un problème est survenu avec la modification du service. Veuillez réessayer.',
         ],
         'delete' => [
-            'success' => 'Le composant a été supprimé !',
-            'failure' => 'Un problème est survenu avec la suppression composant. Veuillez réessayer.',
+            'success' => 'Le service a été supprimé !',
+            'failure' => 'Un problème est survenu avec la suppression du service. Veuillez réessayer.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => '[0,1]Groupe de composants|[2,*]Groupes de composants',
-            'no_components' => 'Vous devez ajouter un groupe de composants.',
+            'groups'        => '[0,1]Groupe de services|[2,*]Groupes de services',
+            'no_components' => 'Vous devez ajouter un groupe de services.',
             'add'           => [
-                'title'   => 'Ajouter un groupe de composants',
-                'success' => 'Groupe de composants ajouté.',
-                'failure' => 'Un problème est survenu avec l’ajout du groupe de composants. Veuillez réessayer.',
+                'title'   => 'Ajouter un groupe de services',
+                'success' => 'Groupe de services ajouté.',
+                'failure' => 'Un problème est survenu avec l’ajout du groupe de services. Veuillez réessayer.',
             ],
             'edit' => [
-                'title'   => 'Modifier un groupe de composants',
-                'success' => 'Groupe de composants modifié.',
-                'failure' => 'Un problème est survenu avec la modification du groupe de composants. Veuillez réessayer.',
+                'title'   => 'Modifier un groupe de services',
+                'success' => 'Groupe de services modifié.',
+                'failure' => 'Un problème est survenu avec la modification du groupe de services. Veuillez réessayer.',
             ],
             'delete' => [
-                'success' => 'Le groupe de composants a été supprimé !',
-                'failure' => 'Un problème est survenu avec la suppression du groupe de composants. Veuillez réessayer.',
+                'title' => 'Supprimer le groupe de services',
+                'success' => 'Le groupe de services a été supprimé !',
+                'failure' => 'Un problème est survenu avec la suppression du groupe de services. Veuillez réessayer.',
             ],
         ],
     ],
@@ -157,7 +158,7 @@ return [
     // Subscribers
     'subscribers' => [
         'subscribers'          => 'Abonnés',
-        'description'          => 'Les abonnés recevront des notifications par courriel lorsque des incidents sont créés ou des composants sont mis-à-jour.',
+        'description'          => 'Les abonnés recevront des notifications par courriel lorsque des incidents sont créés ou des services sont mis-à-jour.',
         'description_disabled' => 'Pour utiliser cette fonction, vous devez autoriser l’abonnement aux notifications.',
         'verified'             => 'Vérifié',
         'not_verified'         => 'Non vérifié',
@@ -182,7 +183,7 @@ return [
         'team'        => 'Équipe',
         'member'      => 'Membre',
         'profile'     => 'Profil utilisateur',
-        'description' => 'Les membres de l’équipe pourront ajouter & modifier les composants et les incidents.',
+        'description' => 'Les membres de l’équipe pourront ajouter & modifier les services et les incidents.',
         'add'         => [
             'title'   => 'Ajouter un nouveau membre à l’équipe',
             'success' => 'Membre d’équipe a ajouté.',
@@ -292,7 +293,7 @@ return [
         'message' => 'Votre page de statut est presque prête ! Vous voudrez peut-être configurer ces paramètres supplémentaires',
         'close'   => 'Aller directement à mon tableau de bord',
         'steps'   => [
-            'component'  => 'Créer des composants',
+            'component'  => 'Créer des services',
             'incident'   => 'Créer des incidents',
             'customize'  => 'Personnaliser',
             'team'       => 'Ajouter des utilisateurs',
