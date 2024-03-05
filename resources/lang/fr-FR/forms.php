@@ -48,13 +48,13 @@ return [
     'incidents' => [
         'name'               => 'Nom',
         'status'             => 'Statut',
-        'component'          => 'Composant',
-        'component_status'   => 'Statut de composant',
+        'component'          => 'Service',
+        'component_status'   => 'Statut de service',
         'message'            => 'Message',
         'message-help'       => 'Vous pouvez également utiliser le format Markdown.',
         'occurred_at'        => 'Quand s’est produit cet incident ?',
         'notify_subscribers' => 'Notifier les abonnés ?',
-        'notify_disabled'    => 'Suite à une maintenance plannifiée, les notifications sur cet incident ou ses composants seront supprimées.',
+        'notify_disabled'    => 'Suite à une maintenance plannifiée, les notifications sur cet incident ou ses services seront supprimées.',
         'visibility'         => 'Visibilité de l’incident',
         'stick_status'       => 'Incident épinglé',
         'stickied'           => 'Épinglé',
@@ -91,7 +91,7 @@ return [
         'link'        => 'Lien',
         'tags'        => 'Mots-clés',
         'tags-help'   => 'Séparés par des virgules.',
-        'enabled'     => 'Activer le composant ?',
+        'enabled'     => 'Activer le service ?',
 
         'groups' => [
             'name'                     => 'Nom',
@@ -188,7 +188,7 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Couleur de fond',
-            'background-fills'        => 'Couleur de remplissage de l’arrière-plan (composants, incidents, pied-de-page)',
+            'background-fills'        => 'Couleur de remplissage de l’arrière-plan (services, incidents, pied-de-page)',
             'banner-background-color' => 'Couleur d’arrière-plan de l’entête',
             'banner-padding'          => 'Marge de l’entête',
             'fullwidth-banner'        => 'Activer la pleine largeur de bannière ?',
