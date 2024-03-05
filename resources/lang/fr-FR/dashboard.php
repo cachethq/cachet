@@ -129,7 +129,7 @@ return [
                 'failure' => 'Un problème est survenu avec la modification du groupe de services. Veuillez réessayer.',
             ],
             'delete' => [
-                'title' => 'Supprimer le groupe de services',
+                'title'   => 'Supprimer le groupe de services',
                 'success' => 'Le groupe de services a été supprimé !',
                 'failure' => 'Un problème est survenu avec la suppression du groupe de services. Veuillez réessayer.',
             ],
