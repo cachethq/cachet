@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Nom',
             'template' => 'Plantilla',
-            'twig'     => 'Les plantilles d\'incidents poden fer ús del llenguatge de plantilles <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Les plantilles d\'incidents poden fer ús del llenguatge de plantilles <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

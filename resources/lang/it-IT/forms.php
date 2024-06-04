@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Nome',
             'template' => 'Modello',
-            'twig'     => 'I modelli di segnalazione possono usare il linguaggio di templating <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'I modelli di segnalazione possono usare il linguaggio di templating <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Nome',
             'template' => 'Modello',
-            'twig'     => 'I modelli di segnalazione possono usare il linguaggio di templating <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'I modelli di segnalazione possono usare il linguaggio di templating <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

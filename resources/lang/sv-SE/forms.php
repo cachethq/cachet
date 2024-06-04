@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Namn',
             'template' => 'Mall',
-            'twig'     => 'Händelsmallar kan använda <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>-mallspråk.',
+            'twig'     => 'Händelsmallar kan använda <a href="https://twig.symfony.com" target="_blank">Twig</a>-mallspråk.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Namn',
             'template' => 'Mall',
-            'twig'     => 'Händelsmallar kan använda <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>-mallspråk.',
+            'twig'     => 'Händelsmallar kan använda <a href="https://twig.symfony.com" target="_blank">Twig</a>-mallspråk.',
         ],
     ],
 

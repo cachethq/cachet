@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Vorfall Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Vorfall Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 

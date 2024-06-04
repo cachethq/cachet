@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Nama',
             'template' => 'Template',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Incident Templates can make use of the <a href="https://twig.symfony.com" target="_blank">Twig</a> templating language.',
         ],
     ],
 

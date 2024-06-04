@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Navn',
             'template' => 'Skabelon',
-            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
+            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="https://twig.symfony.com" target="_blank"> Twigs</a> skabelon sprog.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Navn',
             'template' => 'Skabelon',
-            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
+            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="https://twig.symfony.com" target="_blank"> Twigs</a> skabelon sprog.',
         ],
     ],
 

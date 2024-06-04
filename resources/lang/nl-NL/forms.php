@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Naam',
             'template' => 'Sjabloon',
-            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> template taal.',
+            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="https://twig.symfony.com" target="_blank">Twig</a> template taal.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Naam',
             'template' => 'Sjabloon',
-            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> template taal.',
+            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="https://twig.symfony.com" target="_blank">Twig</a> template taal.',
         ],
     ],
 
