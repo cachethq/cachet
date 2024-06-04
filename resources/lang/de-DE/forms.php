@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
