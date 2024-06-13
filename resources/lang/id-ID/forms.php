@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Nama',
             'template' => 'Template',
-            'twig'     => 'Template Insiden ini bisa menggunakan bahasa template <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Template Insiden ini bisa menggunakan bahasa template <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Nama',
             'template' => 'Template',
-            'twig'     => 'Template Insiden ini bisa menggunakan bahasa template <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Template Insiden ini bisa menggunakan bahasa template <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

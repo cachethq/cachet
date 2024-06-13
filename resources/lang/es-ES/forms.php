@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Nombre',
             'template' => 'Plantilla',
-            'twig'     => 'Las plantillas de incidentes pueden hacer uso del lenguaje de plantillas <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Las plantillas de incidentes pueden hacer uso del lenguaje de plantillas <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Nombre',
             'template' => 'Plantilla',
-            'twig'     => 'Las plantillas de incidentes pueden hacer uso del lenguaje de plantillas <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Las plantillas de incidentes pueden hacer uso del lenguaje de plantillas <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

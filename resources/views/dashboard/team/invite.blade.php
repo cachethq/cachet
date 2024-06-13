@@ -34,7 +34,7 @@
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
                             <a class="btn btn-default" href="{{ cachet_route('dashboard.team') }}">{{ trans('forms.cancel') }}</a>
-                            <button type="button" @click="add" class="btn btn-primary">Add</button>
+                            <button type="button" @click="add" class="btn btn-primary">{{ trans('forms.add') }}</button>
                         </div>
                     </div>
                 </form>

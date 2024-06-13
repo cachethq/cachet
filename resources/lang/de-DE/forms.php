@@ -33,7 +33,7 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username oder E-Mail',
+        'login'         => 'Nutzername oder E-Mail',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -221,7 +221,7 @@ return [
         ],
         'team' => [
             'description' => 'Laden Sie Ihre Teammitglieder ein, indem Sie deren E-Mail-Adressen hier eingeben.',
-            'email'       => 'Die E-Mail Adresse des Teammitgliedes',
+            'email'       => 'E-Mail-Adresse des Teammitgliedes',
         ],
     ],
 

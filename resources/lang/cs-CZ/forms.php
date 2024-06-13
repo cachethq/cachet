@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Jméno',
             'template' => 'Šablona',
-            'twig'     => 'Šablony pro incidenty mohou používat šablonovací jazyk <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Šablony pro incidenty mohou používat šablonovací jazyk <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Jméno',
             'template' => 'Šablona',
-            'twig'     => 'Šablony pro incidenty mohou používat šablonovací jazyk <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Šablony pro incidenty mohou používat šablonovací jazyk <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

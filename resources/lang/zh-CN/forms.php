@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => '名称',
             'template' => '模板',
-            'twig'     => '故障模板可以使用 <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> 模板语言',
+            'twig'     => '故障模板可以使用 <a href="https://twig.symfony.com" target="_blank">Twig</a> 模板语言',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => '名称',
             'template' => '模板',
-            'twig'     => '故障模板可以使用 <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> 模板语言',
+            'twig'     => '故障模板可以使用 <a href="https://twig.symfony.com" target="_blank">Twig</a> 模板语言',
         ],
     ],
 

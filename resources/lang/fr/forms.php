@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Nom',
             'template' => 'Modèle',
-            'twig'     => 'Vous pouvez utiliser <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> pour créer des modèles par langues pour les modèles d\'incidents.',
+            'twig'     => 'Vous pouvez utiliser <a href="https://twig.symfony.com" target="_blank">Twig</a> pour créer des modèles par langues pour les modèles d\'incidents.',
         ],
     ],
 

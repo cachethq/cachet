@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Nume',
             'template' => 'Șablon',
-            'twig'     => 'Şabloanele pentru incidente pot folosi limbajul <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Şabloanele pentru incidente pot folosi limbajul <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Nume',
             'template' => 'Șablon',
-            'twig'     => 'Şabloanele pentru incidente pot folosi limbajul <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Şabloanele pentru incidente pot folosi limbajul <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

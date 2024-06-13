@@ -20,54 +20,54 @@ return [
         'incidents'                => 'Ereignisse',
         'logged'                   => '{0}Es gibt keine Ereignisse, gute Arbeit.|[1]Du hast ein Ereignis gemeldet.|[2,*]Du hast <strong>:count</strong> Ereignisse gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
-        'incident-templates'       => 'Ereignis Vorlagen',
+        'incident-templates'       => 'Ereignis-Vorlagen',
         'updates'                  => [
-            'title'   => 'Vorfall Updates für :incident',
+            'title'   => 'Vorfall-Updates für :incident',
             'count'   => '{0}Keine Updates|[1]Ein Update|[2]Zwei Updates|[3,*]Mehrere Updates',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
-                'success' => 'Dein Vorfall Update wurde erstellt.',
-                'failure' => 'Etwas ist mit dem Vorfall Update schief gelaufen.',
+                'success' => 'Dein Vorfall-Update wurde erstellt.',
+                'failure' => 'Beim Erstellen des Vorfalls ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
             'edit' => [
-                'title'   => 'Vorfall Update bearbeiten',
+                'title'   => 'Vorfall-Update bearbeiten',
                 'success' => 'Vorfall wurde aktualisiert.',
-                'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
+                'failure' => 'Beim Bearbeiten des Vorfalls ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
         ],
-        'reported_by'              => 'Reported :timestamp by :user',
+        'reported_by'              => 'Veröffentlicht :timestamp von :user',
         'add'                      => [
             'title'   => 'Ereignis hinzufügen',
             'success' => 'Ereignis hinzugefügt.',
-            'failure' => 'Es ist ein Fehler beim Hinzufügen der Störung aufgetreten. Bitte erneut versuchen.',
+            'failure' => 'Beim Erstellen des Ereignisses ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'edit' => [
             'title'   => 'Ereignis bearbeiten',
             'success' => 'Ereignis aktualisiert.',
-            'failure' => 'Es ist ein Fehler beim Editieren der Störung aufgetreten. Bitte erneut versuchen.',
+            'failure' => 'Beim Bearbeiten des Ereignisses ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'delete' => [
             'success' => 'Das Ereignis wurde gelöscht und wird nicht mehr angezeigt.',
-            'failure' => 'Die Störung konnte nicht gelöscht werden. Bitte versuche es erneut.',
+            'failure' => 'Beim Löschen des Ereignisses ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Ereignis Vorlagen',
+            'title' => 'Ereignis-Vorlagen',
             'add'   => [
                 'title'   => 'Ereignisvorlage erstellen',
-                'message' => 'Du solltest eine Ereignis-Vorlage hinzufügen.',
+                'message' => 'Noch keine Ereignis-Vorlage erstellt.',
                 'success' => 'Deine neue Ereignis-Vorlage wurde angelegt.',
-                'failure' => 'Etwas ist mit der Ereignis-Vorlage schief gelaufen.',
+                'failure' => 'Beim Erstellen der Ereignis-Vorlage ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
             'edit' => [
                 'title'   => 'Vorlage bearbeiten',
                 'success' => 'Die Ereignis-Vorlage wurde aktualisiert.',
-                'failure' => 'Etwas ist mit dem Aktualisieren der Ereignis-Vorlage schief gelaufen',
+                'failure' => 'Beim Bearbeiten der Ereignis-Vorlage ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
             'delete' => [
                 'success' => 'Die Ereignis-Vorlage wurde gelöscht.',
-                'failure' => 'Die Ereignis-Vorlage konnte nicht gelöscht werden. Bitte versuche es erneut.',
+                'failure' => 'Beim Löschen der Ereignis-Vorlage ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
         ],
     ],
@@ -80,16 +80,16 @@ return [
         'add'          => [
             'title'   => 'Wartungsarbeiten hinzufügen',
             'success' => 'Wartungsarbeiten hinzugefügt.',
-            'failure' => 'Etwas lief schief mit dem Hinzufügen des Zeitplans. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Erstellen des Zeitplans ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'edit' => [
             'title'   => 'Planmäßige Wartung bearbeiten',
             'success' => 'Wartungsarbeiten wurden aktualisiert!',
-            'failure' => 'Etwas lief schief mit dem Editieren des Zeitplans. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Bearbeiten des Zeitplans ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'delete' => [
             'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
-            'failure' => 'Der Zeitplan konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Löschen des Zeitplans ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
     ],
 
@@ -102,16 +102,16 @@ return [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
             'success' => 'Komponente erstellt.',
-            'failure' => 'Etwas ist schief gelaufen mit der Komponenten-Gruppe, versuchen sie es erneut.',
+            'failure' => 'Beim Erstellen der Komponente ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
             'success' => 'Komponente aktualisiert.',
-            'failure' => 'Etwas ist schief gelaufen mit der Komponenten-Gruppe, versuchen sie es erneut.',
+            'failure' => 'Beim Bearbeiten der Komponente ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'delete' => [
             'success' => 'Die Komponente wurde gelöscht!',
-            'failure' => 'Die Komponente konnte nicht gelöscht werden. Bitte versuche es erneut.',
+            'failure' => 'Beim Löschen der Komponente ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
 
         // Component groups
@@ -121,16 +121,16 @@ return [
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
                 'success' => 'Komponentengruppe hinzugefügt.',
-                'failure' => 'Etwas ist schief gelaufen mit der Komponenten-Gruppe, versuchen sie es erneut.',
+                'failure' => 'Beim Erstellen der Komponentengruppe ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
                 'success' => 'Komponentengruppe aktualisiert.',
-                'failure' => 'Etwas ist schief gelaufen mit der Komponenten-Gruppe, versuchen sie es erneut.',
+                'failure' => 'Beim Bearbeiten der Komponentengruppe ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
             'delete' => [
                 'success' => 'Die Komponentengruppe wurde gelöscht!',
-                'failure' => 'Die Komponentengruppe konnte nicht gelöscht werden. Bitte versuche es erneut.',
+                'failure' => 'Beim Löschen der Komponentengruppe ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             ],
         ],
     ],
@@ -140,18 +140,18 @@ return [
         'metrics' => 'Metriken',
         'add'     => [
             'title'   => 'Metrik erstellen',
-            'message' => 'Du solltest eine Metrik hinzufügen.',
+            'message' => 'Noch keine Metrik erstellt.',
             'success' => 'Metrik erstellt.',
-            'failure' => 'Es lieft etwas mit der Metrik schief, bitte nochmal versuchen.',
+            'failure' => 'Beim Erstellen der Metrik ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'edit' => [
             'title'   => 'Metrik bearbeiten',
             'success' => 'Metrik aktualisiert.',
-            'failure' => 'Es lieft etwas mit der Metrik schief, bitte nochmal versuchen.',
+            'failure' => 'Beim Bearbeiten der Metrik ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'delete' => [
             'success' => 'Die Metrik wurde gelöscht und wird nicht mehr angezeigt.',
-            'failure' => 'Die Metrik konnte nicht gelöscht werden. Bitte versuche es erneut.',
+            'failure' => 'Beim Löschen der Metrik ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
     ],
     // Subscribers
@@ -160,20 +160,20 @@ return [
         'description'          => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
         'description_disabled' => 'Um diese Funktion nutzen zu können, musst du zulassen, dass sich Personen für Benachrichtigungen anmelden dürfen.',
         'verified'             => 'Bestätigt',
-        'not_verified'         => 'Nicht Bestätigt',
+        'not_verified'         => 'Nicht bestätigt',
         'subscriber'           => ':email, abonniert am :date',
         'no_subscriptions'     => 'Aktualisierungen per E-Mail abonnieren',
         'global'               => 'Alles abonniert',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
-            'failure' => 'Etwas lief schief dem dem Hinzufügen eines Abonnenten. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Hinzufügen des Abonnenten ist ein Fehler aufgetreten. Versuche es bitte erneut.',
             'help'    => 'Gib jeden Abonnenten in eine neue Zeile ein.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Etwas lief schief mit dem Bearbeiten eines Abonnenten. Bitte versuchen sie es erneut.',
+            'failure' => 'Beim Bearbeiten des Abonnenten ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
     ],
 
@@ -182,25 +182,25 @@ return [
         'team'        => 'Team',
         'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
+        'description' => 'Teammitglieder werden die Möglichkeit haben, Komponente sowie Vorfälle hinzuzufügen und zu verändern.',
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
             'success' => 'Teammitglied hinzugefügt.',
-            'failure' => 'Teammitglied konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Hinzufügen des Teammitglieds ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'edit' => [
             'title'   => 'Profil aktualisieren',
             'success' => 'Profil aktualisiert.',
-            'failure' => 'Etwas lief schief mit dem Aktualisieren des Profils. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Bearbeiten des Teammitglieds ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
-            'failure' => 'Teammitglied konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Löschen des Teammitglieds ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
         'invite' => [
             'title'   => 'Ein neues Teammitglied einladen',
             'success' => 'Eine Einladung wurde verschickt',
-            'failure' => 'Diese Einladung konnte nicht versendet werden. Bitte versuchen Sie es erneut.',
+            'failure' => 'Beim Einladen des Teammitglieds ist ein Fehler aufgetreten. Versuche es bitte erneut.',
         ],
     ],
 
@@ -210,7 +210,7 @@ return [
         'app-setup' => [
             'app-setup'   => 'Anwendungsinstallation',
             'images-only' => 'Es können nur Bilder hochgeladen werden.',
-            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Sie können Dateien bis zu einer Maximalgröße von :size hochladen.',
+            'too-big'     => 'Die hochgeladene Datei ist zu groß. Es sind nur Dateien mit einer Maximalgröße von :size erlaubt.',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -231,7 +231,7 @@ return [
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Test-Benachrichtigung von Cachet',
-                'body'    => 'Dies ist ein Test-Benachrichtigung von Cachet.',
+                'body'    => 'Dies ist eine Test-Benachrichtigung von Cachet.',
             ],
         ],
         'security' => [
@@ -246,7 +246,7 @@ return [
         ],
         'edit' => [
             'success' => 'Einstellungen gespeichert.',
-            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
+            'failure' => 'Beim Speichern der Einstellungen ist ein Fehler aufgetreten.',
         ],
         'credits' => [
             'credits'       => 'Danksagungen',
@@ -263,7 +263,7 @@ return [
         'login'      => 'Einloggen',
         'logged_in'  => 'Sie sind eingeloggt.',
         'welcome'    => 'Willkommen zurück!',
-        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
+        'two-factor' => 'Zwei-Faktor-Authentifizierung',
     ],
 
     // Sidebar footer
@@ -281,7 +281,7 @@ return [
     // Widgets
     'widgets' => [
         'support'          => 'Cachet unterstützen',
-        'support_subtitle' => 'Unterstütze uns unter <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'support_subtitle' => 'Unterstütze uns auf <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
         'news'             => 'Aktuelle Neuigkeiten',
         'news_subtitle'    => 'Erhalte die neusten Nachrichten',
     ],
@@ -289,7 +289,7 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Willkommen zu Deiner Status Seite!',
-        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'message' => 'Deine Statusseite ist fast fertig! Vielleicht möchtest Du diese zusätzlichen Einstellungen konfigurieren.',
         'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [
             'component'  => 'Komponenten erstellen',

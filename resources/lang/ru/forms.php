@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Название',
             'template' => 'Шаблон',
-            'twig'     => 'В шаблонах инцидентов можно использовать <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'В шаблонах инцидентов можно использовать <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 

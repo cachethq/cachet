@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Nazwa',
             'template' => 'Szablon',
-            'twig'     => 'Szablony wydarzeń mogą korzystać z języka szablonów <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Szablony wydarzeń mogą korzystać z języka szablonów <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Nazwa',
             'template' => 'Szablon',
-            'twig'     => 'Szablony wydarzeń mogą korzystać z języka szablonów <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
+            'twig'     => 'Szablony wydarzeń mogą korzystać z języka szablonów <a href="https://twig.symfony.com" target="_blank">Twig</a>.',
         ],
     ],
 
