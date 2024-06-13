@@ -126,7 +126,8 @@ class CreateIncidentCommandHandler
                 null,
                 null,
                 null,
-                false
+                null,
+                true  // Silent mode
             ));
         }
 
