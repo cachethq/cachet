@@ -38,15 +38,15 @@ class ApiController extends AbstractApiController
         try {
             execute(new UpdateComponentCommand(
                 $component,
-                $component->name,
-                $component->description,
+                null,
+                null,
                 Binput::get('status'),
-                $component->link,
-                $component->order,
-                $component->group_id,
-                $component->enabled,
-                $component->meta,
-                $component->tags,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
                 true   // Silent mode
             ));
         } catch (QueryException $e) {
@@ -71,15 +71,15 @@ class ApiController extends AbstractApiController
 
                 execute(new UpdateComponentCommand(
                     $component,
-                    $component->name,
-                    $component->description,
+                    null,
+                    null,
                     $component->status,
-                    $component->link,
+                    null,
                     $order + 1,
-                    $component->group_id,
-                    $component->enabled,
-                    $component->meta,
-                    $component->tags,
+                    null,
+                    null,
+                    null,
+                    null,
                     true   // Silent mode
                 ));
             } catch (QueryException $e) {
