@@ -1,0 +1,40 @@
+services:
+  mysql:
+    container_name: mysql
+    hostname: mysql
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cachet
+      MYSQL_USER: cachet
+      MYSQL_PASSWORD: cachet
+    ports:
+     - 3306:3306
+    volumes:
+      - cachet_mysql:/var/lib/mysql
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci', '--default-authentication-plugin=mysql_native_password']
+  cachet:
+    build:
+      context: .
+    ports:
+      - 80:80
+    environment:
+      - DB_DRIVER=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=cachet
+      - DB_USERNAME=cachet
+      - DB_PASSWORD=cachet
+      - APP_KEY=${APP_KEY:-null}
+      - APP_LOG=errorlog
+      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=false
+      - DEBUG=false
+    depends_on:
+      - mysql
+    restart: on-failure
+
+volumes:
+  cachet_mysql:
