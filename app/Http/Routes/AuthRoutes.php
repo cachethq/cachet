@@ -45,7 +45,6 @@ class AuthRoutes
                 'middleware' => 'guest',
                 'uses'       => 'AuthController@showLogin',
             ]);
-
             $router->post('login', [
                 'as'         => 'post:auth.login',
                 'middleware' => ['guest', 'throttle:10,10'],

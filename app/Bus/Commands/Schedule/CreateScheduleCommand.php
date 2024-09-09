@@ -67,6 +67,9 @@ final class CreateScheduleCommand
      */
     public $notify;
 
+
+    public $instability;
+
     /**
      * The validation rules.
      *
@@ -80,6 +83,7 @@ final class CreateScheduleCommand
         'completed_at' => 'nullable|string',
         'components'   => 'nullable|array',
         'notify'       => 'nullable|bool',
+        'instability'  => 'nullable|bool',
     ];
 
     /**
@@ -95,7 +99,7 @@ final class CreateScheduleCommand
      *
      * @return void
      */
-    public function __construct($name, $message, $status, $scheduled_at, $completed_at, $components, $notify)
+    public function __construct($name, $message, $status, $scheduled_at, $completed_at, $components, $notify, $instability)
     {
         $this->name = $name;
         $this->message = $message;
@@ -104,5 +108,6 @@ final class CreateScheduleCommand
         $this->completed_at = $completed_at;
         $this->components = $components;
         $this->notify = $notify;
+        $this->instability = $instability;
     }
 }

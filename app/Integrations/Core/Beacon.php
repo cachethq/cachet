@@ -26,6 +26,7 @@ use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Str;
+use Lcobucci\JWT\Signer\Ecdsa\Sha512;
 
 /**
  * This is the beacon class.
@@ -85,7 +86,8 @@ class Beacon implements BeaconContract
         $setting = app(Setting::class);
 
         if (!$installId = $setting->get('install_id', null)) {
-            $installId = sha1(Str::random(20));
+            $randomtext = Str::random(20);
+            $installId = hash("sha512", $randomtext);
 
             $setting->set('install_id', $installId);
         }

@@ -46,7 +46,7 @@ class Cache
      */
     public function __construct(Filesystem $files, $path)
     {
-        $this->files = $files;
+        $this->files = $files; 
         $this->path = $path;
     }
 

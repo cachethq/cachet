@@ -15,8 +15,10 @@ use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Models\Tag;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Facades\DB;
 
 /**
  * This is the core system class.
@@ -53,56 +55,80 @@ class System implements SystemContract
         $this->auth = $auth;
     }
 
-    /**
-     * Get the entire system status.
-     *
-     * @return array
-     */
+
     public function getStatus()
     {
-        $includePrivate = $this->auth->check();
+    $includePrivate = $this->auth->check();
+    $tag = request()->input('tag'); 
 
-        $totalComponents = Component::enabled()->authenticated($includePrivate)->count();
-        $majorOutages = Component::enabled()->authenticated($includePrivate)->status(4)->count();
-        $majorOutageRate = (int) $this->config->get('setting.major_outage_rate', '50');
-        $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) * 100 >= $majorOutageRate : false;
+    $query = Component::enabled()->authenticated($includePrivate);
 
-        // Default data
+    // Filtrer par tag si un tag est spécifié
+    if ($tag) {
+        $totalComponents = $query->whereHas('tags', function ($query) use ($tag) {
+            $query->where('slug', $tag);
+        })->count();
+    }else{
+        $totalComponents = $query->count();
+    }
+    
+    $majorOutages = $query->status(4)->count();
+    $majorOutageRate = (int) $this->config->get('setting.major_outage_rate', '50');
+    
+    $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) * 100 >= $majorOutageRate : false;
+
+    $status = [
+        'system_status'  => 'info',
+        'system_message' => trans_choice('cachet.service.bad', $totalComponents),
+        'favicon'        => 'favicon-high-alert',
+    ];
+    if ($isMajorOutage) {
         $status = [
-            'system_status'  => 'info',
-            'system_message' => trans_choice('cachet.service.bad', $totalComponents),
+            'system_status'  => 'danger',
+            'system_message' => trans_choice('cachet.service.major', $totalComponents),
             'favicon'        => 'favicon-high-alert',
         ];
+    } elseif ($query->notStatus(1)->count() === 0) {
+        // // Si tous nos composants sont OK, avons-nous des incidents non résolus ?
+        // if($tag){
+        //     $incidents = Incident::leftJoin('components', 'incidents.component_id', '=', 'components.id')
+        //     ->leftJoin('taggables', 'components.id', '=', 'taggables.taggable_id')
+        //     ->where(function($query) use ($tag) {
+        //     $query->where('taggables.taggable_type', 'components')
+        //         ->where('taggables.tag_id', function ($query) use ($tag) {
+        //             $query->select('id')
+        //                 ->from('tags')
+        //                 ->where('slug', $tag);
+        //         })
+        //         ->orWhereNull('taggables.taggable_type'); 
+        //     })
+        //     ->whereNotIn('incidents.status', [Incident::FIXED]) 
+        //     ->orderBy('incidents.occurred_at', 'desc') 
+        //     ->get();
+        // }
+        
+        // $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
+        //     return $incident->status !== Incident::FIXED;
+        // });
 
-        if ($isMajorOutage) {
+        // $incidentCount = $incidents->count();
+
+        // $unresolvedCount = $incidents->filter(function ($incident) {
+        //     return !$incident->is_resolved;
+        // })->count();
+
+        // if ($incidentCount === 0 || ($incidentCount >= 1 && $unresolvedCount === 0)) {
             $status = [
-                'system_status'  => 'danger',
-                'system_message' => trans_choice('cachet.service.major', $totalComponents),
-                'favicon'        => 'favicon-high-alert',
+                'system_status'  => 'success',
+                'system_message' => trans_choice('cachet.service.good', $totalComponents),
+                'favicon'        => 'favicon',
             ];
-        } elseif (Component::enabled()->authenticated($includePrivate)->notStatus(1)->count() === 0) {
-            // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
-                return $incident->status !== Incident::FIXED;
-            });
-            $incidentCount = $incidents->count();
-            $unresolvedCount = $incidents->filter(function ($incident) {
-                return !$incident->is_resolved;
-            })->count();
-
-            if ($incidentCount === 0 || ($incidentCount >= 1 && $unresolvedCount === 0)) {
-                $status = [
-                    'system_status'  => 'success',
-                    'system_message' => trans_choice('cachet.service.good', $totalComponents),
-                    'favicon'        => 'favicon',
-                ];
-            }
-        } elseif (Component::enabled()->authenticated($includePrivate)->whereIn('status', [2, 3])->count() > 0) {
-            $status['favicon'] = 'favicon-medium-alert';
-        }
-
-        return $status;
+        // }
+    } elseif ($query->whereIn('status', [2, 3])->count() > 0) {
+        $status['favicon'] = 'favicon-medium-alert';
     }
+    return $status;
+}
 
     /**
      * Determine if Cachet is allowed to send notifications to users, subscribers or third party tools.

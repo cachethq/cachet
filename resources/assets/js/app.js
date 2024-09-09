@@ -1,7 +1,7 @@
 /**
  * Polyfill promises.
  */
-const Promise = require('promise')
+const Promise = require('promise');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -23,7 +23,7 @@ window.axios.defaults.headers.common = {
 /**
  * Flatpickr.
  */
-const Flatpickr = require('flatpickr');
+import flatpickr from 'flatpickr';
 
 import Metric from './components/status-page/Metric.vue';
 import Dashboard from './components/dashboard/Dashboard.vue';
@@ -36,8 +36,7 @@ import Setup from './components/Setup.vue';
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
-    Vue.component('fetch-data', require('./components/FetchData'));
-
+    Vue.component('fetch-data', require('./components/FetchData').default);
     new Vue({
         el: '#app',
         data () {
@@ -53,10 +52,12 @@ import Setup from './components/Setup.vue';
             }
         },
         mounted () {
-            Flatpickr('.flatpickr');
+            flatpickr('.flatpickr');
 
-            Flatpickr('.flatpickr-time', {
-                enableTime: true
+            flatpickr('.flatpickr-time', {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                time_24hr: true
             });
         },
         components: {
@@ -65,4 +66,4 @@ import Setup from './components/Setup.vue';
             'metric-chart': Metric,
         }
     });
-})()
+})();

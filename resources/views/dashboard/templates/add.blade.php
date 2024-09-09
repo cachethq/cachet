@@ -5,8 +5,8 @@
 @stop
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/mode/twig/twig.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js" integrity="sha512-44SqYq++kgKMaOJ3+RevTgdNgSPvt673LdMwikiB3V7VI9Tw05UoGUHZ026ud91B5oMWPvbzeKiIE3GAKl3yOQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/mode/twig/twig.min.js" integrity="sha512-+/xXuWhg7jY+j5dxRBZ3e1OVhk2T+fWjySBaVzrQXOXYFC8aG03IXHxmpAvJDzTg3GKP0Jwt3ZKparAFZT68cg==" crossorigin="anonymous"></script>
 
 <script>
 //Initializes the editor only once the DOM is loaded.

@@ -61,6 +61,7 @@ return [
             'prefix'      => env('DB_PREFIX', null),
             'strict'      => false,
             'engine'      => null,
+            'logging'     => true
         ],
 
         'pgsql' => [

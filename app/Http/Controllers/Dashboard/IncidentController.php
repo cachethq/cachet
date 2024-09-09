@@ -10,7 +10,7 @@
  */
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
-
+use League\CommonMark\CommonMarkConverter;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
@@ -74,13 +74,18 @@ class IncidentController extends Controller
      * @return \Illuminate\View\View
      */
     public function showIncidents()
-    {
-        $incidents = Incident::with('user')->orderBy('created_at', 'desc')->get();
+{
+    $incidents = Incident::with('user')->orderBy('created_at', 'desc')->get();
+    $converter = app(CommonMarkConverter::class);
 
-        return View::make('dashboard.incidents.index')
-            ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
-            ->withIncidents($incidents);
+    foreach ($incidents as $incident) {
+        $incident->formatted_message = $converter->convertToHtml($incident->message);
     }
+
+    return view('dashboard.incidents.index')
+        ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
+        ->withIncidents($incidents);
+}
 
     /**
      * Shows the add incident view.
@@ -263,7 +268,7 @@ class IncidentController extends Controller
                 ['seo' => Binput::get('seo', [])]
             ));
         } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
+            return cachet_redirect('dashboard.incidents.edit', ['incident' => $incident->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
                 ->withErrors($e->getMessageBag());
@@ -273,7 +278,7 @@ class IncidentController extends Controller
             $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
-        return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
+        return cachet_redirect('dashboard.incidents.edit', ['incident' => $incident->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.edit.success')));
     }
 

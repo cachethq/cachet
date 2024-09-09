@@ -34,7 +34,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'env'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -143,7 +143,6 @@ return [
     */
 
     'providers' => array_filter([
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -169,16 +168,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Packages Service Providers...
          */
         env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
-        Barryvdh\Cors\ServiceProvider::class,
         env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
-        CachetHQ\Badger\BadgerServiceProvider::class,
-        CachetHQ\Emoji\EmojiServiceProvider::class,
-        CachetHQ\Twitter\TwitterServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
@@ -198,6 +194,8 @@ return [
         CachetHQ\Cachet\Providers\IntegrationServiceProvider::class,
         CachetHQ\Cachet\Providers\RepositoryServiceProvider::class,
         CachetHQ\Cachet\Providers\RouteServiceProvider::class,
+        CachetHQ\Cachet\Providers\CommonMarkServiceProvider::class,
+
 
     ]),
 

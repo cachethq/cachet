@@ -58,14 +58,20 @@
                         </div>
                     </fieldset>
                     @if($notificationsEnabled)
-                    <input type="hidden" name="notify" value="0">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('notify', 'checked') }}">
-                            {{ trans('forms.incidents.notify_subscribers') }}
-                        </label>
-                    </div>
+                        <input type="hidden" name="notify" value="0">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('notify', 'checked') }}">
+                                {{ trans('forms.incidents.notify_subscribers') }}
+                            </label>
+                        </div>
                     @endif
+                    <div class="form-group">
+                        <p>{{ trans('forms.optional') }}</p>
+                        <label for="instability_checkbox">Instability ?</label><br>
+                        <input type="checkbox" id="instability_checkbox" name="instability" value="1">
+                        <label for="instability_checkbox">Yes</label>
+                    </div>
                     <div class="form-group">
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>

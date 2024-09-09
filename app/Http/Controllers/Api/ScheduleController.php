@@ -74,7 +74,8 @@ class ScheduleController extends AbstractApiController
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
                 Binput::get('components', []),
-                Binput::get('notify', false)
+                Binput::get('notify', false),
+                Binput::get('instability', false)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -100,12 +101,12 @@ class ScheduleController extends AbstractApiController
                 Binput::get('status'),
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
-                Binput::get('components', [])
+                Binput::get('components', []),
+                Binput::get('instability')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
-
         return $this->item($schedule);
     }
 

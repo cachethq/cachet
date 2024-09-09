@@ -111,8 +111,7 @@ class UpdateIncidentCommandHandler
                 null,
                 null,
                 null,
-                null,
-                true // Silent mode
+                false
             ));
         }
 

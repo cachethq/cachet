@@ -113,11 +113,11 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.seo.title') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="seo[title]" class="form-control"  value="{{ array_get($incident->meta, 'seo.title', '')  }}">
+                        <input type="text" name="seo[title]" class="form-control"  value="{{ \Illuminate\Support\Arr::get($incident->meta, 'seo.title', '')  }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.seo.description') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="seo[description]" class="form-control" value="{{ array_get($incident->meta, 'seo.description', '') }}">
+                        <input type="text" name="seo[description]" class="form-control" value="{{ \Illuminate\Support\Arr::get($incident->meta, 'seo.description', '') }}">
                     </div>
                 </fieldset>
 
@@ -132,3 +132,8 @@
     </div>
 </div>
 @stop
+
+
+@php
+use Illuminate\Support\Arr;
+@endphp

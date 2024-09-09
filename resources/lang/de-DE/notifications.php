@@ -87,9 +87,9 @@ return [
         ],
         'manage' => [
             'mail' => [
-                'subject' => 'Verwaltung Ihres Abonnements',
-                'content' => 'Klicken, um Ihr Abonnement für die Statusseite :app_name zu verwalten.',
-                'title'   => 'Klicken, um Ihr Abonnement für die Statusseite :app_name zu verwalten.',
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
                 'action'  => 'Abonnements verwalten',
             ],
         ],

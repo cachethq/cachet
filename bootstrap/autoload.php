@@ -25,7 +25,7 @@ define('CACHET_VERSION', trim(file_get_contents(__DIR__.'/../VERSION')));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +39,5 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 if (file_exists($compiledPath = __DIR__.'/cache/compiled.php')) {
-    require $compiledPath;
+    require_once $compiledPath;
 }

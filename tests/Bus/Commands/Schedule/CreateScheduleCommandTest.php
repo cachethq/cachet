@@ -43,7 +43,8 @@ class CreateScheduleCommandTest extends AbstractTestCase
             $params['scheduled_at'],
             $params['completed_at'],
             $params['components'],
-            $params['notify']
+            $params['notify'],
+            $params['instability']
         );
 
         return compact('params', 'object');

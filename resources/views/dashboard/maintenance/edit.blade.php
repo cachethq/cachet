@@ -57,7 +57,12 @@
                         <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $schedule->completed_at_datetimepicker }}" placeholder="{{ trans('forms.schedules.completed_at') }}">
                     </div>
                 </fieldset>
-
+                <div class="form-group">
+                        <p>{{ trans('forms.optional') }}</p>
+                        <label for="instability_checkbox">Instability ?</label><br>
+                        <input type="checkbox" id="instability_checkbox" name="instability" value="1" {{ $schedule->instability == 1 ? 'checked' : '' }}>
+                        <label for="instability_checkbox">Yes</label>
+                </div>
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>

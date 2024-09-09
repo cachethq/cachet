@@ -67,7 +67,6 @@ trait HasTags
     {
         if (!$this->exists) {
             $this->queuedTags = $tags;
-
             return;
         }
 
@@ -120,7 +119,7 @@ trait HasTags
         $tags = collect(Tag::findOrCreate($tags));
 
         $this->tags()->syncWithoutDetaching($tags->pluck('id')->toArray());
-
+        
         return $this;
     }
 

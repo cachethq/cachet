@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Support\Facades\Redirect;
 
 /**
  * This is the authenticate middleware class.
@@ -55,7 +55,7 @@ class Authenticate
     public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guest()) {
-            throw new HttpException(401);
+            return Redirect::guest('auth/login');
         }
 
         return $next($request);

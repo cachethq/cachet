@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Angepinnte Vorfälle',
         'scheduled'    => 'Wartungsarbeiten',
         'scheduled_at' => ', geplant :timestamp',
-        'posted'       => 'Veröffentlicht :timestamp von :username',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Veröffentlicht am :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
@@ -85,21 +85,21 @@ return [
             'notifications'       => 'Benachrichtigungen',
             'notifications_for'   => 'Verwalten von Benachrichtigungen für',
             'no_subscriptions'    => 'Du hast im Augenblick alle Updates abonniert.',
-            'update_subscription' => 'Aktualisieren',
+            'update_subscription' => 'Update-Abonnement',
             'my_subscriptions'    => 'Du hast im Augenblick folgende Updates abonniert.',
             'manage_at_link'      => 'Verwalte deine Abonnements unter :link',
         ],
         'email' => [
-            'manage_subscription' => 'Wir haben Ihnen eine E-Mail gesendet. Klicken Sie bitte auf den Link, um Ihr Abonnement zu verwalten.',
+            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
             'subscribe'           => 'Aktualisierungen per E-Mail abonnieren.',
-            'subscribed'          => 'Sie haben die E-Mail-Benachrichtigungen bestätigt.',
-            'updated-subscribe'   => 'Abonnement erfolgreich aktualisiert',
+            'subscribed'          => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
+            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
             'verified'            => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
             'manage'              => 'Verwalte deine Abonnements',
             'unsubscribe'         => 'Abonnement widerrufen.',
             'unsubscribed'        => 'Ihre E-Mail-Abonnement wurde beendet.',
-            'failure'             => 'Beim Aktivieren des Abonnements ist ein Fehler aufgetreten.',
-            'already-subscribed'  => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail-Adresse bereits registriert ist.',
+            'failure'             => 'Beim aktivieren des Abonnements ist ein Fehler aufgetreten.',
+            'already-subscribed'  => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse schon registriert ist.',
         ],
     ],
 
@@ -109,11 +109,11 @@ return [
         'email'    => 'E-Mail',
         'password' => 'Passwort',
         'success'  => 'Ihr Konto wurde erfolgreich erstellt.',
-        'failure'  => 'Bei der Registrierung ist etwas schief gelaufen.',
+        'failure'  => 'Mit der Registrierung ist etwas schief gelaufen.',
     ],
 
     'system' => [
-        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Erfahre <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie du aktualisieren kannst!',
+        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Lerne <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie du updaten kannst!',
     ],
 
     // Modal
@@ -121,7 +121,7 @@ return [
         'close'     => 'Schließen',
         'subscribe' => [
             'title'  => 'Abonniere die Komponenten-Updates',
-            'body'   => 'Gib deine E-Mail-Adresse ein, um Updates für diese Komponente(n) zu erhalten. Wenn du bereits Abonnent bist, erhältst du automatisch Updates.',
+            'body'   => 'Gib deine E-Mail Adresse ein, um Updates für diesen Komponenten zu erhalten. Wenn du bereits abonniert bist, erhälst du schon Updates für diesen Komponenten.',
             'button' => 'Abonnieren',
         ],
     ],
@@ -138,7 +138,7 @@ return [
 
     // Other
     'home'            => 'Startseite',
-    'powered_by'      => 'Unterstützt von <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Uhrzeiten werden in :timezone angezeigt.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',

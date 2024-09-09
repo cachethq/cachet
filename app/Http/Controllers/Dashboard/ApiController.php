@@ -20,6 +20,7 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
+use SebastianBergmann\Environment\Console;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ApiController extends AbstractApiController
@@ -46,8 +47,7 @@ class ApiController extends AbstractApiController
                 $component->group_id,
                 $component->enabled,
                 $component->meta,
-                $component->tags,
-                true   // Silent mode
+                false
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -64,11 +64,9 @@ class ApiController extends AbstractApiController
     public function postUpdateComponentOrder()
     {
         $componentData = Binput::get('ids');
-
         foreach ($componentData as $order => $componentId) {
             try {
                 $component = Component::find($componentId);
-
                 execute(new UpdateComponentCommand(
                     $component,
                     $component->name,
@@ -79,14 +77,14 @@ class ApiController extends AbstractApiController
                     $component->group_id,
                     $component->enabled,
                     $component->meta,
-                    $component->tags,
-                    true   // Silent mode
+                    null,
+                    true
                 ));
+
             } catch (QueryException $e) {
                 throw new BadRequestHttpException();
             }
         }
-
         return $this->collection(Component::query()->orderBy('order')->get());
     }
 

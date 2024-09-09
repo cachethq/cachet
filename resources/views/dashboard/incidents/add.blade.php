@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
-                            <label class="radio-inline">
+                            <label class="radio-inline">                                
                                 <input type="radio" name="status" value="1" v-model="status">
                                 <i class="ion ion-flag"></i>
                                 {{ trans('cachet.incidents.status')[1] }}
@@ -151,3 +151,83 @@
     </div>
 </div>
 @stop
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const submitButton = document.querySelector('[type="submit"]');
+        const selectComponent = document.querySelector('[name="component_id"]');
+        let checkedStatus = document.querySelector('[name="status"]:checked');
+        let checkedComponentStatus = document.querySelector('[name="component_status"]:checked');
+
+        submitButton.disabled = true;
+
+        // Function to check if all required fields are filled
+        function checkRequiredFields() {
+            const requiredFields = document.querySelectorAll('[required]');
+            for (let i = 0; i < requiredFields.length; i++) {
+                if (!requiredFields[i].value) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Function to check if at least one radio button is selected for incident status
+        function isStatusRadioButtonSelected() {
+            const radioButtons = document.querySelectorAll('[name="status"]');
+            for (let radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Function to check if at least one radio button is selected for component status
+        function isComponentStatusRadioButtonSelected() {
+            const radioButtons = document.querySelectorAll('[name="component_status"]');
+            for (let radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Event listener for selectComponent change
+        selectComponent.addEventListener('change', function() {
+            if (selectComponent.value) {
+                submitButton.disabled = true;
+                // submitButton.disabled = !checkRequiredFields() || !isStatusRadioButtonSelected() ;
+            const radioButtonsComponentStatus = document.querySelectorAll('[name="component_status"]');
+            for (let radioButton of radioButtonsComponentStatus) {
+            radioButton.addEventListener('change', function() {
+                checkedComponentStatus = document.querySelector('[name="component_status"]:checked');
+                // Enable or disable submit button based on required fields and selected radio button for component status
+                submitButton.disabled = !checkRequiredFields() || !isComponentStatusRadioButtonSelected();
+            });
+        }
+            }
+        });
+
+        // Event listener for required inputs
+        const requiredInputs = document.querySelectorAll('[required]');
+        for (let required of requiredInputs) {
+            required.addEventListener('input', function() {
+                submitButton.disabled = !checkRequiredFields() || !isStatusRadioButtonSelected();
+            });
+        }
+
+        // Event listener for radio buttons related to incident status
+        const radioButtonsStatus = document.querySelectorAll('[name="status"]');
+        for (let radioButton of radioButtonsStatus) {
+            radioButton.addEventListener('change', function() {
+                checkedStatus = document.querySelector('[name="status"]:checked');
+                // Enable or disable submit button based on required fields and selected radio button for incident status
+                submitButton.disabled = !checkRequiredFields() || !isStatusRadioButtonSelected();
+            });
+        }
+
+        
+    });
+</script>

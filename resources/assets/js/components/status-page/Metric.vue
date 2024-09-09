@@ -4,10 +4,9 @@
             <div class="col-xs-10">
                 <strong>
                     {{metric.name}}
-
                     <i class="ion ion-ios-help-outline" data-toggle="tooltip" :data-title="metric.description" v-if="metric.description"></i>
                 </strong>
-            </div>
+            </div>  
             <div class="col-xs-2">
                 <div class="dropdown pull-right">
                     <a href='javascript: void(0)' class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{view.title || metric.default_view_name}}</span> <span class="caret"></span></a>
@@ -106,7 +105,6 @@ export default {
                 param: param,
                 title: title
             }
-
             this.getData().then(this.updateChart)
         },
         updateChart () {
@@ -167,7 +165,6 @@ export default {
                                             delta = tickValue - Math.floor(tickValue)
                                         }
                                     }
-
                                     const logDelta = Chart.helpers.log10(Math.abs(delta))
                                     let tickString = ''
 

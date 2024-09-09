@@ -64,6 +64,10 @@ class ScheduleRoutes
                 'as'   => 'post:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@editScheduleAction',
             ]);
+            $router->put('{schedule}', [
+                'as'   => 'put:dashboard.schedule.edit',
+                'uses' => 'ScheduleController@update',
+            ]);
             $router->delete('{schedule}', [
                 'as'   => 'delete:dashboard.schedule.delete',
                 'uses' => 'ScheduleController@deleteScheduleAction',

@@ -114,6 +114,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('tags'),
                 (bool) Binput::get('silent', false)
             ));
+            $component->touch();
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }

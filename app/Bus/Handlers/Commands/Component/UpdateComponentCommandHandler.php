@@ -48,25 +48,26 @@ class UpdateComponentCommandHandler
     public function handle(UpdateComponentCommand $command)
     {
         $component = $command->component;
+
         $originalStatus = $component->status;
 
-        if ($command->status && (int) $originalStatus !== (int) $command->status) {
+
+        if ($command->status && (int)$originalStatus !== (int)$command->status) {
             event(new ComponentStatusWasChangedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
         }
 
         $component->update($this->filter($command));
 
+
         // Sync the tags into the component.
-        if ($command->tags) {
+        if ($command->tags){
             collect(preg_split('/ ?, ?/', $command->tags))->filter()->map(function ($tag) {
                 return trim($tag);
             })->pipe(function ($tags) use ($component) {
                 $component->syncTags($tags);
             });
         }
-
         event(new ComponentWasUpdatedEvent($this->auth->user(), $component));
-
         return $component;
     }
 
@@ -91,7 +92,7 @@ class UpdateComponentCommandHandler
         ];
 
         return array_filter($params, function ($val) {
-            return $val !== null;
+            return $val !== null ;
         });
     }
 }

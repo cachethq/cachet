@@ -70,6 +70,13 @@ final class UpdateScheduleCommand
     public $components;
 
     /**
+     * The instability of the schedule.
+     *
+     * @var int
+     */
+    public $instability;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -82,6 +89,7 @@ final class UpdateScheduleCommand
         'scheduled_at' => 'nullable|string',
         'completed_at' => 'nullable|string',
         'components'   => 'nullable|array',
+        'instability'  => 'nullable|bool',
     ];
 
     /**
@@ -97,7 +105,7 @@ final class UpdateScheduleCommand
      *
      * @return void
      */
-    public function __construct(Schedule $schedule, $name, $message, $status, $scheduled_at, $completed_at, array $components = [])
+    public function __construct(Schedule $schedule, $name, $message, $status, $scheduled_at, $completed_at, array $components = [], $instability)
     {
         $this->schedule = $schedule;
         $this->name = $name;
@@ -106,5 +114,7 @@ final class UpdateScheduleCommand
         $this->scheduled_at = $scheduled_at;
         $this->completed_at = $completed_at;
         $this->components = $components;
+        $this->instability = $instability;
     }
+
 }

@@ -96,6 +96,7 @@ class CreateScheduleCommandHandler
             'scheduled_at' => $scheduledAt,
             'completed_at' => $completedAt,
             'notify'       => $command->notify,
+            'instability'  => $command->instability,
         ];
 
         $availableParams = array_filter($params, function ($val) {

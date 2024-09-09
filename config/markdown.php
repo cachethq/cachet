@@ -40,8 +40,7 @@ return [
     */
 
     'extensions' => array_filter([
-        env('CACHET_EMOJI', false) ? 'CachetHQ\Emoji\EmojiExtension' : null,
-        env('CACHET_AUTO_TWITTER', true) ? 'CachetHQ\Twitter\TwitterExtension' : null,
+        League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension::class,
     ]),
 
     /*
@@ -154,6 +153,6 @@ return [
     |
     */
 
-    'max_nesting_level' => INF,
+    'max_nesting_level' => 10000000,
 
 ];

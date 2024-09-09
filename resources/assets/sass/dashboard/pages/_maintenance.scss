@@ -1,0 +1,84 @@
+/* Style pour les boutons actifs */
+.btn.active {
+    background-color: #007bff; /* Bleu par défaut de Bootstrap */
+    color: #fff; /* Texte blanc */
+    outline: none; /* Pas de contour */
+    &:focus{
+        box-shadow: none; /* Pas d'ombre */
+        outline: none;
+    }
+}
+
+
+.list-events{
+    display: none;
+}
+
+.fc-h-event{
+    background-color: transparent !important;
+    border: none !important;
+    display: flex;
+        .fc-event-time{
+            display: none;
+        }
+        .fc-event-title{
+            color: black;
+        }
+}
+
+.fc-event-time{
+    display: none;
+}
+
+.end-line {
+    position: absolute;
+    bottom: 0; /* Adjust as needed to position the line */
+    left: 0;
+    right: 0;
+    height: 2px; /* Height of the line */
+  }
+
+.top-of-key{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between;
+    .legend{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .legend-color1{
+            position: relative;
+        
+            &::after{
+                content: '';
+                position: absolute; 
+                display: inline-block;
+                top: 10px;
+                left: -30px;
+                width: 20px;
+                height: 2px;
+                background-color: #007bff;
+                margin-right: 10px;
+            }
+        }
+        .legend-color2{
+            position: relative;
+        
+            &::after{
+                content: '';
+                position: absolute; 
+                display: inline-block;
+                top: 10px;
+                left: -30px;
+                width: 20px;
+                height: 2px;
+                background-color: orange;
+                margin-right: 10px;
+            }
+        }
+    }
+    
+    
+}

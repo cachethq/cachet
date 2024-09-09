@@ -102,7 +102,6 @@
 
     $('.color-code').each(function () {
         var $this = $(this);
-
         $this.minicolors({
             control: 'hue',
             defaultValue: $this.val() || '',
@@ -119,7 +118,7 @@
     $('button.close').on('click', function () {
         $(this).parents('div.alert').addClass('hide');
     });
-
+    
     $('form[name=IncidentForm] select[name=component_id]').on('change', function () {
         var $option = $(this).find('option:selected');
         var $componentStatus = $('#component-status');
@@ -148,6 +147,7 @@
                     return $(elem).data('orderable-id');
                 });
 
+                console.log(orderedIds);
                 $.ajax({
                     async: true,
                     url: url,
@@ -155,8 +155,9 @@
                     data: {
                         ids: orderedIds
                     },
+                    
                     success: function () {
-                        notifier.notify('Ordering updated.', 'success');
+                        notifier.notify('Ordering updated', 'success');
                     },
                     error: function () {
                         notifier.notify('Ordering not updated.', 'error');

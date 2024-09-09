@@ -157,6 +157,8 @@ class IncidentUpdateController extends Controller
                 $incidentUpdate,
                 Binput::get('status'),
                 Binput::get('message'),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
@@ -164,6 +166,10 @@ class IncidentUpdateController extends Controller
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.edit.failure')))
                 ->withErrors($e->getMessageBag());
+        }
+
+        if ($incident->component) {
+            $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
         return cachet_redirect('dashboard.incidents.updates', ['incident' => $incident->id])

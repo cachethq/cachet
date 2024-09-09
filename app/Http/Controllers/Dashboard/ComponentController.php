@@ -122,15 +122,15 @@ class ComponentController extends Controller
                 $componentData['enabled'],
                 null, // Meta data cannot be supplied through the dashboard yet.
                 $componentData['tags'], // Meta data cannot be supplied through the dashboard yet.
-                true // Silent since we're not really making changes to the component (this should be optional)
+                false // Silent since we're not really making changes to the component (this should be optional)
             ));
+            $component->touch();
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.edit', [$component->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
         return cachet_redirect('dashboard.components.edit', [$component->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
     }

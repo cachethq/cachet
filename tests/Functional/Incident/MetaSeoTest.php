@@ -61,7 +61,7 @@ class MetaSeoTest extends AbstractTestCase
     /**
      * Setup the application.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->app->make(SettingsRepository::class)->set('app_name', $this->appName);

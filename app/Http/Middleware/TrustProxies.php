@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Middleware;
+ namespace CachetHQ\Cachet\Http\Middleware;
 
-use Fideloper\Proxy\TrustProxies as Middleware;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
+ use Illuminate\Http\Request;
+ use Illuminate\Support\Facades\Config;
+ use Fideloper\Proxy\TrustProxies as Middleware;
 
 /**
  * This is the trust proxies middleware class.
@@ -34,7 +34,11 @@ class TrustProxies extends Middleware
      *
      * @var int
      */
-    protected $headers = Request::HEADER_X_FORWARDED_ALL;
+    protected $headers = Request::HEADER_X_FORWARDED_FOR | 
+                        Request::HEADER_X_FORWARDED_HOST | 
+                        Request::HEADER_X_FORWARDED_PORT | 
+                        Request::HEADER_X_FORWARDED_PROTO;
+
 
     /**
      * Create new trust proxies instance.

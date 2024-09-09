@@ -72,6 +72,7 @@ class Schedule extends Model implements HasPresenter
         'status'       => 'int',
         'scheduled_at' => 'datetime',
         'completed_at' => 'datetime',
+        'instability'  => 'boolean',
     ];
 
     /**
@@ -87,6 +88,7 @@ class Schedule extends Model implements HasPresenter
         'completed_at',
         'created_at',
         'updated_at',
+        'instability',
     ];
 
     /**
@@ -98,6 +100,7 @@ class Schedule extends Model implements HasPresenter
         'name'         => 'required|string',
         'message'      => 'nullable|string',
         'status'       => 'required|int|between:0,2',
+        'instability'  => 'nullable|bool',
     ];
 
     /**
@@ -109,6 +112,7 @@ class Schedule extends Model implements HasPresenter
         'id',
         'name',
         'status',
+        'instability',
     ];
 
     /**
@@ -124,6 +128,7 @@ class Schedule extends Model implements HasPresenter
         'completed_at',
         'created_at',
         'updated_at',
+        'instability'
     ];
 
     /**

@@ -20,6 +20,9 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -61,8 +64,11 @@ class ScheduleController extends Controller
      */
     public function showIndex()
     {
-        $schedule = Schedule::orderBy('created_at')->get();
-
+        // if(!isset($schedule) || empty($schedule)){
+            
+        // }
+        $schedule = Schedule::orderBy('scheduled_at')->get();
+        
         return View::make('dashboard.maintenance.index')
             ->withPageTitle(trans('dashboard.schedule.schedule').' - '.trans('dashboard.dashboard'))
             ->withSchedule($schedule);
@@ -98,7 +104,8 @@ class ScheduleController extends Controller
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
                 Binput::get('components', []),
-                Binput::get('notify', false)
+                Binput::get('notify', false),
+                Binput::get('instability', null)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.create')
@@ -106,7 +113,6 @@ class ScheduleController extends Controller
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
         return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.add.success')));
     }
@@ -138,6 +144,7 @@ class ScheduleController extends Controller
     public function editScheduleAction(Schedule $schedule)
     {
         try {
+            $instability = Binput::get('instability') ? 1 : 0;
             $schedule = execute(new UpdateScheduleCommand(
                 $schedule,
                 Binput::get('name', null),
@@ -145,7 +152,8 @@ class ScheduleController extends Controller
                 Binput::get('status', null),
                 Binput::get('scheduled_at', null),
                 Binput::get('completed_at', null),
-                Binput::get('components', [])
+                Binput::get('components', []),
+                $instability
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
@@ -153,7 +161,6 @@ class ScheduleController extends Controller
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
         return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.edit.success')));
     }

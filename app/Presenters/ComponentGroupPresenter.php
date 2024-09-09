@@ -11,8 +11,10 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Facades\Session;
 use McCool\LaravelAutoPresenter\BasePresenter;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
@@ -74,7 +76,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
             $this->enabledComponentsLowest = $this->wrappedObject->enabled_components_lowest()->first();
         }
 
-        return $this->enabledComponentsLowest;
+        return $this->enabledComponentsLowest ;
     }
 
     /**

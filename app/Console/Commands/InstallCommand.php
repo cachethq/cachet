@@ -322,7 +322,6 @@ class InstallCommand extends Command
      */
     protected function configureCachet(array $config = [])
     {
-        $config = [];
         if ($this->confirm('Do you wish to use Cachet Beacon?')) {
             $config['CACHET_BEACON'] = 'true';
         }
@@ -411,7 +410,7 @@ class InstallCommand extends Command
      */
     protected function getFreshConfiguration()
     {
-        $app = require $this->laravel->bootstrapPath().'/app.php';
+        $app = require_once $this->laravel->bootstrapPath().'/app.php';
         $app->make(Kernel::class)->bootstrap();
     }
 

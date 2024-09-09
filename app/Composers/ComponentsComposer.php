@@ -11,10 +11,14 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use Illuminate\Support\Facades\Log;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Tag;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 /**
  * This is the components composer.
@@ -31,6 +35,11 @@ class ComponentsComposer
      */
     protected $guard;
 
+
+    private $request;
+
+    private $groupStatusCalculator;
+
     /**
      * Creates a new components composer instance.
      *
@@ -38,9 +47,10 @@ class ComponentsComposer
      *
      * @return void
      */
-    public function __construct(Guard $guard)
+    public function __construct(Guard $guard, Request $request)
     {
         $this->guard = $guard;
+        $this->request = $request;
     }
 
     /**
@@ -52,11 +62,18 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
+        $start_time = microtime(true);
+        
+        $selectedValue = $this->request->input('tag');
+        Session::put('selectedValue', $selectedValue);
         $componentGroups = $this->getVisibleGroupedComponents();
         $ungroupedComponents = Component::ungrouped()->orderBy('status', 'desc')->get();
-
-        $view->withComponentGroups($componentGroups)
-            ->withUngroupedComponents($ungroupedComponents);
+        $view->with(compact('componentGroups', 'ungroupedComponents' ));
+        
+        $end_time = microtime(true);
+        $execution_time = ($end_time - $start_time) * 1000;
+        
+        Log::info('Temps de réponse de la vue : ' . $execution_time . ' ms');
     }
 
     /**
@@ -73,7 +90,8 @@ class ComponentsComposer
 
         $usedComponentGroups = Component::grouped()->pluck('group_id');
 
-        return $componentGroupsBuilder->used($usedComponentGroups)
-            ->get();
+        return $componentGroupsBuilder->used($usedComponentGroups)->get();
     }
+
+
 }

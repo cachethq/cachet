@@ -83,7 +83,7 @@
         <div class="bottom-menu-sidebar">
             <ul>
                 <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.help') }}">
-                    <a href="https://docs.cachethq.io" target="_blank"><i class="ion ion-help"></i></a>
+                    <a href="https://docs.cachethq.io" target="_blank" rel="noopener"><i class="ion ion-help"></i></a>
                 </li>
                 <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.status_page') }}">
                     <a href="{{ cachet_route('status-page') }}"><i class="ion ion-monitor"></i></a>

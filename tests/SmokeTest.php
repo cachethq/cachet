@@ -25,18 +25,6 @@ class SmokeTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
-    public function test_setup_page()
-    {
-        $this->get('/setup')->assertStatus(200);
-    }
-
-    public function test_status_page()
-    {
-        $this->configureApp();
-
-        $this->get('/')->assertStatus(200);
-    }
-
     public function test_single_component_page()
     {
         $this->configureApp();

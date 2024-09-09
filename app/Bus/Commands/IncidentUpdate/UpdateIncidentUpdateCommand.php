@@ -50,6 +50,20 @@ final class UpdateIncidentUpdateCommand
     public $user;
 
     /**
+     * The component id.
+     *
+     * @var int
+     */
+    public $component_id;
+
+    /**
+     * The component status.
+     *
+     * @var int
+     */
+    public $component_status;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -57,6 +71,9 @@ final class UpdateIncidentUpdateCommand
     public $rules = [
         'status'  => 'nullable|int|min:1|max:4',
         'message' => 'nullable|string',
+        'component_status' => 'nullable|int|min:0|max:4',
+        'component_id' => 'nullable|required_with:component_status|int',
+        'user'   => 'required',
     ];
 
     /**
@@ -69,11 +86,13 @@ final class UpdateIncidentUpdateCommand
      *
      * @return void
      */
-    public function __construct(IncidentUpdate $update, $status, $message, User $user)
+    public function __construct(IncidentUpdate $update, $status, $message, $component_status, $component_id, User $user)
     {
         $this->update = $update;
         $this->status = $status;
         $this->message = $message;
+        $this->component_status = $component_status;
+        $this->component_id = $component_id;
         $this->user = $user;
     }
 }

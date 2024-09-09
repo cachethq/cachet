@@ -33,7 +33,7 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Nutzername oder E-Mail',
+        'login'         => 'Username oder E-Mail',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
@@ -64,7 +64,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
         'templates'    => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Ereignis-Vorlagen können den <a href="https://twig.symfony.com" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Ereignis Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -91,7 +91,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Schlagwörter',
         'tags-help'   => 'Durch Kommata trennen.',
-        'enabled'     => 'Komponente aktiv?',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name'                     => 'Name',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
             'analytics_gosquared'    => 'GoSquared Analytics Code',
-            'analytics_piwik_url'    => 'URL der Piwik-Instanz',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
         ],
         'localization' => [
@@ -210,7 +210,7 @@ return [
         'password'       => 'Passwort',
         'api-token'      => 'API Token',
         'api-token-help' => 'Wenn sie ihren API-Token neu generieren, können bestehende Anwendungen nicht mehr auf Cachet zugreifen.',
-        'gravatar'       => 'Ändern Sie Ihr Profilbild bei Gravatar.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'Benutzerebene',
         'levels'         => [
             'admin' => 'Admin',
@@ -220,8 +220,8 @@ return [
             'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
         ],
         'team' => [
-            'description' => 'Laden Sie Ihre Teammitglieder ein, indem Sie deren E-Mail-Adressen hier eingeben.',
-            'email'       => 'E-Mail-Adresse des Teammitgliedes',
+            'description' => 'Invite your team members by entering their email addresses here.',
+            'email'       => 'Die E-Mail Adresse deines Teammitgliedes',
         ],
     ],
 

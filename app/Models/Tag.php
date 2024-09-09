@@ -65,18 +65,19 @@ class Tag extends Model
     {
         $tags = collect($values)->map(function ($value) {
             if ($value instanceof self) {
+                $value->Str::lower($value);
                 return $value;
             }
 
-            $tag = static::where('name', '=', $value)->first();
-
+            $slug = Str::slug($value);
+            $tag = static::where('slug', '=', $slug)->first();
+            
             if (!$tag instanceof self) {
                 $tag = static::create([
                     'name' => $value,
-                    'slug' => Str::slug($value),
+                    'slug' => $slug,
                 ]);
             }
-
             return $tag;
         });
 

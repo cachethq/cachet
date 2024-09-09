@@ -245,4 +245,5 @@ class Component extends Model implements HasPresenter
     {
         return ComponentPresenter::class;
     }
+
 }

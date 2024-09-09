@@ -25,7 +25,7 @@
                             @endif
                             {!! $component->name !!} <small>{{ $component->human_status }}</small>
                         </h4>
-                        @if($component->group)
+                        @if($component->grou)
                         <p><small>{{ trans('dashboard.components.listed_group', ['name' => $component->group->name]) }}</small></p>
                         @endif
                         @if($component->description)

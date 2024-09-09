@@ -13,20 +13,29 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Badger\Facades\Badger;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
+use Illuminate\Support\Facades\Log;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use CachetHQ\Cachet\Services\GroupStatusService;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Cache\TaggableStore;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
+
+use function Aws\filter;
 
 /**
  * This is the status page controller class.
@@ -37,12 +46,18 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class StatusPageController extends AbstractApiController
 {
-    /**
+    protected $groupStatusService;
+
+    public function __construct(GroupStatusService $groupStatusService)
+    {
+        $this->groupStatusService = $groupStatusService;
+    }
+    /*
      * Displays the status page.
      *
      * @return \Illuminate\View\View
      */
-    public function showIndex()
+    public function showIndex(Request $request)
     {
         $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
         $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
@@ -82,7 +97,6 @@ class StatusPageController extends AbstractApiController
                 $startDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
                 $endDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
             }
-
             $canPageForward = $page > 0;
             $canPageBackward = ($page + 1) < $numPages;
             $previousDate = $page + 1;
@@ -110,26 +124,40 @@ class StatusPageController extends AbstractApiController
             // Add in days that have no incidents
             foreach ($incidentDays as $i => $day) {
                 $date = app(DateFactory::class)->make($startDate)->subDays($i);
-
                 if (!isset($allIncidents[$date->toDateString()])) {
                     $allIncidents[$date->toDateString()] = [];
                 }
             }
         }
-
         // Sort the array so it takes into account the added days
         $allIncidents = $allIncidents->sortBy(function ($value, $key) {
             return strtotime($key);
         }, SORT_REGULAR, true);
 
+        $allTheTags = Tag::all();
+
+        $rejectTags = $allTheTags->reject(function ($tag){
+            return $tag->name === '1';
+        });
+
+        $componentGroups = ComponentGroup::all();
+
+        $ungroupedComponents = Component::ungrouped()->get();
+
+        $incidents = Schedule::all();
         return View::make('index')
-            ->withDaysToShow($appIncidentDays)
-            ->withAllIncidents($allIncidents)
-            ->withCanPageForward($canPageForward)
-            ->withCanPageBackward($canPageBackward)
-            ->withPreviousDate($previousDate)
-            ->withNextDate($nextDate);
+            ->with('daysToShow', $appIncidentDays)
+            ->with('allIncidents', $allIncidents)
+            ->with('canPageForward', $canPageForward)
+            ->with('canPageBackward', $canPageBackward)
+            ->with('previousDate', $previousDate)
+            ->with('nextDate', $nextDate)
+            ->with('rejectTags', $rejectTags)
+            ->with('componentGroups', $componentGroups)
+            ->with('ungroupedComponents', $ungroupedComponents)
+            ->with('incidents', $incidents);
     }
+
 
     /**
      * Shows an incident in more detail.
@@ -217,4 +245,7 @@ class StatusPageController extends AbstractApiController
 
         return Response::make($badge, 200, ['Content-Type' => 'image/svg+xml']);
     }
+
+
+
 }

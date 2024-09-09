@@ -1,28 +1,153 @@
 body.status-page {
     padding-top: 40px;
+    position: relative;
     font-family: $base-font-family;
-    background-color: #F0F3F4;
+    background-color: white !important;
     color: #333333;
     font-size: 1.4em;
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
-
     &.no-padding {
         padding-top: 0 !important;
     }
-
     hr {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-
     h1, h2, h3, h4, h5 {
         margin-bottom: 20px;
     }
-
+    .viewButton{
+        border-radius: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 100%;
+        &:hover{
+            background-color: #2c3e50;
+            color: white;
+        }
+    }
+    .legend{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .legend-color1{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute; 
+                display: inline-block;
+                top: 10px;
+                left: -30px;
+                width: 20px;
+                height: 2px;
+                background-color: #007bff;
+                margin-right: 10px;
+            }
+        }
+        .legend-color2{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute; 
+                display: inline-block;
+                top: 10px;
+                left: -30px;
+                width: 20px;
+                height: 2px;
+                background-color: orange;
+                margin-right: 10px;
+            }
+        }
+    }
+    .end-line {
+        position: absolute;
+        z-index: 0;
+        bottom: 0; /* Adjust as needed to position the line */
+        left: 0;
+        right: 0;
+        height: 2px; /* Height of the line */
+      }
+    .fc-h-event{
+        background-color: transparent !important;
+        border: none !important; 
+        z-index: 1;
+        &:hover{
+           z-index: 10001; 
+        }
+        .fc-event-time{
+            display: none;
+        }
+        .fc-event-title{
+            color: black;
+        }
+    }
+    .fc-event{
+        z-index: 1;
+        &:hover{
+            z-index: 10001; 
+         }
+    }
+    .tooltip-coucou {
+        position: absolute;
+        background-color: black;
+        opacity: 1;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        z-index: 10000;
+        pointer-events: none; /* Prevent interference with mouse events */
+        white-space: wrap; /* Empêche le texte de se diviser en plusieurs lignes */
+    }                  
+    .calendar-wrapper{
+        position: absolute;
+        display: none;
+        background-color: white;
+        width: 97%;
+        z-index: 5555555;
+        overflow: visible; 
+        #calendar{
+            top: 10%;
+            left: 50%;
+        }
+    }
+    .close-button {
+        position: absolute;
+        right: -100px;
+        cursor: pointer;
+        top: 0;
+        font-size: 35px;
+        color: white;
+        padding-left: 15px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #2c3e50;
+    }
+    #customButtons{
+        position: absolute;
+        right: -150px;
+        top: 100px;
+        .active{
+            background-color: #2c3e50;
+            color: white;
+        }
+        #filterAllButton{
+            margin-bottom: 10px;
+            border-radius: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: none;
+        }
+        #filterUnstableButton{
+            border-radius: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: none;
+        }
+    }
     img {
         box-sizing: border-box;
-
         &.emoji {
             height: 20px;
             width: 20px;
@@ -36,11 +161,11 @@ body.status-page {
     }
 
     .tooltip {
-        background-color: black;
+        background-color: transparent;
         .tooltip-inner {
             padding: 8px 12px;
             font-size: 14px;
-            word-wrap: break-word;
+            max-width: 700px !important;
         }
     }
 

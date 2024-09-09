@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.description') }}</label>
-                        <textarea name="component[description]" class="form-control" rows="5" placeholder="{{ trans('forms.components.description') }}">{{ $component->description }}</textarea>
+                        <textarea name="component[description]" id="componentDescription" class="form-control" rows="" placeholder="{{ trans('forms.components.description') }}">{{ $component->description }}</textarea>  
                     </div>
                     @if($groups->count() > 0)
                     <div class="form-group">
@@ -64,7 +64,7 @@
                         </label>
                     </div>
                 </fieldset>
-
+                
                 <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $currentUser->id }}">
                 <input type="hidden" name="component[order]" value="{{ $component->order ?: 0 }}">
 

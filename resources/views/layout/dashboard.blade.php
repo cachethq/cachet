@@ -38,6 +38,7 @@
 
     <script src="{{ asset(mix('dist/js/manifest.js')) }}"></script>
     <script src="{{ asset(mix('dist/js/vendor.js')) }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous"></script>
 </head>
 
 <body class="dashboard">
@@ -62,4 +63,20 @@
 </body>
 @yield('js')
 <script src="{{ asset(mix('dist/js/all.js')) }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("componentDescription").addEventListener("keydown", function(e) {
+            if (e.keyCode === 13) { 
+                e.preventDefault(); 
+                let start = this.selectionStart;
+                let end = this.selectionEnd;
+                let value = this.value;
+                this.value = value.substring(0, start) + "\n" + value.substring(end);
+                console.log(this.value);
+                this.selectionStart = this.selectionEnd = start + 1;
+            }
+        });
+    });
+    
+</script>
 </html>

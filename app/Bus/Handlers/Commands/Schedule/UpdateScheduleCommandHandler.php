@@ -83,6 +83,7 @@ class UpdateScheduleCommandHandler
             'name'    => $command->name,
             'message' => $command->message,
             'status'  => $command->status,
+            'instability' => $command->instability,
         ];
 
         if ($scheduledAt = $command->scheduled_at) {
@@ -91,6 +92,10 @@ class UpdateScheduleCommandHandler
 
         if ($completedAt = $command->completed_at) {
             $params['completed_at'] = $this->dates->create('Y-m-d H:i', $completedAt);
+        }
+
+        if($instability = $command->instability) {
+            $params['instability'] = $instability;
         }
 
         $availableParams = array_filter($params, function ($val) {

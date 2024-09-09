@@ -112,5 +112,4 @@ return [
         'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
         'Exception'                                                     => 'error',
     ],
-
 ];

@@ -80,7 +80,7 @@
                         <div class='stats-body'>
                             <div class="list-group">
                                 @foreach($entries as $entry)
-                                <a class="list-group-item" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small> <span class="badge"><i class="ion-android-open"></i></span></a>
+                                <a class="list-group-item" rel="noopener" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small> <span class="badge"><i class="ion-android-open"></i></span></a>
                                 @endforeach
                             </div>
                         </div>
