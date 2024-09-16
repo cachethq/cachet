@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'Correo electrónico',
-        'username'         => 'Nombre de usario',
+        'username'         => 'Nombre de usuario',
         'password'         => 'Contraseña',
         'site_name'        => 'Nombre del sitio',
         'site_domain'      => 'Dominio de sitio',
@@ -149,7 +149,7 @@ return [
     ],
 
     'user' => [
-        'username'       => 'Nombre de usario',
+        'username'       => 'Nombre de usuario',
         'email'          => 'Correo electrónico',
         'password'       => 'Contraseña',
         'api-token'      => 'API Token',

@@ -111,7 +111,7 @@ return [
 
     'signup' => [
         'title'    => 'Registrarse',
-        'username' => 'Nombre de usario',
+        'username' => 'Nombre de usuario',
         'email'    => 'Correo electrónico',
         'password' => 'Contraseña',
         'success'  => 'Tu cuenta ha sido creada.',
