@@ -95,15 +95,5 @@ return [
      */
     'api_rate_limit' => env('CACHET_API_RATE_LIMIT', 300),
 
-    /*
-     |--------------------------------------------------------------------------
-     | Cachet Major Outage Threshold
-     |--------------------------------------------------------------------------
-     |
-     | This is the threshold at which a major outage is declared.
-     |
-     */
-    'major_outage' => 25.0,
-
     'beacon' => env('CACHET_BEACON', true),
 ];
