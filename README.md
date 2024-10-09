@@ -30,7 +30,7 @@ For more information on the Cachet rebuild and our plans for 3.x, you can read t
 - PHP 7.1.3 – 7.3
 - HTTP server with PHP support (e.g.: Apache, Nginx, Caddy)
 - [Composer](https://getcomposer.org)
-- A supported database: MySQL, PostgreSQL or SQLite
+- A supported database: MariaDB, MySQL, PostgreSQL or SQLite
 
 ## Installation, Upgrades and Documentation
 
