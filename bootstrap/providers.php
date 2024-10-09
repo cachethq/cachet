@@ -9,10 +9,6 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests;
-
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-
-abstract class TestCase extends BaseTestCase
-{
-}
+return [
+    App\Providers\AppServiceProvider::class,
+];
