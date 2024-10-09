@@ -11,23 +11,11 @@ Cachet, the open-source status page system.
 
 For more information on the Cachet rebuild and our plans for 3.x, you can read the announcement [here](https://github.com/CachetHQ/Cachet/discussions/4342).
 
-## Features
-
-- List your service components
-- Report incidents
-- Customise the look of your status page
-- Markdown support for incident messages
-- A powerful JSON API
-- Metrics
-- Multi-lingual
-- Subscriber notifications via email
-- Two factor authentication
-
 ## Requirements
 
-- PHP 8.1 or later
+- PHP 8.2 or later
 - [Composer](https://getcomposer.org)
-- A supported database: MySQL, PostgreSQL or SQLite
+- A supported database: MariaDB, MySQL, PostgreSQL or SQLite
 
 ## Installation, Upgrades and Documentation
 
