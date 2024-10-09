@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
 
     /*
@@ -45,10 +54,10 @@ return [
     */
 
     'argon' => [
-        'memory' => env('ARGON_MEMORY', 65536),
+        'memory'  => env('ARGON_MEMORY', 65536),
         'threads' => env('ARGON_THREADS', 1),
-        'time' => env('ARGON_TIME', 4),
-        'verify' => env('HASH_VERIFY', true),
+        'time'    => env('ARGON_TIME', 4),
+        'verify'  => env('HASH_VERIFY', true),
     ],
 
     /*
