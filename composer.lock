@@ -3295,16 +3295,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.44.1",
+            "version": "v11.44.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0883d4175f4e2b5c299e7087ad3c74f2ce195c6d"
+                "reference": "f85216c82cbd38b66d67ebd20ea762cb3751a4b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0883d4175f4e2b5c299e7087ad3c74f2ce195c6d",
-                "reference": "0883d4175f4e2b5c299e7087ad3c74f2ce195c6d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f85216c82cbd38b66d67ebd20ea762cb3751a4b4",
+                "reference": "f85216c82cbd38b66d67ebd20ea762cb3751a4b4",
                 "shasum": ""
             },
             "require": {
@@ -3506,51 +3506,52 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-03-05T15:34:10+00:00"
+            "time": "2025-03-12T14:34:30+00:00"
         },
         {
             "name": "laravel/nightwatch",
-            "version": "v1.0.7",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/nightwatch.git",
-                "reference": "6270c58db97556d3e0c78d6733b5e721556b680e"
+                "reference": "fd6fb57f39eb2a20e10a678f46ecfb89f31c4196"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/6270c58db97556d3e0c78d6733b5e721556b680e",
-                "reference": "6270c58db97556d3e0c78d6733b5e721556b680e",
+                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/fd6fb57f39eb2a20e10a678f46ecfb89f31c4196",
+                "reference": "fd6fb57f39eb2a20e10a678f46ecfb89f31c4196",
                 "shasum": ""
             },
             "require": {
                 "ext-zlib": "*",
-                "laravel/framework": "^10.0|^11.0",
+                "laravel/framework": "^10.0|^11.0|^12.0",
                 "monolog/monolog": "^3.0",
                 "nesbot/carbon": "^2.0|^3.0",
                 "php": "^8.2",
                 "psr/http-message": "^1.0|^2.0",
                 "psr/log": "^1.0|^2.0|^3.0",
-                "symfony/console": "^7.0",
-                "symfony/http-foundation": "^7.0"
+                "symfony/console": "^6.0|^7.0",
+                "symfony/http-foundation": "^6.0|^7.0"
             },
             "require-dev": {
+                "guzzlehttp/guzzle": "^7.0",
                 "guzzlehttp/promises": "^2.0",
                 "guzzlehttp/psr7": "^2.0",
                 "laravel/pint": "1.21.0",
                 "mockery/mockery": "^1.0",
                 "mongodb/laravel-mongodb": "^5.0",
-                "orchestra/pest-plugin-testbench": "^3.0",
-                "orchestra/testbench": "^9.0",
-                "orchestra/testbench-core": "^9.0",
-                "pestphp/pest": "^3.0",
-                "pestphp/pest-plugin-arch": "^3.0",
-                "pestphp/pest-plugin-laravel": "^3.0",
+                "orchestra/pest-plugin-testbench": "^2.0|^3.0",
+                "orchestra/testbench": "^8.0|^9.0|^10.0",
+                "orchestra/testbench-core": "^8.0|^9.0|^10.0",
+                "pestphp/pest": "^2.0|^3.0",
+                "pestphp/pest-plugin-arch": "^2.0|^3.0",
+                "pestphp/pest-plugin-laravel": "^2.0|^3.0",
                 "phpstan/phpstan": "^1.0",
                 "ramsey/uuid": "^4.0",
                 "spatie/laravel-ignition": "^2.0",
-                "symfony/mailer": "^7.0",
-                "symfony/mime": "^7.0",
-                "symfony/var-dumper": "^7.0"
+                "symfony/mailer": "^6.0|^7.0",
+                "symfony/mime": "^6.0|^7.0",
+                "symfony/var-dumper": "^6.0|^7.0"
             },
             "type": "library",
             "extra": {
@@ -3587,7 +3588,7 @@
                 "issues": "https://github.com/laravel/nightwatch/issues",
                 "source": "https://github.com/laravel/nightwatch"
             },
-            "time": "2025-03-03T06:04:58+00:00"
+            "time": "2025-03-17T22:39:21+00:00"
         },
         {
             "name": "laravel/prompts",
