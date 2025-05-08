@@ -1096,12 +1096,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/core.git",
-                "reference": "7101318bb438e704a6ca71a45f43d9207e60b473"
+                "reference": "4476d44b2846ddbf26306c7f52b706abdab35d95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/core/zipball/7101318bb438e704a6ca71a45f43d9207e60b473",
-                "reference": "7101318bb438e704a6ca71a45f43d9207e60b473",
+                "url": "https://api.github.com/repos/cachethq/core/zipball/4476d44b2846ddbf26306c7f52b706abdab35d95",
+                "reference": "4476d44b2846ddbf26306c7f52b706abdab35d95",
                 "shasum": ""
             },
             "require": {
@@ -1127,9 +1127,10 @@
                 "twig/twig": "^3.0"
             },
             "require-dev": {
-                "dedoc/scramble": "0.12.0-alpha.1",
-                "larastan/larastan": "^3.0",
+                "dedoc/scramble": "^0.12.11",
+                "larastan/larastan": "^3.4",
                 "laravel/pail": "^1.1",
+                "laravel/pint": "^1.21",
                 "orchestra/testbench": "^9.5.1",
                 "pestphp/pest": "^3.2",
                 "pestphp/pest-plugin-laravel": "^3.0",
@@ -1190,8 +1191,15 @@
                 "start": [
                     "@dev"
                 ],
+                "test:lint": [
+                    "pint --test"
+                ],
+                "test:unit": [
+                    "pest --parallel --processes=10 --ci --compact"
+                ],
                 "test": [
-                    "vendor/bin/pest"
+                    "@test:lint",
+                    "@test:unit"
                 ]
             },
             "license": [
@@ -1214,7 +1222,7 @@
                 "issues": "https://github.com/cachethq/core/issues",
                 "source": "https://github.com/cachethq/core"
             },
-            "time": "2025-02-27T09:22:00+00:00"
+            "time": "2025-05-08T11:51:48+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
