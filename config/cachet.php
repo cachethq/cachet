@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
 
     /*
@@ -123,7 +132,7 @@ return [
      */
     'webhooks' => [
         'queue_connection' => env('CACHET_WEBHOOK_QUEUE_CONNECTION', 'default'),
-        'queue_name' => env('CACHET_WEBHOOK_QUEUE_NAME', 'webhooks'),
+        'queue_name'       => env('CACHET_WEBHOOK_QUEUE_NAME', 'webhooks'),
 
         'logs' => [
             'prune_logs_after_days' => 30,
@@ -139,17 +148,17 @@ return [
      |
      */
     'supported_locales' => [
-        'de' => 'Deutsch (DE)',
+        'de'    => 'Deutsch (DE)',
         'de_AT' => 'Deutsch (AT)',
         'de_CH' => 'Deutsch (CH)',
-        'en' => 'English',
+        'en'    => 'English',
         'en_GB' => 'English (UK)',
         'es_ES' => 'Spanish (ES)',
-        'nl' => 'Nederlands',
+        'nl'    => 'Nederlands',
         'pt_BR' => 'Português (BR)',
         'zh_CN' => '简体中文',
         'zh_TW' => '繁體中文',
-        'ph' => 'Filipino',
+        'ph'    => 'Filipino',
     ],
 
     /*
@@ -174,7 +183,7 @@ return [
      |
      */
     'feed' => [
-        'uri' => env('CACHET_FEED_URI', 'https://blog.cachethq.io/rss'),
+        'uri'   => env('CACHET_FEED_URI', 'https://blog.cachethq.io/rss'),
         'cache' => env('CACHET_FEED_CACHE', 3600),
     ],
 
