@@ -79,7 +79,6 @@ return [
      */
     'middleware' => [
         'web',
-        \Cachet\Http\Middleware\AuthenticateRemoteUser::class,
     ],
 
     'api_middleware' => [
@@ -154,11 +153,12 @@ return [
         'en'    => 'English',
         'en_GB' => 'English (UK)',
         'es_ES' => 'Spanish (ES)',
+        'ko' => '한국어',
         'nl'    => 'Nederlands',
+        'ph' => 'Filipino',
         'pt_BR' => 'Português (BR)',
         'zh_CN' => '简体中文',
         'zh_TW' => '繁體中文',
-        'ph'    => 'Filipino',
     ],
 
     /*
