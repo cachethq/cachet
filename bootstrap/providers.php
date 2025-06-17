@@ -11,4 +11,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
+    Cachet\CachetCoreServiceProvider::class,
+    Cachet\CachetDashboardServiceProvider::class,
 ];
