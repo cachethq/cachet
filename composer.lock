@@ -3521,16 +3521,16 @@
         },
         {
             "name": "laravel/nightwatch",
-            "version": "v1.10.5",
+            "version": "v1.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/nightwatch.git",
-                "reference": "62bd80ec24521b439cf5c6edc21fdc9c081fd9ee"
+                "reference": "075c2cd68cb2fbfa460799d1d24c10d0abbdb2fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/62bd80ec24521b439cf5c6edc21fdc9c081fd9ee",
-                "reference": "62bd80ec24521b439cf5c6edc21fdc9c081fd9ee",
+                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/075c2cd68cb2fbfa460799d1d24c10d0abbdb2fb",
+                "reference": "075c2cd68cb2fbfa460799d1d24c10d0abbdb2fb",
                 "shasum": ""
             },
             "require": {
@@ -3546,11 +3546,13 @@
                 "symfony/http-foundation": "^6.0|^7.0"
             },
             "require-dev": {
+                "aws/aws-sdk-php": "^3.349",
                 "ext-pdo": "*",
                 "guzzlehttp/guzzle": "^7.0",
                 "guzzlehttp/psr7": "^2.0",
                 "laravel/horizon": "^5.4",
                 "laravel/pint": "1.21.0",
+                "laravel/vapor-core": "^2.38.2",
                 "livewire/livewire": "^2.0|^3.0",
                 "mockery/mockery": "^1.0",
                 "mongodb/laravel-mongodb": "^4.0|^5.0",
@@ -3560,6 +3562,7 @@
                 "phpstan/phpstan": "^1.0",
                 "phpunit/phpunit": "^10.0|^11.0",
                 "ramsey/uuid": "^4.0",
+                "singlestoredb/singlestoredb-laravel": "^1.0|^2.0",
                 "spatie/laravel-ignition": "^2.0",
                 "symfony/mailer": "^6.0|^7.0",
                 "symfony/mime": "^6.0|^7.0",
@@ -3600,7 +3603,7 @@
                 "issues": "https://github.com/laravel/nightwatch/issues",
                 "source": "https://github.com/laravel/nightwatch"
             },
-            "time": "2025-07-06T23:30:09+00:00"
+            "time": "2025-07-08T01:29:53+00:00"
         },
         {
             "name": "laravel/prompts",
