@@ -17,10 +17,12 @@ services:
       - CACHE_STORE=redis
       - SESSION_DRIVER=redis
       - QUEUE_CONNECTION=redis
-      - REDIS_CLIENT=predis
+      - REDIS_CLIENT=phpredis
       - REDIS_HOST=redis
       - REDIS_PASSWORD=${REDIS_PASSWORD}
       - REDIS_PORT=6379
+      - CACHET_ADMIN_USER_EMAIL=${CACHET_ADMIN_USER_EMAIL}
+      - CACHET_ADMIN_USER_NAME=${CACHET_ADMIN_USER_NAME}
     depends_on:
       db:
         condition: service_healthy

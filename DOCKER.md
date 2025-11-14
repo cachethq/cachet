@@ -22,6 +22,8 @@ This guide explains how to run Cachet using Docker with a complete setup includi
    - `REDIS_PASSWORD`: Set a secure Redis password
    - `MYSQL_ROOT_PASSWORD`: Set a secure MySQL root password
    - `APP_URL`: Set to your domain (e.g., `https://status.yourdomain.com`)
+   - `CACHET_ADMIN_USER_EMAIL`: (Optional) Email for auto-created admin user
+   - `CACHET_ADMIN_USER_NAME`: (Optional) Name for auto-created admin user
 
 4. **Build and start services**
    ```bash
@@ -100,6 +102,37 @@ services:
 | `DB_PASSWORD` | Database password | *Required* |
 | `REDIS_PASSWORD` | Redis password | *Required* |
 | `MYSQL_ROOT_PASSWORD` | MySQL root password | *Required* |
+| `CACHET_ADMIN_USER_EMAIL` | Email for auto-created admin user | *Optional* |
+| `CACHET_ADMIN_USER_NAME` | Name for auto-created admin user | *Optional* |
+
+## Automatic Admin User Creation
+
+When starting the containers for the first time, you can automatically create an admin user by setting these environment variables in your `.env` file:
+
+```bash
+CACHET_ADMIN_USER_EMAIL=admin@example.com
+CACHET_ADMIN_USER_NAME=Administrator
+```
+
+The entrypoint script will:
+
+1. Check if these variables are set
+2. Generate a secure random password (20 characters)
+3. Create an admin user with the specified email and name
+4. Display the password in the container logs
+
+If the user already exists, the creation will be skipped silently.
+
+### Retrieving the Generated Password
+
+To retrieve the auto-generated admin password, check the container logs:
+
+```bash
+# Check the container logs for the password
+docker-compose logs app | grep -A 3 "Admin user created"
+```
+
+**Important:** The password is only displayed once during the initial container startup. Make sure to save it securely when you first start the containers.
 
 ## Data Persistence
 
