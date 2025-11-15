@@ -36,9 +36,8 @@ WORKDIR /var/www/html
 # Copy application code
 COPY . .
 
-# Install PHP dependencies including Redis client
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer require predis/predis --no-scripts \
-    && composer install --no-dev --optimize-autoloader --no-scripts
+# Install PHP dependencies
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
