@@ -1,13 +1,244 @@
+diff --git a/resources/lang/en/incident.php b/resources/lang/en/incident.php
+index 91a51c1..fe573d2 100644
+--- a/resources/lang/en/incident.php
++++ b/resources/lang/en/incident.php
+@@ -16,6 +16,7 @@ return [
+     'timeline' => [
+         'past_incidents_header' => 'Past Incidents',
+         'recent_incidents_header' => 'Recent Incidents',
++        'stickied_incidents_header' => 'Stickied Incidents',
+         'no_incidents_reported_between' => 'No incidents reported between :from and :to',
+         'navigate' => [
+             'previous' => 'Previous',
 diff --git a/resources/views/components/incident-timeline.blade.php b/resources/views/components/incident-timeline.blade.php
-index 849b822..9f54bba 100644
+index 8615dc0..9f54bba 100644
 --- a/resources/views/components/incident-timeline.blade.php
 +++ b/resources/views/components/incident-timeline.blade.php
-@@ -20,7 +20,7 @@
-                     <div class="flex flex-col flex-1">
-                         <div class="flex gap-2 items-center">
-                             <h3 class="max-w-full text-base font-semibold break-words sm:text-xl">
--                                <a href="{{ route('cachet.status-page.incident', $incident) }}">{{ $incident->name}}</a>
+@@ -1,4 +1,81 @@
+ <div class="flex flex-col gap-8">
++    @if($stickiedIncidents->isNotEmpty())
++    <div class="flex flex-col gap-5">
++        <div class="md:border-b py-2 dark:border-zinc-700">
++            <h2 class="text-2xl font-semibold">{{ __('cachet::incident.timeline.stickied_incidents_header') }}</h2>
++        </div>
++        @foreach($stickiedIncidents as $incident)
++        <div x-data="{ timestamp: new Date(@js($incident->timestamp)) }" class="bg-white border divide-y rounded-lg dark:divide-zinc-700 dark:border-zinc-700 dark:bg-white/5 ring-2 ring-amber-500 dark:ring-amber-600">
++            <div @class([
++                'flex flex-col bg-amber-50 p-4 dark:bg-amber-950/30 gap-2',
++                'rounded-t-lg' => $incident->updates->isNotEmpty(),
++                'rounded-lg' => $incident->updates->isEmpty(),
++            ])>
++                @if ($incident->components()->exists())
++                <div class="text-xs font-medium">
++                    {{ $incident->components->pluck('name')->join(', ', ' and ') }}
++                </div>
++                @endif
++                <div class="flex flex-col sm:flex-row justify-between gap-2 flex-col-reverse items-start sm:items-center">
++                    <div class="flex flex-col flex-1">
++                        <div class="flex gap-2 items-center">
++                            <h3 class="max-w-full text-base font-semibold break-words sm:text-xl">
 +                                <a href="{{ route('cachet.status-page.incident', $incident) }}">{{ $incident->name }}</a>
-                             </h3>
-                             @auth
-                                 <a href="{{ $incident->filamentDashboardEditUrl() }}" class="underline text-right text-sm text-zinc-500 hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-300" title="{{ __('cachet::incident.edit_button_title') }}">
++                            </h3>
++                            @auth
++                                <a href="{{ $incident->filamentDashboardEditUrl() }}" class="underline text-right text-sm text-zinc-500 hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-300" title="{{ __('cachet::incident.edit_button_title') }}">
++                                    <x-heroicon-m-pencil-square class="size-4" />
++                                </a>
++                            @endauth
++                        </div>
++                        <span class="text-xs text-zinc-500 dark:text-zinc-400">
++                            {{ $incident->timestamp->diffForHumans() }} — <time datetime="{{ $incident->timestamp->toW3cString() }}" x-text="timestamp.toLocaleString(@if($appSettings->timezone !== '-')undefined, {timeZone: '{{$appSettings->timezone}}'}@endif )"></time>
++                        </span>
++                    </div>
++                    <div class="flex justify-start sm:justify-end">
++                        <x-cachet::badge :status="$incident->latestStatus" />
++                    </div>
++                </div>
++            </div>
++
++            @if($incident->updates->isNotEmpty())
++            <div class="flex flex-col px-4 divide-y dark:divide-zinc-700">
++                @foreach ($incident->updates as $update)
++                <div class="relative py-4" x-data="{ timestamp: new Date(@js($update->created_at)) }">
++                    <x-cachet::incident-update-status :status="$update->status" />
++                    <h3 class="text-lg font-semibold">{{ $update->status->getLabel() }}</h3>
++                    <span class="text-xs text-zinc-500 dark:text-zinc-400">
++                        {{ $update->created_at->diffForHumans() }} — <time datetime="{{ $update->created_at->toW3cString() }}" x-text="timestamp.toLocaleString(@if($appSettings->timezone !== '-')undefined, {timeZone: '{{$appSettings->timezone}}'}@endif )"></time>
++                    </span>
++                    <div class="prose-sm md:prose prose-zinc dark:prose-invert prose-a:text-accent-content prose-a:underline prose-p:leading-normal">{!! $update->formattedMessage() !!}</div>
++                </div>
++                @endforeach
++                <div class="relative py-4" x-data="{ timestamp: new Date(@js($incident->timestamp)) }">
++                    <x-cachet::incident-update-status :status="Cachet\Enums\IncidentStatusEnum::unknown" />
++
++                    <span class="text-xs text-zinc-500 dark:text-zinc-400">
++                        {{ $incident->timestamp->diffForHumans() }} — <time datetime="{{ $incident->timestamp->toW3cString() }}" x-text="timestamp.toLocaleString(@if($appSettings->timezone !== '-')undefined, {timeZone: '{{$appSettings->timezone}}'}@endif )"></time>
++                    </span>
++                    <div class="prose-sm md:prose prose-zinc dark:prose-invert prose-a:text-accent-content prose-a:underline prose-p:leading-normal">{!! $incident->formattedMessage() !!}</div>
++                </div>
++            </div>
++            @else
++            <div class="flex flex-col px-4 divide-y dark:divide-zinc-700">
++                <div class="relative py-4" x-data="{ timestamp: new Date(@js($incident->timestamp)) }">
++                    <x-cachet::incident-update-status :status="Cachet\Enums\IncidentStatusEnum::unknown" />
++
++                    <span class="text-xs text-zinc-500 dark:text-zinc-400">
++                        {{ $incident->timestamp->diffForHumans() }} — <time datetime="{{ $incident->timestamp->toW3cString() }}" x-text="timestamp.toLocaleString(@if($appSettings->timezone !== '-')undefined, {timeZone: '{{$appSettings->timezone}}'}@endif )"></time>
++                    </span>
++                    <div class="prose-sm md:prose prose-zinc dark:prose-invert prose-a:text-accent-content prose-a:underline prose-p:leading-normal">{!! $incident->formattedMessage() !!}</div>
++                </div>
++            </div>
++            @endif
++        </div>
++        @endforeach
++    </div>
++    @endif
++
+     <div class="md:border-b py-2 dark:border-zinc-700 flex justify-between flex-col md:flex-row md:items-center gap-2 md:gap-0">
+         <div>
+             <h2 class="text-2xl font-semibold">
+diff --git a/src/View/Components/IncidentTimeline.php b/src/View/Components/IncidentTimeline.php
+index 9cd6996..3e6f282 100644
+--- a/src/View/Components/IncidentTimeline.php
++++ b/src/View/Components/IncidentTimeline.php
+@@ -26,6 +26,7 @@ class IncidentTimeline extends Component
+         $endDate = $startDate->clone()->subDays($incidentDays);
+ 
+         return view('cachet::components.incident-timeline', [
++            'stickiedIncidents' => $this->stickiedIncidents(),
+             'incidents' => $this->incidents(
+                 $startDate,
+                 $endDate,
+@@ -41,6 +42,22 @@ class IncidentTimeline extends Component
+         ]);
+     }
+ 
++    /**
++     * Fetch stickied incidents that should be displayed at the top.
++     */
++    private function stickiedIncidents(): Collection
++    {
++        return Incident::query()
++            ->with([
++                'components',
++                'updates' => fn ($query) => $query->orderByDesc('created_at'),
++            ])
++            ->visible(auth()->check())
++            ->stickied()
++            ->get()
++            ->sortByDesc(fn (Incident $incident) => $incident->timestamp);
++    }
++
+     /**
+      * Fetch the incidents that occurred between the given start and end date.
+      * Incidents will be grouped by days.
+@@ -53,6 +70,7 @@ class IncidentTimeline extends Component
+                 'updates' => fn ($query) => $query->orderByDesc('created_at'),
+             ])
+             ->visible(auth()->check())
++            ->where('stickied', false)
+             ->when($this->appSettings->recent_incidents_only, function ($query) {
+                 $query->where(function ($query) {
+                     $query->whereDate(
+diff --git a/tests/Feature/View/Components/IncidentTimelineTest.php b/tests/Feature/View/Components/IncidentTimelineTest.php
+new file mode 100644
+index 0000000..8ad7246
+--- /dev/null
++++ b/tests/Feature/View/Components/IncidentTimelineTest.php
+@@ -0,0 +1,97 @@
++<?php
++
++use Cachet\Models\Incident;
++use Cachet\Settings\AppSettings;
++use Cachet\View\Components\IncidentTimeline;
++use Illuminate\Support\Carbon;
++
++use function Pest\Laravel\get;
++
++beforeEach(function () {
++    Carbon::setTestNow('2026-01-08 12:00:00');
++});
++
++it('displays stickied incidents separately at the top', function () {
++    // Create a sticky incident
++    $stickyIncident = Incident::factory()->create([
++        'name' => 'Important Sticky Incident',
++        'stickied' => true,
++        'occurred_at' => now()->subDays(5),
++    ]);
++
++    // Create regular incidents
++    $regularIncident = Incident::factory()->create([
++        'name' => 'Regular Incident',
++        'stickied' => false,
++        'occurred_at' => now()->subDays(2),
++    ]);
++
++    $response = get(route('cachet.status-page'));
++
++    $response->assertOk();
++    $response->assertSeeInOrder([
++        'Stickied Incidents',
++        'Important Sticky Incident',
++        'Past Incidents',
++        'Regular Incident',
++    ]);
++});
++
++it('does not show stickied incidents in the regular timeline', function () {
++    $stickyIncident = Incident::factory()->create([
++        'name' => 'Sticky Incident',
++        'stickied' => true,
++        'occurred_at' => now()->subDays(2),
++    ]);
++
++    $regularIncident = Incident::factory()->create([
++        'name' => 'Regular Incident',
++        'stickied' => false,
++        'occurred_at' => now()->subDays(2),
++    ]);
++
++    $component = new IncidentTimeline(app(AppSettings::class));
++    $viewData = $component->render()->getData();
++
++    // Sticky incident should be in stickiedIncidents
++    expect($viewData['stickiedIncidents'])->toHaveCount(1);
++    expect($viewData['stickiedIncidents']->first()->name)->toBe('Sticky Incident');
++
++    // Regular incidents timeline should not include sticky incident
++    $allRegularIncidents = collect($viewData['incidents'])->flatten(1);
++    expect($allRegularIncidents)->toHaveCount(1);
++    expect($allRegularIncidents->first()->name)->toBe('Regular Incident');
++});
++
++it('shows multiple stickied incidents sorted by timestamp', function () {
++    $sticky1 = Incident::factory()->create([
++        'name' => 'Older Sticky',
++        'stickied' => true,
++        'occurred_at' => now()->subDays(5),
++    ]);
++
++    $sticky2 = Incident::factory()->create([
++        'name' => 'Newer Sticky',
++        'stickied' => true,
++        'occurred_at' => now()->subDays(2),
++    ]);
++
++    $component = new IncidentTimeline(app(AppSettings::class));
++    $viewData = $component->render()->getData();
++
++    expect($viewData['stickiedIncidents'])->toHaveCount(2);
++    expect($viewData['stickiedIncidents']->first()->name)->toBe('Newer Sticky');
++    expect($viewData['stickiedIncidents']->last()->name)->toBe('Older Sticky');
++});
++
++it('does not show stickied incidents section when there are none', function () {
++    Incident::factory()->create([
++        'name' => 'Regular Incident',
++        'stickied' => false,
++    ]);
++
++    $response = get(route('cachet.status-page'));
++
++    $response->assertOk();
++    $response->assertDontSee('Stickied Incidents');
++});
