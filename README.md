@@ -23,8 +23,7 @@ You can find documentation at [https://docs.cachethq.io](https://docs.cachethq.i
 
 Here are some useful quick links:
 
-- [Installing Cachet](https://docs.cachethq.io/installation/)
-- [Getting started with Docker](https://docs.cachethq.io/installation/docker)
+- [Installing Cachet](https://docs.cachethq.io/v3.x/installation)
 
 ### Demo
 
