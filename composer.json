@@ -21,7 +21,8 @@
         "laravel/framework": "^11.2",
         "laravel/nightwatch": "^1.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "league/flysystem-aws-s3-v3": "^3.32"
     },
     "autoload": {
         "psr-4": {
