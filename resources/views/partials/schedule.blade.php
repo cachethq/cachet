@@ -6,7 +6,7 @@
         <div class="list-group">
             @foreach($scheduled_maintenance as $schedule)
             <div class="list-group-item">
-                <strong>{{ $schedule->name }}</strong> <small class="date"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></small>
+                <strong>{{ $schedule->name }}</strong> <small class="date"><a href="{{ route('incident', ['id' => $schedule->id]) }}" class="links"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></a></small>
                 {!! $schedule->formattedMessage !!}
             </div>
             @endforeach
