@@ -20,7 +20,8 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Metric extends Model implements HasPresenter
 {
-    use SortableTrait, ValidatingTrait;
+    use SortableTrait;
+    use ValidatingTrait;
 
     /**
      * The calculation type of sum.

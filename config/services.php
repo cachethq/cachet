@@ -23,7 +23,7 @@ return [
     |
     */
 
-   'github' => [
+    'github' => [
         'token' => env('GITHUB_TOKEN'),
     ],
 

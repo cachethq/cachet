@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Hash;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword, ValidatingTrait;
+    use Authenticatable;
+    use CanResetPassword;
+    use ValidatingTrait;
 
     /**
      * The admin level of user.

@@ -18,7 +18,8 @@ use Illuminate\Support\Str;
 
 class Tag extends Model
 {
-    use SearchableTrait, SortableTrait;
+    use SearchableTrait;
+    use SortableTrait;
 
     /**
      * The attributes that should be casted to native types.

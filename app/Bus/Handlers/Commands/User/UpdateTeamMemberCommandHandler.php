@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
 use CachetHQ\Cachet\Bus\Commands\User\UpdateTeamMemberCommand;
 use CachetHQ\Cachet\Bus\Events\User\UserWasUpdatedEvent;
-use CachetHQ\Cachet\Models\User;
 
 /**
  * This is the update team member command handler.
