@@ -45,6 +45,10 @@ class SubscribeController extends Controller
      */
     public function showSubscribe()
     {
+        if (!subscribers_enabled()) {
+            return Redirect::route('status-page');
+        }
+
         return View::make('subscribe.subscribe')
             ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
     }
@@ -56,8 +60,11 @@ class SubscribeController extends Controller
      */
     public function postSubscribe()
     {
+        if (!subscribers_enabled()) {
+            return Redirect::route('status-page');
+        }
+
         $email = Binput::get('email');
-        $subscriptions = Binput::get('subscriptions');
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
