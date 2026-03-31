@@ -148,7 +148,7 @@ class ComponentController extends Controller
         $tags = preg_split('/ ?, ?/', $tags);
 
         // For every tag, do we need to create it?
-        $componentTags = array_map(function ($taggable) use ($component) {
+        $componentTags = array_map(function ($taggable) {
             return Tag::firstOrCreate(['name' => $taggable])->id;
         }, $tags);
 
@@ -201,7 +201,7 @@ class ComponentController extends Controller
         $tags = preg_split('/ ?, ?/', $tags);
 
         // For every tag, do we need to create it?
-        $componentTags = array_map(function ($taggable) use ($component) {
+        $componentTags = array_map(function ($taggable) {
             return Tag::firstOrCreate(['name' => $taggable])->id;
         }, $tags);
 

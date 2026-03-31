@@ -49,7 +49,7 @@ class FeedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function atomAction(ComponentGroup $group = null)
+    public function atomAction(?ComponentGroup $group = null)
     {
         return $this->feedAction($group, false);
     }
@@ -61,7 +61,7 @@ class FeedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function rssAction(ComponentGroup $group = null)
+    public function rssAction(?ComponentGroup $group = null)
     {
         $this->feed->lang = Config::get('setting.app_locale');
 

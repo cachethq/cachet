@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 
