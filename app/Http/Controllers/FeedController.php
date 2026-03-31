@@ -90,7 +90,10 @@ class FeedController extends Controller
             });
         }
 
-        return $this->feed->render($isRss ? 'rss' : 'atom');
+        $content = $this->feed->render($isRss ? 'rss' : 'atom');
+        $contentType = $isRss ? 'application/rss+xml; charset=UTF-8' : 'application/atom+xml; charset=UTF-8';
+
+        return response($content, 200, ['Content-Type' => $contentType]);
     }
 
     /**
