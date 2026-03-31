@@ -127,7 +127,7 @@ class SubscribeController extends Controller
         if ($subscription) {
             dispatch(new UnsubscribeSubscriptionCommand(Subscription::forSubscriber($subscriber->id)->firstOrFail()));
         } else {
-            dispatch(new UnsubscribeSubscriberCommand($subscriber, $subscription));
+            dispatch(new UnsubscribeSubscriberCommand($subscriber));
         }
 
         return Redirect::route('status-page')
