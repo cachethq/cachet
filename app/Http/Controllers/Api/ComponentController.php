@@ -25,6 +25,20 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 class ComponentController extends AbstractApiController
 {
     /**
+     * Parse a comma-separated tags payload into a clean tag list.
+     *
+     * @param string $tags
+     *
+     * @return array
+     */
+    protected function parseTags($tags)
+    {
+        return array_values(array_filter(array_map('trim', preg_split('/ ?, ?/', (string) $tags)), function ($tag) {
+            return $tag !== '';
+        }));
+    }
+
+    /**
      * Get all components.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -83,9 +97,9 @@ class ComponentController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if (Binput::has('tags')) {
+        if (!is_null(Binput::get('tags', null))) {
             // The component was added successfully, so now let's deal with the tags.
-            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+            $tags = $this->parseTags(Binput::get('tags'));
 
             // For every tag, do we need to create it?
             $componentTags = array_map(function ($taggable) use ($component) {
@@ -124,8 +138,8 @@ class ComponentController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if (Binput::has('tags')) {
-            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+        if (!is_null(Binput::get('tags', null))) {
+            $tags = $this->parseTags(Binput::get('tags'));
 
             // For every tag, do we need to create it?
             $componentTags = array_map(function ($taggable) use ($component) {

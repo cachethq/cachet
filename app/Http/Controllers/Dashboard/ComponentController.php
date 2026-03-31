@@ -36,6 +36,20 @@ class ComponentController extends Controller
     protected $subMenu = [];
 
     /**
+     * Parse a comma-separated tags payload into a clean tag list.
+     *
+     * @param string $tags
+     *
+     * @return array
+     */
+    protected function parseTags($tags)
+    {
+        return array_values(array_filter(array_map('trim', preg_split('/ ?, ?/', (string) $tags)), function ($tag) {
+            return $tag !== '';
+        }));
+    }
+
+    /**
      * Creates a new component controller instance.
      *
      * @return void
@@ -145,7 +159,7 @@ class ComponentController extends Controller
         }
 
         // The component was added successfully, so now let's deal with the tags.
-        $tags = preg_split('/ ?, ?/', $tags);
+        $tags = $this->parseTags($tags);
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
@@ -198,7 +212,7 @@ class ComponentController extends Controller
         }
 
         // The component was added successfully, so now let's deal with the tags.
-        $tags = preg_split('/ ?, ?/', $tags);
+        $tags = $this->parseTags($tags);
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
