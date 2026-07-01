@@ -18,10 +18,10 @@
         "php": "^8.2",
         "cachethq/core": "dev-main",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^11.2",
+        "laravel/framework": "^13.0",
         "laravel/nightwatch": "^1.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9",
+        "laravel/tinker": "^3.0",
         "league/flysystem-aws-s3-v3": "^3.32"
     },
     "autoload": {
