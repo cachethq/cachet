@@ -1,5 +1,9 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use Cachet\CachetCoreServiceProvider;
+use Cachet\CachetDashboardServiceProvider;
+
 /*
  * This file is part of Cachet.
  *
@@ -10,7 +14,7 @@
  */
 
 return [
-    App\Providers\AppServiceProvider::class,
-    Cachet\CachetCoreServiceProvider::class,
-    Cachet\CachetDashboardServiceProvider::class,
+    AppServiceProvider::class,
+    CachetCoreServiceProvider::class,
+    CachetDashboardServiceProvider::class,
 ];

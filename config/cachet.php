@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 /*
  * This file is part of Cachet.
  *
@@ -42,7 +44,7 @@ return [
      | This is the model that will be used to authenticate users. This model
      | must be an instance of Illuminate\Foundation\Auth\User.
      */
-    'user_model' => env('CACHET_USER_MODEL', \App\Models\User::class),
+    'user_model' => env('CACHET_USER_MODEL', User::class),
 
     'user_migrations' => env('CACHET_USER_MIGRATIONS', true),
 
@@ -131,7 +133,7 @@ return [
      */
     'webhooks' => [
         'queue_connection' => env('CACHET_WEBHOOK_QUEUE_CONNECTION', 'default'),
-        'queue_name'       => env('CACHET_WEBHOOK_QUEUE_NAME', 'webhooks'),
+        'queue_name' => env('CACHET_WEBHOOK_QUEUE_NAME', 'webhooks'),
 
         'logs' => [
             'prune_logs_after_days' => 30,
@@ -147,15 +149,15 @@ return [
      |
      */
     'supported_locales' => [
-        'de'    => 'Deutsch (DE)',
+        'de' => 'Deutsch (DE)',
         'de_AT' => 'Deutsch (AT)',
         'de_CH' => 'Deutsch (CH)',
-        'en'    => 'English',
+        'en' => 'English',
         'en_GB' => 'English (UK)',
         'es_ES' => 'Spanish (ES)',
-        'ko'    => '한국어',
-        'nl'    => 'Nederlands',
-        'ph'    => 'Filipino',
+        'ko' => '한국어',
+        'nl' => 'Nederlands',
+        'ph' => 'Filipino',
         'pt_BR' => 'Português (BR)',
         'zh_CN' => '简体中文',
         'zh_TW' => '繁體中文',
@@ -183,7 +185,7 @@ return [
      |
      */
     'feed' => [
-        'uri'   => env('CACHET_FEED_URI', 'https://blog.cachethq.io/rss'),
+        'uri' => env('CACHET_FEED_URI', 'https://blog.cachethq.io/rss'),
         'cache' => env('CACHET_FEED_CACHE', 3600),
     ],
 

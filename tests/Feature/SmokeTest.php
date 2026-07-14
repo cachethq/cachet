@@ -34,8 +34,8 @@ it('serves the dashboard login page', function () {
 
 it('serves the dashboard to authenticated users', function () {
     $user = User::forceCreate([
-        'name'     => 'Test User',
-        'email'    => 'test@example.com',
+        'name' => 'Test User',
+        'email' => 'test@example.com',
         'password' => 'password',
         'is_admin' => true,
     ]);
