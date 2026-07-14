@@ -1,0 +1,13 @@
+name: "Fix Code Styling"
+
+on:
+  push:
+    branches:
+      - 3.x
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    uses: laravel/.github/.github/workflows/coding-standards.yml@main
