@@ -8,14 +8,8 @@
             "email": "james@alt-three.com"
         }
     ],
-    "repositories": {
-        "cachet-core": {
-            "type": "vcs",
-            "url": "git@github.com:cachethq/core.git"
-        }
-    },
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "cachethq/core": "dev-main",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^13.0",
