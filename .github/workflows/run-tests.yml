@@ -11,12 +11,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        php: [8.3, 8.4]
-
-    name: Tests - PHP ${{ matrix.php }}
+    name: Tests - PHP 8.4
 
     steps:
       - name: Checkout code
@@ -25,7 +20,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: 8.4
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, intl, gd, exif, iconv, fileinfo
           coverage: none
 
@@ -40,15 +35,21 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: composer-${{ matrix.php }}-${{ hashFiles('composer.json') }}
+          key: composer-8.4-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            composer-${{ matrix.php }}-
+            composer-8.4-
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
       - name: Generate application key
         run: php artisan key:generate
+
+      - name: Publish package assets
+        run: |
+          php artisan vendor:publish --tag=laravel-assets --ansi --force
+          php artisan vendor:publish --tag=cachet-assets --ansi --force
+          php artisan filament:assets --ansi
 
       - name: Execute tests
         run: composer test
