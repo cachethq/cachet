@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a Cachet issue
+    url: https://github.com/cachethq/core/issues/new/choose
+    about: Cachet is implemented in cachethq/core. Please report issues there.
