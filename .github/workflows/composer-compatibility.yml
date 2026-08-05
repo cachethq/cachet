@@ -1,0 +1,83 @@
+name: Composer compatibility
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 3.x
+
+permissions:
+  contents: write
+
+concurrency:
+  group: composer-compatibility-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  install:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.3', '8.4', '8.5']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, pdo_sqlite
+          coverage: none
+
+      - name: Validate Composer files
+        run: composer validate --no-check-publish
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress --no-scripts
+
+  lockfile:
+    name: Generate lockfile on PHP 8.3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_sqlite
+          coverage: none
+
+      - name: Generate lockfile
+        run: composer update --prefer-dist --no-interaction --no-progress --no-scripts
+
+      - name: Detect lockfile changes
+        id: lockfile
+        run: |
+          if git diff --quiet -- composer.lock; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Require lockfile changes in pull requests
+        if: github.event_name == 'pull_request' && steps.lockfile.outputs.changed == 'true'
+        run: |
+          echo "composer.lock must be regenerated with PHP 8.3 and committed."
+          exit 1
+
+      - name: Commit regenerated lockfile
+        if: github.event_name == 'push' && steps.lockfile.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add composer.lock
+          git commit -m "Update Composer lockfile"
+          git push
