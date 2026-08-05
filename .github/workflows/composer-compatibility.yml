@@ -14,9 +14,49 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  lockfile:
+    name: Generate lockfile on PHP 8.3
+    runs-on: ubuntu-latest
+
+    outputs:
+      changed: ${{ steps.lockfile.outputs.changed }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_sqlite
+          coverage: none
+
+      - name: Generate lockfile
+        run: composer update --prefer-dist --no-interaction --no-progress --no-scripts
+
+      - name: Verify generated lockfile
+        run: composer install --prefer-dist --no-interaction --no-progress --no-scripts
+
+      - name: Detect lockfile changes
+        id: lockfile
+        run: |
+          if git diff --quiet -- composer.lock; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload generated lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: composer-lockfile
+          path: composer.lock
+
   install:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
+    needs: lockfile
 
     strategy:
       fail-fast: false
@@ -34,47 +74,47 @@ jobs:
           extensions: mbstring, pdo_sqlite
           coverage: none
 
+      - name: Download generated lockfile
+        uses: actions/download-artifact@v4
+        with:
+          name: composer-lockfile
+          path: .
+
       - name: Validate Composer files
         run: composer validate --no-check-publish
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress --no-scripts
 
-  lockfile:
-    name: Generate lockfile on PHP 8.3
+  require-committed-lockfile:
+    name: Require committed lockfile
     runs-on: ubuntu-latest
+    needs: [lockfile, install]
+    if: ${{ github.event_name == 'pull_request' && needs.lockfile.outputs.changed == 'true' }}
+
+    steps:
+      - name: Report stale lockfile
+        run: |
+          echo "composer.lock must be regenerated with PHP 8.3 and committed."
+          exit 1
+
+  commit-lockfile:
+    name: Commit generated lockfile
+    runs-on: ubuntu-latest
+    needs: [lockfile, install]
+    if: ${{ github.event_name == 'push' && needs.lockfile.outputs.changed == 'true' }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
+      - name: Download generated lockfile
+        uses: actions/download-artifact@v4
         with:
-          php-version: '8.3'
-          extensions: mbstring, pdo_sqlite
-          coverage: none
+          name: composer-lockfile
+          path: .
 
-      - name: Generate lockfile
-        run: composer update --prefer-dist --no-interaction --no-progress --no-scripts
-
-      - name: Detect lockfile changes
-        id: lockfile
-        run: |
-          if git diff --quiet -- composer.lock; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Require lockfile changes in pull requests
-        if: github.event_name == 'pull_request' && steps.lockfile.outputs.changed == 'true'
-        run: |
-          echo "composer.lock must be regenerated with PHP 8.3 and committed."
-          exit 1
-
-      - name: Commit regenerated lockfile
-        if: ${{ github.event_name == 'push' && steps.lockfile.outputs.changed == 'true' }}
+      - name: Commit generated lockfile
         uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7
         with:
           commit_message: Update Composer lockfile
