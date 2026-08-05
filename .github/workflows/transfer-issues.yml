@@ -11,19 +11,8 @@ jobs:
     name: Transfer issue to core
     runs-on: ubuntu-latest
     steps:
-      - name: Create Cachet Bot token
-        id: cachet-bot-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ vars.CACHET_BOT_APP_ID }}
-          private-key: ${{ secrets.CACHET_BOT_PRIVATE_KEY }}
-          owner: cachethq
-          repositories: |-
-            cachet
-            core
-
       - name: Transfer issue
         env:
-          GH_TOKEN: ${{ steps.cachet-bot-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.CACHET_ISSUE_TRANSFER_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: gh issue transfer "$ISSUE_URL" cachethq/core
