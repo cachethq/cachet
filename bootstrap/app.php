@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-use App\Http\Middleware\TrustProxies;
 use App\Providers\AppServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -27,8 +26,6 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->redirectGuestsTo(fn () => route('login'));
         $middleware->redirectUsersTo(AppServiceProvider::HOME);
-        $middleware->append(TrustProxies::class);
-
         $middleware->throttleApi();
     })
     ->withExceptions(function (Exceptions $exceptions) {
