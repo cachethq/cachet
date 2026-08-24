@@ -502,12 +502,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/core.git",
-                "reference": "bdbea5d7cd709febe102e7a6cf4d2baed2c24655"
+                "reference": "462102e5a8eb52ddc0c9f6f9121012fc0ca24213"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/core/zipball/bdbea5d7cd709febe102e7a6cf4d2baed2c24655",
-                "reference": "bdbea5d7cd709febe102e7a6cf4d2baed2c24655",
+                "url": "https://api.github.com/repos/cachethq/core/zipball/462102e5a8eb52ddc0c9f6f9121012fc0ca24213",
+                "reference": "462102e5a8eb52ddc0c9f6f9121012fc0ca24213",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
                 "issues": "https://github.com/cachethq/core/issues",
                 "source": "https://github.com/cachethq/core"
             },
-            "time": "2026-08-13T08:35:13+00:00"
+            "time": "2026-08-23T16:40:40+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -4134,16 +4134,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v4.4.0",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "514b29d5a23594d4e4846494f580268b20c2f11e"
+                "reference": "0c925c55b4a5c134f2fb147efa4b9f53a837d866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/514b29d5a23594d4e4846494f580268b20c2f11e",
-                "reference": "514b29d5a23594d4e4846494f580268b20c2f11e",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/0c925c55b4a5c134f2fb147efa4b9f53a837d866",
+                "reference": "0c925c55b4a5c134f2fb147efa4b9f53a837d866",
                 "shasum": ""
             },
             "require": {
@@ -4198,7 +4198,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v4.4.0"
+                "source": "https://github.com/livewire/livewire/tree/v4.4.1"
             },
             "funding": [
                 {
@@ -4206,28 +4206,28 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-10T15:24:22+00:00"
+            "time": "2026-08-18T11:39:06+00:00"
         },
         {
             "name": "masterminds/html5",
-            "version": "2.10.1",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Masterminds/html5-php.git",
-                "reference": "fd5018f6815fff903946d0564977b44ce8010e29"
+                "reference": "a1e7a2f88ee13635d86fc61cfbdf2306a76ddfc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/fd5018f6815fff903946d0564977b44ce8010e29",
-                "reference": "fd5018f6815fff903946d0564977b44ce8010e29",
+                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/a1e7a2f88ee13635d86fc61cfbdf2306a76ddfc7",
+                "reference": "a1e7a2f88ee13635d86fc61cfbdf2306a76ddfc7",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
-                "php": ">=5.3.0"
+                "php": ">=7.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9 || ^10"
+                "phpunit/phpunit": "^6 || ^7 || ^8 || ^9 || ^10"
             },
             "type": "library",
             "extra": {
@@ -4271,9 +4271,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Masterminds/html5-php/issues",
-                "source": "https://github.com/Masterminds/html5-php/tree/2.10.1"
+                "source": "https://github.com/Masterminds/html5-php/tree/2.11.0"
             },
-            "time": "2026-06-23T18:43:15+00:00"
+            "time": "2026-08-18T06:18:41+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6776,21 +6776,21 @@
         },
         {
             "name": "spatie/laravel-webhook-server",
-            "version": "3.10.0",
+            "version": "3.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-webhook-server.git",
-                "reference": "6106840254e22b667e77a885da69fff6035549ba"
+                "reference": "3e3b14669de03555d943b9fc008bc58712712565"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-webhook-server/zipball/6106840254e22b667e77a885da69fff6035549ba",
-                "reference": "6106840254e22b667e77a885da69fff6035549ba",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-server/zipball/3e3b14669de03555d943b9fc008bc58712712565",
+                "reference": "3e3b14669de03555d943b9fc008bc58712712565",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/guzzle": "^6.3|^7.3",
+                "guzzlehttp/guzzle": "^6.3|^7.3|^8.0",
                 "illuminate/bus": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
                 "illuminate/queue": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
                 "illuminate/support": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
@@ -6838,7 +6838,7 @@
                 "webhook"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-webhook-server/tree/3.10.0"
+                "source": "https://github.com/spatie/laravel-webhook-server/tree/3.11.0"
             },
             "funding": [
                 {
@@ -6846,7 +6846,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-02-21T15:14:00+00:00"
+            "time": "2026-08-23T23:33:55+00:00"
         },
         {
             "name": "spatie/php-structure-discoverer",
