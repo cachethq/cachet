@@ -31,7 +31,7 @@ For more information on the Cachet rebuild and our plans for 3.x, you can read t
 
 ## Installation, Upgrades and Documentation
 
-You can find documentation at [https://docs.cachethq.io](https://docs.cachethq.io).
+You can find documentation at [https://cachethq.io/docs](https://cachethq.io/docs).
 
 Here are some useful quick links:
 
