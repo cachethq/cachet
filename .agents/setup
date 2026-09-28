@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+started_at=$SECONDS
+
+log() {
+    printf '[orb setup] %s\n' "$1"
+}
+
+log 'Installing the PHP 8.4 toolchain'
+
+prerequisites=(ca-certificates curl gnupg)
+missing_prerequisites=()
+for package in "${prerequisites[@]}"; do
+    dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q 'install ok installed' || missing_prerequisites+=("$package")
+done
+
+if ((${#missing_prerequisites[@]})); then
+    sudo apt-get update
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "${missing_prerequisites[@]}"
+fi
+
+if [[ ! -f /etc/apt/sources.list.d/php.list ]]; then
+    curl -fsSL https://packages.sury.org/debsuryorg-archive-keyring.deb -o /tmp/debsuryorg-archive-keyring.deb
+    sudo dpkg -i /tmp/debsuryorg-archive-keyring.deb
+    rm /tmp/debsuryorg-archive-keyring.deb
+    echo 'deb [signed-by=/usr/share/keyrings/debsuryorg-archive-keyring.gpg] https://packages.sury.org/php/ bookworm main' \
+        | sudo tee /etc/apt/sources.list.d/php.list >/dev/null
+fi
+
+php_packages=(
+    php8.4-bcmath
+    php8.4-cli
+    php8.4-curl
+    php8.4-gd
+    php8.4-intl
+    php8.4-mbstring
+    php8.4-sqlite3
+    php8.4-xml
+    php8.4-zip
+)
+missing_php_packages=()
+for package in "${php_packages[@]}"; do
+    dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q 'install ok installed' || missing_php_packages+=("$package")
+done
+
+if ((${#missing_php_packages[@]})); then
+    sudo apt-get update
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "${missing_php_packages[@]}"
+fi
+
+if [[ "$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')" != '8.4' ]]; then
+    sudo update-alternatives --set php /usr/bin/php8.4
+fi
+
+if ! command -v composer >/dev/null; then
+    log 'Installing Composer'
+    expected_signature="$(curl -fsSL https://composer.github.io/installer.sig)"
+    curl -fsSL https://getcomposer.org/installer -o /tmp/composer-setup.php
+    actual_signature="$(php -r "echo hash_file('sha384', '/tmp/composer-setup.php');")"
+
+    if [[ "$expected_signature" != "$actual_signature" ]]; then
+        rm /tmp/composer-setup.php
+        echo 'Composer installer signature verification failed' >&2
+        exit 1
+    fi
+
+    sudo php /tmp/composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer
+    rm /tmp/composer-setup.php
+fi
+
+log 'Preparing the local SQLite environment'
+[[ -f .env ]] || cp -- .env.example .env
+[[ -f database/database.sqlite ]] || touch database/database.sqlite
+
+log 'Installing locked Composer dependencies'
+composer install --prefer-dist --no-interaction --no-progress
+
+if grep -Eq '^APP_KEY=$' .env; then
+    php artisan key:generate --force --no-interaction
+fi
+
+log 'Preparing the application database and public assets'
+php artisan migrate --force --no-interaction
+php artisan vendor:publish --tag=laravel-assets --ansi --force
+php artisan vendor:publish --tag=cachet-assets --ansi --force
+php artisan filament:assets --ansi
+
+log "Complete in $((SECONDS - started_at)) seconds"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Cachet uses local SQLite in development and requires no resume-time services.

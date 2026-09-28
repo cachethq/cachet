@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /public/css/filament
+/public/fonts/filament
 /public/js/filament
 /public/vendor/cachethq/cachet
 /storage/*.key
@@ -20,3 +21,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/.amp/portals/
