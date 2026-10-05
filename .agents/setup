@@ -80,8 +80,23 @@ if grep -Eq '^APP_KEY=$' .env; then
     php artisan key:generate --force --no-interaction
 fi
 
-log 'Preparing the application database and public assets'
+log 'Preparing the application database and demo data'
 php artisan migrate --force --no-interaction
+
+# Seed Cachet's demo only when setup finds a completely empty application.
+if php -r '
+$database = new PDO("sqlite:database/database.sqlite");
+
+foreach (["users", "components", "component_groups", "incidents", "schedules"] as $table) {
+    if ((int) $database->query("SELECT COUNT(*) FROM {$table}")->fetchColumn() > 0) {
+        exit(1);
+    }
+}
+'; then
+    php artisan db:seed --class='Cachet\Database\Seeders\DatabaseSeeder' --force --no-interaction
+fi
+
+log 'Publishing public assets'
 php artisan vendor:publish --tag=laravel-assets --ansi --force
 php artisan vendor:publish --tag=cachet-assets --ansi --force
 php artisan filament:assets --ansi

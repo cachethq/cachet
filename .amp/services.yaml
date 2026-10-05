@@ -1,0 +1,18 @@
+services:
+  cachet:
+    command: >-
+      php artisan optimize:clear &&
+      APP_URL="$PUBLIC_URL" ASSET_URL="$PUBLIC_URL"
+      php artisan serve --host=0.0.0.0 --port="$PORT"
+    env:
+      CACHET_TRUSTED_PROXIES: "*"
+    health: /
+    portal:
+      url: /
+      title: Cachet Status Page
+      description: Review the public status page with seeded components and incidents.
+    portals:
+      - url: /dashboard
+        title: Cachet Dashboard
+        description: Sign in with test@test.com and password test123.
+    agent: control
