@@ -46,7 +46,7 @@ class ApiController extends AbstractApiController
                 $component->group_id,
                 $component->enabled,
                 $component->meta,
-                $component->tags,
+                null,   // Tags: null leaves them unchanged
                 true   // Silent mode
             ));
         } catch (QueryException $e) {
@@ -79,7 +79,7 @@ class ApiController extends AbstractApiController
                     $component->group_id,
                     $component->enabled,
                     $component->meta,
-                    $component->tags,
+                    null,   // Tags: null leaves them unchanged
                     true   // Silent mode
                 ));
             } catch (QueryException $e) {
