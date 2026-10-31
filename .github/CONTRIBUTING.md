@@ -40,7 +40,7 @@ You should also make use of the [.editorconfig](/.editorconfig) file found withi
 
 ## Ways to help:
 
-Start by becoming familiar with Cachet. If you're already using Cachet, that's a great head start. If not, check out the latest [demo](https://dev.cachethq.io) and have a play. You can also download and install Cachet locally to familiarise yourself that way.
+Start by becoming familiar with Cachet. If you're already using Cachet, that's a great head start. If not, check out the latest [demo](https://v3.cachethq.io/dashboard) and have a play. You can also download and install Cachet locally to familiarise yourself that way.
 
 You don't have to be a developer to help improve Cachet, infact there are lots of ways that you can help us.
 
@@ -56,7 +56,7 @@ Cachet is in use around the world. Cachet speaks multiple languages. Our documen
 
 We're always looking for new [translations](#translations).
 
-Of course bug reports, feature requests and [documentation](https://docs.cachethq.io) are always appreciated.
+Of course bug reports, feature requests and [documentation](https://cachethq.io/docs) are always appreciated.
 
 ### As a designer
 
@@ -89,6 +89,6 @@ Once cloned to your local machine, you'll need some demo data! Run `php artisan 
 
 ### #YOLO JUST SUBMIT A PR
 
-_A great idea taken from https://github.com/metabase/metabase/blob/master/docs/contributing.md#yolo-just-submit-a-pr._
+_A great idea taken from https://github.com/metabase/metabase/blob/master/docs/CONTRIBUTING.md#yolo-just-submit-a-pr._
 
 > If you come up with something really cool, and want to share it with us, just submit a PR. If it hasn't gone through the above process, we probably won't merge it as is, but if it's compelling, we're more than willing to help you via code review, design review and generally OCD nitpicking so that it fits into the rest of our codebase.

@@ -35,7 +35,7 @@ You can find documentation at [https://cachethq.io/docs](https://cachethq.io/doc
 
 Here are some useful quick links:
 
-- [Installing Cachet](https://docs.cachethq.io/v3.x/installation)
+- [Installing Cachet](https://cachethq.io/docs/v3.x/installation)
 
 ### Demo
 
