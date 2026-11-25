@@ -73,6 +73,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "baer-software/larabeacon": "^3.6",
         "fakerphp/faker": "^1.24",
         "mockery/mockery": "^1.6",
         "pestphp/pest": "*",
